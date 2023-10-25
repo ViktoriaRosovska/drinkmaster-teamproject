@@ -2,6 +2,7 @@ import background1_sm from '../../assets/image/404/404_iced_tea@1x_sm.png';
 import background2_sm from '../../assets/image/404/404_iced_tea@2x_sm.png';
 import background1_md from '../../assets/image/404/404_iced_tea@1x_md.png';
 import background2_md from '../../assets/image/404/404_iced_tea@2x_md.png';
+import backgroundLeftCircle from '../../assets/image/404/Ellipseleft.png';
 
 import styled from 'styled-components';
 
@@ -48,4 +49,13 @@ const NotFoundText = styled.p`
   font-weight: 600;
   line-height: 200px;
 `;
-export { NotFoundContainer, NotFoundImage, NotFoundText };
+
+const NotFoundSection = styled.section`
+  width: 100vw;
+  height: 100vh;
+  background-image: url(${backgroundLeftCircle});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+`;
+export { NotFoundContainer, NotFoundImage, NotFoundText, NotFoundSection };
