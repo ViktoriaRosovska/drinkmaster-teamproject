@@ -1,5 +1,6 @@
 import React from 'react';
 import DrinkItem from 'components/DrinkItem/DrinkItem';
+import { CardList } from './DrinkList.styled';
 
 const DrinkList = () => {
     const drinks = [
@@ -60,12 +61,12 @@ const DrinkList = () => {
     
     
     return (
-        <ul>
+        <CardList>
             {drinks ? (drinks.map(( drink ) => {
                 console.log(drink)
                 return <DrinkItem drinkData={drink} />
             })) : (<p>You havent added any favorite cocktails yet</p>)}
-       </ul>
+       </CardList>
    )
 }
 
