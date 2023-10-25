@@ -3,6 +3,8 @@ import background2_sm from '../../assets/image/404/404_iced_tea@2x_sm.png';
 import background1_md from '../../assets/image/404/404_iced_tea@1x_md.png';
 import background2_md from '../../assets/image/404/404_iced_tea@2x_md.png';
 import backgroundLeftCircle from '../../assets/image/404/Ellipseleft.png';
+import background222 from '../../assets/image/404/Ellipse222.png';
+import background223 from '../../assets/image/404/Ellipse223.png';
 
 import styled from 'styled-components';
 
@@ -53,9 +55,9 @@ const NotFoundText = styled.p`
 const NotFoundSection = styled.section`
   width: 100vw;
   height: 100vh;
-  background-image: url(${backgroundLeftCircle});
+  background-image: url(${backgroundLeftCircle}), url(${background222}),
+    url(${background223});
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-position: left center, bottom center, bottom center;
 `;
 export { NotFoundContainer, NotFoundImage, NotFoundText, NotFoundSection };
