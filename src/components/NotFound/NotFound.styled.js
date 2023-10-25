@@ -55,9 +55,9 @@ const NotFoundText = styled.p`
 const NotFoundSection = styled.section`
   width: 100vw;
   height: 100vh;
-  background-image: url(${backgroundLeftCircle}), url(${background222}),
-    url(${background223});
+  background-image: url(${backgroundLeftCircle}), url(${background223}),
+    url(${background222});
   background-repeat: no-repeat;
-  background-position: left center, bottom center, bottom center;
+  background-position: left center, bottom left, bottom right;
 `;
 export { NotFoundContainer, NotFoundImage, NotFoundText, NotFoundSection };
