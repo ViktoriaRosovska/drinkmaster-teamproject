@@ -1,22 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Card, CardImage, DrinkName, IsAlco, Description, SeeMoreBtn } from './DrinkItem.styled';
 
 const DrinkItem = ({ drinkData }) => {
     const { drink, drinkThumb, alcoholic, description, _id } = drinkData;
 
     return (
-        <li>
-            <img src={drinkThumb} alt={drink} />
-            <h2>{drink}</h2>
-            <p>{alcoholic}</p>
-            <p>{description}</p>
+        <Card>
+            <CardImage src={drinkThumb} alt={drink} />
+            <DrinkName>{drink}</DrinkName>
+            <IsAlco>{alcoholic}</IsAlco>
+            <Description>{description}</Description>
             <Link to={`/drink/${_id}`}>
-                <button>See more</button>
+                <SeeMoreBtn type='button'>See more</SeeMoreBtn>
             </Link>
-            <button >
+            <button type='button' >
                 Delete
             </button>
-       </li>
+       </Card>
    )
 }
 
