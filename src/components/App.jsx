@@ -8,28 +8,25 @@ import { FavoriteDrinksPage } from 'views/FavouriteDrinksPage/FavouriteDrinksPag
 
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
+    <>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route index element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/drinks" element={<DrinksPage />} />
           <Route path="/add" element={<AddDrinkPage />} />
           <Route path="/my" element={<MyDrinksPage />} />
           <Route path="/favorites" element={<FavoriteDrinksPage />} />
+
+          <Route
+            path="/welcome"
+            element={<h2 style={{ color: 'white' }}>welcome to signin</h2>}
+          />
+          {/* <Route path="/signin" element={<SigninForm />} /> */}
+          {/* <Route path="/signup" element={<SignupForm />} /> */}
         </Route>
 
         <Route path="*" element={<h2>404 Page not found</h2>} />
       </Routes>
-    </div>
+    </>
   );
 };
