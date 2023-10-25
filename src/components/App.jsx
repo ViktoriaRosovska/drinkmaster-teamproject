@@ -5,6 +5,7 @@ import { DrinksPage } from 'views/DrinksPage/DrinksPage';
 import { AddDrinkPage } from 'views/AddDrinkPage/AddDrinkPage';
 import { MyDrinksPage } from 'views/MyDrinksPage/MyDrinksPage';
 import { FavoriteDrinksPage } from 'views/FavouriteDrinksPage/FavouriteDrinksPage';
+import NotFound from './NotFound/NotFound';
 
 export const App = () => {
   return (
@@ -23,9 +24,8 @@ export const App = () => {
           />
           {/* <Route path="/signin" element={<SigninForm />} /> */}
           {/* <Route path="/signup" element={<SignupForm />} /> */}
+          <Route path="*" element={<NotFound />} />
         </Route>
-
-        <Route path="*" element={<h2>404 Page not found</h2>} />
       </Routes>
     </>
   );
