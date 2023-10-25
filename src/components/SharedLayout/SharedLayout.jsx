@@ -6,9 +6,8 @@ export const SharedLayout = () => {
   return (
     <>
       {/* <Header /> */}
-      <GlobalStyle>
-        <Outlet />
-      </GlobalStyle>
+      <GlobalStyle />
+      <Outlet />
 
       {/* <Footer /> */}
     </>
