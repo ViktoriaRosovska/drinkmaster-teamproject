@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/drinkmaster-teamproject/static/css/main.7acaea2f.css",
+    "main.css": "/drinkmaster-teamproject/static/css/main.49ac44e7.css",
     "main.js": "/drinkmaster-teamproject/static/js/main.30de90d5.js",
     "index.html": "/drinkmaster-teamproject/index.html",
-    "main.7acaea2f.css.map": "/drinkmaster-teamproject/static/css/main.7acaea2f.css.map",
+    "main.49ac44e7.css.map": "/drinkmaster-teamproject/static/css/main.49ac44e7.css.map",
     "main.30de90d5.js.map": "/drinkmaster-teamproject/static/js/main.30de90d5.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
+    "static/css/main.49ac44e7.css",
     "static/js/main.30de90d5.js"
   ]
 }
