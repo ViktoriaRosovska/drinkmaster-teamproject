@@ -7,7 +7,7 @@ export const CardList = styled.ul`
   margin-left: auto;
   margin-right: auto;
 
-  @media screen and (min-width: 768px)and (max-width: 1439px) {
+  @media screen and (min-width: 768px) {
     grid-template-columns: 342px 342px;
     gap: 80px 20px;
   }
