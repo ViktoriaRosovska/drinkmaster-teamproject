@@ -35,10 +35,23 @@ export const IsAlco = styled.p`
 `;
 
 export const Description = styled.p`
+    width: 100%;
+    height: 75px;
     margin-bottom: 18px;
+    overflow: hidden;
 
     @media screen and (min-width: 768px) {
         margin-bottom: 24px;
+        height: 110px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        height: 96px;
+         white-space: normal;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
     }
 `;
 
