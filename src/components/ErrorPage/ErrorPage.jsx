@@ -1,18 +1,18 @@
+import { CenterPageContainer } from 'styles/App.styled';
 import {
-  ErrorPageContainer,
   ErrorPageImage,
-  ErrorPageSection,
+  // ErrorPageSection,
   ErrorPageText,
 } from './ErrorPage.styled';
 
 export default function ErrorPage() {
   return (
-    <ErrorPageSection>
-      <ErrorPageContainer>
-        <ErrorPageText>4</ErrorPageText>
-        <ErrorPageImage />
-        <ErrorPageText>4</ErrorPageText>
-      </ErrorPageContainer>
-    </ErrorPageSection>
+    // <ErrorPageSection>
+    <CenterPageContainer>
+      <ErrorPageText>4</ErrorPageText>
+      <ErrorPageImage />
+      <ErrorPageText>4</ErrorPageText>
+    </CenterPageContainer>
+    // </ErrorPageSection>
   );
 }

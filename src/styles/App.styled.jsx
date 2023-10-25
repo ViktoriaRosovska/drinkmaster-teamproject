@@ -24,5 +24,13 @@ const MainContainer = styled.div`
     padding-right: 100px;
   }
 `;
-
-export default MainContainer;
+const CenterPageContainer = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export { MainContainer, CenterPageContainer };

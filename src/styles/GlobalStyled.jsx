@@ -1,45 +1,38 @@
-import styled from 'styled-components';
-
-const GlobalStyle = styled.main`
+import { createGlobalStyle } from 'styled-components';
+export default createGlobalStyle`
   *,
   *::before,
   *::after {
     box-sizing: border-box;
   }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
 
-  :root {
-    //main background color
-    --black-color: #OAOA11;
-    --black-fifty-color: rgba(10, 10, 17, 0.5);
-    --black-forty-color: rgba(10, 10, 17, 0.4);
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-    --dark-blue-color: #161f37;
-    --dark-blue-fifty-color: rgba(22, 31, 55, 0.5);
-    --dark-blue-twenty-color: rgba(22, 31, 55, 0.2);
+a {
+  text-decoration: none;
+}
 
-    --grey-color: #434d67;
+button {
+  cursor: pointer;
+  font-size: 16px;
+}
 
-    --blue-color: #4070cd;
-    --blue-fifty-color: rgba(64, 112, 205, 0.5);
-
-    --light-green-color: #bce6d2;
-    --light-green-forty-color: rgba(188, 230 210, 0.4);
-
-    --white-color: #f3f3f3;
-    --white-twenty-color: rgba(243, 243, 243, 0.2);
-    --white-thirty-color: rgba(243, 243, 243, 0.3);
-    --white-forty-color: rgba(243, 243, 243, 0.4);
-    --white-fifty-color: rgba(243, 243, 243, 0.5);
-
-    --red-error-color: #da1414;
-    --red-error-fifty-color: rgba(218, 20, 20, 0.5);
-    --green-success-color: rgba(60, 188, 129, 1);
-    --green-success-fifty-color: rgba(60, 188, 129, 0.5);
-
-    --start-page-txt-color: #fafafa;
-
-    --linear-start-color: rgba(10, 10, 17, 0.03);
-    --linear-end-color: rgba(10, 10, 17, 0.8);
-  }
+img {
+  display: block;
+}
+ 
 `;
-export default GlobalStyle;
