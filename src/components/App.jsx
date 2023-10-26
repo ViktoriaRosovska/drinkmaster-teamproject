@@ -2,7 +2,6 @@ import { Route, Routes } from 'react-router-dom';
 
 import { HomePage } from 'views/HomePage/HomePage';
 import { DrinksPage } from 'views/DrinksPage/DrinksPage';
-import { DrinkIdPage } from 'views/DrinkIdPage/DrinkIdPage';
 import { AddDrinkPage } from 'views/AddDrinkPage/AddDrinkPage';
 import { MyDrinksPage } from 'views/MyDrinksPage/MyDrinksPage';
 import { FavoriteDrinksPage } from 'views/FavouriteDrinksPage/FavouriteDrinksPage';
@@ -14,6 +13,7 @@ import SignupForm from './AuthForm/SignupForm/SignupForm';
 import PublicRoute from 'helpers/PublicRoute';
 import PrivateRoute from 'helpers/PrivateRoute';
 import WelcomePage from 'views/WelcomePage/WelcomePage';
+import DrinkIdPage from 'views/DrinkIdPage/DrinkIdPage';
 
 const isLoggedIn = true;
 
