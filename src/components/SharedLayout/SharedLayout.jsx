@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import GlobalStyle from 'styles/GlobalStyled';
 
 // SharedLayout component
-export const SharedLayout = () => {
+export default function SharedLayout() {
   return (
     <>
       {/* <Header /> */}
@@ -12,4 +12,4 @@ export const SharedLayout = () => {
       {/* <Footer /> */}
     </>
   );
-};
+}
