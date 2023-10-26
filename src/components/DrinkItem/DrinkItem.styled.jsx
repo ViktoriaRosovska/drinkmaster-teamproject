@@ -16,6 +16,7 @@ export const CardImage = styled.img`
     width: 100%;
     height: auto;
     margin-bottom: 18px;
+    border-radius: 8px;
 
     @media screen and (min-width: 768px) {
         margin-bottom: 24px;
