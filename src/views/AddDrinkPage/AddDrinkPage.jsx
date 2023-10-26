@@ -1,4 +1,6 @@
+import PageTitle from 'components/PageTitle/PageTitle';
+
 // AddDrinkPage page
 export const AddDrinkPage = () => {
-  return <h2>welcome to AddDrinkPage </h2>;
+  return <PageTitle title="Add drink" />;
 };
