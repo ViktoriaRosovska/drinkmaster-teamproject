@@ -3,17 +3,21 @@ import {
   AddBtn,
   AddDrinkContainer,
   AddPhotoContainer,
+  ReactSVGIcon,
 } from './AddDrinkPage.styled';
 import { MainContainer } from 'styles/App.styled';
+import IconPlus from '../../assets/images/addDrink/plus.svg';
 
-// AddDrinkPage page
 export const AddDrinkPage = () => {
   return (
     <MainContainer>
       <AddDrinkContainer>
         <PageTitle title="Add drink" />
         <AddPhotoContainer>
-          <AddBtn></AddBtn>
+          <AddBtn>
+            <ReactSVGIcon src={IconPlus} />
+          </AddBtn>
+          <></>Add image
         </AddPhotoContainer>
         <form>
           <input type="text" />

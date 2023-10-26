@@ -17,6 +17,7 @@
     "react-router-dom": "^6.17.0",
     "react-scripts": "5.0.1",
     "react-spinners": "^0.13.8",
+    "react-svg": "^16.1.29",
     "redux-persist": "^6.0.0",
     "styled-components": "^6.1.0",
     "vite-plugin-svgr": "^4.1.0",
