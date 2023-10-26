@@ -7,17 +7,11 @@ const initialState = {
   token: '',
   isLoggedIn: false,
   isRefreshing: false,
-  theme: 'dark',
 };
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  reducers: {
-    toggleTheme(state) {
-      state.theme = state.theme === 'light' ? 'dark' : 'light';
-    },
-  },
   extraReducers: {
     [authOperations.signUp.fulfilled](state, { payload }) {
       state.user = payload.user;
@@ -52,7 +46,5 @@ const authSlice = createSlice({
     },
   },
 });
-
-export const { toggleTheme } = authSlice.actions;
 
 export const authReducer = authSlice.reducer;
