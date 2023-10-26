@@ -29,7 +29,7 @@ export const DrinkName = styled.h2`
   font-size: 18px;
   line-height: 24px;
 
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     font-size: 24px;
     line-height: 32px;
   }
@@ -80,4 +80,11 @@ export const SeeMoreBtn = styled.button`
   margin-right: 8px;
   font-weight: 600;
   font-size: 14px;
+
+  @media screen and (min-width: 768px) {
+    min-width: 160px;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 18px 44px;
+  }
 `;
