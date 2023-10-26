@@ -7,6 +7,7 @@ const MainContainer = styled.div`
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
+  padding-top: 80px;
   background-color: var(--black-color);
   /* display: flex; */
 
