@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import { HomePage } from 'views/HomePage/HomePage';
 import { DrinksPage } from 'views/DrinksPage/DrinksPage';
+import { DrinkIdPage } from 'views/DrinkIdPage/DrinkIdPage';
 import { AddDrinkPage } from 'views/AddDrinkPage/AddDrinkPage';
 import { MyDrinksPage } from 'views/MyDrinksPage/MyDrinksPage';
 import { FavoriteDrinksPage } from 'views/FavouriteDrinksPage/FavouriteDrinksPage';
@@ -36,6 +37,7 @@ export const App = () => {
           <Route path="/" element={<SharedLayout />}>
             <Route path="/home" element={<HomePage />} />
             <Route path="/drinks" element={<DrinksPage />} />
+            <Route path="/drink/:drinkId" element={<DrinkIdPage />} />
             <Route path="/add" element={<AddDrinkPage />} />
             <Route path="/my" element={<MyDrinksPage />} />
             <Route path="/favorites" element={<FavoriteDrinksPage />} />
