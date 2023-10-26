@@ -1,14 +1,13 @@
 import {
-  NotFoundContainer,
+  ErrorPageContainer,
   NotFoundImage,
   NotFoundText,
 } from './NotFound.styled';
 export default function NotFound() {
   return (
-    <NotFoundContainer>
-      <NotFoundText>4</NotFoundText>
+    <ErrorPageContainer>
       <NotFoundImage />
-      <NotFoundText>4</NotFoundText>
-    </NotFoundContainer>
+      <NotFoundText>You haven't added any favorite cocktails yet</NotFoundText>
+    </ErrorPageContainer>
   );
 }
