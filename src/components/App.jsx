@@ -5,6 +5,7 @@ import { DrinksPage } from 'views/DrinksPage/DrinksPage';
 import { AddDrinkPage } from 'views/AddDrinkPage/AddDrinkPage';
 import { MyDrinksPage } from 'views/MyDrinksPage/MyDrinksPage';
 import { FavoriteDrinksPage } from 'views/FavouriteDrinksPage/FavouriteDrinksPage';
+import { WelcomePage } from 'views/WelcomePage/WelcomePage';
 import NotFound from './NotFound/NotFound';
 
 export const App = () => {
@@ -20,7 +21,7 @@ export const App = () => {
 
           <Route
             path="/welcome"
-            element={<h2 style={{ color: 'white' }}>welcome to signin</h2>}
+            element={<WelcomePage />}  //<h2 style={{ color: 'white' }}>welcome to signin</h2
           />
           {/* <Route path="/signin" element={<SigninForm />} /> */}
           {/* <Route path="/signup" element={<SignupForm />} /> */}
