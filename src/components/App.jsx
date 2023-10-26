@@ -28,7 +28,6 @@ export const App = () => {
           <Route path="/welcome/signin" element={<SigninForm />} />
           <Route path="/welcome/signup" element={<SignupForm />} />
         </Route>
-
         <Route
           element={
             <PrivateRoute redirectTo="/welcome" isLoggedIn={isLoggedIn} />
