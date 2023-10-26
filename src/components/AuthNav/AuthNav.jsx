@@ -1,6 +1,12 @@
 import React from 'react';
-import MainContainer from 'styles/App.styled';
-import { H2, P, Conteiner, DefButton, ButtonDiv } from 'styles/WelcomePage';
+import { MainContainer } from 'styles/App.styled';
+import {
+  H2,
+  P,
+  Conteiner,
+  DefButton,
+  ButtonDiv,
+} from 'views/WelcomePage/WelcomePage.styled';
 
 const AuthNav = () => {
   return (
