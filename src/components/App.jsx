@@ -23,7 +23,7 @@ export const App = () => {
         <Route
           element={<PublicRoute redirectTo="/home" isLoggedIn={isLoggedIn} />}
         >
-          <Route path="welcome" element={<WelcomePage />} />
+          <Route path="/welcome" element={<WelcomePage />} />
           <Route path="/welcome/signin" element={<SigninForm />} />
           <Route path="/welcome/signup" element={<SignupForm />} />
         </Route>

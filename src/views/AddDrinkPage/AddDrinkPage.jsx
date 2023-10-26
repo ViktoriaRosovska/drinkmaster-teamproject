@@ -6,7 +6,6 @@ import {
 } from './AddDrinkPage.styled';
 import { MainContainer } from 'styles/App.styled';
 
-// AddDrinkPage page
 export const AddDrinkPage = () => {
   return (
     <MainContainer>
@@ -67,6 +66,7 @@ export const AddDrinkPage = () => {
           <h4>Popular drinks</h4>
           <div>Компонент Популярні напої</div>
         </div>
+        <PlusIcon />
       </AddDrinkContainer>
     </MainContainer>
   );
