@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-export const MainContainer = styled.div`
-  position: relative;
+export const LayoutContainer = styled.div`
+  /* position: relative;
   min-height: 100%;
   min-width: 320px;
-  display: flex;
-  flex-direction: column;
+  display: flex; */
+  /* flex-direction: column; */
   background-image: radial-gradient(
       circle,
       rgba(64, 112, 205, 0.5) 0%,
@@ -16,7 +16,7 @@ export const MainContainer = styled.div`
       rgba(64, 112, 205, 0.5) 0%,
       rgba(255, 255, 255, 0) 65%
     );
-  background-repeat: repeat-y, no-repeat;
+  background-repeat: no-repeat;
   background-position-x: -400px, calc(100vw - 190px);
   background-position-y: -40px, 400px;
   background-size: 670px 670px, 670px 670px;

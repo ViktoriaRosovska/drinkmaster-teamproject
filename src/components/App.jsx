@@ -24,17 +24,17 @@ export const App = () => {
         <Route
           element={<PublicRoute redirectTo="/home" isLoggedIn={isLoggedIn} />}
         >
-          <Route path="welcome" element={<WelcomePage />} />
-          <Route path="/welcome/signin" element={<SigninForm />} />
-          <Route path="/welcome/signup" element={<SignupForm />} />
+          <Route path="/welcome" element={<WelcomePage />} />
+          <Route path="/signin" element={<SigninForm />} />
+          <Route path="/signup" element={<SignupForm />} />
         </Route>
 
-        <Route
-          element={
-            <PrivateRoute redirectTo="/welcome" isLoggedIn={isLoggedIn} />
-          }
-        >
-          <Route path="/" element={<SharedLayout />}>
+        <Route path="/" element={<SharedLayout />}>
+          <Route
+            element={
+              <PrivateRoute redirectTo="/welcome" isLoggedIn={isLoggedIn} />
+            }
+          >
             <Route path="/home" element={<HomePage />} />
             <Route path="/drinks" element={<DrinksPage />} />
             <Route path="/drink/:drinkId" element={<DrinkIdPage />} />

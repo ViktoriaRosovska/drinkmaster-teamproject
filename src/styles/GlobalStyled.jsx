@@ -22,11 +22,13 @@ ol {
   list-style: none;
 }
 
+
 a {
   text-decoration: none;
 }
 
 button {
+  border: none;
   cursor: pointer;
   font-size: 16px;
 }
