@@ -16,6 +16,7 @@ const MainContainer = styled.div`
     width: 768px;
     padding-left: 32px;
     padding-right: 32px;
+    padding-top: 140px;
   }
 
   @media screen and (min-width: 1440px) {
