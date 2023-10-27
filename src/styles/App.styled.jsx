@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const MainContainer = styled.div`
   min-width: 320px;
-  height: 100vh;
+  // height: 100vh;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
