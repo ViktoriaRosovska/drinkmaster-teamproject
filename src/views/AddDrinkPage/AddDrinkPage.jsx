@@ -5,9 +5,12 @@ import {
   AddDrinkContainer,
   AddFormInput,
   AddFormSelect,
+  AddFormSelectContainer,
+  AddFormSelectLabel,
   AddFormTextarea,
   AddPhotoContainer,
   ReactSVGIcon,
+  SelectContainer,
 } from './AddDrinkPage.styled';
 import { MainContainer } from 'styles/App.styled';
 import IconPlus from '../../assets/images/addDrink/plus.svg';
@@ -26,27 +29,33 @@ export default function AddDrinkPage() {
           <AddBtnText>Add image</AddBtnText>
         </AddPhotoContainer>
         <form>
-          <AddFormInput
-            type="text"
-            data-limit="50"
-            placeholder="Enter item title"
-          />
+          <SelectContainer>
+            <AddFormInput
+              type="text"
+              data-limit="50"
+              placeholder="Enter item title"
+            />
+            <AddFormInput type="text" placeholder="Enter about recipe" />
+            <AddFormSelectContainer>
+              <AddFormSelectLabel>Category</AddFormSelectLabel>
+              <AddFormSelect
+                placeholder=""
+                getOptionLabel={ingredient => ingredient.title}
+                getOptionValue={ingredient => ingredient.title}
+                options={ingredients}
+              />
+            </AddFormSelectContainer>
 
-          <AddFormInput type="text" placeholder="Enter about recipe" />
-
-          <AddFormSelect
-            placeholder="Category"
-            getOptionLabel={ingredient => ingredient.title}
-            getOptionValue={ingredient => ingredient.title}
-            options={ingredients}
-          />
-
-          <AddFormSelect
-            placeholder="Glass"
-            getOptionLabel={glass => glass.glass}
-            getOptionValue={glass => glass.glass}
-            options={glasses}
-          />
+            <AddFormSelectContainer>
+              <AddFormSelectLabel>Glass</AddFormSelectLabel>
+              <AddFormSelect
+                placeholder=""
+                getOptionLabel={glass => glass.glass}
+                getOptionValue={glass => glass.glass}
+                options={glasses}
+              />
+            </AddFormSelectContainer>
+          </SelectContainer>
           <div>
             <input type="radio" name="typeDrink" />
             <label>Alcoholic</label>
