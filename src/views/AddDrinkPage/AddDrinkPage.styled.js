@@ -110,6 +110,8 @@ const AddFormSelect = styled(Select)`
     line-height: 16px; /* 133.333% */
     padding: 10px;
     overflow: hidden;
+    position: absolute;
+    right: 0;
     ::-webkit-scrollbar {
       width: 0;
     }
@@ -131,6 +133,8 @@ const AddFormSelect = styled(Select)`
     line-height: 16px; /* 133.333% */
     padding: 10px;
     overflow: hidden;
+    position: absolute;
+    right: 0;
     ::-webkit-scrollbar {
       width: 0;
     }

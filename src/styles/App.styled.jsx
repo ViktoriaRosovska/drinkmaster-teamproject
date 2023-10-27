@@ -2,18 +2,14 @@ import styled from 'styled-components';
 
 const MainContainer = styled.div`
   min-width: 320px;
-  /* height: 100vh; */
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 80px;
-  /* background-color: var(--black-color); */
-  /* display: flex; */
 
   @media screen and (min-width: 375px) {
     width: 375px;
-   
   }
 
   @media screen and (min-width: 768px) {
@@ -27,7 +23,7 @@ const MainContainer = styled.div`
     width: 1440px;
     padding-left: 100px;
     padding-right: 100px;
-    padding-top:160px;
+    padding-top: 160px;
   }
 `;
 const CenterPageContainer = styled.div`
