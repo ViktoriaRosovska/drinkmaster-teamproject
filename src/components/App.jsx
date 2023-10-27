@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import { HomePage } from 'views/HomePage/HomePage';
 import { DrinksPage } from 'views/DrinksPage/DrinksPage';
-import { AddDrinkPage } from 'views/AddDrinkPage/AddDrinkPage';
+import AddDrinkPage from 'views/AddDrinkPage/AddDrinkPage';
 import { MyDrinksPage } from 'views/MyDrinksPage/MyDrinksPage';
 import { FavoriteDrinksPage } from 'views/FavouriteDrinksPage/FavouriteDrinksPage';
 
