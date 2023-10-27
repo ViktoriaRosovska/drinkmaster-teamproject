@@ -1,6 +1,7 @@
 import React from 'react';
 import DrinkItem from 'components/DrinkItem/DrinkItem';
 import { CardList } from './DrinkList.styled';
+import NotFound from 'components/NotFound/NotFound';
 
 const DrinkList = () => {
      const drinks = [
@@ -66,8 +67,10 @@ const DrinkList = () => {
             {drinks.map(( drink ) => {
                 console.log(drink)
                 return <DrinkItem key={drink._id.$oid} drinkData={drink} />
-            })) : (<p>You havent added any favorite cocktails yet</p>)}
-       </CardList>
+            })}
+      </CardList>) : (<NotFound/>)}
+        
+      </>
    )
 }
 
