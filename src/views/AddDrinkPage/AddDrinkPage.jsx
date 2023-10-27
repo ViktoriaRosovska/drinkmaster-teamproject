@@ -71,6 +71,7 @@ export const AddDrinkPage = () => {
           <h4>Popular drinks</h4>
           <div>Компонент Популярні напої</div>
         </div>
+        <PlusIcon />
       </AddDrinkContainer>
     </MainContainer>
   );
