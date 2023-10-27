@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Card, CardImage, DrinkName, IsAlco, Description, ButtonsContainer, SVG, DeleteBtn } from './DrinkItem.styled';
 import trash from '../../assets/images/deleteSvg/trash.svg';
 import SeeMoreBtn from 'components/LinkBtn/SeeMoreBtn';
@@ -14,9 +13,7 @@ const DrinkItem = ({ drinkData }) => {
             <IsAlco>{alcoholic}</IsAlco>
             <Description>{description}</Description>
             <ButtonsContainer>
-            <Link to={`/drink/${_id}`}>
-                <SeeMoreBtn type='button'>See more</SeeMoreBtn>
-            </Link>
+                <SeeMoreBtn navLink={`/drink/${_id}`} />
             <DeleteBtn type="button">
           <SVG src={trash} />
                 </DeleteBtn>
