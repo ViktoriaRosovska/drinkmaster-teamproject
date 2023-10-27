@@ -20,12 +20,12 @@ const AuthNav = () => {
           retrieve your own recipes at any time.
         </P>
         <ButtonDiv>
-          <DefButton>
-            <Link to="/signup">Sign Up</Link>
-          </DefButton>
-          <DefButton>
-            <Link to="/signin">Sign In</Link>
-          </DefButton>
+          <Link to="/signup">
+            <DefButton>Sign Up</DefButton>
+          </Link>
+          <Link to="/signin">
+            <DefButton>Sign In</DefButton>
+          </Link>
         </ButtonDiv>
       </Conteiner>
     </MainContainer>
