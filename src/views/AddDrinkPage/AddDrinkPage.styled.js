@@ -63,9 +63,10 @@ const AddFormInput = styled.input`
   background-color: transparent;
   border: none;
   border-bottom: 1px solid var(--white-fifty-color);
+
   &::placeholder {
     color: var(--white-color);
-    font-family: Manrope;
+    font-family: 'Manrope';
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -83,7 +84,7 @@ const AddFormTextarea = styled.textarea`
 
   &::placeholder {
     color: var(--white-color);
-    font-family: Manrope;
+    font-family: 'Manrope';
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -92,7 +93,35 @@ const AddFormTextarea = styled.textarea`
 `;
 
 const AddFormSelect = styled(Select)`
+  padding: 0;
   width: 100%;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  &::placeholder {
+    color: red;
+    font-family: 'Manrope';
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.28px;
+  }
+  & .css-1fdsijx-ValueContainer {
+    padding: 0;
+    color: var(--white-color);
+    font-family: 'Manrope';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+
+    & ::selection {
+      background-color: transparent;
+    }
+  }
+
   & #react-select-3-listbox {
     appearance: none;
     -moz-appearance: none;
@@ -103,7 +132,7 @@ const AddFormSelect = styled(Select)`
     color: red;
     background-color: #161f37;
     color: rgba(243, 243, 243, 0.4);
-    font-family: Manrope;
+    font-family: 'Manrope';
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -115,6 +144,28 @@ const AddFormSelect = styled(Select)`
     ::-webkit-scrollbar {
       width: 0;
     }
+  }
+  & .css-qbdosj-Input {
+    color: var(--white-color);
+    font-family: 'Manrope';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.28px;
+  }
+  & .css-t3ipsp-control {
+    background-color: transparent;
+  }
+  & .css-13cymwt-control {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--white-fifty-color);
+    border-radius: 0;
+    outline: none;
+  }
+  & .css-1u9des2-indicatorSeparator {
+    display: none;
   }
   & #react-select-5-listbox {
     appearance: none;
