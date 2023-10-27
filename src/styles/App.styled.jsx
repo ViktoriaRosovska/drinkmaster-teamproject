@@ -2,14 +2,13 @@ import styled from 'styled-components';
 
 const MainContainer = styled.div`
   min-width: 320px;
-  height: 100vh;
+  /* height: 100vh; */
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 80px;
-  background-color: var(--black-color);
-  /* display: flex; */
+  /* background-color: var(--black-color); */
 
   @media screen and (min-width: 375px) {
     width: 375px;

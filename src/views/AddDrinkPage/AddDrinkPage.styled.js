@@ -15,9 +15,12 @@ const AddPhotoContainer = styled.div`
 `;
 
 const AddDrinkContainer = styled.div`
+  width: 335px;
   display: flex;
   flex-direction: column;
   gap: 40px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const AddBtn = styled.button`
@@ -92,22 +95,26 @@ const AddFormTextarea = styled.textarea`
   }
 `;
 
+const SelectContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+`;
+
+const AddFormSelectContainer = styled.div`
+  height: 34px;
+  position: relative;
+`;
+
 const AddFormSelect = styled(Select)`
   padding: 0;
   width: 100%;
+  height: 34px;
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
   outline: none;
-  &::placeholder {
-    color: red;
-    font-family: 'Manrope';
-    font-size: 19px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: -0.28px;
-  }
+
   & .css-1fdsijx-ValueContainer {
     padding: 0;
     color: var(--white-color);
@@ -163,6 +170,7 @@ const AddFormSelect = styled(Select)`
     border-bottom: 1px solid var(--white-fifty-color);
     border-radius: 0;
     outline: none;
+    padding-bottom: 14px;
   }
   & .react-select-3-placeholder {
     display: block;
@@ -234,6 +242,19 @@ const AddIngredientsContainer = styled.div`
   opacity: 0.8;
 `;
 
+const AddFormSelectLabel = styled.label`
+  font-family: 'Manrope';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #f3f3f3;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
 export {
   AddPhotoContainer,
   AddDrinkContainer,
@@ -246,4 +267,7 @@ export {
   AddFormRadioGroup,
   InputRadio,
   AddIngredientsContainer,
+  AddFormSelectLabel,
+  AddFormSelectContainer,
+  SelectContainer,
 };
