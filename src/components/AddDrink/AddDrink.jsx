@@ -1,8 +1,8 @@
 import {
   ImageBgYellow,
   ImageWrap,
-  MainDescription,
-  MainLink,
+  HeroDescription,
+  AddDrinkBtnLink,
   MainWrap,
   HeroContainer,
   SectionWrap,
@@ -24,12 +24,12 @@ const AddDrink = () => {
         <SectionWrap>
           <MainWrap>
             <PageTitle title="Craft Your Perfect Drink with Drink Master" />
-            <MainDescription>
+            <HeroDescription>
               Unlock your inner mixologist with Drink Master, your one-stop
               destination for exploring, crafting, and mastering the world`s
               finest beverages.
-            </MainDescription>
-            <MainLink to="/add">Add drink</MainLink>
+            </HeroDescription>
+            <AddDrinkBtnLink to="/add">Add drink</AddDrinkBtnLink>
           </MainWrap>
           <ImageWrap>
             <picture>
