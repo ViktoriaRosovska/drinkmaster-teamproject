@@ -1,3 +1,4 @@
+import { ReactSVG } from 'react-svg';
 import styled from 'styled-components';
 
 export const Card = styled.li`
@@ -77,9 +78,17 @@ export const SeeMoreBtn = styled.button`
   min-width: 143px;
   border-radius: 42px;
   padding: 14px 40px;
-  margin-right: 8px;
   font-weight: 600;
   font-size: 14px;
+  line-height: 18px;
+  background-color: var(--dark-blue-color);
+  color: var(--white-color);
+  transition: background-color 0.25s ease-in;
+
+  &:hover {
+    background-color: var(--white-color);
+    color: var(--dark-blue-color);
+  }
 
   @media screen and (min-width: 768px) {
     min-width: 160px;
@@ -87,4 +96,38 @@ export const SeeMoreBtn = styled.button`
     line-height: 18px;
     padding: 18px 44px;
   }
+`;
+
+export const DeleteBtn = styled.button`
+  border-radius: 40px;
+  background-color: var(--dark-blue-color);
+  height: 46px;
+  width: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.25s ease-in;
+
+  &:hover {
+    background-color: var(--white-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 54px;
+    width: 56px;
+  }
+`;
+
+export const SVG = styled(ReactSVG)`
+  & div svg {
+    ${DeleteBtn}:hover & {
+      stroke: var(--dark-blue-color);
+    }
+  }
+`;
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  gap: 8px;
+  align-items: center;
 `;

@@ -28,6 +28,7 @@ a {
 }
 
 button {
+  border: none;
   cursor: pointer;
   font-size: 16px;
 }
