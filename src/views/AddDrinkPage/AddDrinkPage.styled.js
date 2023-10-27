@@ -164,8 +164,18 @@ const AddFormSelect = styled(Select)`
     border-radius: 0;
     outline: none;
   }
+  & .react-select-3-placeholder {
+    display: block;
+  }
+  & .css-1dimb5e-singleValue {
+    text-align: right;
+  }
   & .css-1u9des2-indicatorSeparator {
     display: none;
+  }
+  & #react-select-3-input {
+    text-align: right;
+    margin-left: 50px;
   }
   & #react-select-5-listbox {
     appearance: none;
