@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const MainContainer = styled.div`
   min-width: 320px;
-  height: 100vh;
+  /* height: 100vh; */
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
@@ -13,18 +13,21 @@ const MainContainer = styled.div`
 
   @media screen and (min-width: 375px) {
     width: 375px;
+   
   }
 
   @media screen and (min-width: 768px) {
     width: 768px;
     padding-left: 32px;
     padding-right: 32px;
+    padding-top: 140px;
   }
 
   @media screen and (min-width: 1440px) {
     width: 1440px;
     padding-left: 100px;
     padding-right: 100px;
+    padding-top:160px;
   }
 `;
 const CenterPageContainer = styled.div`
