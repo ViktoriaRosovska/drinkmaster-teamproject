@@ -15,7 +15,7 @@ import PrivateRoute from 'helpers/PrivateRoute';
 import WelcomePage from 'views/WelcomePage/WelcomePage';
 import DrinkIdPage from 'views/DrinkIdPage/DrinkIdPage';
 
-const isLoggedIn = false;
+const isLoggedIn = true;
 
 export const App = () => {
   return (
