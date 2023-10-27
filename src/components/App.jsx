@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import { HomePage } from 'views/HomePage/HomePage';
 import { DrinksPage } from 'views/DrinksPage/DrinksPage';
-import { AddDrinkPage } from 'views/AddDrinkPage/AddDrinkPage';
+import AddDrinkPage from 'views/AddDrinkPage/AddDrinkPage';
 import { MyDrinksPage } from 'views/MyDrinksPage/MyDrinksPage';
 import { FavoriteDrinksPage } from 'views/FavouriteDrinksPage/FavouriteDrinksPage';
 
@@ -15,7 +15,7 @@ import PrivateRoute from 'helpers/PrivateRoute';
 import WelcomePage from 'views/WelcomePage/WelcomePage';
 import DrinkIdPage from 'views/DrinkIdPage/DrinkIdPage';
 
-const isLoggedIn = true;
+const isLoggedIn = false;
 
 export const App = () => {
   return (
@@ -29,12 +29,12 @@ export const App = () => {
           <Route path="/signup" element={<SignupForm />} />
         </Route>
 
-        <Route path="/" element={<SharedLayout />}>
-          <Route
-            element={
-              <PrivateRoute redirectTo="/welcome" isLoggedIn={isLoggedIn} />
-            }
-          >
+        <Route
+          element={
+            <PrivateRoute redirectTo="/welcome" isLoggedIn={isLoggedIn} />
+          }
+        >
+          <Route path="/" element={<SharedLayout />}>
             <Route path="/home" element={<HomePage />} />
             <Route path="/drinks" element={<DrinksPage />} />
             <Route path="/drink/:drinkId" element={<DrinkIdPage />} />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MainContainer } from 'styles/App.styled';
 import {
   H2,
@@ -19,13 +20,12 @@ const AuthNav = () => {
           retrieve your own recipes at any time.
         </P>
         <ButtonDiv>
-          <DefButton>
-            <link to={`/signup`}></link>Sign Up
-          </DefButton>
-          <DefButton>
-            <link to={`/signin`}></link>
-            Sign In
-          </DefButton>
+          <Link to="/signup">
+            <DefButton>Sign Up</DefButton>
+          </Link>
+          <Link to="/signin">
+            <DefButton>Sign In</DefButton>
+          </Link>
         </ButtonDiv>
       </Conteiner>
     </MainContainer>

@@ -14,7 +14,7 @@ import IconPlus from '../../assets/images/addDrink/plus.svg';
 import ingredients from '../../helpers/Data/ingredients.json';
 import glasses from 'helpers/Data/glasses';
 
-export const AddDrinkPage = () => {
+export default function AddDrinkPage() {
   return (
     <MainContainer>
       <AddDrinkContainer>
@@ -48,9 +48,9 @@ export const AddDrinkPage = () => {
             options={glasses}
           />
           <div>
-            <input type="radio" />
+            <input type="radio" name="typeDrink" />
             <label>Alcoholic</label>
-            <input type="radio" />
+            <input type="radio" name="typeDrink" />
             <label>Non-alcoholic</label>
           </div>
           <h3>Ingredients</h3>
@@ -81,4 +81,4 @@ export const AddDrinkPage = () => {
       </AddDrinkContainer>
     </MainContainer>
   );
-};
+}
