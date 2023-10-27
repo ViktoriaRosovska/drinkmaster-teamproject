@@ -1,10 +1,16 @@
 {
   "files": {
     "main.css": "/drinkmaster-teamproject/static/css/main.3eb60bdc.css",
-    "main.js": "/drinkmaster-teamproject/static/js/main.c9e0b2af.js",
+    "main.js": "/drinkmaster-teamproject/static/js/main.a76d0723.js",
+    "static/media/hero-desc@2x.png": "/drinkmaster-teamproject/static/media/hero-desc@2x.db60f489f3cec4e24ae6.png",
+    "static/media/hero-tab@2x.png": "/drinkmaster-teamproject/static/media/hero-tab@2x.db60f489f3cec4e24ae6.png",
     "static/media/blue_iced_tea@2x_md.png": "/drinkmaster-teamproject/static/media/blue_iced_tea@2x_md.577757fa62d57beb6add.png",
+    "static/media/hero-mob@2x.png": "/drinkmaster-teamproject/static/media/hero-mob@2x.0e421edb78a3c7d3e854.png",
     "static/media/blue_iced_tea@2x_sm.png": "/drinkmaster-teamproject/static/media/blue_iced_tea@2x_sm.25be66c35dcec24d93c7.png",
+    "static/media/hero-desc@1x.png": "/drinkmaster-teamproject/static/media/hero-desc@1x.e82e22017745bc2a9863.png",
+    "static/media/hero-tab@1x.png": "/drinkmaster-teamproject/static/media/hero-tab@1x.e82e22017745bc2a9863.png",
     "static/media/404_iced_tea@2x_md.png": "/drinkmaster-teamproject/static/media/404_iced_tea@2x_md.8f314118d098483dd086.png",
+    "static/media/hero-mob@1x.png": "/drinkmaster-teamproject/static/media/hero-mob@1x.da9563e4164434437c43.png",
     "static/media/404_iced_tea@2x_sm.png": "/drinkmaster-teamproject/static/media/404_iced_tea@2x_sm.ab416c18fdce51da91e7.png",
     "static/media/blue_iced_tea@1x_sm.png": "/drinkmaster-teamproject/static/media/blue_iced_tea@1x_sm.de44a32b5880ede6432b.png",
     "static/media/404_iced_tea@1x_md.png": "/drinkmaster-teamproject/static/media/404_iced_tea@1x_md.787e0a5b11d614b5e30b.png",
@@ -12,10 +18,10 @@
     "index.html": "/drinkmaster-teamproject/index.html",
     "static/media/plus.svg": "/drinkmaster-teamproject/static/media/plus.a42d76147973b79136673cbc84673ffb.svg",
     "main.3eb60bdc.css.map": "/drinkmaster-teamproject/static/css/main.3eb60bdc.css.map",
-    "main.c9e0b2af.js.map": "/drinkmaster-teamproject/static/js/main.c9e0b2af.js.map"
+    "main.a76d0723.js.map": "/drinkmaster-teamproject/static/js/main.a76d0723.js.map"
   },
   "entrypoints": [
     "static/css/main.3eb60bdc.css",
-    "static/js/main.c9e0b2af.js"
+    "static/js/main.a76d0723.js"
   ]
 }
