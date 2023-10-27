@@ -33,12 +33,12 @@ const AddBtn = styled.button`
   }
 `;
 
-const SvgIcon = styled.svg`
-  width: 28px;
-  height: 28px;
-  fill: var(--dark-blue-color);
-  stroke: red;
-`;
+// const SvgIcon = styled.svg`
+//   width: 28px;
+//   height: 28px;
+//   fill: var(--dark-blue-color);
+//   stroke: red;
+// `;
 
 const AddBtnText = styled.span`
   color: var(--white-color);
@@ -197,7 +197,7 @@ export {
   AddPhotoContainer,
   AddDrinkContainer,
   AddBtn,
-  ReactSVGIcon,
+  // ReactSVGIcon,
   AddBtnText,
   AddFormInput,
   AddFormTextarea,
