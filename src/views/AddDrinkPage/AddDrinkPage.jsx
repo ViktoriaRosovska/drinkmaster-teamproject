@@ -48,9 +48,9 @@ export const AddDrinkPage = () => {
             options={glasses}
           />
           <div>
-            <input type="radio" />
+            <input type="radio" name="typeDrink" />
             <label>Alcoholic</label>
-            <input type="radio" />
+            <input type="radio" name="typeDrink" />
             <label>Non-alcoholic</label>
           </div>
           <h3>Ingredients</h3>
