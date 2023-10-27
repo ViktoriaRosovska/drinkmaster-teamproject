@@ -74,30 +74,6 @@ export const Description = styled.p`
   }
 `;
 
-export const SeeMoreBtn = styled.button`
-  min-width: 143px;
-  border-radius: 42px;
-  padding: 14px 40px;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 18px;
-  background-color: var(--dark-blue-color);
-  color: var(--white-color);
-  transition: background-color 0.25s ease-in;
-
-  &:hover {
-    background-color: var(--white-color);
-    color: var(--dark-blue-color);
-  }
-
-  @media screen and (min-width: 768px) {
-    min-width: 160px;
-    font-size: 16px;
-    line-height: 18px;
-    padding: 18px 44px;
-  }
-`;
-
 export const DeleteBtn = styled.button`
   border-radius: 40px;
   background-color: var(--dark-blue-color);
