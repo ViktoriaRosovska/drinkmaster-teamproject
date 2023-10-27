@@ -1,4 +1,4 @@
-import DrinksItem from '../DrinksItem/DrinksItem';
+import DrinksItem from './DrinksItem';
 import { List } from './Drinks.styled';
 
 export const Drinks = () => {
