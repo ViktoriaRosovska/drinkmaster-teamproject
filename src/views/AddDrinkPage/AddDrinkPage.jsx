@@ -1,12 +1,18 @@
 import PageTitle from 'components/PageTitle/PageTitle';
 import {
   AddBtn,
+  AddBtnText,
   AddDrinkContainer,
+  AddFormInput,
+  AddFormSelect,
+  AddFormTextarea,
   AddPhotoContainer,
   ReactSVGIcon,
 } from './AddDrinkPage.styled';
 import { MainContainer } from 'styles/App.styled';
 import IconPlus from '../../assets/images/addDrink/plus.svg';
+import ingredients from '../../helpers/Data/ingredients.json';
+import glasses from 'helpers/Data/glasses';
 
 export const AddDrinkPage = () => {
   return (
@@ -17,29 +23,30 @@ export const AddDrinkPage = () => {
           <AddBtn>
             <ReactSVGIcon src={IconPlus} />
           </AddBtn>
-          <></>Add image
+          <AddBtnText>Add image</AddBtnText>
         </AddPhotoContainer>
         <form>
-          <input type="text" />
-          <label>Enter item title</label>
-          <input type="text" />
-          <label>Enter about recipe</label>
-          <label>Category</label>
-          <select>
-            <optgroup>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-            </optgroup>
-          </select>
-          <label>Glass</label>
-          <select>
-            <optgroup>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-            </optgroup>
-          </select>
+          <AddFormInput
+            type="text"
+            data-limit="50"
+            placeholder="Enter item title"
+          />
+
+          <AddFormInput type="text" placeholder="Enter about recipe" />
+
+          <AddFormSelect
+            placeholder="Category"
+            getOptionLabel={ingredient => ingredient.title}
+            getOptionValue={ingredient => ingredient.title}
+            options={ingredients}
+          />
+
+          <AddFormSelect
+            placeholder="Glass"
+            getOptionLabel={glass => glass.glass}
+            getOptionValue={glass => glass.glass}
+            options={glasses}
+          />
           <div>
             <input type="radio" />
             <label>Alcoholic</label>
@@ -60,7 +67,7 @@ export const AddDrinkPage = () => {
           <input type="text" />
           <button>X</button>
           <h3>Recipe Preparation</h3>
-          <textarea></textarea>
+          <AddFormTextarea placeholder="Enter the recipe"></AddFormTextarea>
           <button>Add</button>
         </form>
         <div>
