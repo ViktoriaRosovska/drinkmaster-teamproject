@@ -66,8 +66,10 @@ const DrinkList = () => {
             {drinks.map(( drink ) => {
                 console.log(drink)
                 return <DrinkItem key={drink._id.$oid} drinkData={drink} />
-            })) : (<p>You havent added any favorite cocktails yet</p>)}
-       </CardList>
+            })}
+      </CardList>) : (<NotFound/>)}
+
+      </>
    )
 }
 
