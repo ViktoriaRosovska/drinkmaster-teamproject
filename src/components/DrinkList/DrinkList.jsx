@@ -1,6 +1,7 @@
 import React from 'react';
 import DrinkItem from 'components/DrinkItem/DrinkItem';
 import { CardList } from './DrinkList.styled';
+import NotFound from 'components/NotFound/NotFound';
 
 const DrinkList = () => {
      const drinks = [
