@@ -201,6 +201,39 @@ const AddFormSelect = styled(Select)`
     }
   }
 `;
+
+const AddFormRadioGroup = styled.div`
+  display: flex;
+  gap: 14px;
+`;
+
+const InputRadio = styled.input`
+  font-family: 'Manrope';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #f3f3f380;
+  & :checked {
+    & label {
+      color: red;
+    }
+  }
+`;
+
+const AddIngredientsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 104px;
+  height: 38px;
+  border: 1px solid #f3f3f3;
+  background-color: transparent;
+  border-radius: 200px;
+  opacity: 0.8;
+`;
+
 export {
   AddPhotoContainer,
   AddDrinkContainer,
@@ -210,4 +243,7 @@ export {
   AddFormInput,
   AddFormTextarea,
   AddFormSelect,
+  AddFormRadioGroup,
+  InputRadio,
+  AddIngredientsContainer,
 };
