@@ -69,7 +69,7 @@ const DrinkList = () => {
                 return <DrinkItem key={drink._id.$oid} drinkData={drink} />
             })}
       </CardList>) : (<NotFound/>)}
-        
+
       </>
    )
 }
