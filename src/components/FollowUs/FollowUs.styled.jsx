@@ -41,13 +41,13 @@ export const FollowUsLink = styled.a`
 
 export const FacebookIcon = styled(FacebookSvg)`
   fill: var(--white-color);
-//   width: 22px;
-//   height: 22px;
+  width: 22px;
+  height: 22px;
   padding: 8px;
 
   @media screen and (min-width: 768px) {
-    // width: 28px;
-    // height: 28px;
+    width: 28px;
+    height: 28px;
     padding: 10px;
   }
 `;

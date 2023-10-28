@@ -1,17 +1,16 @@
-import { MainContainer } from 'styles/App.styled';
 import Logo from '../../components/Logo/Logo';
 import FollowUs from '../FollowUs/FollowUs';
-import { FooterContainer, FooterLogoAndSocial } from './Footer.styled';
+import { FooterContainer, FooterLogoAndSocial, Container } from './Footer.styled';
 
 const Footer = () => {
   return (
     <FooterContainer>
-      <MainContainer>
+      <Container>
         <FooterLogoAndSocial>
           <Logo />
           <FollowUs />
         </FooterLogoAndSocial>
-      </MainContainer>
+      </Container>
     </FooterContainer>
   );
 };
