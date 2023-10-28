@@ -25,7 +25,7 @@ const MainContainer = styled.div`
     width: 1440px;
     padding-left: 100px;
     padding-right: 100px;
-    padding-top: 160px;
+    // padding-top: 160px;
   }
 `;
 const CenterPageContainer = styled.div`
