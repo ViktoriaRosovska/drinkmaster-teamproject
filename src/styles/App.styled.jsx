@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const MainContainer = styled.div`
   min-width: 320px;
-  /* height: 100vh; */
+  min-height: 100vh;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
@@ -28,13 +28,5 @@ const MainContainer = styled.div`
     padding-top: 160px;
   }
 `;
-const CenterPageContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-export { MainContainer, CenterPageContainer };
+
+export { MainContainer };

@@ -5,12 +5,12 @@ import NotFound2_sm from '../../assets/images/NotFound/blue_iced_tea@2x_sm.png';
 import NotFound1_md from '../../assets/images/NotFound/blue_iced_tea@2x_md.png';
 import NotFound2_md from '../../assets/images/NotFound/blue_iced_tea@2x_md.png';
 
-import { CenterPageContainer } from 'styles/App.styled';
-
-const ErrorPageContainer = styled(CenterPageContainer)`
+const NotFoundPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
+  justify-content: center;
+  align-items: center;
 `;
 
 const NotFoundText = styled.p`
@@ -53,4 +53,4 @@ const NotFoundImage = styled.div`
   }
 `;
 
-export { ErrorPageContainer, NotFoundImage, NotFoundText };
+export { NotFoundPageContainer, NotFoundImage, NotFoundText };

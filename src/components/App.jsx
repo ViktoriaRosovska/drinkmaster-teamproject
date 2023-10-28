@@ -7,7 +7,7 @@ import { MyDrinksPage } from 'views/MyDrinksPage/MyDrinksPage';
 import { FavoriteDrinksPage } from 'views/FavouriteDrinksPage/FavouriteDrinksPage';
 
 import SharedLayout from './SharedLayout/SharedLayout';
-import ErrorPage from './ErrorPage/ErrorPage';
+import ErrorPage from '../views/ErrorPage/ErrorPage';
 import SigninForm from './AuthForm/SigninForm/SigninForm';
 import SignupForm from './AuthForm/SignupForm/SignupForm';
 import PublicRoute from 'helpers/PublicRoute';
@@ -44,7 +44,6 @@ export const App = () => {
             <Route path="*" element={<ErrorPage />} />
           </Route>
         </Route>
-        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </>
   );
