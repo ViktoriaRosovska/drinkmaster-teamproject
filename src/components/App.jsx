@@ -14,25 +14,15 @@ import PublicRoute from 'helpers/PublicRoute';
 import PrivateRoute from 'helpers/PrivateRoute';
 import WelcomePage from 'views/WelcomePage/WelcomePage';
 import DrinkIdPage from 'views/DrinkIdPage/DrinkIdPage';
-// import { useSelector } from 'react-redux';
-// import authSelectors from 'redux/auth/authSelectors';
+import { useEffect } from 'react';
 
 const isLoggedIn = true;
 
 export const App = () => {
-  // const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
-
+  useEffect(() => {}, []);
   return (
     <>
       <Routes>
-        <Route
-          element={<PublicRoute redirectTo="/home" isLoggedIn={isLoggedIn} />}
-        >
-          <Route path="/welcome" element={<WelcomePage />} />
-          <Route path="/signin" element={<SigninForm />} />
-          <Route path="/signup" element={<SignupForm />} />
-        </Route>
-
         <Route
           element={
             <PrivateRoute redirectTo="/welcome" isLoggedIn={isLoggedIn} />
@@ -41,12 +31,19 @@ export const App = () => {
           <Route path="/" element={<SharedLayout />}>
             <Route path="/home" element={<HomePage />} />
             <Route path="/drinks" element={<DrinksPage />} />
-            <Route path="/drink/:drinkId" element={<DrinkIdPage />} />
+            <Route path="/drinks/Id" element={<DrinkIdPage />} />
             <Route path="/add" element={<AddDrinkPage />} />
             <Route path="/my" element={<MyDrinksPage />} />
             <Route path="/favorites" element={<FavoriteDrinksPage />} />
             <Route path="*" element={<ErrorPage />} />
           </Route>
+        </Route>
+        <Route
+          element={<PublicRoute redirectTo="/home" isLoggedIn={isLoggedIn} />}
+        >
+          <Route path="/welcome" element={<WelcomePage />} />
+          <Route path="/signin" element={<SigninForm />} />
+          <Route path="/signup" element={<SignupForm />} />
         </Route>
       </Routes>
     </>
