@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 import Loader from '../Loader';
 import { Main, LayoutContainer } from './SharedLayout.styled';
 import GlobalStyled from 'styles/GlobalStyled';
-// import Footer from '../Footer/Footer';
+import Footer from '../Footer/Footer';
 
 const SharedLayout = () => {
   return (
@@ -20,7 +20,7 @@ const SharedLayout = () => {
           </Suspense>
         </Main>
 
-        {/* <Footer /> */}
+        { <Footer />}
       </LayoutContainer>
     </>
   );
