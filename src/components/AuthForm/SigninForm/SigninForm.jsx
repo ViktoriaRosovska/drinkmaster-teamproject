@@ -1,10 +1,25 @@
-import { Formik } from 'formik';
-import { toast } from 'react-toastify';
+import { ErrorMessage, Formik } from 'formik';
+import { ToastContainer, toast, Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth/authOperations';
 import * as Yup from 'yup';
-import { Input, InputWrapper, LoginForm, Title } from './SigninForm.styled';
+import {
+  LoginContainer,
+  Input,
+  InputWrapper,
+  LoginForm,
+  Title,
+  Button,
+  ToggleButton,
+  ErrorText,
+  ErrorSvgStyled,
+  CheckSvgStyled,
+} from './SigninForm.styled';
+import { ReactComponent as ShowPassword } from '../../../assets/images/authComponents/eye.svg';
+import { ReactComponent as HidePassword } from '../../../assets/images/authComponents/eye-off.svg';
+import { Link } from 'react-router-dom';
 
 const initialValues = { email: '', password: '' };
 const schema = Yup.object().shape({
@@ -25,6 +40,7 @@ const schema = Yup.object().shape({
 
 export default function SigninForm() {
   const [showPassword, setShowPassword] = useState(false);
+
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
@@ -35,51 +51,92 @@ export default function SigninForm() {
     const { email, password } = values;
     dispatch(authOperations.signIn({ email, password }))
       .unwrap()
-      .then(() => toast.success('Your login was successful!'))
-      .catch(() => toast.error('Something went wrong. Try again'));
+      .then(() => {
+        console.log('email:', email);
+        console.log('password:', password);
+        toast.success(`🦄 Your login was successful!`, {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 1500,
+        });
+      })
+      .catch(() => {
+        console.log('email:', email);
+        console.log('password:', password);
+        toast.error(`Something went wrong. Try again`, {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 1500,
+        });
+      });
     resetForm();
   };
 
   return (
     <>
-      <Title>Sign In</Title>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={schema}
-        onSubmit={handleSubmit}
-      >
-        {({ values, errors, touched }) => (
-          <LoginForm>
-            <>
-              <InputWrapper>
-                <Input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  error={errors.email && touched.email ? 'true' : 'false'}
-                  success={values.email && !errors.email ? 'true' : 'false'}
-                />
-              </InputWrapper>
+      <LoginContainer>
+        <ToastContainer transition={Slide} />
+        <Title>Sign In</Title>
+        <Formik
+          initialValues={initialValues}
+          validationSchema={schema}
+          onSubmit={handleSubmit}
+        >
+          {({ values, errors, touched }) => (
+            <LoginForm>
+              <>
+                <InputWrapper>
+                  <Input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    error={errors.email && touched.email ? 'true' : 'false'}
+                    success={values.email && !errors.email ? 'true' : 'false'}
+                  />
+                  <ErrorMessage
+                    name="email"
+                    render={message => <ErrorText>{message}</ErrorText>}
+                  />
+                  {errors.email && touched.email ? (
+                    <ErrorSvgStyled />
+                  ) : values.email && !errors.email ? (
+                    <CheckSvgStyled />
+                  ) : null}
+                </InputWrapper>
 
-              <InputWrapper>
-                <Input
-                  type={showPassword ? 'text' : 'password'}
-                  value={values.password}
-                  name="password"
-                  placeholder="Password"
-                  error={errors.password && touched.password ? 'true' : 'false'}
-                  success={
-                    values.password && !errors.password ? 'true' : 'false'
-                  }
-                />
-                <button type="button" onClick={handleTogglePassword}></button>
-              </InputWrapper>
-            </>
+                <InputWrapper>
+                  <Input
+                    type={showPassword ? 'text' : 'password'}
+                    value={values.password}
+                    name="password"
+                    placeholder="Password"
+                    error={
+                      errors.password && touched.password ? 'true' : 'false'
+                    }
+                    success={
+                      values.password && !errors.password ? 'true' : 'false'
+                    }
+                  />
+                  <ErrorMessage
+                    name="password"
+                    render={message => <ErrorText>{message}</ErrorText>}
+                  />
+                  <ToggleButton type="button" onClick={handleTogglePassword}>
+                    {values.password ? (
+                      showPassword ? (
+                        <ShowPassword />
+                      ) : (
+                        <HidePassword />
+                      )
+                    ) : null}
+                  </ToggleButton>
+                </InputWrapper>
+              </>
 
-            <button type="submit">Sign In</button>
-          </LoginForm>
-        )}
-      </Formik>
+              <Button type="submit">Sign In</Button>
+            </LoginForm>
+          )}
+        </Formik>
+        <Link to="/signup">Sign Ap</Link>
+      </LoginContainer>
     </>
   );
 }
