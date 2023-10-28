@@ -35,5 +35,4 @@ button {
 img {
   display: block;
 }
- 
 `;

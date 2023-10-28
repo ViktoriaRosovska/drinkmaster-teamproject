@@ -40,6 +40,16 @@ const AddBtn = styled.button`
   }
 `;
 
+const ChevronReactSvg = styled(ReactSVG)`
+  width: 20px;
+  height: 20px;
+  opacity: 1;
+
+  & div svg {
+    stroke: #f3f3f3;
+  }
+`;
+
 const ReactSVGIcon = styled(ReactSVG)`
   & div svg {
     width: 29px;
@@ -66,6 +76,13 @@ const AddFormInput = styled.input`
   background-color: transparent;
   border: none;
   border-bottom: 1px solid var(--white-fifty-color);
+  color: var(--white-color);
+
+  font-family: 'Manrope';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0em;
 
   &::placeholder {
     color: var(--white-color);
@@ -114,16 +131,18 @@ const AddFormSelect = styled(Select)`
   -moz-appearance: none;
   -webkit-appearance: none;
   outline: none;
-
-  & .css-1fdsijx-ValueContainer {
+  & .css-1dimb5e-singleValue {
+    color: #f3f3f3;
     padding: 0;
-    color: var(--white-color);
     font-family: 'Manrope';
     font-size: 14px;
-    font-style: normal;
     font-weight: 400;
-    line-height: 18px;
-
+    line-height: 14px;
+    text-align: left;
+    height: 34px;
+  }
+  & .css-1fdsijx-ValueContainer {
+    padding: 0;
     & ::selection {
       background-color: transparent;
     }
@@ -136,7 +155,7 @@ const AddFormSelect = styled(Select)`
     width: 131px;
     height: 258px;
     padding: 0;
-    color: red;
+    /* color: red; */
     background-color: #161f37;
     color: rgba(243, 243, 243, 0.4);
     font-family: 'Manrope';
@@ -152,6 +171,14 @@ const AddFormSelect = styled(Select)`
       width: 0;
     }
   }
+  & .css-13cymwt-control {
+    & :hover {
+      outline: none;
+    }
+  }
+  & .css-1dimb5e-singleValue {
+    margin-right: 28px;
+  }
   & .css-qbdosj-Input {
     color: var(--white-color);
     font-family: 'Manrope';
@@ -160,9 +187,20 @@ const AddFormSelect = styled(Select)`
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.28px;
+    height: 34px;
+    padding: 0;
+    /* margin-left: 60px; */
+    margin-right: 28px;
+    margin: 0 0 0 60px;
+    outline: none;
   }
   & .css-t3ipsp-control {
     background-color: transparent;
+  }
+  & .css-166bipr-Input {
+    color: var(--white-color);
+
+    margin-left: 60px;
   }
   & .css-13cymwt-control {
     background-color: transparent;
@@ -170,7 +208,20 @@ const AddFormSelect = styled(Select)`
     border-bottom: 1px solid var(--white-fifty-color);
     border-radius: 0;
     outline: none;
-    padding-bottom: 14px;
+    height: 34px;
+    font-family: 'Manrope';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0em;
+    color: white;
+  }
+  & .css-1xc3v61-indicatorContainer {
+    display: none;
+    outline: none;
+  }
+  & .css-1hb7zxy-IndicatorsContainer {
+    display: none;
   }
   & .react-select-3-placeholder {
     display: block;
@@ -184,6 +235,7 @@ const AddFormSelect = styled(Select)`
   & #react-select-3-input {
     text-align: right;
     margin-left: 50px;
+    height: 34px;
   }
   & #react-select-5-listbox {
     appearance: none;
@@ -192,14 +244,13 @@ const AddFormSelect = styled(Select)`
     width: 131px;
     height: 258px;
     padding: 0;
-    color: red;
     background-color: #161f37;
     color: rgba(243, 243, 243, 0.4);
-    font-family: Manrope;
+    font-family: 'Manrope';
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 16px; /* 133.333% */
+    line-height: 16px;
     padding: 10px;
     overflow: hidden;
     position: absolute;
@@ -207,27 +258,20 @@ const AddFormSelect = styled(Select)`
     ::-webkit-scrollbar {
       width: 0;
     }
+    & :hover {
+      background-color: none;
+    }
   }
 `;
 
 const AddFormRadioGroup = styled.div`
   display: flex;
   gap: 14px;
+  flex-direction: row;
 `;
 
 const InputRadio = styled.input`
-  font-family: 'Manrope';
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 19px;
-  letter-spacing: -0.02em;
-  text-align: left;
-  color: #f3f3f380;
-  & :checked {
-    & label {
-      color: red;
-    }
-  }
+  /* display: none; */
 `;
 
 const AddIngredientsContainer = styled.div`
@@ -243,14 +287,17 @@ const AddIngredientsContainer = styled.div`
 `;
 
 const AddFormSelectLabel = styled.label`
+  display: inline-flex;
+  justify-content: space-between;
+  width: 335px;
   font-family: 'Manrope';
   font-size: 14px;
   font-weight: 400;
   line-height: 19px;
   letter-spacing: -0.02em;
   text-align: left;
-  color: #f3f3f3;
-  opacity: 0.5;
+  color: var(--white-fifty-color);
+
   position: absolute;
   top: 0;
   left: 0;
@@ -270,4 +317,5 @@ export {
   AddFormSelectLabel,
   AddFormSelectContainer,
   SelectContainer,
+  ChevronReactSvg,
 };
