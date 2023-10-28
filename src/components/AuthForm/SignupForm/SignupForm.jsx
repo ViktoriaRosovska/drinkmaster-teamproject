@@ -1,5 +1,5 @@
 import { Field, Formik, Form } from 'formik';
-import { useState } from 'react';
+// import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth/authOperations';
 // import DatePicker from 'react-datepicker';
@@ -13,13 +13,13 @@ const initialValues = {
 };
 
 function SignupForm() {
-  const [showPassword, setShowPassword] = useState(false);
+  // const [showPassword, setShowPassword] = useState(false);
   // const [selectedDate, setSelectedDate] = useState(null);
   const dispatch = useDispatch();
 
-  const handleTogglePassword = () => {
-    setShowPassword(!showPassword);
-  };
+  // const handleTogglePassword = () => {
+  //   setShowPassword(!showPassword);
+  // };
 
   const handleSubmit = (values, { resetForm }) => {
     console.log('values', values);
