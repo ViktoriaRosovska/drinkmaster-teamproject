@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Overlay } from './ModalWindow.styled';
 
 export default function ModalWindow({ onBackdropClose, ...props }) {
@@ -6,6 +7,11 @@ export default function ModalWindow({ onBackdropClose, ...props }) {
       onBackdropClose();
     }
   };
+
+  useEffect(() => {
+    document.addEventListener('keydown', onBackdropClose)
+    return () => document.removeEventListener('keydown', onBackdropClose)
+  })
 
   return (
     <>

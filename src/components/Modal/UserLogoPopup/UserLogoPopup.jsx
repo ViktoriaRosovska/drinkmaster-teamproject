@@ -1,19 +1,21 @@
-export default function UserLogoPopup({ onBackdropClose }) {
+import {
+  EditProfileBtn,
+  ModalContainer,
+  LogoutBtn,
+  IconEdit,
+} from './UserLogoPopup.styled';
+
+export default function UserLogoPopup({ onBackdropClose, openUserInfoModal }) {
+
+
   return (
-    <div
-      style={{
-        width: '500px',
-        height: '500px',
-        backgroundColor: 'yellow',
-        color: 'black',
-        position: 'fixed',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%,-50%)',
-      }}
-    >
-      Hello World!
-      <button onClick={() => onBackdropClose()}>Close Modal</button>
-    </div>
+    <ModalContainer>
+      <EditProfileBtn type="button" onClick={openUserInfoModal}>
+        Edit profile
+        <IconEdit />
+      </EditProfileBtn>
+      <LogoutBtn type="button">Log out</LogoutBtn>
+      {/* <button onClick={() => onBackdropClose()}>Close Modal</button> */}
+    </ModalContainer>
   );
 }
