@@ -17,7 +17,7 @@ import DrinkIdPage from 'views/DrinkIdPage/DrinkIdPage';
 // import { useSelector } from 'react-redux';
 // import authSelectors from 'redux/auth/authSelectors';
 
-const isLoggedIn = false;
+const isLoggedIn = true;
 
 export const App = () => {
   // const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);

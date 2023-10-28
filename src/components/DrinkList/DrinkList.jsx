@@ -69,10 +69,10 @@ const DrinkList = () => {
         'https://ftp.goit.study/img/drinkify/recipes/Orange_Crush.jpg',
     },
   ];
-  const drink1 = [];
+
   return (
     <>
-      {drink1.length > 0 ? (
+      {drinks.length > 0 ? (
         <CardList>
           {drinks.map(drink => {
             console.log(drink);
