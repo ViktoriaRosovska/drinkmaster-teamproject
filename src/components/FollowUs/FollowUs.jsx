@@ -1,48 +1,48 @@
 import {
-  SocialMediaLink,
-  SocialMediaList,
-  SocialMediaListItem,
+  FollowUsLink,
+  FollowUsList,
+  FollowUsListItem,
   FacebookIcon,
   InstagramIcon,
   YoutubeIcon,
-} from './SocialMedia.styled';
+} from './FollowUs.styled';
 
-const SocialMedia = () => {
+const FollowUs = () => {
   return (
-    <SocialMediaList>
-      <SocialMediaListItem>
-        <SocialMediaLink
+    <FollowUsList>
+      <FollowUsListItem>
+        <FollowUsLink
           href="https://www.facebook.com/goITclub/"
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
           <FacebookIcon />
-        </SocialMediaLink>
-      </SocialMediaListItem>
+        </FollowUsLink>
+      </FollowUsListItem>
 
-      <SocialMediaListItem>
-        <SocialMediaLink
+      <FollowUsListItem>
+        <FollowUsLink
           href="https://www.instagram.com/goitclub/"
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
           <InstagramIcon />
-        </SocialMediaLink>
+        </FollowUsLink>
         
-      </SocialMediaListItem>
+      </FollowUsListItem>
 
-      <SocialMediaListItem>
-        <SocialMediaLink
+      <FollowUsListItem>
+        <FollowUsLink
           href="https://www.youtube.com/c/GoIT"
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
           <YoutubeIcon />
-        </SocialMediaLink>
+        </FollowUsLink>
         
-      </SocialMediaListItem>
-    </SocialMediaList>
+      </FollowUsListItem>
+    </FollowUsList>
   );
 };
 
-export default SocialMedia;
+export default FollowUs;

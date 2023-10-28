@@ -3,8 +3,8 @@ import styled from 'styled-components';
 const MainContainer = styled.div`
   min-width: 320px;
   min-height: 100vh;
-  margin-left: auto;
-  margin-right: auto;
+  // margin-left: auto;
+  // margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 80px;
@@ -18,7 +18,7 @@ const MainContainer = styled.div`
     width: 768px;
     padding-left: 32px;
     padding-right: 32px;
-    padding-top: 140px;
+    // padding-top: 140px;
   }
 
   @media screen and (min-width: 1440px) {

@@ -23,8 +23,4 @@ justify-content: start;
 gap: 28px;
 }
 
-@media screen and (min-width: 768px) {
-gap: 40px;
-}
-
 `

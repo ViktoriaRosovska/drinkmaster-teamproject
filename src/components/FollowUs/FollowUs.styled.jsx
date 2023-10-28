@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { ReactComponent as FacebookSvg } from '../../../assets/images/link_icons/facebook.svg';
-import { ReactComponent as InstagramSvg } from '../../../assets/images/link_icons/instagram.svg';
-import { ReactComponent as YoutubeSvg } from '../../../assets/images/link_icons/youtube.svg';
+import { ReactComponent as FacebookSvg } from '../../assets/images/link_icons/facebook.svg';
+import { ReactComponent as InstagramSvg } from '../../assets/images/link_icons/instagram.svg';
+import { ReactComponent as YoutubeSvg } from '../../assets/images/link_icons/youtube.svg';
 
-export const SocialMediaList = styled.ul`
+export const FollowUsList = styled.ul`
   display: flex;
   gap: 14px;
   align-items: center;
@@ -14,12 +14,12 @@ export const SocialMediaList = styled.ul`
     margin-top: 28px;
   }
 `;
-export const SocialMediaListItem = styled.li``;
-export const SocialMediaLink = styled.a`
+export const FollowUsListItem = styled.li``;
+export const FollowUsLink = styled.a`
   display: flex;
 //   width: 38px;
 //   height: 38px;
-padding: 8px;
+
   border-radius: 10px;
   border: 1px solid var(--white-twenty-color);
   aline-item: center;

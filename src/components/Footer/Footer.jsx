@@ -1,6 +1,6 @@
 import { MainContainer } from 'styles/App.styled';
 import Logo from '../../components/Logo/Logo';
-import SocialMedia from './SocialMedia/SocialMedia';
+import FollowUs from '../FollowUs/FollowUs';
 import { FooterContainer, FooterLogoAndSocial } from './Footer.styled';
 
 const Footer = () => {
@@ -9,7 +9,7 @@ const Footer = () => {
       <MainContainer>
         <FooterLogoAndSocial>
           <Logo />
-          <SocialMedia />
+          <FollowUs />
         </FooterLogoAndSocial>
       </MainContainer>
     </FooterContainer>
