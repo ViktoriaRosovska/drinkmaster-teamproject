@@ -60,7 +60,7 @@ export default function SigninForm() {
         });
       })
       .catch(() => {
-        console.log('email:', email);
+        console.log('error email:', email);
         console.log('password:', password);
         toast.error(`Something went wrong. Try again`, {
           position: toast.POSITION.TOP_RIGHT,
