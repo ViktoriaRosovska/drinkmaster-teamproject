@@ -14,10 +14,14 @@ import PublicRoute from 'helpers/PublicRoute';
 import PrivateRoute from 'helpers/PrivateRoute';
 import WelcomePage from 'views/WelcomePage/WelcomePage';
 import DrinkIdPage from 'views/DrinkIdPage/DrinkIdPage';
+// import { useSelector } from 'react-redux';
+// import authSelectors from 'redux/auth/authSelectors';
 
 const isLoggedIn = false;
 
 export const App = () => {
+  // const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
+
   return (
     <>
       <Routes>
