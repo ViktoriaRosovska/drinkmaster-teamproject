@@ -1,10 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 export default createGlobalStyle`
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
+  // *,
+  // *::before,
+  // *::after {
+  //   box-sizing: border-box;
+  // }
 h1,
 h2,
 h3,
