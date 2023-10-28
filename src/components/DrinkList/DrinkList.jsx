@@ -70,6 +70,7 @@ const DrinkList = () => {
     },
   ];
   // const drink1 = [];
+
   return (
     <>
       {drinks.length > 0 ? (
