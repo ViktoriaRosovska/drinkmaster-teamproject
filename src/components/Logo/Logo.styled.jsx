@@ -9,7 +9,8 @@ export const LogoLink = styled(Link)`
 
   &:hover,
   &:focus {
-    transform: scale(1.1);
+    transform: scale(1.06);
+    
   }
  
 `

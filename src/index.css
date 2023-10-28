@@ -32,6 +32,8 @@
 
   --linear-start-color: rgba(10, 10, 17, 0.03);
   --linear-end-color: rgba(10, 10, 17, 0.8);
+
+  --transition: 500ms ease-in; 
 }
 
 body {
