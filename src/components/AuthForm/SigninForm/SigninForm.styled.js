@@ -9,7 +9,7 @@ export const LoginContainer = styled.div`
   min-width: 320px;
   padding-left: 16px;
   padding-right: 16px;
-  padding-top: 259px;
+  padding-top: 191px;
   display: flex;
   flex-direction: column;
 
@@ -20,12 +20,12 @@ export const LoginContainer = styled.div`
   }
   @media screen and (min-width: 768px) {
     width: 768px;
-    padding-top: 350px;
+    padding-top: 280px;
     padding-left: 64px;
   }
 
   @media screen and (min-width: 1440px) {
-    padding-top: 223px;
+    padding-top: 153px;
     padding-left: 100px;
   }
 `;
