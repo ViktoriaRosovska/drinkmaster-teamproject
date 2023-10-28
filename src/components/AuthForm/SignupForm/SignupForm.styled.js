@@ -5,11 +5,11 @@ import { ReactComponent as ErrorSvg } from '../../../assets/images/authComponent
 import { ReactComponent as CheckSvg } from '../../../assets/images/authComponents/done.svg';
 import { NavLink } from 'react-router-dom';
 
-export const LoginContainer = styled.div`
+export const SignUpContainer = styled.div`
   min-width: 320px;
   padding-left: 16px;
   padding-right: 16px;
-  padding-top: 191px;
+  padding-top: 259px;
   display: flex;
   flex-direction: column;
 
@@ -20,12 +20,12 @@ export const LoginContainer = styled.div`
   }
   @media screen and (min-width: 768px) {
     width: 768px;
-    padding-top: 280px;
+    padding-top: 350px;
     padding-left: 64px;
   }
 
   @media screen and (min-width: 1440px) {
-    padding-top: 153px;
+    padding-top: 223px;
     padding-left: 100px;
   }
 `;
@@ -39,7 +39,7 @@ export const Title = styled.h1`
   }
 `;
 
-export const LoginForm = styled(Form)`
+export const SignUpForm = styled(Form)`
   display: flex;
   flex-direction: column;
   gap: 14px;

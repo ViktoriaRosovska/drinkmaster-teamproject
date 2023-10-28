@@ -23,8 +23,27 @@ justify-content: start;
 gap: 28px;
 }
 
-@media screen and (min-width: 768px) {
-gap: 40px;
-}
-
 `
+export const Container = styled.div`
+  min-width: 320px;
+  min-height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 80px;
+  /* background-color: var(--black-color); */
+
+  
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+   
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 1440px;
+    padding-left: 100px;
+    padding-right: 100px;
+    
+  }
+`;
