@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-import notFound1_sm from '../../assets/image/NotFound/blue_iced_tea@1x_sm.png';
-import NotFound2_sm from '../../assets/image/NotFound/blue_iced_tea@2x_sm.png';
-import NotFound1_md from '../../assets/image/NotFound/blue_iced_tea@2x_md.png';
-import NotFound2_md from '../../assets/image/NotFound/blue_iced_tea@2x_md.png';
+import notFound1_sm from '../../assets/images/NotFound/blue_iced_tea@1x_sm.png';
+import NotFound2_sm from '../../assets/images/NotFound/blue_iced_tea@2x_sm.png';
+import NotFound1_md from '../../assets/images/NotFound/blue_iced_tea@2x_md.png';
+import NotFound2_md from '../../assets/images/NotFound/blue_iced_tea@2x_md.png';
 
 import { CenterPageContainer } from 'styles/App.styled';
 
