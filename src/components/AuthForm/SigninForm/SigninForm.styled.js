@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import transition from '../../../utils/transition';
 import { ReactComponent as ErrorSvg } from '../../../assets/images/authComponents/error.svg';
 import { ReactComponent as CheckSvg } from '../../../assets/images/authComponents/done.svg';
+import { NavLink } from 'react-router-dom';
 
 export const LoginContainer = styled.div`
   min-width: 320px;
@@ -99,7 +100,7 @@ export const Button = styled.button`
   font-size: 14px;
   font-weight: 600;
   line-height: 1.28571;
-  margin-bottom: 14px;
+  /* margin-bottom: 14px; */
   margin-top: 14px;
   display: flex;
   justify-content: center;
@@ -159,4 +160,13 @@ export const CheckSvgStyled = styled(CheckSvg)`
   position: absolute;
   top: 18px;
   right: 24px;
+`;
+
+export const Link = styled(NavLink)`
+  color: var(--white-color);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.33px;
+  text-decoration-line: underline;
+  text-align: center;
 `;

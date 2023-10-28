@@ -16,10 +16,10 @@ import {
   ErrorText,
   ErrorSvgStyled,
   CheckSvgStyled,
+  Link,
 } from './SigninForm.styled';
 import { ReactComponent as ShowPassword } from '../../../assets/images/authComponents/eye.svg';
 import { ReactComponent as HidePassword } from '../../../assets/images/authComponents/eye-off.svg';
-import { Link } from 'react-router-dom';
 
 const initialValues = { email: '', password: '' };
 const schema = Yup.object().shape({
@@ -132,10 +132,10 @@ export default function SigninForm() {
               </>
 
               <Button type="submit">Sign In</Button>
+              <Link to="/signup">Sign Up</Link>
             </LoginForm>
           )}
         </Formik>
-        <Link to="/signup">Sign Ap</Link>
       </LoginContainer>
     </>
   );
