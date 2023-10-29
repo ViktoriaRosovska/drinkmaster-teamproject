@@ -1,18 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { MainContainer } from 'styles/App.styled';
 import {
   H2,
   P,
-  Conteiner,
+  Cont,
+  Container,
   DefButton,
   ButtonDiv,
+  Img,
+  Ellipse223,
+  Ellipse222,
+  Ellipse224,
+  ImgWithGradient,
 } from 'views/WelcomePage/WelcomePage.styled';
+import myImage from 'assets/images/welcomePage/bg-welcome-desc@2x.jpg';
 
 const AuthNav = () => {
   return (
-    <MainContainer>
-      <Conteiner>
+    <Cont>
+      <Ellipse223></Ellipse223>
+      <Ellipse222></Ellipse222>
+      <Ellipse224></Ellipse224>
+      <Container>
         <H2>Welcome to the app!</H2>
         <P>
           This app offers more than just a collection of recipes - it is
@@ -20,15 +28,14 @@ const AuthNav = () => {
           retrieve your own recipes at any time.
         </P>
         <ButtonDiv>
-          <Link to="/signup">
-            <DefButton>Sign Up</DefButton>
-          </Link>
-          <Link to="/signin">
-            <DefButton>Sign In</DefButton>
-          </Link>
+          <DefButton to="/signup">Sign Up</DefButton>
+          <DefButton to="/signin">Sign In</DefButton>
         </ButtonDiv>
-      </Conteiner>
-    </MainContainer>
+      </Container>
+      <ImgWithGradient>
+        <Img src={myImage} alt="Cocktail" />
+      </ImgWithGradient>
+    </Cont>
   );
 };
 
