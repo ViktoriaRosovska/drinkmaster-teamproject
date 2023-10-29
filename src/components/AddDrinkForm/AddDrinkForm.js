@@ -263,7 +263,7 @@ export default function AddDrinkForm() {
       <SubTitle>Recipe Preparation</SubTitle>
       <label htmlFor="addDrinkFormTextarea">Enter the recipe</label>
       <AddFormTextarea id="addDrinkFormTextarea"></AddFormTextarea>
-      <WhiteLinkBtn type="submit" title="Add" navLink={'/my'} />
+      <WhiteLinkBtn type="submit" title="Add" />
     </form>
   );
 }

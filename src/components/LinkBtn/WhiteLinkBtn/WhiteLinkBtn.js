@@ -2,7 +2,7 @@ import React from 'react';
 
 import { WhiteButton } from './WhiteLinkBtn.styled';
 
-const WhiteLinkBtn = ({ navLink, title, type }) => {
+const WhiteLinkBtn = ({ title, type }) => {
   return <WhiteButton type={type}>{title}</WhiteButton>;
 };
 
