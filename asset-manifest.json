@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/drinkmaster-teamproject/static/css/main.dca46d18.css",
-    "main.js": "/drinkmaster-teamproject/static/js/main.a3aea04c.js",
+    "main.js": "/drinkmaster-teamproject/static/js/main.2370c36f.js",
     "static/media/hero-desc@2x.png": "/drinkmaster-teamproject/static/media/hero-desc@2x.db60f489f3cec4e24ae6.png",
     "static/media/hero-tab@2x.png": "/drinkmaster-teamproject/static/media/hero-tab@2x.db60f489f3cec4e24ae6.png",
     "static/media/blue_iced_tea@2x_md.png": "/drinkmaster-teamproject/static/media/blue_iced_tea@2x_md.577757fa62d57beb6add.png",
@@ -20,6 +20,8 @@
     "index.html": "/drinkmaster-teamproject/index.html",
     "static/media/eye-off.svg": "/drinkmaster-teamproject/static/media/eye-off.768f435bea4f6451c51a054462606fc4.svg",
     "static/media/youtube.svg": "/drinkmaster-teamproject/static/media/youtube.7da522da3b45a6316b2072783581abc7.svg",
+    "static/media/next.svg": "/drinkmaster-teamproject/static/media/next.6b317752da04cf10e84a045cdfede67e.svg",
+    "static/media/prev.svg": "/drinkmaster-teamproject/static/media/prev.e1906c812d11ccdad22c94e3d79f22b7.svg",
     "static/media/trash.svg": "/drinkmaster-teamproject/static/media/trash.f50c8fb87949d134fdb884d63595b6fb.svg",
     "static/media/facebook.svg": "/drinkmaster-teamproject/static/media/facebook.5d589375abdb546c520081588705e80a.svg",
     "static/media/eye.svg": "/drinkmaster-teamproject/static/media/eye.bbaadc2bd3acd7fe8754edffe5ec72ec.svg",
@@ -31,10 +33,10 @@
     "static/media/MinusForm.svg": "/drinkmaster-teamproject/static/media/MinusForm.7aa2513c040a6b5b61df80c9efc7b18d.svg",
     "static/media/plus.svg": "/drinkmaster-teamproject/static/media/plus.a42d76147973b79136673cbc84673ffb.svg",
     "main.dca46d18.css.map": "/drinkmaster-teamproject/static/css/main.dca46d18.css.map",
-    "main.a3aea04c.js.map": "/drinkmaster-teamproject/static/js/main.a3aea04c.js.map"
+    "main.2370c36f.js.map": "/drinkmaster-teamproject/static/js/main.2370c36f.js.map"
   },
   "entrypoints": [
     "static/css/main.dca46d18.css",
-    "static/js/main.a3aea04c.js"
+    "static/js/main.2370c36f.js"
   ]
 }
