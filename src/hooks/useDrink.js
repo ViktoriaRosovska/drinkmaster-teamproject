@@ -8,7 +8,7 @@ import {
   // selectTotalDrinks,
   // selectFavoriteDrinks,
   // selectPopularDrinks,
-} from './drinksSelectors';
+} from '../redux/drinks/drinksSelectors';
 
 export const useDrink = () => {
   const mainPageDrinks = useSelector(selectMainPageDrinks);
