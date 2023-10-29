@@ -29,6 +29,7 @@ const initialValues = {
 };
 
 const schema = Yup.object().shape({
+  name: Yup.string().required('Name is required'),
   email: Yup.string()
     .matches(
       /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
@@ -98,7 +99,22 @@ function SignupForm() {
         {({ values, errors, touched }) => (
           <SignUpForm>
             <InputWrapper>
-              <Input type="text" name="name" placeholder="Name" required />
+              <Input
+                type="text"
+                name="name"
+                placeholder="Name"
+                error={errors.name && touched.name ? 'true' : 'false'}
+                success={values.name && !errors.name ? 'true' : 'false'}
+              />
+              <ErrorMessage
+                name="name"
+                render={message => <ErrorText>{message}</ErrorText>}
+              />
+              {errors.name && touched.name ? (
+                <ErrorSvgStyled />
+              ) : values.name && !errors.name ? (
+                <CheckSvgStyled />
+              ) : null}
             </InputWrapper>
 
             <InputWrapper>
@@ -107,7 +123,6 @@ function SignupForm() {
                 onChange={date => setSelectedDate('birthDate', date)}
                 dateFormat="dd/MM/yyyy"
                 placeholderText="dd/mm/yyyy"
-                locale="en-GB"
               />
             </InputWrapper>
 
@@ -116,7 +131,6 @@ function SignupForm() {
                 type="email"
                 name="email"
                 placeholder="Email"
-                required
                 error={errors.email && touched.email ? 'true' : 'false'}
                 success={values.email && !errors.email ? 'true' : 'false'}
               />
@@ -137,7 +151,6 @@ function SignupForm() {
                 value={values.password}
                 name="password"
                 placeholder="Password"
-                required
                 error={errors.password && touched.password ? 'true' : 'false'}
                 success={values.password && !errors.password ? 'true' : 'false'}
               />
@@ -145,6 +158,11 @@ function SignupForm() {
                 name="password"
                 render={message => <ErrorText>{message}</ErrorText>}
               />
+              {errors.password && touched.password ? (
+                <ErrorSvgStyled />
+              ) : values.password && !errors.password ? (
+                <CheckSvgStyled />
+              ) : null}
               <ToggleButton type="button" onClick={handleTogglePassword}>
                 {values.password ? (
                   showPassword ? (
