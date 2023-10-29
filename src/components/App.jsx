@@ -1,35 +1,85 @@
-import { Route, Routes } from 'react-router-dom';
-
-import { HomePage } from 'views/HomePage/HomePage';
-import { DrinksPage } from 'views/DrinksPage/DrinksPage';
-import AddDrinkPage from 'views/AddDrinkPage/AddDrinkPage';
-import { MyDrinksPage } from 'views/MyDrinksPage/MyDrinksPage';
-import { FavoriteDrinksPage } from 'views/FavouriteDrinksPage/FavouriteDrinksPage';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { lazy, useEffect } from 'react';
+// import { useSelector } from 'react-redux';
+// import authSelectors from 'redux/auth/authSelectors';
 
 import SharedLayout from './SharedLayout/SharedLayout';
-import ErrorPage from '../views/ErrorPage/ErrorPage';
 import PublicRoute from 'helpers/PublicRoute';
 import PrivateRoute from 'helpers/PrivateRoute';
 import WelcomePage from 'views/WelcomePage/WelcomePage';
-import DrinkIdPage from 'views/DrinkIdPage/DrinkIdPage';
-import { useEffect } from 'react';
+
 import SignInPage from 'views/SignInPage/SignInPage';
 import SignUpPage from 'views/SignUpPage/SignUpPage';
-// import { useSelector } from 'react-redux';
-// import authSelectors from 'redux/auth/authSelectors';
+
+const HomePage = lazy(() => import('../views/HomePage/HomePage'));
+const ErrorPage = lazy(() => import('../views/ErrorPage/ErrorPage'));
+const AddDrinkPage = lazy(() => import('../views/AddDrinkPage/AddDrinkPage'));
+const FavoriteDrinksPage = lazy(() =>
+  import('../views/FavouriteDrinksPage/FavouriteDrinksPage')
+);
+const MyDrinksPage = lazy(() => import('../views/MyDrinksPage/MyDrinksPage'));
+const DrinkIdPage = lazy(() => import('../views/DrinkIdPage/DrinkIdPage'));
+const DrinksPage = lazy(() => import('../views/DrinksPage/DrinksPage'));
 
 const isLoggedIn = true;
 
 export const App = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (location.pathname === '/') {
+      navigate('/home');
+    }
+  }, [location.pathname, navigate]);
   // const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
 
-  useEffect(() => {}, []);
   return (
     <>
       <Routes>
         <Route
+          path="/welcome"
           element={
-            <PrivateRoute redirectTo="/welcome" isLoggedIn={isLoggedIn} />
+            <PublicRoute
+              // restricted={false}
+              redirectTo="/home"
+              isLoggedIn={isLoggedIn}
+              component={<WelcomePage />}
+            />
+          }
+        />
+
+        <Route
+          path="/signin"
+          element={
+            <PublicRoute
+              // restricted={false}
+              redirectTo="/home"
+              isLoggedIn={isLoggedIn}
+              component={<SignInPage />}
+            />
+          }
+        />
+
+        <Route
+          path="/signup"
+          element={
+            <PublicRoute
+              // restricted={false}
+              redirectTo="/home"
+              isLoggedIn={isLoggedIn}
+              component={<SignUpPage />}
+            />
+          }
+        />
+
+        <Route
+          path="/"
+          element={
+            <PrivateRoute
+              redirectTo="/welcome"
+              isLoggedIn={isLoggedIn}
+              component={<SharedLayout />}
+            />
           }
         >
           <Route path="/" element={<SharedLayout />}>
@@ -41,13 +91,6 @@ export const App = () => {
             <Route path="/favorites" element={<FavoriteDrinksPage />} />
             <Route path="*" element={<ErrorPage />} />
           </Route>
-        </Route>
-        <Route
-          element={<PublicRoute redirectTo="/home" isLoggedIn={isLoggedIn} />}
-        >
-          <Route path="/welcome" element={<WelcomePage />} />
-          <Route path="/signin" element={<SignInPage />} />
-          <Route path="/signup" element={<SignUpPage />} />
         </Route>
       </Routes>
     </>
