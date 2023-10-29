@@ -7,8 +7,7 @@ const DrinksItem = ({ drinkThumb, drinkTitle, id }) => {
       <Wrapper>
         <Title>{drinkTitle}</Title>
 
-        <SeeMore to={`/drinks/${key}`}>See more</SeeMore>
-
+        <SeeMore to={`/drinks/${id}`}>See more</SeeMore>
       </Wrapper>
     </Item>
   );
