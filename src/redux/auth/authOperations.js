@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://drink-master-app.onrender.com'; //??? треба узгодити з бекендом https://drink-master-app.onrender.com/api/
+axios.defaults.baseURL = 'https://drink-master-app.onrender.com/api/'; //??? треба узгодити з бекендом https://drink-master-app.onrender.com
 
 const token = {
   set(token) {
