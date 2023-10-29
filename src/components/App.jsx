@@ -1,7 +1,8 @@
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { lazy, useEffect } from 'react';
 
 import SharedLayout from './SharedLayout/SharedLayout';
-import HomePage from 'views/HomePage/HomePage';
+// import HomePage from 'views/HomePage/HomePage';
 import ErrorPage from '../views/ErrorPage/ErrorPage';
 import SigninForm from './AuthForm/SigninForm/SigninForm';
 import SignupForm from './AuthForm/SignupForm/SignupForm';
@@ -13,11 +14,14 @@ import DrinkIdPage from 'views/DrinkIdPage/DrinkIdPage';
 import AddDrinkPage from 'views/AddDrinkPage/AddDrinkPage';
 import MyDrinksPage from 'views/MyDrinksPage/MyDrinksPage';
 import FavoriteDrinksPage from 'views/FavouriteDrinksPage/FavouriteDrinksPage';
-import { useEffect } from 'react';
+
 // import { useSelector } from 'react-redux';
 // import authSelectors from 'redux/auth/authSelectors';
 
+const HomePage = lazy(() => import('../views/HomePage/HomePage'));
+
 const isLoggedIn = true;
+
 export const App = () => {
   const location = useLocation();
   const navigate = useNavigate();
