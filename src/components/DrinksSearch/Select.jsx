@@ -17,6 +17,24 @@ const Selection = ({ placeholder, options }) => {
       backgroundColor: '#161F37',
       width: '199px',
       marginTop: '4px',
+      '&::-webkit-scrollbar': {
+        width: '0px',
+      },
+    }),
+    menuList: baseStyles => ({
+      ...baseStyles,
+      '&::-webkit-scrollbar': {
+        width: '0px',
+      },
+    }),
+    dropdownIndicator: (baseStyles, { isFocused }) => ({
+      ...baseStyles,
+      color: 'var(--white-color)',
+      '&:hover': {
+        color: 'var(--white-color)',
+      },
+      transition: 'transform 0.25s ease-out',
+      transform: isFocused && 'rotate(180deg)',
     }),
     indicatorSeparator: baseStyles => ({
       ...baseStyles,
@@ -26,7 +44,21 @@ const Selection = ({ placeholder, options }) => {
       ...baseStyles,
       color: 'white',
     }),
-    dropdownIndicator: baseStyles => ({
+    input: baseStyles => ({
+      ...baseStyles,
+      color: 'white',
+      // display: 'none',
+    }),
+    option: baseStyles => ({
+      ...baseStyles,
+      backgroundColor: 'none',
+      color: 'var(--white-fifty-color)',
+
+      '&:hover': {
+        color: 'var(--white-color)',
+      },
+    }),
+    singleValue: baseStyles => ({
       ...baseStyles,
       color: 'white',
     }),
