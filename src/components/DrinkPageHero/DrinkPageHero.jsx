@@ -1,10 +1,20 @@
-const DrinkPageHero = ({ glass, about, title, image }) => {
+import {
+  About,
+  GlassName,
+  HeroContainer,
+  ImageDrink,
+} from './DrinkPageHero.styled';
+
+const DrinkPageHero = ({ glass, about, alcoholic, title, image }) => {
   return (
-    <div>
+    <HeroContainer>
       <div>
-        <p>{glass}</p>
+        <GlassName>
+          {glass} / {alcoholic}
+        </GlassName>
+
         {about ? (
-          <p>{about}</p>
+          <About>{about}</About>
         ) : (
           <p>
             <br />
@@ -12,8 +22,12 @@ const DrinkPageHero = ({ glass, about, title, image }) => {
         )}
         <button>add favorite</button>
       </div>
-      {image ? <img src={image} alt={title} /> : <div>default image</div>}
-    </div>
+      {image ? (
+        <ImageDrink src={image} alt={title} />
+      ) : (
+        <div>default image</div>
+      )}
+    </HeroContainer>
   );
 };
 export default DrinkPageHero;

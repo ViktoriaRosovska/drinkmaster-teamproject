@@ -6,7 +6,7 @@ const DrinksItem = ({ drinkThumb, drinkTitle, key }) => {
       <Image src={drinkThumb} alt={drinkTitle} />
       <Wrapper>
         <Title>{drinkTitle}</Title>
-        <SeeMore to={`/drink/${key}`}>See more</SeeMore>
+        <SeeMore to={`/drinks/${key}`}>See more</SeeMore>
       </Wrapper>
     </Item>
   );
