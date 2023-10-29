@@ -1,19 +1,26 @@
 {
   "files": {
     "main.css": "/drinkmaster-teamproject/static/css/main.dca46d18.css",
-    "main.js": "/drinkmaster-teamproject/static/js/main.c67ba74e.js",
+    "main.js": "/drinkmaster-teamproject/static/js/main.84875b46.js",
+    "static/js/325.3e438ed1.chunk.js": "/drinkmaster-teamproject/static/js/325.3e438ed1.chunk.js",
     "static/media/hero-desc@2x.png": "/drinkmaster-teamproject/static/media/hero-desc@2x.db60f489f3cec4e24ae6.png",
     "static/media/hero-tab@2x.png": "/drinkmaster-teamproject/static/media/hero-tab@2x.db60f489f3cec4e24ae6.png",
     "static/media/blue_iced_tea@2x_md.png": "/drinkmaster-teamproject/static/media/blue_iced_tea@2x_md.577757fa62d57beb6add.png",
     "static/media/hero-mob@2x.png": "/drinkmaster-teamproject/static/media/hero-mob@2x.0e421edb78a3c7d3e854.png",
+    "static/media/bg-welcome-desc@2x.jpg": "/drinkmaster-teamproject/static/media/bg-welcome-desc@2x.df28db0756aec1690a2f.jpg",
     "static/media/blue_iced_tea@2x_sm.png": "/drinkmaster-teamproject/static/media/blue_iced_tea@2x_sm.25be66c35dcec24d93c7.png",
     "static/media/hero-desc@1x.png": "/drinkmaster-teamproject/static/media/hero-desc@1x.e82e22017745bc2a9863.png",
     "static/media/hero-tab@1x.png": "/drinkmaster-teamproject/static/media/hero-tab@1x.e82e22017745bc2a9863.png",
+    "static/media/bg-welcome-tab@2x.jpg": "/drinkmaster-teamproject/static/media/bg-welcome-tab@2x.b3906b548083e428e9f3.jpg",
     "static/media/404_iced_tea@2x_md.png": "/drinkmaster-teamproject/static/media/404_iced_tea@2x_md.8f314118d098483dd086.png",
+    "static/media/bg-welcome-mob@2x.jpg": "/drinkmaster-teamproject/static/media/bg-welcome-mob@2x.bcfdc93b53457813a58d.jpg",
+    "static/media/bg-welcome-desc@1x.jpg": "/drinkmaster-teamproject/static/media/bg-welcome-desc@1x.cd38a83c7e7ae78e6f69.jpg",
+    "static/media/bg-welcome-tab@1x.jpg": "/drinkmaster-teamproject/static/media/bg-welcome-tab@1x.a5fb0e4311b46d4c9656.jpg",
     "static/media/hero-mob@1x.png": "/drinkmaster-teamproject/static/media/hero-mob@1x.da9563e4164434437c43.png",
     "static/media/404_iced_tea@2x_sm.png": "/drinkmaster-teamproject/static/media/404_iced_tea@2x_sm.ab416c18fdce51da91e7.png",
     "static/media/blue_iced_tea@1x_sm.png": "/drinkmaster-teamproject/static/media/blue_iced_tea@1x_sm.de44a32b5880ede6432b.png",
     "static/media/404_iced_tea@1x_md.png": "/drinkmaster-teamproject/static/media/404_iced_tea@1x_md.787e0a5b11d614b5e30b.png",
+    "static/media/bg-welcome-mob@1x.jpg": "/drinkmaster-teamproject/static/media/bg-welcome-mob@1x.907be8a6fa9b355d5dc7.jpg",
     "static/media/404_iced_tea@1x_sm.png": "/drinkmaster-teamproject/static/media/404_iced_tea@1x_sm.e030e098a362edbe46f7.png",
     "static/media/instagram.svg": "/drinkmaster-teamproject/static/media/instagram.a07afd196ef8f69480e42e5774cc8fd0.svg",
     "static/media/done.svg": "/drinkmaster-teamproject/static/media/done.a3f6f973d6a109dfe8e133995090a9a4.svg",
@@ -35,10 +42,11 @@
     "static/media/MinusForm.svg": "/drinkmaster-teamproject/static/media/MinusForm.7aa2513c040a6b5b61df80c9efc7b18d.svg",
     "static/media/plus.svg": "/drinkmaster-teamproject/static/media/plus.a42d76147973b79136673cbc84673ffb.svg",
     "main.dca46d18.css.map": "/drinkmaster-teamproject/static/css/main.dca46d18.css.map",
-    "main.c67ba74e.js.map": "/drinkmaster-teamproject/static/js/main.c67ba74e.js.map"
+    "main.84875b46.js.map": "/drinkmaster-teamproject/static/js/main.84875b46.js.map",
+    "325.3e438ed1.chunk.js.map": "/drinkmaster-teamproject/static/js/325.3e438ed1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dca46d18.css",
-    "static/js/main.c67ba74e.js"
+    "static/js/main.84875b46.js"
   ]
 }
