@@ -1,24 +1,25 @@
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { lazy, useEffect } from 'react';
-
-import SharedLayout from './SharedLayout/SharedLayout';
-// import HomePage from 'views/HomePage/HomePage';
-import ErrorPage from '../views/ErrorPage/ErrorPage';
-import SigninForm from './AuthForm/SigninForm/SigninForm';
-import SignupForm from './AuthForm/SignupForm/SignupForm';
-import PublicRoute from 'helpers/PublicRoute';
-import PrivateRoute from 'helpers/PrivateRoute';
-import WelcomePage from 'views/WelcomePage/WelcomePage';
-import DrinksPage from 'views/DrinksPage/DrinksPage';
-import DrinkIdPage from 'views/DrinkIdPage/DrinkIdPage';
-import AddDrinkPage from 'views/AddDrinkPage/AddDrinkPage';
-import MyDrinksPage from 'views/MyDrinksPage/MyDrinksPage';
-import FavoriteDrinksPage from 'views/FavouriteDrinksPage/FavouriteDrinksPage';
-
 // import { useSelector } from 'react-redux';
 // import authSelectors from 'redux/auth/authSelectors';
 
+import SharedLayout from './SharedLayout/SharedLayout';
+import PublicRoute from 'helpers/PublicRoute';
+import PrivateRoute from 'helpers/PrivateRoute';
+import WelcomePage from 'views/WelcomePage/WelcomePage';
+
+import SigninForm from './AuthForm/SigninForm/SigninForm';
+import SignupForm from './AuthForm/SignupForm/SignupForm';
+
 const HomePage = lazy(() => import('../views/HomePage/HomePage'));
+const ErrorPage = lazy(() => import('../views/ErrorPage/ErrorPage'));
+const AddDrinkPage = lazy(() => import('../views/AddDrinkPage/AddDrinkPage'));
+const FavoriteDrinksPage = lazy(() =>
+  import('../views/FavouriteDrinksPage/FavouriteDrinksPage')
+);
+const MyDrinksPage = lazy(() => import('../views/MyDrinksPage/MyDrinksPage'));
+const DrinkIdPage = lazy(() => import('../views/DrinkIdPage/DrinkIdPage'));
+const DrinksPage = lazy(() => import('../views/DrinksPage/DrinksPage'));
 
 const isLoggedIn = true;
 
