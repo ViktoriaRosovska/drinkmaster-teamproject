@@ -57,10 +57,10 @@ function SignupForm() {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = (values, { resetForm, setFieldValue }) => {
+  const handleSubmit = (values, { resetForm }) => {
     console.log('values', values);
 
-    setFieldValue(selectedDate);
+    ///setFieldValue
 
     const formattedDate = format(selectedDate, 'dd MMM yyyy');
 
