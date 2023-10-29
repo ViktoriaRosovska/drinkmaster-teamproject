@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const CardList = styled.ul`
   display: grid;
@@ -16,4 +16,3 @@ export const CardList = styled.ul`
     grid-template-columns: 400px 400px 400px;
   }
 `;
-

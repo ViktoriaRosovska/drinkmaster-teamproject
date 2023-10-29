@@ -17,6 +17,7 @@ import {
   ErrorSvgStyled,
   CheckSvgStyled,
   Link,
+  Section,
 } from './SigninForm.styled';
 import { ReactComponent as ShowPassword } from '../../../assets/images/authComponents/eye.svg';
 import { ReactComponent as HidePassword } from '../../../assets/images/authComponents/eye-off.svg';
@@ -71,7 +72,7 @@ export default function SigninForm() {
   };
 
   return (
-    <>
+    <Section>
       <LoginContainer>
         <ToastContainer transition={Slide} />
         <Title>Sign In</Title>
@@ -119,6 +120,9 @@ export default function SigninForm() {
                     name="password"
                     render={message => <ErrorText>{message}</ErrorText>}
                   />
+                  {errors.password && touched.password && !values.password && (
+                    <ErrorSvgStyled />
+                  )}
                   <ToggleButton type="button" onClick={handleTogglePassword}>
                     {values.password ? (
                       showPassword ? (
@@ -132,11 +136,11 @@ export default function SigninForm() {
               </>
 
               <Button type="submit">Sign In</Button>
-              <Link to="/signup">Sign Up</Link>
             </LoginForm>
           )}
         </Formik>
+        <Link to="/signup">Sign Up</Link>
       </LoginContainer>
-    </>
+    </Section>
   );
 }

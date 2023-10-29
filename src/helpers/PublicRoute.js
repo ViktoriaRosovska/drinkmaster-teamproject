@@ -1,7 +1,9 @@
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
-export default function PublicRoute({ children, isLoggedIn, redirectTo }) {
-  if (isLoggedIn) return <Navigate to={redirectTo} />;
-
-  return children ? children : <Outlet />;
+export default function PublicRoute({
+  isLoggedIn,
+  redirectTo,
+  component: Component,
+}) {
+  return isLoggedIn ? <Navigate to={redirectTo} /> : Component;
 }
