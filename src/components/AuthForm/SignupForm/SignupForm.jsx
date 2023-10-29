@@ -1,4 +1,5 @@
 import { Formik, ErrorMessage } from 'formik';
+import { format } from 'date-fns';
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -6,6 +7,8 @@ import { authOperations } from 'redux/auth/authOperations';
 import DatePicker from 'react-datepicker';
 import * as Yup from 'yup';
 import {
+  Container,
+  AuthForm,
   Input,
   InputWrapper,
   Title,
@@ -16,10 +19,10 @@ import {
   CheckSvgStyled,
   Link,
 } from '../AuthForm.styled';
-import { SignUpContainer, SignUpForm } from './SignupForm.styled.js';
 import { ReactComponent as ShowPassword } from '../../../assets/images/authComponents/eye.svg';
 import { ReactComponent as HidePassword } from '../../../assets/images/authComponents/eye-off.svg';
 import 'react-datepicker/dist/react-datepicker.css';
+import { WelcomeWrapper } from 'styles/App.styled';
 
 const initialValues = {
   name: '',
@@ -54,13 +57,17 @@ function SignupForm() {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = (values, { resetForm, setFieldValue }) => {
+  const handleSubmit = (values, { resetForm }) => {
     console.log('values', values);
 
-    setFieldValue(selectedDate);
+    ///setFieldValue
+
+    const formattedDate = format(selectedDate, 'dd MMM yyyy');
 
     const { name, birthDate, email, password } = values;
-    dispatch(authOperations.signUp({ name, birthDate, email, password }))
+    dispatch(
+      authOperations.signUp({ name, birthDate: formattedDate, email, password })
+    )
       .unwrap()
       .then(() => {
         console.log('name:', name);
@@ -88,98 +95,102 @@ function SignupForm() {
   };
 
   return (
-    <SignUpContainer>
-      <ToastContainer transition={Slide} />
-      <Title>Sign Up</Title>
-      <Formik
-        initialValues={initialValues}
-        onSubmit={handleSubmit}
-        validationSchema={schema}
-      >
-        {({ values, errors, touched }) => (
-          <SignUpForm>
-            <InputWrapper>
-              <Input
-                type="text"
-                name="name"
-                placeholder="Name"
-                error={errors.name && touched.name ? 'true' : 'false'}
-                success={values.name && !errors.name ? 'true' : 'false'}
-              />
-              <ErrorMessage
-                name="name"
-                render={message => <ErrorText>{message}</ErrorText>}
-              />
-              {errors.name && touched.name ? (
-                <ErrorSvgStyled />
-              ) : values.name && !errors.name ? (
-                <CheckSvgStyled />
-              ) : null}
-            </InputWrapper>
-
-            <InputWrapper>
-              <DatePicker
-                selected={values.birthDate}
-                onChange={date => setSelectedDate('birthDate', date)}
-                dateFormat="dd/MM/yyyy"
-                placeholderText="dd/mm/yyyy"
-              />
-            </InputWrapper>
-
-            <InputWrapper>
-              <Input
-                type="email"
-                name="email"
-                placeholder="Email"
-                error={errors.email && touched.email ? 'true' : 'false'}
-                success={values.email && !errors.email ? 'true' : 'false'}
-              />
-              <ErrorMessage
-                name="email"
-                render={message => <ErrorText>{message}</ErrorText>}
-              />
-              {errors.email && touched.email ? (
-                <ErrorSvgStyled />
-              ) : values.email && !errors.email ? (
-                <CheckSvgStyled />
-              ) : null}
-            </InputWrapper>
-
-            <InputWrapper>
-              <Input
-                type={showPassword ? 'text' : 'password'}
-                value={values.password}
-                name="password"
-                placeholder="Password"
-                error={errors.password && touched.password ? 'true' : 'false'}
-                success={values.password && !errors.password ? 'true' : 'false'}
-              />
-              <ErrorMessage
-                name="password"
-                render={message => <ErrorText>{message}</ErrorText>}
-              />
-              {errors.password && touched.password ? (
-                <ErrorSvgStyled />
-              ) : values.password && !errors.password ? (
-                <CheckSvgStyled />
-              ) : null}
-              <ToggleButton type="button" onClick={handleTogglePassword}>
-                {values.password ? (
-                  showPassword ? (
-                    <ShowPassword />
-                  ) : (
-                    <HidePassword />
-                  )
+    <WelcomeWrapper>
+      <Container>
+        <ToastContainer transition={Slide} />
+        <Title>Sign Up</Title>
+        <Formik
+          initialValues={initialValues}
+          onSubmit={handleSubmit}
+          validationSchema={schema}
+        >
+          {({ values, errors, touched }) => (
+            <AuthForm>
+              <InputWrapper>
+                <Input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  error={errors.name && touched.name ? 'true' : 'false'}
+                  success={values.name && !errors.name ? 'true' : 'false'}
+                />
+                <ErrorMessage
+                  name="name"
+                  render={message => <ErrorText>{message}</ErrorText>}
+                />
+                {errors.name && touched.name ? (
+                  <ErrorSvgStyled />
+                ) : values.name && !errors.name ? (
+                  <CheckSvgStyled />
                 ) : null}
-              </ToggleButton>
-            </InputWrapper>
+              </InputWrapper>
 
-            <Button type="submit">Sign Up</Button>
-            <Link to="/signin">Sign In</Link>
-          </SignUpForm>
-        )}
-      </Formik>
-    </SignUpContainer>
+              <InputWrapper>
+                <DatePicker
+                  selected={selectedDate}
+                  onChange={date => setSelectedDate(date)}
+                  dateFormat="dd/MM/yyyy"
+                  placeholderText="dd/mm/yyyy"
+                />
+              </InputWrapper>
+
+              <InputWrapper>
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  error={errors.email && touched.email ? 'true' : 'false'}
+                  success={values.email && !errors.email ? 'true' : 'false'}
+                />
+                <ErrorMessage
+                  name="email"
+                  render={message => <ErrorText>{message}</ErrorText>}
+                />
+                {errors.email && touched.email ? (
+                  <ErrorSvgStyled />
+                ) : values.email && !errors.email ? (
+                  <CheckSvgStyled />
+                ) : null}
+              </InputWrapper>
+
+              <InputWrapper>
+                <Input
+                  type={showPassword ? 'text' : 'password'}
+                  value={values.password}
+                  name="password"
+                  placeholder="Password"
+                  error={errors.password && touched.password ? 'true' : 'false'}
+                  success={
+                    values.password && !errors.password ? 'true' : 'false'
+                  }
+                />
+                <ErrorMessage
+                  name="password"
+                  render={message => <ErrorText>{message}</ErrorText>}
+                />
+                {errors.password && touched.password ? (
+                  <ErrorSvgStyled />
+                ) : values.password && !errors.password ? (
+                  <CheckSvgStyled />
+                ) : null}
+                <ToggleButton type="button" onClick={handleTogglePassword}>
+                  {values.password ? (
+                    showPassword ? (
+                      <ShowPassword />
+                    ) : (
+                      <HidePassword />
+                    )
+                  ) : null}
+                </ToggleButton>
+              </InputWrapper>
+
+              <Button type="submit">Sign Up</Button>
+              <Link to="/signin">Sign In</Link>
+            </AuthForm>
+          )}
+        </Formik>
+      </Container>
+    </WelcomeWrapper>
   );
 }
 
