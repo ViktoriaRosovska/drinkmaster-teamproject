@@ -6,7 +6,7 @@ display: flex:
 margin-top: 40px;
 margin-bottom: 18px;
 min-width: 320px;
-
+height: 100%;
 background: radial-gradient(
       circle,
       var(--light-green-forty-color) 40%,
