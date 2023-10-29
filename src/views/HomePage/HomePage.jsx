@@ -7,7 +7,7 @@ import UserInfoModal from 'components/Modal/UserInfoModal/UserInfoModal';
 import UserLogoPopup from 'components/Modal/UserLogoPopup/UserLogoPopup';
 import { useState } from 'react';
 
-export const HomePage = () => {
+export default function HomePage() {
   const [showModal, setShowModal] = useState(false);
   const [isModalUserInfoOpen, setIsModalUserInfoOpen] = useState(false);
 
@@ -55,4 +55,4 @@ export const HomePage = () => {
       )}
     </>
   );
-};
+}
