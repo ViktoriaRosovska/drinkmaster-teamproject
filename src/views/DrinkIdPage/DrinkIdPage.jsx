@@ -1,12 +1,19 @@
 import React from 'react';
+// import { useParams } from 'react-router-dom';
+// import { useEffect } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { getDrinkById } from 'redux/drinks/drinksOperations.js';
+// import { selectDrinkById } from 'redux/drinks/drinksSelectors';
+// import selectIsLoggedIn from 'redux/auth/authSelectors';
+
 import PageTitle from 'components/PageTitle/PageTitle';
 import DrinkPageHero from 'components/DrinkPageHero/DrinkPageHero';
 import DrinkIngridientList from 'components/DrinkIngredientsList/DrinkIngridientsList';
-
-import { MainContainer } from 'styles/App.styled';
 import RecipePreparation from 'components/RecipePreparation/RecipePreparation';
 
-const recipe = {
+import { MainContainer } from 'styles/App.styled';
+
+const drink = {
   _id: {
     $oid: '639b6de9ff77d221f190c50f',
   },
@@ -36,7 +43,7 @@ const recipe = {
     'W shakerze wypełnionym do połowy kostkami lodu wymieszać rum, Kahlua i śmietanę. Dobrze wstrząsnąć. Przelej do kieliszka koktajlowego i udekoruj gałką muszkatołową.',
   instructionsUK:
     'У шейкері, наповненому наполовину кубиками льоду, змішайте ром, Калуа та вершки. Добре струсити. Процідіть у келих для коктейлю та прикрасьте мускатним горіхом.',
-  drinkThumb: 'https://ftp.goit.study/img/drinkify/recipes/Quentin.jpg',
+  drinkThumb: 'https://ftp.goit.study/img/drinkify/recipes/Orange_Crush.jpg',
   ingredients: [
     {
       title: 'Dark rum',
@@ -71,17 +78,36 @@ const recipe = {
 };
 
 const DrinkIdPage = () => {
+  // const dispatch = useDispatch();
+  // const { drinkId } = useParams();
+  // const drink = useSelector(selectDrinkById);
+  // const isLoggedIn = useSelector(selectIsLoggedIn);
+
+  // useEffect(() => {
+  //   async function fetchDrinkById() {
+  //     const res = await dispatch(getDrinkById(drinkId));
+  //     return res;
+  //   }
+  //   function loadPage() {
+  //     if (isLoggedIn) {
+  //       fetchDrinkById();
+  //     }
+  //   }
+  //   loadPage();
+  // }, [dispatch, drinkId, isLoggedIn]);
+
   return (
     <MainContainer>
-      <PageTitle title={recipe.drink} />
+      <PageTitle title={drink.drink} style={{ marginBottom: 0 }} />
       <DrinkPageHero
-        glass={recipe.glass}
-        about={recipe.description || null}
-        title={recipe.drink}
-        image={recipe.drinkThumb || null}
+        glass={drink.glass}
+        about={drink.description || null}
+        title={drink.drink}
+        image={drink.drinkThumb || null}
+        alcoholic={drink.alcoholic}
       />
-      <DrinkIngridientList ingredients={recipe.ingredients} />
-      <RecipePreparation instruction={recipe.instructions} />
+      <DrinkIngridientList ingredients={drink.ingredients} />
+      <RecipePreparation instructions={drink.instructions} />
     </MainContainer>
   );
 };

@@ -27,7 +27,7 @@ const drinksSlice = createSlice({
   name: 'drinks',
   initialState,
 
-  extraReducers: (builder) =>
+  extraReducers: builder =>
     builder
       .addCase(getMainPageAllDrinks.pending, handlePending)
       .addCase(getMainPageAllDrinks.fulfilled, (state, action) => {
@@ -68,7 +68,7 @@ const drinksSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         const index = state.favoriteDrinks.findIndex(
-          (drink) => drink._id === action.payload.result._id,
+          drink => drink._id === action.payload.result._id
         );
         state.favoriteDrinks.splice(index, 1);
       })
@@ -78,7 +78,7 @@ const drinksSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         const index = state.drinks.findIndex(
-          (drink) => drink._id === action.payload.result._id,
+          drink => drink._id === action.payload.result._id
         );
         state.drinks.splice(index, 1);
       })

@@ -66,8 +66,7 @@ export const CategoryDrinksIMG = styled.img`
 
 export const CategoryDrinksP = styled.p`
   font-family: Manrope;
-  color: #f3f3f3;
-  color: ${({ theme }) => theme.mainText};
+  color: var(--white-color);
   font-size: 16px;
   font-weight: 500;
   line-height: 1.12;
@@ -82,12 +81,12 @@ export const CategoryDrinksLink = styled(NavLink)`
   line-height: 18px;
   white-space: nowrap;
 
-  color: ${({ theme }) => theme.subTitleText};
+  color: #0a0a1180;
   transition: color ${transition};
 
   &:hover,
   &:focus {
-    color: ${({ theme }) => theme.subTitleTextHover};
+    color: var(--black-color);
   }
   @media screen and (min-width: 768px) {
     font-size: 16px;
@@ -107,8 +106,8 @@ export const CategoryDrinkToDrink = styled(NavLink)`
   margin-top: 60px;
   padding: 15px 41px;
   text-align: center;
-  background: ${({ theme }) => theme.basicBtnBg};
-  color: ${({ theme }) => theme.basicBtnText};
+  background: var(--dark-blue-color);
+  color: var(--white-color);
   border: 1px solid transparent;
   border-radius: 42px;
   font-weight: 500;
@@ -118,9 +117,9 @@ export const CategoryDrinkToDrink = styled(NavLink)`
 
   &:hover,
   &:focus {
-    color: ${({ theme }) => theme.basicBtnTextHover};
-    background: ${({ theme }) => theme.basicBtnBgHover};
-    border-color: ${({ theme }) => theme.basicBtnBorderHover};
+    color: var(--dark-blue-color);
+    background: var(--dark-blue-color);
+    border-color: var(--dark-blue-color);
   }
 
   @media screen and (min-width: 768px) {

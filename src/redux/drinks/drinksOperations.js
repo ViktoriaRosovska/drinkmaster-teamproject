@@ -13,20 +13,21 @@ export const getMainPageAllDrinks = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
-  },
+  }
 );
 
-// export const getDrinkById = createAsyncThunk(
-//   'drinks/getDrinkById',
-//   async (drinkId, thunkAPI) => {
-//     try {
-//       const response = await axios.get(`/api/drinks/${:id}`);
-//       return response.data;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   },
-// );
+export const getDrinkById = createAsyncThunk(
+  'drinks/getDrinkById',
+  async (drinkId, thunkAPI) => {
+    try {
+      const response = await axios.get(`/api/drinks/:${drinkId}`);
+
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
 
 // export const getPopularDrinks = createAsyncThunk(
 //   'drinks/getPopularDrinks',
