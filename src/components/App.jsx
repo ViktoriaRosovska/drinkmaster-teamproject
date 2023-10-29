@@ -46,7 +46,9 @@ export const App = () => {
               component={<WelcomePage />}
             />
           }
+
         />
+
 
         <Route
           path="/signin"
