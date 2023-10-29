@@ -32,13 +32,19 @@
 
   --linear-start-color: rgba(10, 10, 17, 0.03);
   --linear-end-color: rgba(10, 10, 17, 0.8);
+
+  --transition: 500ms ease-in;
 }
 
 body {
-  background-color: var(--black-color);
   font-family: 'Manrope', sans-serif;
-  line-height: 18px;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  /* line-height: 18px; */
   color: var(--white-color);
+  background-color: var(--black-color);
+
   width: 100%;
   height: 100vh;
   padding: 0;

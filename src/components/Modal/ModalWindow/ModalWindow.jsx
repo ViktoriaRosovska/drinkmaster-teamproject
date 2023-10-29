@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Overlay } from './ModalWindow.styled';
 
 export default function ModalWindow({ onBackdropClose, ...props }) {
@@ -6,6 +7,16 @@ export default function ModalWindow({ onBackdropClose, ...props }) {
       onBackdropClose();
     }
   };
+
+  useEffect(e => {
+    const handleEsc = event => {
+      if (event.key === 'Escape') {
+        onBackdropClose();
+      }
+    };
+    document.addEventListener('keydown', handleEsc);
+    return () => document.removeEventListener('keydown', handleEsc);
+  });
 
   return (
     <>

@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://'; // додати, коли буде бек
+axios.defaults.baseURL = 'https://drink-master-app.onrender.com'; //??? треба узгодити з бекендом https://drink-master-app.onrender.com/api/
 
 const token = {
   set(token) {
@@ -13,10 +13,10 @@ const token = {
 };
 
 const signUp = createAsyncThunk(
-  'auth/signUp',
+  'auth/signup',
   async (credentials, thunkAPI) => {
     try {
-      const { data } = await axios.post('users/signup', credentials);
+      const { data } = await axios.post('/auth/signup', credentials);
       token.set(data.token); //глобально сетимо токен на подальші запити
       return data;
     } catch (error) {
@@ -26,10 +26,10 @@ const signUp = createAsyncThunk(
 );
 
 const signIn = createAsyncThunk(
-  'auth/signIn',
+  'auth/signin',
   async (credentials, thunkAPI) => {
     try {
-      const { data } = await axios.post('users/signIn', credentials);
+      const { data } = await axios.post('/auth/signin', credentials);
       token.set(data.token);
       return data;
     } catch (error) {
@@ -38,9 +38,9 @@ const signIn = createAsyncThunk(
   }
 );
 
-const signOut = createAsyncThunk('auth/signOut', async (_, thunkAPI) => {
+const signOut = createAsyncThunk('auth/signout', async (_, thunkAPI) => {
   try {
-    await axios.post('users/signOut');
+    await axios.post('/auth/signout');
     token.unset();
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
@@ -60,7 +60,7 @@ const refreshUser = createAsyncThunk(
 
     token.set(persistedToken);
     try {
-      const { data } = await axios.get('/users/current');
+      const { data } = await axios.get('/auth/current');
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

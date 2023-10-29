@@ -2,10 +2,9 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 // import { Header } from '../Header/Header';
 import Loader from '../Loader';
-import { LayoutContainer, Main } from './SharedLayout.styled';
+import { Main, LayoutContainer } from './SharedLayout.styled';
 import GlobalStyled from 'styles/GlobalStyled';
-
-// import Footer from '../Footer/Footer';
+import Footer from '../Footer/Footer';
 
 const SharedLayout = () => {
   return (
@@ -21,7 +20,7 @@ const SharedLayout = () => {
           </Suspense>
         </Main>
 
-        {/* <Footer /> */}
+         <Footer />
       </LayoutContainer>
     </>
   );
