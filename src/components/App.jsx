@@ -1,19 +1,18 @@
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 
-import { HomePage } from 'views/HomePage/HomePage';
-import { DrinksPage } from 'views/DrinksPage/DrinksPage';
-import AddDrinkPage from 'views/AddDrinkPage/AddDrinkPage';
-import { MyDrinksPage } from 'views/MyDrinksPage/MyDrinksPage';
-import { FavoriteDrinksPage } from 'views/FavouriteDrinksPage/FavouriteDrinksPage';
-
 import SharedLayout from './SharedLayout/SharedLayout';
+import HomePage from 'views/HomePage/HomePage';
 import ErrorPage from '../views/ErrorPage/ErrorPage';
 import SigninForm from './AuthForm/SigninForm/SigninForm';
 import SignupForm from './AuthForm/SignupForm/SignupForm';
 import PublicRoute from 'helpers/PublicRoute';
 import PrivateRoute from 'helpers/PrivateRoute';
 import WelcomePage from 'views/WelcomePage/WelcomePage';
+import DrinksPage from 'views/DrinksPage/DrinksPage';
 import DrinkIdPage from 'views/DrinkIdPage/DrinkIdPage';
+import AddDrinkPage from 'views/AddDrinkPage/AddDrinkPage';
+import MyDrinksPage from 'views/MyDrinksPage/MyDrinksPage';
+import FavoriteDrinksPage from 'views/FavouriteDrinksPage/FavouriteDrinksPage';
 import { useEffect } from 'react';
 
 const isLoggedIn = true;
