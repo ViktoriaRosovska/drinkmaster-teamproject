@@ -8,10 +8,15 @@ export default function ModalWindow({ onBackdropClose, ...props }) {
     }
   };
 
-  useEffect(() => {
-    document.addEventListener('keydown', onBackdropClose)
-    return () => document.removeEventListener('keydown', onBackdropClose)
-  })
+  useEffect(e => {
+    const handleEsc = event => {
+      if (event.key === 'Escape') {
+        onBackdropClose();
+      }
+    };
+    document.addEventListener('keydown', handleEsc);
+    return () => document.removeEventListener('keydown', handleEsc);
+  });
 
   return (
     <>
