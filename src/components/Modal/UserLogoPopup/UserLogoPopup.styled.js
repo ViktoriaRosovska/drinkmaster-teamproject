@@ -3,15 +3,15 @@ import IconEdit2 from '../IconEdit2/IconEdit2';
 
 const ModalContainer = styled.div`
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 72px;
+  right: 20px;
   width: 177px;
   height: 134px;
   padding: 18px;
   border-radius: 8px;
   background-color: #161f37;
   color: #f3f3f3;
-  transform: translate(-50%, -50%);
+//   transform: translate(-50%, -50%);
 `;
 
 const EditProfileBtn = styled.button`
