@@ -15,10 +15,14 @@ import PrivateRoute from 'helpers/PrivateRoute';
 import WelcomePage from 'views/WelcomePage/WelcomePage';
 import DrinkIdPage from 'views/DrinkIdPage/DrinkIdPage';
 import { useEffect } from 'react';
+// import { useSelector } from 'react-redux';
+// import authSelectors from 'redux/auth/authSelectors';
 
 const isLoggedIn = true;
 
 export const App = () => {
+  // const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
+
   useEffect(() => {}, []);
   return (
     <>
