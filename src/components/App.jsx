@@ -8,8 +8,8 @@ import PublicRoute from 'helpers/PublicRoute';
 import PrivateRoute from 'helpers/PrivateRoute';
 import WelcomePage from 'views/WelcomePage/WelcomePage';
 
-import SigninForm from './AuthForm/SigninForm/SigninForm';
-import SignupForm from './AuthForm/SignupForm/SignupForm';
+import SignInPage from 'views/SignInPage/SignInPage';
+import SignUpPage from 'views/SignUpPage/SignUpPage';
 
 const HomePage = lazy(() => import('../views/HomePage/HomePage'));
 const ErrorPage = lazy(() => import('../views/ErrorPage/ErrorPage'));
@@ -55,7 +55,7 @@ export const App = () => {
               // restricted={false}
               redirectTo="/home"
               isLoggedIn={isLoggedIn}
-              component={<SigninForm />}
+              component={<SignInPage />}
             />
           }
         />
@@ -67,7 +67,7 @@ export const App = () => {
               // restricted={false}
               redirectTo="/home"
               isLoggedIn={isLoggedIn}
-              component={<SignupForm />}
+              component={<SignUpPage />}
             />
           }
         />
@@ -82,13 +82,15 @@ export const App = () => {
             />
           }
         >
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/drinks" element={<DrinksPage />} />
-          <Route path="/drinks/drinkId" element={<DrinkIdPage />} />
-          <Route path="/add" element={<AddDrinkPage />} />
-          <Route path="/my" element={<MyDrinksPage />} />
-          <Route path="/favorites" element={<FavoriteDrinksPage />} />
-          <Route path="*" element={<ErrorPage />} />
+          <Route path="/" element={<SharedLayout />}>
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/drinks" element={<DrinksPage />} />
+            <Route path="/drinks/Id" element={<DrinkIdPage />} />
+            <Route path="/add" element={<AddDrinkPage />} />
+            <Route path="/my" element={<MyDrinksPage />} />
+            <Route path="/favorites" element={<FavoriteDrinksPage />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Route>
         </Route>
       </Routes>
     </>

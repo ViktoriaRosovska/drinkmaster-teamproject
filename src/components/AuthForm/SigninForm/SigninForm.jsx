@@ -6,10 +6,10 @@ import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth/authOperations';
 import * as Yup from 'yup';
 import {
-  LoginContainer,
+  Container,
   Input,
   InputWrapper,
-  LoginForm,
+  AuthForm,
   Title,
   Button,
   ToggleButton,
@@ -17,10 +17,10 @@ import {
   ErrorSvgStyled,
   CheckSvgStyled,
   Link,
-  Section,
-} from './SigninForm.styled';
+} from '../AuthForm.styled';
 import { ReactComponent as ShowPassword } from '../../../assets/images/authComponents/eye.svg';
 import { ReactComponent as HidePassword } from '../../../assets/images/authComponents/eye-off.svg';
+import { WelcomeWrapper } from 'styles/App.styled';
 
 const initialValues = { email: '', password: '' };
 const schema = Yup.object().shape({
@@ -72,8 +72,8 @@ export default function SigninForm() {
   };
 
   return (
-    <Section>
-      <LoginContainer>
+    <WelcomeWrapper>
+      <Container>
         <ToastContainer transition={Slide} />
         <Title>Sign In</Title>
         <Formik
@@ -82,7 +82,7 @@ export default function SigninForm() {
           onSubmit={handleSubmit}
         >
           {({ values, errors, touched }) => (
-            <LoginForm>
+            <AuthForm>
               <>
                 <InputWrapper>
                   <Input
@@ -136,11 +136,11 @@ export default function SigninForm() {
               </>
 
               <Button type="submit">Sign In</Button>
-            </LoginForm>
+            </AuthForm>
           )}
         </Formik>
         <Link to="/signup">Sign Up</Link>
-      </LoginContainer>
-    </Section>
+      </Container>
+    </WelcomeWrapper>
   );
 }
