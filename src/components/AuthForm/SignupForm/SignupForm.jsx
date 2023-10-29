@@ -15,7 +15,7 @@ import {
   ErrorSvgStyled,
   CheckSvgStyled,
   Link,
-} from '../SigninForm/SigninForm.styled';
+} from '../AuthForm.styled';
 import { SignUpContainer, SignUpForm } from './SignupForm.styled.js';
 import { ReactComponent as ShowPassword } from '../../../assets/images/authComponents/eye.svg';
 import { ReactComponent as HidePassword } from '../../../assets/images/authComponents/eye-off.svg';

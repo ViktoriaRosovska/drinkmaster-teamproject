@@ -8,13 +8,13 @@ import { FavoriteDrinksPage } from 'views/FavouriteDrinksPage/FavouriteDrinksPag
 
 import SharedLayout from './SharedLayout/SharedLayout';
 import ErrorPage from '../views/ErrorPage/ErrorPage';
-import SigninForm from './AuthForm/SigninForm/SigninForm';
-import SignupForm from './AuthForm/SignupForm/SignupForm';
 import PublicRoute from 'helpers/PublicRoute';
 import PrivateRoute from 'helpers/PrivateRoute';
 import WelcomePage from 'views/WelcomePage/WelcomePage';
 import DrinkIdPage from 'views/DrinkIdPage/DrinkIdPage';
 import { useEffect } from 'react';
+import SignInPage from 'views/SignInPage/SignInPage';
+import SignUpPage from 'views/SignUpPage/SignUpPage';
 // import { useSelector } from 'react-redux';
 // import authSelectors from 'redux/auth/authSelectors';
 
@@ -46,8 +46,8 @@ export const App = () => {
           element={<PublicRoute redirectTo="/home" isLoggedIn={isLoggedIn} />}
         >
           <Route path="/welcome" element={<WelcomePage />} />
-          <Route path="/signin" element={<SigninForm />} />
-          <Route path="/signup" element={<SignupForm />} />
+          <Route path="/signin" element={<SignInPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
         </Route>
       </Routes>
     </>
