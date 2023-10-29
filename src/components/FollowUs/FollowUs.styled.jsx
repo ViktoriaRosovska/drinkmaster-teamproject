@@ -6,7 +6,7 @@ import { ReactComponent as YoutubeSvg } from '../../assets/images/link_icons/you
 export const FollowUsList = styled.ul`
   display: flex;
   gap: 14px;
-  align-items: center;
+  align-items: center; 
   margin-top: 20px;
 
   @media screen and (min-width: 768px) {
@@ -22,7 +22,7 @@ export const FollowUsLink = styled.a`
 
   border-radius: 10px;
   border: 1px solid var(--white-twenty-color);
-  aline-item: center;
+  align-items: center;
   justify-content: center;
 
   transition: transform var(--transition), border var(--transition);
@@ -30,7 +30,7 @@ export const FollowUsLink = styled.a`
   &:focus {
     transform: scale(1.1);
     border: solid 1px var(--white-color);
-    background-color: var(--white-fifty-color);
+    // background-color: var(--white-fifty-color);
   }
 
   @media screen and (min-width: 768px) {
