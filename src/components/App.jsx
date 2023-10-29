@@ -14,6 +14,8 @@ import AddDrinkPage from 'views/AddDrinkPage/AddDrinkPage';
 import MyDrinksPage from 'views/MyDrinksPage/MyDrinksPage';
 import FavoriteDrinksPage from 'views/FavouriteDrinksPage/FavouriteDrinksPage';
 import { useEffect } from 'react';
+// import { useSelector } from 'react-redux';
+// import authSelectors from 'redux/auth/authSelectors';
 
 const isLoggedIn = true;
 export const App = () => {
@@ -24,6 +26,8 @@ export const App = () => {
       navigate('/home');
     }
   }, [location.pathname, navigate]);
+  // const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
+
   return (
     <>
       <Routes>
