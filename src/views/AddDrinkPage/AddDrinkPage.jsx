@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 // import { authOperations } from '../../redux/auth/authOperations';
 
 import AddDrinkForm from '../../components/AddDrinkForm/AddDrinkForm';
+import FollowUs from 'components/FollowUs/FollowUs';
 
 export default function AddDrinkPage() {
   useEffect(() => {}, []);
@@ -18,7 +19,7 @@ export default function AddDrinkPage() {
 
         <AddDrinkForm />
         <div>
-          <h4>Follow Us</h4>
+          <FollowUs />
           <div>Іконки</div>
         </div>
         <div>

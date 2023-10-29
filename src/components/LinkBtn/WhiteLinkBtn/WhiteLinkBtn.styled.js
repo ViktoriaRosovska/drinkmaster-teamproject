@@ -12,7 +12,9 @@ export const WhiteButton = styled.button`
   border: 1px solid var(--white-color);
   transition: background-color 0.25s ease-in;
   &:hover {
-    border: 1px solid var(--blue-fifty-color);
+    border: 1px solid var(--white-color);
+    background-color: transparent;
+    color: var(--white-color);
   }
   @media screen and (min-width: 768px) {
     font-size: 16px;
