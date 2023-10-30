@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Cont = styled.div`
   display: flex;
@@ -26,7 +27,7 @@ export const ButtonDiv = styled.div`
   gap: 10px;
 `;
 
-export const DefButton = styled.button`
+export const DefButton = styled(Link)`
   background-color: transparent;
   color: var(--white-color);
   padding: 18px 44px 18px 44px;

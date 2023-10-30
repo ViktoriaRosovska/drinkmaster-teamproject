@@ -2,5 +2,6 @@
   "compilerOptions": {
     "baseUrl": "src"
   },
-  "include": ["src", "public/authComponents", "public/authSvg.js"]
+  "exclude": ["node_modules"],
+  "include": ["src"]
 }
