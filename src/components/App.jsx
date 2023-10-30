@@ -1,7 +1,7 @@
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { lazy, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import authSelectors from 'redux/auth/authSelectors';
+// import { useSelector } from 'react-redux';
+// import authSelectors from 'redux/auth/authSelectors';
 
 import SharedLayout from './SharedLayout/SharedLayout';
 import PublicRoute from 'helpers/PublicRoute';
@@ -21,7 +21,7 @@ const MyDrinksPage = lazy(() => import('../views/MyDrinksPage/MyDrinksPage'));
 const DrinkIdPage = lazy(() => import('../views/DrinkIdPage/DrinkIdPage'));
 const DrinksPage = lazy(() => import('../views/DrinksPage/DrinksPage'));
 
-// const isLoggedIn = true;
+const isLoggedIn = true;
 
 export const App = () => {
   const location = useLocation();
@@ -31,7 +31,7 @@ export const App = () => {
       navigate('/home');
     }
   }, [location.pathname, navigate]);
-  const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
+  // const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
 
   return (
     <>
@@ -82,15 +82,13 @@ export const App = () => {
             />
           }
         >
-          <Route path="/" element={<SharedLayout />}>
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/drinks" element={<DrinksPage />} />
-            <Route path="/drinks/Id" element={<DrinkIdPage />} />
-            <Route path="/add" element={<AddDrinkPage />} />
-            <Route path="/my" element={<MyDrinksPage />} />
-            <Route path="/favorites" element={<FavoriteDrinksPage />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Route>
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/drinks" element={<DrinksPage />} />
+          <Route path="/drinks/Id" element={<DrinkIdPage />} />
+          <Route path="/add" element={<AddDrinkPage />} />
+          <Route path="/my" element={<MyDrinksPage />} />
+          <Route path="/favorites" element={<FavoriteDrinksPage />} />
+          <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
     </>
