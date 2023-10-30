@@ -32,7 +32,7 @@ const drinksSlice = createSlice({
       .addCase(getMainPageAllDrinks.pending, handlePending)
       .addCase(getMainPageAllDrinks.fulfilled, (state, action) => {
         state.mainPageDrinks = action.payload;
-        console.log(state.mainPageDrinks);
+        console.log("slice:", state.mainPageDrinks);
         state.isLoading = false;
         state.error = null;
       })
