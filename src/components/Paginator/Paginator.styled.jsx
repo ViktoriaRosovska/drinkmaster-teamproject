@@ -7,6 +7,7 @@ export const PagContainer = styled.div`
   gap: 48px;
   padding-top: 14px;
   padding-bottom: 14px;
+  margin-top: 40px;
 
   @media screen and (min-width: 768px) {
     gap: 40px;
@@ -35,6 +36,10 @@ export const NumberButton = styled.button`
   width: 27px;
   height: 27px;
   border-radius: 50%;
+
+  ${({active}) => active? `
+     background-color: var(--blue-fifty-color);
+  ` : ' '}
 
   /* transition: background-color 0.25s ease-in; */
 
