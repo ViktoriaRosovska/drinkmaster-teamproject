@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "https://ViktoriaRosovska.github.io/drinkmaster-teamproject/",
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.15",
     "@reduxjs/toolkit": "^1.9.7",
     "@types/react-transition-group": "^4.4.8",
