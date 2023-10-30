@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/drinkmaster-teamproject/static/css/main.dca46d18.css",
-    "main.js": "/drinkmaster-teamproject/static/js/main.3c060ba7.js",
-    "static/js/325.c7d1da80.chunk.js": "/drinkmaster-teamproject/static/js/325.c7d1da80.chunk.js",
-    "static/js/342.63580812.chunk.js": "/drinkmaster-teamproject/static/js/342.63580812.chunk.js",
-    "static/js/703.5cc246f6.chunk.js": "/drinkmaster-teamproject/static/js/703.5cc246f6.chunk.js",
-    "static/js/136.a3dd8cca.chunk.js": "/drinkmaster-teamproject/static/js/136.a3dd8cca.chunk.js",
-    "static/js/261.2336bdfa.chunk.js": "/drinkmaster-teamproject/static/js/261.2336bdfa.chunk.js",
-    "static/js/429.1e6f21ea.chunk.js": "/drinkmaster-teamproject/static/js/429.1e6f21ea.chunk.js",
-    "static/js/331.5363f9c0.chunk.js": "/drinkmaster-teamproject/static/js/331.5363f9c0.chunk.js",
+    "main.js": "/drinkmaster-teamproject/static/js/main.3f7ed0ed.js",
+    "static/js/325.ff1d0d56.chunk.js": "/drinkmaster-teamproject/static/js/325.ff1d0d56.chunk.js",
+    "static/js/342.40718faf.chunk.js": "/drinkmaster-teamproject/static/js/342.40718faf.chunk.js",
+    "static/js/703.6f9f2b2e.chunk.js": "/drinkmaster-teamproject/static/js/703.6f9f2b2e.chunk.js",
+    "static/js/136.be020fda.chunk.js": "/drinkmaster-teamproject/static/js/136.be020fda.chunk.js",
+    "static/js/261.31f34643.chunk.js": "/drinkmaster-teamproject/static/js/261.31f34643.chunk.js",
+    "static/js/429.1d096448.chunk.js": "/drinkmaster-teamproject/static/js/429.1d096448.chunk.js",
+    "static/js/331.30bbe23d.chunk.js": "/drinkmaster-teamproject/static/js/331.30bbe23d.chunk.js",
     "static/js/492.3a9d1afd.chunk.js": "/drinkmaster-teamproject/static/js/492.3a9d1afd.chunk.js",
     "static/js/715.1c955d67.chunk.js": "/drinkmaster-teamproject/static/js/715.1c955d67.chunk.js",
     "static/media/hero-desc@2x.png": "/drinkmaster-teamproject/static/media/hero-desc@2x.db60f489f3cec4e24ae6.png",
@@ -50,19 +50,19 @@
     "static/media/MinusForm.svg": "/drinkmaster-teamproject/static/media/MinusForm.7aa2513c040a6b5b61df80c9efc7b18d.svg",
     "static/media/plus.svg": "/drinkmaster-teamproject/static/media/plus.a42d76147973b79136673cbc84673ffb.svg",
     "main.dca46d18.css.map": "/drinkmaster-teamproject/static/css/main.dca46d18.css.map",
-    "main.3c060ba7.js.map": "/drinkmaster-teamproject/static/js/main.3c060ba7.js.map",
-    "325.c7d1da80.chunk.js.map": "/drinkmaster-teamproject/static/js/325.c7d1da80.chunk.js.map",
-    "342.63580812.chunk.js.map": "/drinkmaster-teamproject/static/js/342.63580812.chunk.js.map",
-    "703.5cc246f6.chunk.js.map": "/drinkmaster-teamproject/static/js/703.5cc246f6.chunk.js.map",
-    "136.a3dd8cca.chunk.js.map": "/drinkmaster-teamproject/static/js/136.a3dd8cca.chunk.js.map",
-    "261.2336bdfa.chunk.js.map": "/drinkmaster-teamproject/static/js/261.2336bdfa.chunk.js.map",
-    "429.1e6f21ea.chunk.js.map": "/drinkmaster-teamproject/static/js/429.1e6f21ea.chunk.js.map",
-    "331.5363f9c0.chunk.js.map": "/drinkmaster-teamproject/static/js/331.5363f9c0.chunk.js.map",
+    "main.3f7ed0ed.js.map": "/drinkmaster-teamproject/static/js/main.3f7ed0ed.js.map",
+    "325.ff1d0d56.chunk.js.map": "/drinkmaster-teamproject/static/js/325.ff1d0d56.chunk.js.map",
+    "342.40718faf.chunk.js.map": "/drinkmaster-teamproject/static/js/342.40718faf.chunk.js.map",
+    "703.6f9f2b2e.chunk.js.map": "/drinkmaster-teamproject/static/js/703.6f9f2b2e.chunk.js.map",
+    "136.be020fda.chunk.js.map": "/drinkmaster-teamproject/static/js/136.be020fda.chunk.js.map",
+    "261.31f34643.chunk.js.map": "/drinkmaster-teamproject/static/js/261.31f34643.chunk.js.map",
+    "429.1d096448.chunk.js.map": "/drinkmaster-teamproject/static/js/429.1d096448.chunk.js.map",
+    "331.30bbe23d.chunk.js.map": "/drinkmaster-teamproject/static/js/331.30bbe23d.chunk.js.map",
     "492.3a9d1afd.chunk.js.map": "/drinkmaster-teamproject/static/js/492.3a9d1afd.chunk.js.map",
     "715.1c955d67.chunk.js.map": "/drinkmaster-teamproject/static/js/715.1c955d67.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dca46d18.css",
-    "static/js/main.3c060ba7.js"
+    "static/js/main.3f7ed0ed.js"
   ]
 }
