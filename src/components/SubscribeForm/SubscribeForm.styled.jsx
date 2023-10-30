@@ -2,22 +2,26 @@ import { Field, Form as FormikForm } from 'formik';
 import styled from 'styled-components';
 import transition from '../../utils/transition';
 
-export const SybscribeWrapper = styled(FormikForm)`
+export const SubscribeWrapper = styled(FormikForm)`
   width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   @media screen and (min-width: 768px) {
     width: 309px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
-export const SybscribeInput = styled(Field)`
-  //   вилазить за контейнер, тому що контенери футера та мейн різні
-  width: 100%;
-
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-  //   width: 335px;
-
+export const SubscribeInput = styled(Field)`
+  width: 335px;
+  margin-top: 24px;
   margin-bottom: 18px;
   padding: 18px 24px;
   border-radius: 200px;
@@ -39,27 +43,29 @@ export const SybscribeInput = styled(Field)`
     font-size: 17px;
     padding: 14px 23px;
     line-height: 1.56;
-    // якщо буде ширина 100%, то це прибрати
-    // width: 309px;
+    width: 309px;
   }
 `;
-export const SybscribeText = styled.p`
+export const SubscribeText = styled.p`
   color: var(--white-color);
   font-weight: 400;
   line-height: 1.43;
-  margin-bottom: 24px;
 
+  width: 335px;
+  margin: 0 auto;
   @media screen and (min-width: 768px) {
     font-size: 18px;
     line-height: 1.33;
+    width: 309px;
   }
 `;
 
 export const SubscribeButton = styled.button`
-  width: 100%;
+  width: 335px;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.125;
+  margin: 0 auto;
   padding: 18px;
   border: 1px solid var(--white-twenty-color);
   border-radius: 200px;
@@ -72,5 +78,9 @@ export const SubscribeButton = styled.button`
     border: 1px solid var(--white-fifty-color);
     color: var(--white-color);
     transform: scale(1.05);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 309px;
   }
 `;

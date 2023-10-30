@@ -17,8 +17,8 @@ export const FollowUsList = styled.ul`
 export const FollowUsListItem = styled.li``;
 export const FollowUsLink = styled.a`
   display: flex;
-//   width: 38px;
-//   height: 38px;
+  width: 38px;
+  height: 38px;
 
   border-radius: 10px;
   border: 1px solid var(--white-twenty-color);

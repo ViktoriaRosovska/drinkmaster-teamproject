@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const FooterContainer = styled.footer`
 border-top: 1px solid var(--white-twenty-color);
 display: flex;
-margin-top: 40px;
-margin-bottom: 18px;
+padding-top: 40px;
+padding-bottom: 18px;
 min-width: 320px;
 
 
@@ -20,8 +20,8 @@ background: radial-gradient(
   background-position-y: 330px;
 
  @media screen and (min-width: 768px) {
-    margin-top: 80px;
-    margin-bottom: 24px;
+    padding-top: 80px;
+    padding-bottom: 24px;
     
    background: radial-gradient(
         circle,
@@ -60,7 +60,6 @@ background: radial-gradient(
       900px 900px;
 
     background-repeat: no-repeat, no-repeat;
-
     background-position-x: calc(50vw - 650px), calc(60vw - 400px);
     background-position-y: 260px, 270px;
 }
@@ -75,6 +74,11 @@ justify-content: start;
 @media screen and (min-width: 768px) {
 gap: 28px;
 }
+@media screen and (min-width: 768px) {
+gap: 40px;
+}
+
+
 
 `;
 export const Container = styled.div`
@@ -85,9 +89,10 @@ export const Container = styled.div`
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: 80px;
+  // padding-top: 80px;
   
   @media screen and (min-width: 768px) {
+    // max-width: 768px;
     width: 704px;
     height: 482px;
     padding-left: 32px;
@@ -96,6 +101,7 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
+    // max-width: 1440px:
     width: 1240px;
     height: 428px;
     padding-left: 100px;
@@ -114,7 +120,8 @@ export const FooterNavWrapper = styled.div`
   @media screen and (min-width: 1440px) {
     display: flex;
     flex-direction: row;
-    flex: 1;
+        row-gap: 411px;
+    justify-content: space-between;
   }
 `
 
@@ -124,13 +131,14 @@ gap: 40px;
 flex-direction: column;
 
 @media screen and (min-width: 768px) {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0px;
   }
 
   @media screen and (min-width: 1440px) {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
+    gap: 294px;
   }
 
 `;

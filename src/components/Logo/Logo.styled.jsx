@@ -6,13 +6,18 @@ export const LogoLink = styled(Link)`
   display: flex;
   gap: 14px;
   transition: 0.5s;
+  width: 133px;
 
   &:hover,
   &:focus {
     transform: scale(1.06);
     
   }
- 
+ @media screen and (min-width: 768px) {
+    width: 151px;
+    
+  }
+
 `
 
 export const LogoIcon = styled(logo_icon)`
