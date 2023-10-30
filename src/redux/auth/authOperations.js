@@ -1,8 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://drink-master-app.onrender.com/api/'; //??? треба узгодити з бекендом https://drink-master-app.onrender.com
-
+axios.defaults.baseURL = 'https://drink-master-app.onrender.com/api/';
 const token = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -47,21 +46,21 @@ const signOut = createAsyncThunk('auth/signout', async (_, thunkAPI) => {
   }
 });
 
-const refreshUser = createAsyncThunk(
-  'auth/refreshUser',
+const currentUser = createAsyncThunk(
+  'auth/currentUser',
   async (_, thunkAPI) => {
-    const state = thunkAPI.getState();
-    const persistedToken = state.auth.token;
+    const { token } = thunkAPI.getState().auth.token;
 
-    //якщо розлогінений і нема токену, то виходимо. thunkAPI.rejectWithValue();бо return вертає undefined і тоді помилки при рефрешЮзер
-    if (persistedToken === null) {
+    if (!token) {
       return thunkAPI.rejectWithValue('Unable to fetch User');
     }
 
-    token.set(persistedToken);
+    token.set(token);
+
     try {
-      const { data } = await axios.get('/user/current');
-      return data;
+      const res = await axios.get('/users/current');
+
+      return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -83,6 +82,6 @@ export const authOperations = {
   signUp,
   signIn,
   signOut,
-  refreshUser,
+  currentUser,
   subscribeEmail,
 };
