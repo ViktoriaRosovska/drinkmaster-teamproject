@@ -10,7 +10,7 @@ import {
   getOwnDrinks,
   addDrinkToFavorite,
   getFavoriteAll,
-} from './drinks-operations';
+} from './drinksOperations';
 import { handlePending, handleRejected } from '../../hooks/handlers';
 const initialState = {
   searchQuery: '',
@@ -32,6 +32,7 @@ const drinksSlice = createSlice({
       .addCase(getMainPageAllDrinks.pending, handlePending)
       .addCase(getMainPageAllDrinks.fulfilled, (state, action) => {
         state.mainPageDrinks = action.payload;
+        console.log(state.mainPageDrinks);
         state.isLoading = false;
         state.error = null;
       })
