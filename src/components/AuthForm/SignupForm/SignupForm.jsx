@@ -58,13 +58,12 @@ function SignupForm() {
   };
 
   const handleSubmit = (values, { resetForm }) => {
-    console.log('values', values);
-
-    ///setFieldValue
-
     const formattedDate = format(selectedDate, 'dd MMM yyyy');
+    values.birthDate = formattedDate;
 
+    console.log('values', values);
     const { name, birthDate, email, password } = values;
+
     dispatch(
       authOperations.signUp({ name, birthDate: formattedDate, email, password })
     )
@@ -168,11 +167,9 @@ function SignupForm() {
                   name="password"
                   render={message => <ErrorText>{message}</ErrorText>}
                 />
-                {errors.password && touched.password ? (
+                {errors.password && touched.password && !values.password && (
                   <ErrorSvgStyled />
-                ) : values.password && !errors.password ? (
-                  <CheckSvgStyled />
-                ) : null}
+                )}
                 <ToggleButton type="button" onClick={handleTogglePassword}>
                   {values.password ? (
                     showPassword ? (
