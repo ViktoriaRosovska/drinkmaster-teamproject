@@ -3,15 +3,16 @@ import styled from 'styled-components';
 export const PagContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 48px;
+  justify-content: space-between;
+  /* gap: 40px; */
   padding-top: 14px;
   padding-bottom: 14px;
   margin-top: 40px;
+  width: 295px;
 
-  @media screen and (min-width: 768px) {
+  /* @media screen and (min-width: 768px) {
     gap: 40px;
-  }
+  } */
 `;
 
 export const NumberContainer = styled.div`
