@@ -7,6 +7,7 @@ const initialState = {
   token: '',
   isLoggedIn: false,
   isRefreshing: false,
+  isSubscribed: false,
 };
 
 const authSlice = createSlice({
@@ -44,7 +45,10 @@ const authSlice = createSlice({
       })
       .addCase(authOperations.refreshUser.rejected, state => {
         state.isRefreshing = false;
-      }),
+      })
+      .addCase(authOperations.subscribeEmail.fulfilled, state => {
+        state.isSubscribed = true;
+  }),
 });
 
 export const authReducer = authSlice.reducer;

@@ -6,6 +6,7 @@ const selectAvatarURL = state => state.auth.user.avatarURL;
 const selectIsLoggedIn = state => state.auth.isLoggedIn;
 const selectIsRefreshing = state => state.auth.isRefreshing;
 const selectToken = state => state.auth.token;
+const selectSubscribe = state => state.auth.isSubscribed;
 
 const authSelectors = {
   selectUser,
@@ -15,6 +16,7 @@ const authSelectors = {
   selectToken,
   selectIsLoggedIn,
   selectIsRefreshing,
+  selectSubscribe,
 };
 
 export default authSelectors;
