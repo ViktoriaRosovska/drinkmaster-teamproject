@@ -23,7 +23,7 @@ const MyDrinksPage = lazy(() => import('../views/MyDrinksPage/MyDrinksPage'));
 const DrinkIdPage = lazy(() => import('../views/DrinkIdPage/DrinkIdPage'));
 const DrinksPage = lazy(() => import('../views/DrinksPage/DrinksPage'));
 
-// const isLoggedIn = true;
+//  const isLoggedIn = true;
 
 export const App = () => {
   const location = useLocation();
