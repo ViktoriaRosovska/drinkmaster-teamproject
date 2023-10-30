@@ -9,7 +9,7 @@ export default function FavoriteDrinksPage() {
     <MainContainer>
       <PageTitle title="Favorites" />
       <DrinkList />
-      <Paginator />
+      <Paginator totalDrinks={63} drinksPerPage={9} />
     </MainContainer>
   );
 }

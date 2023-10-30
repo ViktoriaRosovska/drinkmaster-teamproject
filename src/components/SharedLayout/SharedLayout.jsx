@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-// import { Header } from '../Header/Header';
+import Header from 'components/Header/Header';
 import Loader from '../Loader';
 import { Main, LayoutContainer } from './SharedLayout.styled';
 import GlobalStyled from 'styles/GlobalStyled';
@@ -12,7 +12,7 @@ const SharedLayout = () => {
       <LayoutContainer>
         <GlobalStyled />
 
-        {/* <Header /> */}
+        <Header />
 
         <Main>
           <Suspense fallback={<Loader />}>
