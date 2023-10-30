@@ -7,11 +7,11 @@ export const FollowUsList = styled.ul`
   display: flex;
   gap: 14px;
   align-items: center; 
-  margin-top: 20px;
+
 
   @media screen and (min-width: 768px) {
     gap: 16px;
-    margin-top: 28px;
+    
   }
 `;
 export const FollowUsListItem = styled.li``;

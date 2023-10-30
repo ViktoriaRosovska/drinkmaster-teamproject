@@ -69,7 +69,7 @@ const refreshUser = createAsyncThunk(
 );
 
 export const subscribeEmail = createAsyncThunk(
-  'auth/subscribe',
+  '/auth/subscribe',
   async (data, thunkAPI) => {
     try {
       await axios.post('/users/subscribe', data);
