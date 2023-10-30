@@ -1,4 +1,4 @@
-import { useDrink } from '../../redux/drinks/useDrink';
+import { useDrink } from '../../hooks/useDrink';
 import { ItemDrink } from './ItemDrink';
 import Loader from '../Loader/Loader';
 import {
@@ -14,13 +14,13 @@ import { useResize } from '../../hooks/useResize';
 
 const PreviewDrinks = () => {
   const { mainPageDrinks, isLoading } = useDrink();
-
+  console.log(mainPageDrinks);
   const { width } = useResize();
 
   const drinksToRender = width < 768 ? 1 : width < 1440 ? 2 : 3;
 
   const drinksCategory = Object.keys(mainPageDrinks).slice(0, 4);
-
+  console.log(drinksCategory);
   return (
     <>
       <MainContainer>
@@ -30,8 +30,8 @@ const PreviewDrinks = () => {
               <Loader />
             ) : (
               drinksCategory.length > 0 &&
-              drinksCategory.map((category, idx) => (
-                <CategoryDrinksDiv key={idx}>
+              drinksCategory.map((category, _id) => (
+                <CategoryDrinksDiv key={_id}>
                   <DrinkCategoryTitle>{category} </DrinkCategoryTitle>
                   <CategoryDrinksLIST>
                     {mainPageDrinks[category]
