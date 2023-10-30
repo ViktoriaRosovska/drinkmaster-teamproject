@@ -10,6 +10,8 @@ import WelcomePage from 'views/WelcomePage/WelcomePage';
 
 import SignInPage from 'views/SignInPage/SignInPage';
 import SignUpPage from 'views/SignUpPage/SignUpPage';
+import { useSelector } from 'react-redux';
+import authSelectors from 'redux/auth/authSelectors';
 
 const HomePage = lazy(() => import('../views/HomePage/HomePage'));
 const ErrorPage = lazy(() => import('../views/ErrorPage/ErrorPage'));
@@ -21,7 +23,7 @@ const MyDrinksPage = lazy(() => import('../views/MyDrinksPage/MyDrinksPage'));
 const DrinkIdPage = lazy(() => import('../views/DrinkIdPage/DrinkIdPage'));
 const DrinksPage = lazy(() => import('../views/DrinksPage/DrinksPage'));
 
-const isLoggedIn = true;
+//  const isLoggedIn = true;
 
 export const App = () => {
   const location = useLocation();
@@ -31,7 +33,7 @@ export const App = () => {
       navigate('/home');
     }
   }, [location.pathname, navigate]);
-  // const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
+  const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
 
   return (
     <>
