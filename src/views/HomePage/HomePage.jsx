@@ -1,6 +1,6 @@
 import React from 'react';
 import AddDrink from '../../components/AddDrink/AddDrink';
-// import PreviewDrinks from '../../components/PreviewDrinks/PreviewDrinks';
+import PreviewDrinks from '../../components/PreviewDrinks/PreviewDrinks';
 import { MainContainer } from 'styles/App.styled';
 import Modal from 'components/Modal/Modal';
 import UserInfoModal from 'components/Modal/UserInfoModal/UserInfoModal';
@@ -28,7 +28,7 @@ export default function HomePage() {
     <>
       <MainContainer>
         <AddDrink />
-        {/* <PreviewDrinks /> */}
+        <PreviewDrinks />
       </MainContainer>
       <button
         style={{ position: 'absolute', top: '50px', right: '50px' }}

@@ -19,7 +19,7 @@ export const ItemDrink = ({ item }) => {
       />
       <CategoryDrinksTEXTDIV>
         <CategoryDrinksP>{drink}</CategoryDrinksP>
-        <CategoryDrinksLink to={`/drinks/${id}`}>See more</CategoryDrinksLink>
+        <CategoryDrinksLink to={`/drinks/:${id}`}>See more</CategoryDrinksLink>
       </CategoryDrinksTEXTDIV>
     </CategoryDrinksITEM>
   );
