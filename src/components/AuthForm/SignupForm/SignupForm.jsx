@@ -4,7 +4,7 @@ import { ToastContainer, toast, Slide } from 'react-toastify';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth/authOperations';
-import DatePicker from 'react-datepicker';
+// import DatePicker from 'react-datepicker';
 import * as Yup from 'yup';
 import {
   Container,
@@ -18,6 +18,7 @@ import {
   ErrorSvgStyled,
   CheckSvgStyled,
   Link,
+  BirthDate,
 } from '../AuthForm.styled';
 import { ReactComponent as ShowPassword } from '../../../assets/images/authComponents/eye.svg';
 import { ReactComponent as HidePassword } from '../../../assets/images/authComponents/eye-off.svg';
@@ -26,13 +27,14 @@ import { WelcomeWrapper } from 'styles/App.styled';
 
 const initialValues = {
   name: '',
-  birthDate: new Date(),
+  birthDate: '',
   email: '',
   password: '',
 };
 
 const schema = Yup.object().shape({
   name: Yup.string().required('Name is required'),
+  // birthDate: Yup.string().required('Date of Birth is required'),
   email: Yup.string()
     .matches(
       /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
@@ -50,7 +52,7 @@ const schema = Yup.object().shape({
 
 function SignupForm() {
   const [showPassword, setShowPassword] = useState(false);
-  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedDate, setSelectedDate] = useState('');
   const dispatch = useDispatch();
 
   const handleTogglePassword = () => {
@@ -64,9 +66,7 @@ function SignupForm() {
     console.log('values', values);
     const { name, birthDate, email, password } = values;
 
-    dispatch(
-      authOperations.signUp({ name, birthDate: formattedDate, email, password })
-    )
+    dispatch(authOperations.signUp({ name, birthDate, email, password }))
       .unwrap()
       .then(() => {
         console.log('name:', name);
@@ -125,12 +125,21 @@ function SignupForm() {
               </InputWrapper>
 
               <InputWrapper>
-                <DatePicker
+                <BirthDate
                   selected={selectedDate}
                   onChange={date => setSelectedDate(date)}
                   dateFormat="dd/MM/yyyy"
                   placeholderText="dd/mm/yyyy"
                 />
+                <ErrorMessage
+                  name="birthDate"
+                  render={message => <ErrorText>{message}</ErrorText>}
+                />
+                {errors.birthDate && touched.birthDate ? (
+                  <ErrorSvgStyled />
+                ) : values.birthDate && !errors.birthDate ? (
+                  <CheckSvgStyled />
+                ) : null}
               </InputWrapper>
 
               <InputWrapper>
