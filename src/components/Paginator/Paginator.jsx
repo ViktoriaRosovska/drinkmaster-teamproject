@@ -49,3 +49,4 @@ const Paginator = ({totalDrinks, drinksPerPage}) => {
 
 
 export default Paginator;
+

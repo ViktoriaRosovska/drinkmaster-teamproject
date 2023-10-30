@@ -41,8 +41,6 @@ export const NumberButton = styled.button`
      background-color: var(--blue-fifty-color);
   ` : ' '}
 
-  /* transition: background-color 0.25s ease-in; */
-
   &:hover {
     background-color: var(--blue-fifty-color);
   }
