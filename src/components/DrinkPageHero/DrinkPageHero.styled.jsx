@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const HeroContainer = styled.div`
   margin-bottom: 40px;
+
   @media screen and (min-width: 768px) {
     margin-bottom: 80px;
   }
@@ -43,11 +44,13 @@ export const About = styled.p`
 
 export const ImageDrink = styled.img`
   width: 335px;
+  margin-top: 80px;
   @media screen and (min-width: 768px) {
     width: 704px;
   }
   @media screen and (min-width: 1440px) {
     width: 400px;
+    margin-top: 0px;
     position: relative;
     top: -50px;
   }

@@ -1,8 +1,17 @@
+import {
+  Image,
+  Ingredient,
+  IngredientMeasure,
+  IngredientTitle,
+  List,
+  Title,
+} from './DrrinkIngedientList.styled';
+
 const DrinkIngridientList = ({ ingredients }) => {
   return (
     <>
-      <p>Ingredients</p>
-      <ul>
+      <Title>Ingredients</Title>
+      <List>
         {ingredients.map(({ title, measure }) => (
           <li key={title}>
             {/* {ingredientThumb ? (
@@ -10,14 +19,18 @@ const DrinkIngridientList = ({ ingredients }) => {
             ) : (
               <div>default image</div>
             )}
-            <div> */}
-
-            <div>default image</div>
-            <p>{title}</p>
-            <p>{measure}</p>
+             */}
+            <Image
+              src="../../assets/images/drinkPage/coctailPlaceholder.png"
+              alt={title}
+            />
+            <Ingredient>
+              <IngredientTitle>{title}</IngredientTitle>
+              <IngredientMeasure>{measure}</IngredientMeasure>
+            </Ingredient>
           </li>
         ))}
-      </ul>
+      </List>
     </>
   );
 };
