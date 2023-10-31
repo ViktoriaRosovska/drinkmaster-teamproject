@@ -2,8 +2,8 @@ import React from 'react';
 import DrinkItem from 'components/DrinkItem/DrinkItem';
 import { CardList } from './DrinkList.styled';
 import NotFound from 'components/NotFound/NotFound';
-import { useSelector } from 'react-redux';
-import { selectFavoriteDrinks } from 'redux/drinks/drinksSelectors';
+// import { useSelector } from 'react-redux';
+// import { selectFavoriteDrinks } from 'redux/drinks/drinksSelectors';
 
 const DrinkList = () => {
   // const favDrinks = useSelector(selectFavoriteDrinks);
