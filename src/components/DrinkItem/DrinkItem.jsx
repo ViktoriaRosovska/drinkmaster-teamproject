@@ -11,9 +11,17 @@ import {
 } from './DrinkItem.styled';
 import trash from '../../assets/images/deleteSvg/trash.svg';
 import SeeMoreBtn from 'components/LinkBtn/SeeMoreBtn';
+import { useDispatch } from 'react-redux';
+import { removeDrink } from 'redux/drinks/drinksOperations';
 
 const DrinkItem = ({ drinkData }) => {
+  const dispatch = useDispatch();
+
   const { drink, drinkThumb, alcoholic, description, _id } = drinkData;
+
+  const handleRemoveFromFav = () => {
+    dispatch(removeDrink(_id));
+  }
 
   return (
     <Card>
@@ -23,7 +31,7 @@ const DrinkItem = ({ drinkData }) => {
       <Description>{description}</Description>
       <ButtonsContainer>
         <SeeMoreBtn navLink={`/drink/${_id}`} />
-        <DeleteBtn type="button">
+        <DeleteBtn type="button" onClick={handleRemoveFromFav}>
           <SVG src={trash} />
         </DeleteBtn>
       </ButtonsContainer>
