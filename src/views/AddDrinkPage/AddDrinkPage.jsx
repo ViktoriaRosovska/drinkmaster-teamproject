@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 // import { useDispatch } from 'react-redux';
 // import { authOperations } from '../../redux/auth/authOperations';
 
-import AddDrinkForm from '../../components/AddDrinkForm/AddDrinkForm';
+import AddDrinkForm from '../../components/Forms/AddDrinkForm/AddDrinkForm';
 import FollowUs from 'components/FollowUs/FollowUs';
 
 export default function AddDrinkPage() {
