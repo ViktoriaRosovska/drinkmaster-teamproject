@@ -2,8 +2,12 @@ import React from 'react';
 import DrinkItem from 'components/DrinkItem/DrinkItem';
 import { CardList } from './DrinkList.styled';
 import NotFound from 'components/NotFound/NotFound';
+// import { useSelector } from 'react-redux';
+// import { selectFavoriteDrinks } from 'redux/drinks/drinksSelectors';
 
 const DrinkList = () => {
+  // const favDrinks = useSelector(selectFavoriteDrinks);
+  // console.log(favDrinks);
   const drinks = [
     {
       _id: {
@@ -76,7 +80,6 @@ const DrinkList = () => {
       {drinks.length > 0 ? (
         <CardList>
           {drinks.map(drink => {
-            console.log(drink);
             return <DrinkItem key={drink._id.$oid} drinkData={drink} />;
           })}
         </CardList>
