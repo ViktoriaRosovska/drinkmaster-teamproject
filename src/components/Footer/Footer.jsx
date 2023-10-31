@@ -27,6 +27,7 @@ const Footer = () => {
           <SubscribeForm/>
           <FooterCopyright/>
         </FooterContent>
+        
       </Container>
     </FooterContainer>
   );
