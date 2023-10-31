@@ -1,7 +1,7 @@
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { lazy, useEffect } from 'react';
-// import { useSelector } from 'react-redux';
-// import authSelectors from 'redux/auth/authSelectors';
+import { useDispatch, useSelector } from 'react-redux';
+import authSelectors from 'redux/auth/authSelectors';
 
 import SharedLayout from './SharedLayout/SharedLayout';
 import PublicRoute from 'helpers/PublicRoute';
@@ -10,8 +10,8 @@ import WelcomePage from 'views/WelcomePage/WelcomePage';
 
 import SignInPage from 'views/SignInPage/SignInPage';
 import SignUpPage from 'views/SignUpPage/SignUpPage';
-import { useSelector } from 'react-redux';
-import authSelectors from 'redux/auth/authSelectors';
+import { authOperations } from 'redux/auth/authOperations';
+import Loader from './Loader';
 
 const HomePage = lazy(() => import('../views/HomePage/HomePage'));
 const ErrorPage = lazy(() => import('../views/ErrorPage/ErrorPage'));
@@ -28,14 +28,21 @@ const DrinksPage = lazy(() => import('../views/DrinksPage/DrinksPage'));
 export const App = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const isRefreshing = useSelector(authSelectors.selectIsRefreshing);
+
   useEffect(() => {
+    dispatch(authOperations.currentUser());
     if (location.pathname === '/') {
       navigate('/home');
     }
-  }, [location.pathname, navigate]);
+  }, [dispatch, location.pathname, navigate]);
+
   const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
 
-  return (
+  return isRefreshing ? (
+    <Loader />
+  ) : (
     <>
       <Routes>
         <Route

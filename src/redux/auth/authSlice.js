@@ -36,20 +36,22 @@ const authSlice = createSlice({
         state.token = '';
         state.isLoggedIn = false;
       })
-      .addCase(authOperations.refreshUser.pending, state => {
+      .addCase(authOperations.currentUser.pending, state => {
         state.isRefreshing = true;
       })
-      .addCase(authOperations.refreshUser.fulfilled, (state, { payload }) => {
-        state.user = payload;
+      .addCase(authOperations.currentUser.fulfilled, (state, { payload }) => {
+        state.user = payload.user;
+        state.token = payload.token;
+        console.log('currentToken:', state.token);
         state.isLoggedIn = true;
         state.isRefreshing = false;
       })
-      .addCase(authOperations.refreshUser.rejected, state => {
+      .addCase(authOperations.currentUser.rejected, state => {
         state.isRefreshing = false;
       })
       .addCase(authOperations.subscribeEmail.fulfilled, state => {
         state.isSubscribed = true;
-  }),
+      }),
 });
 
 export const authReducer = authSlice.reducer;
