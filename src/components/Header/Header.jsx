@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, {
+  //  useState
+   } from 'react';
 
 import Logo from 'components/Logo/Logo';
 import { Container } from 'components/Header/Header.styled';
 import Navigation from 'components/Navigation/Navigation';
-import UserLogo from 'components/Buttons/UserLogo/UserLogo';
-import ModalPortal from 'components/Modal/ModalPortal/ModalPortal';
+// import ModalPortal from 'components/Modal/ModalPortal/ModalPortal';
 import { HeaderCont, NavCont } from './Header.styled';
+import UserLogo from 'components/UserLogo/UserLogo';
 // import Modal from 'components/Modal/ModalPortal/Modal';
 // import UserLogoPopup from 'components/Modal/UserLogoPopup/UserLogoPopup';
 // import UserInfoModal from 'components/Modal/UserInfoModal/UserInfoModal';
@@ -13,13 +15,13 @@ import { HeaderCont, NavCont } from './Header.styled';
 // import Nav from 'components/Nav/Nav';
 
 const Header = () => {
-  const [showModal, setShowModal] = useState(false);
-  const onShowModalClick = () => {
-    setShowModal(true);
-  };
-  const onBackdrop = () => {
-    setShowModal(false);
-  };
+  // const [showModal, setShowModal] = useState(false);
+  // const onShowModalClick = () => {
+  //   setShowModal(true);
+  // };
+  // const onBackdrop = () => {
+  //   setShowModal(false);
+  // };
 
   return (
     <>
@@ -34,10 +36,11 @@ const Header = () => {
             </li>
             <div>
               <div>Theme</div>
-              <UserLogo onShowModalClick={onShowModalClick} />
+              <UserLogo/>
+              {/* <UserLogo onShowModalClick={onShowModalClick} /> */}
             </div>
           </NavCont>
-          <ModalPortal showModal={showModal} onBackdrop={onBackdrop} />
+          {/* <ModalPortal showModal={showModal} onBackdrop={onBackdrop} /> */}
         </HeaderCont>
       </Container>
 
