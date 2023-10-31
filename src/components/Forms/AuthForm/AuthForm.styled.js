@@ -4,7 +4,7 @@ import transition from '../../../utils/transition';
 import { ReactComponent as ErrorSvg } from '../../../assets/images/authComponents/error.svg';
 import { ReactComponent as CheckSvg } from '../../../assets/images/authComponents/done.svg';
 import { NavLink } from 'react-router-dom';
-import DatePicker from 'react-datepicker';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 export const Container = styled.div`
   display: flex;

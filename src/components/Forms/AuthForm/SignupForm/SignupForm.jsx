@@ -1,10 +1,11 @@
 import { Formik, ErrorMessage } from 'formik';
-import { format } from 'date-fns';
+import moment from 'moment';
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth/authOperations';
-// import DatePicker from 'react-datepicker';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import * as Yup from 'yup';
 import {
   Container,
@@ -22,7 +23,6 @@ import {
 } from '../AuthForm.styled';
 import { ReactComponent as ShowPassword } from '../../../../assets/images/authComponents/eye.svg';
 import { ReactComponent as HidePassword } from '../../../../assets/images/authComponents/eye-off.svg';
-import 'react-datepicker/dist/react-datepicker.css';
 import { WelcomeWrapper } from 'styles/App.styled';
 
 const initialValues = {
@@ -34,7 +34,7 @@ const initialValues = {
 
 const schema = Yup.object().shape({
   name: Yup.string().required('Name is required'),
-  // birthDate: Yup.string().required('Date of Birth is required'),
+  birthDate: Yup.date().required('Date of Birth is required'),
   email: Yup.string()
     .matches(
       /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
@@ -52,7 +52,6 @@ const schema = Yup.object().shape({
 
 function SignupForm() {
   const [showPassword, setShowPassword] = useState(false);
-  const [selectedDate, setSelectedDate] = useState('');
   const dispatch = useDispatch();
 
   const handleTogglePassword = () => {
@@ -60,9 +59,6 @@ function SignupForm() {
   };
 
   const handleSubmit = (values, { resetForm }) => {
-    const formattedDate = format(selectedDate, 'dd MMM yyyy');
-    values.birthDate = formattedDate;
-
     console.log('values', values);
     const { name, birthDate, email, password } = values;
 
@@ -125,21 +121,14 @@ function SignupForm() {
               </InputWrapper>
 
               <InputWrapper>
-                <BirthDate
-                  selected={selectedDate}
-                  onChange={date => setSelectedDate(date)}
-                  dateFormat="dd/MM/yyyy"
-                  placeholderText="dd/mm/yyyy"
-                />
-                <ErrorMessage
-                  name="birthDate"
-                  render={message => <ErrorText>{message}</ErrorText>}
-                />
-                {errors.birthDate && touched.birthDate ? (
-                  <ErrorSvgStyled />
-                ) : values.birthDate && !errors.birthDate ? (
-                  <CheckSvgStyled />
-                ) : null}
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <BirthDate
+                    value={moment(values.birthDate, 'DD MMM YYYY')}
+                    onChange={value =>
+                      (values.birthDate = value.format('DD MMM YYYY'))
+                    }
+                  />
+                </LocalizationProvider>
               </InputWrapper>
 
               <InputWrapper>
