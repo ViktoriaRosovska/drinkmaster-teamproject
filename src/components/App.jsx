@@ -49,7 +49,6 @@ export const App = () => {
           path="/welcome"
           element={
             <PublicRoute
-              // restricted={false}
               redirectTo="/home"
               isLoggedIn={isLoggedIn}
               component={<WelcomePage />}
@@ -61,7 +60,6 @@ export const App = () => {
           path="/signin"
           element={
             <PublicRoute
-              // restricted={false}
               redirectTo="/home"
               isLoggedIn={isLoggedIn}
               component={<SignInPage />}
@@ -73,7 +71,6 @@ export const App = () => {
           path="/signup"
           element={
             <PublicRoute
-              // restricted={false}
               redirectTo="/home"
               isLoggedIn={isLoggedIn}
               component={<SignUpPage />}
