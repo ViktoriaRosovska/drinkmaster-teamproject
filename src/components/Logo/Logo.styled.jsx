@@ -10,7 +10,7 @@ export const LogoLink = styled(Link)`
 
   &:hover,
   &:focus {
-    transform: scale(1.06);
+    transform: scale(1.1);
     
   }
  @media screen and (min-width: 768px) {

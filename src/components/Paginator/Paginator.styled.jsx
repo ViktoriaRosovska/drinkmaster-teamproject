@@ -21,8 +21,13 @@ export const StyledPagination = styled(Pagination)({
 })
 export const stackStyles = {
     marginTop: '54px',
+    marginBottom: '94px',
     justifyContent: 'center',
 
+    '@media (min-width: 768px)': {
+        marginTop: '94px',
+        marginBottom: '154px',
+    }
  }
 
 

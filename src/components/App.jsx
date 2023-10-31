@@ -22,6 +22,12 @@ const FavoriteDrinksPage = lazy(() =>
 const MyDrinksPage = lazy(() => import('../views/MyDrinksPage/MyDrinksPage'));
 const DrinkIdPage = lazy(() => import('../views/DrinkIdPage/DrinkIdPage'));
 const DrinksPage = lazy(() => import('../views/DrinksPage/DrinksPage'));
+const PrivacyPolicyPage = lazy(() =>
+  import('../views/PrivacyPolicyPage/PrivacyPolicyPage')
+);
+const TermsServicePage = lazy(() =>
+  import('../views/TermsServicePage/TermsServicePage')
+);
 
 //  const isLoggedIn = true;
 
@@ -49,7 +55,6 @@ export const App = () => {
           path="/welcome"
           element={
             <PublicRoute
-              // restricted={false}
               redirectTo="/home"
               isLoggedIn={isLoggedIn}
               component={<WelcomePage />}
@@ -61,7 +66,6 @@ export const App = () => {
           path="/signin"
           element={
             <PublicRoute
-              // restricted={false}
               redirectTo="/home"
               isLoggedIn={isLoggedIn}
               component={<SignInPage />}
@@ -73,7 +77,6 @@ export const App = () => {
           path="/signup"
           element={
             <PublicRoute
-              // restricted={false}
               redirectTo="/home"
               isLoggedIn={isLoggedIn}
               component={<SignUpPage />}
@@ -97,6 +100,8 @@ export const App = () => {
           <Route path="/add" element={<AddDrinkPage />} />
           <Route path="/my" element={<MyDrinksPage />} />
           <Route path="/favorites" element={<FavoriteDrinksPage />} />
+          <Route path="privacy" element={<PrivacyPolicyPage />} />
+          <Route path="service" element={<TermsServicePage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>

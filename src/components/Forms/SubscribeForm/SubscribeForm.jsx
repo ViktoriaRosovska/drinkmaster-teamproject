@@ -1,4 +1,4 @@
-import { Formik } from 'formik';
+import { Formik, ErrorMessage } from 'formik';
 import {
   SubscribeWrapper,
   SubscribeInput,
@@ -8,6 +8,8 @@ import {
 import { useDispatch } from 'react-redux';
 import { subscribeEmail } from 'redux/auth/authOperations';
 import { object, string } from 'yup';
+import { toast } from 'react-toastify';
+import { toastConfig } from '../../Notification/notification_options';
 
 const validationSchema = object({
   email: string()
@@ -26,9 +28,14 @@ const SubscribeForm = () => {
     <Formik
       initialValues={{ email: '' }}
       validationSchema={validationSchema}
-      onSubmit={(values, actions) => {
-        dispatch(subscribeEmail(values));
-        actions.resetForm();
+      onSubmit={async (values, actions) => {
+        try {
+          await dispatch(subscribeEmail(values));
+          actions.resetForm();
+          toast.success('You have successfully subscribed!', toastConfig());
+        } catch (error) {
+          toast.error('Subscription failed. Please try again.', toastConfig());
+        }
       }}
     >
       <SubscribeWrapper>
@@ -36,7 +43,12 @@ const SubscribeForm = () => {
           Subscribe up to our newsletter. Be in touch with latest news and
           special offers, etc.
         </SubscribeText>
-        <SubscribeInput type='email' name='email' placeholder='Enter the email'></SubscribeInput>
+        <SubscribeInput
+          type="email"
+          name="email"
+          placeholder="Enter the email"
+        ></SubscribeInput>
+        <ErrorMessage name="email" component="div" />
         <SubscribeButton type="submit">Subscribe</SubscribeButton>
       </SubscribeWrapper>
     </Formik>

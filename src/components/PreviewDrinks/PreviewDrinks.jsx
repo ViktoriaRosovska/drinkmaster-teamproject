@@ -1,4 +1,5 @@
 import { useDrink } from '../../hooks/useDrink';
+// import DrinksItem from '../Drinks/DrinksItem';
 import { ItemDrink } from './ItemDrink';
 import Loader from '../Loader/Loader';
 import {
@@ -37,7 +38,7 @@ const PreviewDrinks = () => {
                     {mainPageDrinks[category]
                       .slice(0, drinksToRender)
                       .map(item => (
-                        <ItemDrink key={item.id} item={item} />
+                        <ItemDrink key={item._id} item={item} />
                       ))}
                   </CategoryDrinksLIST>
                 </CategoryDrinksDiv>

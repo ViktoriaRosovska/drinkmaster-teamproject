@@ -1,3 +1,4 @@
+// import { useDispatch } from "react-redux";
 import LogoutBtn from 'components/Buttons/LogoutBtn/LogoutBtn';
 import {
   EditProfileBtn,
@@ -11,6 +12,9 @@ import ModalPortal from '../ModalPortal/ModalPortal';
 export default function UserLogoPopup({ onBackdropClose, showModal }) {
   const [isModalUserInfoOpen, setIsModalUserInfoOpen] = useState(false);
   const [, setShowModal] = useState(false);
+
+  // const dispatch = useDispatch();
+// const handleLogOut = () => dispatch(signOut());
 
   const openUserInfoModal = () => {
     setShowModal(false);
@@ -30,14 +34,13 @@ export default function UserLogoPopup({ onBackdropClose, showModal }) {
         <LogoutBtn onBackdropClose={onBackdropClose} />
         {/* <button onClick={() => onBackdropClose}>Close Modal</button> */}
       </ModalContainer>
-      (showModal &&{' '}
+
       <ModalPortal
         showModal={showModal}
         isModalUserInfoOpen={isModalUserInfoOpen}
         onBackdrop={onBackdrop}
         openUserInfoModal={openUserInfoModal}
       />
-      )
     </>
   );
 }
