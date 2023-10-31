@@ -1,24 +1,24 @@
 // Navigation component
-import { NavLink } from 'react-router-dom';
-import { Nav } from './Navigation.styled';
+// import { NavLink } from 'react-router-dom';
+import { Nav, DefButton } from './Navigation.styled';
 
 export default function Navigation() {
   return (
     <Nav>
       <li>
-        <NavLink to="/home">Home</NavLink>
+        <DefButton to="/home">Home</DefButton>
       </li>
       <li>
-        <NavLink to="/drinks">Drinks</NavLink>
+        <DefButton to="/drinks">Drinks</DefButton>
       </li>
       <li>
-        <NavLink to="/add">Add drink</NavLink>
+        <DefButton to="/add">Add drink</DefButton>
       </li>
       <li>
-        <NavLink to="/my">My drinks</NavLink>
+        <DefButton to="/my">My drinks</DefButton>
       </li>
       <li>
-        <NavLink to="/favorites">Favorites</NavLink>
+        <DefButton to="/favorites">Favorites</DefButton>
       </li>
     </Nav>
   );
