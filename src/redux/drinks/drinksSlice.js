@@ -14,15 +14,15 @@ import {
 import { handlePending, handleRejected } from '../../hooks/handlers';
 const initialState = {
   searchQuery: '',
-  mainPageDrinks: {},
+  mainPageDrinks: [],
   drinks: [],
-  byId: [],
   favoriteDrinks: [],
   popularDrinks: [],
   isLoading: false,
   error: null,
   total: 0,
 };
+
 
 const drinksSlice = createSlice({
   name: 'drinks',
@@ -32,11 +32,11 @@ const drinksSlice = createSlice({
     builder
       .addCase(getMainPageAllDrinks.pending, handlePending)
       .addCase(getMainPageAllDrinks.fulfilled, (state, action) => {
-        state.mainPageDrinks = action.payload;
-        console.log('slice:', state.mainPageDrinks);
+        state.mainPageDrinks = action.payload.mainPageDrinks;
         state.isLoading = false;
         state.error = null;
       })
+
       .addCase(getMainPageAllDrinks.rejected, handleRejected)
 
       .addCase(getDrinkById.fulfilled, (state, action) => {
