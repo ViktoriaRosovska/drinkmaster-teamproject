@@ -18,8 +18,8 @@ import {
   CheckSvgStyled,
   Link,
 } from '../AuthForm.styled';
-import { ReactComponent as ShowPassword } from '../../../assets/images/authComponents/eye.svg';
-import { ReactComponent as HidePassword } from '../../../assets/images/authComponents/eye-off.svg';
+import { ReactComponent as ShowPassword } from '../../../../assets/images/authComponents/eye.svg';
+import { ReactComponent as HidePassword } from '../../../../assets/images/authComponents/eye-off.svg';
 import { WelcomeWrapper } from 'styles/App.styled';
 
 const initialValues = { email: '', password: '' };
