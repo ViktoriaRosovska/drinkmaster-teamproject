@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 axios.defaults.baseURL = 'https://drink-master-app.onrender.com/api/';
-const token = {
+const authHeaderToken = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
   },
@@ -16,7 +16,7 @@ const signUp = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const { data } = await axios.post('/auth/signup', credentials);
-      token.set(data.token); //глобально сетимо токен на подальші запити
+      authHeaderToken.set(data.token); //глобально сетимо токен на подальші запити
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message); //чи прописувати окремі відповіді на конкретні помилки, які прописані на бекенді?
@@ -29,7 +29,7 @@ const signIn = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const { data } = await axios.post('/auth/signin', credentials);
-      token.set(data.token);
+      authHeaderToken.set(data.token);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -40,7 +40,7 @@ const signIn = createAsyncThunk(
 const signOut = createAsyncThunk('auth/signout', async (_, thunkAPI) => {
   try {
     await axios.post('/auth/signout');
-    token.unset();
+    authHeaderToken.unset();
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
   }
@@ -55,7 +55,7 @@ const currentUser = createAsyncThunk(
       return thunkAPI.rejectWithValue('Unable to fetch User');
     }
 
-    token.set(token);
+    authHeaderToken.set(token);
 
     try {
       const res = await axios.get('/users/current');
