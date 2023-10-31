@@ -110,7 +110,8 @@ export const FooterNavWrapper = styled.div`
     display: flex;
     flex-direction: row;
     row-gap: 411px;
-    justify-content: space-between;
+    // justify-content: space-between;
+    margin-left: 0 auto;
   }
 `;
 
