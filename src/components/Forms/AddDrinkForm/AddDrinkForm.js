@@ -6,7 +6,7 @@ import {
   AddFormSelectContainer,
   AddFormTextarea,
   AddIngedientSelect,
-  ChevronReactSvg,
+  // ChevronReactSvg,
   CloseIconReactSvg,
   QuantityBtn,
   QuantityBtnMirror,
@@ -20,7 +20,6 @@ import WhiteLinkBtn from '../../Buttons/WhiteLinkBtn/WhiteLinkBtn';
 
 import ingredients from '../../../helpers/Data/ingredients.json';
 
-import chevronDown from '../../../assets/images/addDrink/chevron-down.svg';
 import { DrinkDescriptionFields } from '../../DrinkDescriptionFields/DrinkDescriptionFields';
 import { useState } from 'react';
 // import chevronUp from '../../assets/images/addDrink/chevron-up.svg';
@@ -92,7 +91,7 @@ export default function AddDrinkForm() {
             }}
           >
             <AddFormSelectContainer>
-              <ChevronReactSvg src={chevronDown} />
+              {/* <ChevronReactSvg src={chevronDown} /> */}
 
               <AddFormSelect
                 placeholder="Ingredient"

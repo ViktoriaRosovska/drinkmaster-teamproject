@@ -9,6 +9,7 @@ import {
   SelectContainer,
 } from './DrinkDescriptionFields.styled';
 import IconPlus from '../../assets/images/addDrink/plus.svg';
+// import chevronDown from '../../../assets/images/addDrink/chevron-down.svg';
 // import glasses from '../../../helpers/Data/glasses';
 // import { useState } from 'react';
 export const DrinkDescriptionFields = () => {
