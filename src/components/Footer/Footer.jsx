@@ -8,7 +8,7 @@ import {
   FooterContent,
 } from './Footer.styled';
 import Nav from 'components/Nav/Nav';
-import SubscribeForm from 'components/SubscribeForm/SubscribeForm';
+import SubscribeForm from 'components/Forms/SubscribeForm/SubscribeForm';
 import FooterCopyright from './FooterCopyright/FooterCopyright';
 
 const Footer = () => {
@@ -25,8 +25,9 @@ const Footer = () => {
             <Nav />
           </FooterNavWrapper>
           <SubscribeForm/>
-          <FooterCopyright/>
+         
         </FooterContent>
+         <FooterCopyright/>
       </Container>
     </FooterContainer>
   );
