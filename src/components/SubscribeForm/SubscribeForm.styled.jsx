@@ -1,6 +1,5 @@
 import { Field, Form as FormikForm } from 'formik';
 import styled from 'styled-components';
-import transition from '../../utils/transition';
 
 export const SubscribeWrapper = styled(FormikForm)`
   width: 100%;
@@ -31,7 +30,7 @@ export const SubscribeInput = styled(Field)`
   line-height: 1.29;
   color: var(--white-fifty-color);
   background-color: transparent;
-  transition: border ${transition};
+  transition: border var(--transition), transform var(--transition), color var(--transition);
 
   &:focus,
   &:hover {
@@ -71,7 +70,8 @@ export const SubscribeButton = styled.button`
   border-radius: 200px;
   color: var(--white-color);
   background-color: transparent;
-  transition: border ${transition}, background-color ${transition};
+  transition: transform var(--transition), border var(--transition), background-color var(--transition);
+
 
   &:focus,
   &:hover {
