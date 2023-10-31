@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 
 import Logo from 'components/Logo/Logo';
-import { Container, Ul } from 'components/Header/Header.styled';
+import { Container } from 'components/Header/Header.styled';
 import Navigation from 'components/Navigation/Navigation';
 import UserLogo from 'components/Buttons/UserLogo/UserLogo';
 import ModalPortal from 'components/Modal/ModalPortal/ModalPortal';
+import { HeaderCont, NavCont } from './Header.styled';
 // import Modal from 'components/Modal/ModalPortal/Modal';
 // import UserLogoPopup from 'components/Modal/UserLogoPopup/UserLogoPopup';
 // import UserInfoModal from 'components/Modal/UserInfoModal/UserInfoModal';
+
+// import Nav from 'components/Nav/Nav';
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
@@ -21,38 +24,29 @@ const Header = () => {
   return (
     <>
       <Container>
-        <Ul>
-          <li>
-            <Logo />
-          </li>
-          <li>
-            <Navigation />
-          </li>
-        </Ul>
-        <div>Theme</div>
-        <UserLogo onShowModalClick={onShowModalClick} />
+        <HeaderCont>
+          <NavCont>
+            <li>
+              <Logo />
+            </li>
+            <li>
+              <Navigation />
+            </li>
+            <div>
+              <div>Theme</div>
+              <UserLogo onShowModalClick={onShowModalClick} />
+            </div>
+          </NavCont>
+          <ModalPortal showModal={showModal} onBackdrop={onBackdrop} />
+        </HeaderCont>
       </Container>
-      <ModalPortal showModal={showModal} onBackdrop={onBackdrop} />
-      {/* <Modal>
-        <div
-          style={{
-            position: 'absolute',
-            top: '200px',
-            left: '0',
-            width: '50px',
-            height: '50px',
-            backgroundColor: 'pink',
-          }}
-        >
-          hello
-        </div>
-      </Modal>
-      <Modal onBackdropClose={onBackdrop}>
+
+      {/* <Modal onBackdropClose={onBackdrop}>
         <UserLogoPopup onBackdropClose={onBackdrop} />
       </Modal>
       <Modal onBackdropClose={onBackdrop}>
         <UserInfoModal onBackdropClose={onBackdrop} />
-      </Modal> */}
+      </Modal>  */}
     </>
   );
 };
