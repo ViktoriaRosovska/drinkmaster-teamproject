@@ -1,8 +1,8 @@
 import { Formik } from 'formik';
 import {
-  SybscribeWrapper,
-  SybscribeInput,
-  SybscribeText,
+  SubscribeWrapper,
+  SubscribeInput,
+  SubscribeText,
   SubscribeButton,
 } from './SubscribeForm.styled';
 import { useDispatch } from 'react-redux';
@@ -31,14 +31,14 @@ const SubscribeForm = () => {
         actions.resetForm();
       }}
     >
-      <SybscribeWrapper>
-        <SybscribeText>
+      <SubscribeWrapper>
+        <SubscribeText>
           Subscribe up to our newsletter. Be in touch with latest news and
           special offers, etc.
-        </SybscribeText>
-        <SybscribeInput type='email' name='email' placeholder='Enter the email'></SybscribeInput>
+        </SubscribeText>
+        <SubscribeInput type='email' name='email' placeholder='Enter the email'></SubscribeInput>
         <SubscribeButton type="submit">Subscribe</SubscribeButton>
-      </SybscribeWrapper>
+      </SubscribeWrapper>
     </Formik>
   );
 };
