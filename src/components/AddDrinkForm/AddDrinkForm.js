@@ -26,7 +26,7 @@ import {
   SelectContainer,
   SubTitle,
 } from './AddDrinkForm.styled';
-import WhiteLinkBtn from '../../components/LinkBtn/WhiteLinkBtn/WhiteLinkBtn';
+import WhiteLinkBtn from '../Buttons/WhiteLinkBtn/WhiteLinkBtn';
 import IconPlus from '../../assets/images/addDrink/plus.svg';
 import ingredients from '../../helpers/Data/ingredients.json';
 import glasses from 'helpers/Data/glasses';

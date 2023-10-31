@@ -23,6 +23,7 @@ export default function UserInfoModal({ onBackdropClose }) {
   function handleChange(e) {
     setFile(URL.createObjectURL(e.target.files[0]));
   }
+
   return (
     <ModalInfoContainer>
       <ImageWrapper>

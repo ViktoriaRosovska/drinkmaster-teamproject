@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom';
 
-import ModalWindow from './ModalWindow/ModalWindow';
+import ModalWindow from '../ModalWindow/ModalWindow';
 
 export default function Modal({ children, onBackdropClose }) {
   return createPortal(

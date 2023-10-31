@@ -11,7 +11,7 @@ const ModalContainer = styled.div`
   border-radius: 8px;
   background-color: #161f37;
   color: #f3f3f3;
-//   transform: translate(-50%, -50%);
+  //   transform: translate(-50%, -50%);
 `;
 
 const EditProfileBtn = styled.button`
@@ -28,13 +28,13 @@ const EditProfileBtn = styled.button`
   background-color: transparent;
   color: #f3f3f3;
   cursor: pointer;
-  color 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
+  color: 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
   &:hover {
     color: #f3f3f333;
   }
-  `;
-  
-  const IconEdit = styled(IconEdit2)`
+`;
+
+const IconEdit = styled(IconEdit2)`
   width: 14px;
   height: 14px;
   //   @media screen and (min-width: 768px) {
@@ -43,26 +43,26 @@ const EditProfileBtn = styled.button`
   //   }
 `;
 
-const LogoutBtn = styled.button`
-  width: 100%;
-  height: 42px;
-  padding: 12px;
-  font-family: Manrope;
-  font-size: 14px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  border-radius: 42px;
-  background-color: #f3f3f3;
-  color: #161f37;
-  transition:  background-color 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96), color 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96), border 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
-  &:hover {
-    border: 1px solid #f3f3f333;
-    background-color: transparent;
-    color: #f3f3f3;
-  }
-`;
+// const LogoutBtn = styled.button`
+//   width: 100%;
+//   height: 42px;
+//   padding: 12px;
+//   font-family: Manrope;
+//   font-size: 14px;
+//   font-weight: 600;
+//   border: none;
+//   cursor: pointer;
+//   border-radius: 42px;
+//   background-color: #f3f3f3;
+//   color: #161f37;
+//   transition: background-color 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96),
+//     color 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96),
+//     border 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
+//   &:hover {
+//     border: 1px solid #f3f3f333;
+//     background-color: transparent;
+//     color: #f3f3f3;
+//   }
+// `;
 
-export { EditProfileBtn, ModalContainer, LogoutBtn, IconEdit };
-
-
+export { EditProfileBtn, ModalContainer, IconEdit };
