@@ -5,9 +5,9 @@ import { Container, Ul } from 'components/Header/Header.styled';
 import Navigation from 'components/Navigation/Navigation';
 import UserLogo from 'components/Buttons/UserLogo/UserLogo';
 import ModalPortal from 'components/Modal/ModalPortal/ModalPortal';
-import Modal from 'components/Modal/ModalPortal/Modal';
-import UserLogoPopup from 'components/Modal/UserLogoPopup/UserLogoPopup';
-import UserInfoModal from 'components/Modal/UserInfoModal/UserInfoModal';
+// import Modal from 'components/Modal/ModalPortal/Modal';
+// import UserLogoPopup from 'components/Modal/UserLogoPopup/UserLogoPopup';
+// import UserInfoModal from 'components/Modal/UserInfoModal/UserInfoModal';
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
