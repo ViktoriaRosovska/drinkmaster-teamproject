@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkdrinkmaster_teamproject=self.webpackChunkdrinkmaster_teamproject||[]).push([[922],{922:function(e,t,n){n.r(t);n(184);t.default=function(){}}}]);
+//# sourceMappingURL=922.0a2c7da3.chunk.js.map
