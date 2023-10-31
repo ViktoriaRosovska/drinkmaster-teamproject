@@ -49,7 +49,7 @@ const signOut = createAsyncThunk('auth/signout', async (_, thunkAPI) => {
 const currentUser = createAsyncThunk(
   'auth/currentUser',
   async (_, thunkAPI) => {
-    const { token } = thunkAPI.getState().auth.token;
+    const { token } = thunkAPI.getState().auth;
 
     if (!token) {
       return thunkAPI.rejectWithValue('Unable to fetch User');
