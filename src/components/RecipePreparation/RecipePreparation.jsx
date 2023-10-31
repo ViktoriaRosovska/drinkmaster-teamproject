@@ -1,9 +1,11 @@
+import { RecipeTitle } from './RecipePreparation.styled';
+
 const RecipePreparation = ({ instructions }) => {
   const steps = instructions.split('.');
 
   return (
     <>
-      <h2>Recipe Preparation</h2>
+      <RecipeTitle>Recipe Preparation</RecipeTitle>
       <div>
         <ul>
           {steps.map(step => (

@@ -1,5 +1,7 @@
+import { WhiteButton } from 'components/Buttons/WhiteLinkBtn/WhiteLinkBtn.styled';
 import {
   About,
+  DefaultImage,
   GlassName,
   HeroContainer,
   ImageDrink,
@@ -20,12 +22,12 @@ const DrinkPageHero = ({ glass, about, alcoholic, title, image }) => {
             <br />
           </p>
         )}
-        <button>add favorite</button>
+        <WhiteButton>Add favorite</WhiteButton>
       </div>
       {image ? (
         <ImageDrink src={image} alt={title} />
       ) : (
-        <div>default image</div>
+        <DefaultImage>default image</DefaultImage>
       )}
     </HeroContainer>
   );
