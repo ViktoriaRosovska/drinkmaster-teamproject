@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux';
 import { subscribeEmail } from 'redux/auth/authOperations';
 import { object, string } from 'yup';
 import { toast } from 'react-toastify';
-import { toastConfig } from '../Notification/notification_options';
+import { toastConfig } from '../../Notification/notification_options';
 
 const validationSchema = object({
   email: string()
