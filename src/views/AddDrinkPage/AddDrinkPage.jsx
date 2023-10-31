@@ -20,7 +20,6 @@ export default function AddDrinkPage() {
         <AddDrinkForm />
         <div>
           <FollowUs />
-          <div>Іконки</div>
         </div>
         <div>
           <h4>Popular drinks</h4>
