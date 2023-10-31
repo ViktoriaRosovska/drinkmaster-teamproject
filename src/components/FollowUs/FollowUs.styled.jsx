@@ -44,6 +44,7 @@ export const FacebookIcon = styled(FacebookSvg)`
   width: 22px;
   height: 22px;
   padding: 8px;
+  box-sizing: content-box;
 
   @media screen and (min-width: 768px) {
     width: 28px;
@@ -57,6 +58,7 @@ export const InstagramIcon = styled(InstagramSvg)`
   width: 22px;
   height: 22px;
   padding: 8px;
+  box-sizing: content-box;
 
   @media screen and (min-width: 768px) {
     width: 28px;
@@ -68,6 +70,7 @@ export const YoutubeIcon = styled(YoutubeSvg)`
   width: 22px;
   height: 22px;
   padding: 8px;
+  box-sizing: content-box;
 
   @media screen and (min-width: 768px) {
     width: 28px;
