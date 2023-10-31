@@ -1,10 +1,8 @@
 import { useState } from 'react';
-import minuIcon from '../../assets/images/addDrink/MinusForm.svg';
-import plusIcon from '../../assets/images/addDrink/PlusForm.svg';
-import closeIcon from '../../assets/images/addDrink/X.svg';
+import minuIcon from '../../../assets/images/addDrink/MinusForm.svg';
+import plusIcon from '../../../assets/images/addDrink/PlusForm.svg';
+import closeIcon from '../../../assets/images/addDrink/X.svg';
 import {
-  AddBtn,
-  AddBtnText,
   AddFormInput,
   AddFormRadioGroup,
   AddFormSelect,
@@ -12,7 +10,6 @@ import {
   AddFormSelectLabel,
   AddFormTextarea,
   AddIngedientSelect,
-  AddPhotoContainer,
   ChevronReactSvg,
   CloseIconReactSvg,
   InputRadio,
@@ -22,17 +19,18 @@ import {
   QuantityIconReactSvg,
   QuantityIngredients,
   QuantityText,
-  ReactSVGIcon,
   SelectContainer,
   SubTitle,
 } from './AddDrinkForm.styled';
-import WhiteLinkBtn from '../Buttons/WhiteLinkBtn/WhiteLinkBtn';
-import IconPlus from '../../assets/images/addDrink/plus.svg';
-import ingredients from '../../helpers/Data/ingredients.json';
-import glasses from 'helpers/Data/glasses';
-import chevronDown from '../../assets/images/addDrink/chevron-down.svg';
+import WhiteLinkBtn from '../../Buttons/WhiteLinkBtn/WhiteLinkBtn';
+
+import ingredients from '../../../helpers/Data/ingredients.json';
+import glasses from '../../../helpers/Data/glasses';
+import chevronDown from '../../../assets/images/addDrink/chevron-down.svg';
+import { DrinkDescriptionFields } from '../../DrinkDescriptionFields/DrinkDescriptionFields';
 // import chevronUp from '../../assets/images/addDrink/chevron-up.svg';
 // import { ReactSVG } from 'react-svg';
+
 export default function AddDrinkForm() {
   const [value, setValue] = useState('Alcogolic');
   const [quantityValue, setQuantityValue] = useState(1);
@@ -62,12 +60,7 @@ export default function AddDrinkForm() {
   };
   return (
     <form onSubmit={onFormSubmit} style={{ marginBottom: '80px' }}>
-      <AddPhotoContainer>
-        <AddBtn>
-          <ReactSVGIcon src={IconPlus} />
-        </AddBtn>
-        <AddBtnText>Add image</AddBtnText>
-      </AddPhotoContainer>
+      <DrinkDescriptionFields />
       <SelectContainer>
         <AddFormInput
           type="text"
