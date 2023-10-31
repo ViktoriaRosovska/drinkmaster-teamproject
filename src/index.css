@@ -1,5 +1,5 @@
 @import-normalize; /* bring in normalize.css styles */
-@import url('../src/styles/fonts.css');
+/* @import url('../src/styles/fonts.css'); */
 
 :root {
   --black-color: #0a0a11;
