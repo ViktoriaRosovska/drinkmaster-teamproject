@@ -1,18 +1,16 @@
 {
   "files": {
-    "main.css": "/drinkmaster-teamproject/static/css/main.56fe81b9.css",
-    "main.js": "/drinkmaster-teamproject/static/js/main.b4420e53.js",
+    "main.css": "/drinkmaster-teamproject/static/css/main.17221a4d.css",
+    "main.js": "/drinkmaster-teamproject/static/js/main.264d8be2.js",
     "static/js/359.eab9a493.chunk.js": "/drinkmaster-teamproject/static/js/359.eab9a493.chunk.js",
     "static/js/342.40718faf.chunk.js": "/drinkmaster-teamproject/static/js/342.40718faf.chunk.js",
     "static/js/379.5865ec65.chunk.js": "/drinkmaster-teamproject/static/js/379.5865ec65.chunk.js",
-    "static/js/19.41322f4c.chunk.js": "/drinkmaster-teamproject/static/js/19.41322f4c.chunk.js",
+    "static/js/962.e76126a7.chunk.js": "/drinkmaster-teamproject/static/js/962.e76126a7.chunk.js",
     "static/js/261.477931e5.chunk.js": "/drinkmaster-teamproject/static/js/261.477931e5.chunk.js",
     "static/js/577.b1d1e8cf.chunk.js": "/drinkmaster-teamproject/static/js/577.b1d1e8cf.chunk.js",
     "static/js/451.03a8428b.chunk.js": "/drinkmaster-teamproject/static/js/451.03a8428b.chunk.js",
     "static/js/374.e81d91c4.chunk.js": "/drinkmaster-teamproject/static/js/374.e81d91c4.chunk.js",
     "static/js/922.0a2c7da3.chunk.js": "/drinkmaster-teamproject/static/js/922.0a2c7da3.chunk.js",
-    "static/js/554.fc824499.chunk.js": "/drinkmaster-teamproject/static/js/554.fc824499.chunk.js",
-    "static/js/345.fb50756b.chunk.js": "/drinkmaster-teamproject/static/js/345.fb50756b.chunk.js",
     "static/js/866.f9c028a3.chunk.js": "/drinkmaster-teamproject/static/js/866.f9c028a3.chunk.js",
     "static/js/201.f6f812e9.chunk.js": "/drinkmaster-teamproject/static/js/201.f6f812e9.chunk.js",
     "static/media/hero-desc@2x.png": "/drinkmaster-teamproject/static/media/hero-desc@2x.db60f489f3cec4e24ae6.png",
@@ -68,24 +66,22 @@
     "static/media/logo_icon.svg": "/drinkmaster-teamproject/static/media/logo_icon.7162b53d441c064b930061976ec09e61.svg",
     "static/media/addPhoto.svg": "/drinkmaster-teamproject/static/media/addPhoto.190518d2a01cca36f082a59cdc48b4c9.svg",
     "static/media/error.svg": "/drinkmaster-teamproject/static/media/error.b418bd98674843d8d48f4d36abf20d94.svg",
-    "main.56fe81b9.css.map": "/drinkmaster-teamproject/static/css/main.56fe81b9.css.map",
-    "main.b4420e53.js.map": "/drinkmaster-teamproject/static/js/main.b4420e53.js.map",
+    "main.17221a4d.css.map": "/drinkmaster-teamproject/static/css/main.17221a4d.css.map",
+    "main.264d8be2.js.map": "/drinkmaster-teamproject/static/js/main.264d8be2.js.map",
     "359.eab9a493.chunk.js.map": "/drinkmaster-teamproject/static/js/359.eab9a493.chunk.js.map",
     "342.40718faf.chunk.js.map": "/drinkmaster-teamproject/static/js/342.40718faf.chunk.js.map",
     "379.5865ec65.chunk.js.map": "/drinkmaster-teamproject/static/js/379.5865ec65.chunk.js.map",
-    "19.41322f4c.chunk.js.map": "/drinkmaster-teamproject/static/js/19.41322f4c.chunk.js.map",
+    "962.e76126a7.chunk.js.map": "/drinkmaster-teamproject/static/js/962.e76126a7.chunk.js.map",
     "261.477931e5.chunk.js.map": "/drinkmaster-teamproject/static/js/261.477931e5.chunk.js.map",
     "577.b1d1e8cf.chunk.js.map": "/drinkmaster-teamproject/static/js/577.b1d1e8cf.chunk.js.map",
     "451.03a8428b.chunk.js.map": "/drinkmaster-teamproject/static/js/451.03a8428b.chunk.js.map",
     "374.e81d91c4.chunk.js.map": "/drinkmaster-teamproject/static/js/374.e81d91c4.chunk.js.map",
     "922.0a2c7da3.chunk.js.map": "/drinkmaster-teamproject/static/js/922.0a2c7da3.chunk.js.map",
-    "554.fc824499.chunk.js.map": "/drinkmaster-teamproject/static/js/554.fc824499.chunk.js.map",
-    "345.fb50756b.chunk.js.map": "/drinkmaster-teamproject/static/js/345.fb50756b.chunk.js.map",
     "866.f9c028a3.chunk.js.map": "/drinkmaster-teamproject/static/js/866.f9c028a3.chunk.js.map",
     "201.f6f812e9.chunk.js.map": "/drinkmaster-teamproject/static/js/201.f6f812e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.56fe81b9.css",
-    "static/js/main.b4420e53.js"
+    "static/css/main.17221a4d.css",
+    "static/js/main.264d8be2.js"
   ]
 }
