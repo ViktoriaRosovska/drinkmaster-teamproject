@@ -1,4 +1,6 @@
 @import-normalize; /* bring in normalize.css styles */
+@import url('./styles/fonts.css');
+
 :root {
   --black-color: #0a0a11;
   --black-fifty-color: rgba(10, 10, 17, 0.5);
