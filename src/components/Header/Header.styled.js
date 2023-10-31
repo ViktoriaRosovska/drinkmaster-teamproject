@@ -29,12 +29,15 @@ export const Container = styled.div`
 `;
 
 export const NavCont = styled.ul`
-  display: none;
-
-  @media screen and (min-width: 1440px) {
-    display: flex;
-    flex-direction: row;
-    margin-left: 224px
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 71px;
+  @media screen and (min-width: 375px) and (max-width: 767px) {
+    width: 768px;
+    gap: 224px;
+  }
+  @media screen and (min-width: 768px) {
+    gap: 375px;
   }
 `;
-
