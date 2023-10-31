@@ -30,14 +30,13 @@ export default function UserLogoPopup({ onBackdropClose, showModal }) {
         <LogoutBtn onBackdropClose={onBackdropClose} />
         {/* <button onClick={() => onBackdropClose}>Close Modal</button> */}
       </ModalContainer>
-      (showModal &&{' '}
+
       <ModalPortal
         showModal={showModal}
         isModalUserInfoOpen={isModalUserInfoOpen}
         onBackdrop={onBackdrop}
         openUserInfoModal={openUserInfoModal}
       />
-      )
     </>
   );
 }
