@@ -1,8 +1,8 @@
 import { Form, Field } from 'formik';
 import styled, { css } from 'styled-components';
-import transition from '../../utils/transition';
-import { ReactComponent as ErrorSvg } from '../../assets/images/authComponents/error.svg';
-import { ReactComponent as CheckSvg } from '../../assets/images/authComponents/done.svg';
+import transition from '../../../utils/transition';
+import { ReactComponent as ErrorSvg } from '../../../assets/images/authComponents/error.svg';
+import { ReactComponent as CheckSvg } from '../../../assets/images/authComponents/done.svg';
 import { NavLink } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 
