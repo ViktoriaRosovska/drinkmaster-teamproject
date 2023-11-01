@@ -1,18 +1,12 @@
 import React from 'react';
-
 import Stack from '@mui/material/Stack';
 import { StyledPagination, stackStyles } from './Paginator.styled';
 import { PaginationItem } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-// import { createTheme, ThemeProvider } from '@mui/styles';
 
-// import prev from '../../assets/images/paginator/prev.svg';
-// import next from '../../assets/images/paginator/next.svg';
-// import { ReactSVG } from 'react-svg';
-// import { Button, PagContainer, NumberButton, NumberContainer } from './Paginator.styled';
+const Paginator = ({ totalPages, onPageChange, currentPage, path }) => {
 
-const Paginator = ({ totalPages, onPageChange, currentPage }) => {
   return (
     <Stack spacing={2} sx={stackStyles}>
       <StyledPagination
@@ -23,7 +17,7 @@ const Paginator = ({ totalPages, onPageChange, currentPage }) => {
           (item) => {
             return <PaginationItem
               component={Link}
-              to={`/favorites?page=${item.page}`}
+              to={`${path}?page=${item.page}`}
             
               {...item}
             />
