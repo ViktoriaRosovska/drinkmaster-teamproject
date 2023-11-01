@@ -4,10 +4,17 @@ import { Filter, Wrapper } from './DrinksSearch.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterSelector } from '../../redux/filter/filterSelector';
 import { setFilter } from '../../redux/filter/filterSlice';
+// import { useFilters } from 'hooks/useFilters';
 
 const DrinksSearch = () => {
   const dispatch = useDispatch();
   const filter = useSelector(filterSelector);
+
+  // ----- Redux
+  // const { categories, ingredients, isLoading } = useFilters();
+  // console.log('categoriesRedux: ', ingredients);
+
+  // -----
 
   const changeFilter = event => {
     dispatch(setFilter(event.target.value));

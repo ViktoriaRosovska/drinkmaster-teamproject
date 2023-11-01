@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 axios.defaults.baseURL = 'https://drink-master-app.onrender.com/api/';
+console.log('Hello filter');
 export const getCategories = createAsyncThunk(
   'filters/getCategories',
   async (_, thunkAPI) => {

@@ -13,6 +13,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { authReducer } from './auth/authSlice';
 import { drinksReducer } from './drinks/drinksSlice';
 import { filterReducer } from './filter/filterSlice';
+import { filtersReducer } from './filters/filtersSlice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -27,6 +28,7 @@ export const store = configureStore({
     auth: persistedRooReducer,
     drinks: drinksReducer,
     filter: filterReducer,
+    filters: filtersReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
