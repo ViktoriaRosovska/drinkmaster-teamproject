@@ -13,6 +13,14 @@ export const selectMainPageDrinks = createSelector(
   (mainPageDrinks) => mainPageDrinks
 );
 
+export const selectDrinkById = createSelector(
+  [selectDrinksData, (_, drinkId) => drinkId],
+  (drinks, drinkId) => drinks.find((drink) => drink._id === drinkId)
+);
+
+// export const selectDrinkById = (state, drinkId) =>
+//   state.drinks.drinks.find((drink) => drink._id === drinkId);
+
 export const selectIsLoading = createSelector(
   [selectIsLoadingData],
   (isLoading) => isLoading
@@ -43,5 +51,3 @@ export const selectPopularDrinks = createSelector(
   (popularDrinks) => popularDrinks.slice(0, 4)
 );
 
-export const selectDrinkById = (drinkId) => (state) =>
-  state.drinks.drinks.find((drink) => drink._id === drinkId);
