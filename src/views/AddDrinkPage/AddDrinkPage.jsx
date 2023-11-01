@@ -1,5 +1,5 @@
 import PageTitle from 'components/PageTitle/PageTitle';
-import { AddDrinkContainer } from './AddDrinkPage.styled';
+
 import { MainContainer } from 'styles/App.styled';
 
 import { useEffect } from 'react';
