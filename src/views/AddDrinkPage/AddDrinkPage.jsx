@@ -14,18 +14,18 @@ export default function AddDrinkPage() {
   useEffect(() => {}, []);
   return (
     <MainContainer>
-      <AddDrinkContainer>
-        <PageTitle title="Add drink" />
+      {/* <AddDrinkContainer> */}
+      <PageTitle title="Add drink" />
 
-        <AddDrinkForm />
-        <div>
-          <FollowUs />
-        </div>
-        <div>
-          <h4>Popular drinks</h4>
-          <div>Компонент Популярні напої</div>
-        </div>
-      </AddDrinkContainer>
+      <AddDrinkForm />
+      <div>
+        <FollowUs />
+      </div>
+      <div>
+        <h4>Popular drinks</h4>
+        <div>Компонент Популярні напої</div>
+      </div>
+      {/* </AddDrinkContainer> */}
     </MainContainer>
   );
 }

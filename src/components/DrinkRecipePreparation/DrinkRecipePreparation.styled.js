@@ -12,4 +12,13 @@ const AddFormTextarea = styled.textarea`
     line-height: calc(14px / 18px);
   }
 `;
-export { AddFormTextarea };
+
+const RecipeWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+`;
+export { AddFormTextarea, RecipeWrapper };
