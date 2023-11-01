@@ -1,6 +1,7 @@
 import {
   CloseIconReactSvg,
   DrinkIngredientsWrapper,
+  IngredientInputsWrapper,
   IngredientWrapper,
   TitleWrapper,
 } from './DrinkIngredientsFields.styled';
@@ -17,45 +18,48 @@ export default function DrinkIngridientsFields() {
         <QuantitySwitch />
       </TitleWrapper>
       <IngredientWrapper>
-        <AddFormSelect
-          placeholder="Ingredient"
-          getOptionLabel={ingredient => ingredient.title}
-          getOptionValue={ingredient => ingredient.title}
-          // options={ingredients}
-          styles={{
-            control: base => ({
-              base,
-              backgroundColor: 'transparent',
-              boxShadow: 'none',
-              border: '1px solid var(--white-fifty-color)',
-              borderRadius: '200px',
-              width: '200px',
+        <IngredientInputsWrapper>
+          <AddFormSelect
+            placeholder="Ingredient"
+            getOptionLabel={ingredient => ingredient.title}
+            getOptionValue={ingredient => ingredient.title}
+            // options={ingredients}
+            styles={{
+              control: base => ({
+                base,
+                backgroundColor: 'transparent',
+                boxShadow: 'none',
+                border: '1px solid var(--white-fifty-color)',
+                borderRadius: '200px',
+
+                height: '50px',
+                '&:hover': {
+                  border: '1px solid var(--white-color)',
+                },
+              }),
+              option: (provided, state) => ({
+                ...provided,
+
+                backgroundColor: 'none',
+                '&:hover': {
+                  color: 'var(--white-fifty-color)',
+                },
+              }),
+            }}
+          />
+
+          <input
+            type="text"
+            style={{
+              width: '101px',
               height: '50px',
-              '&:hover': {
-                border: '1px solid var(--white-color)',
-              },
-            }),
-            option: (provided, state) => ({
-              ...provided,
+              borderRadius: '200px',
+              border: '1px solid var(--white-fifty-color)',
+              backgroundColor: 'transparent',
+            }}
+          />
+        </IngredientInputsWrapper>
 
-              backgroundColor: 'none',
-              '&:hover': {
-                color: 'var(--white-fifty-color)',
-              },
-            }),
-          }}
-        />
-
-        <input
-          type="text"
-          style={{
-            width: '101px',
-            height: '50px',
-            borderRadius: '200px',
-            border: '1px solid var(--white-fifty-color)',
-            backgroundColor: 'transparent',
-          }}
-        />
         <CloseIconReactSvg src={closeIcon} />
       </IngredientWrapper>
     </DrinkIngredientsWrapper>
