@@ -23,7 +23,6 @@ const initialState = {
   total: 0,
 };
 
-
 const drinksSlice = createSlice({
   name: 'drinks',
   initialState,
@@ -40,7 +39,7 @@ const drinksSlice = createSlice({
       .addCase(getMainPageAllDrinks.rejected, handleRejected)
 
       .addCase(getDrinkById.fulfilled, (state, action) => {
-        state.byId = [action.payload];
+        state.drinks = [action.payload];
         state.isLoading = false;
         state.error = null;
       })
