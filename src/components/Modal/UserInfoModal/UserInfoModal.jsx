@@ -11,6 +11,8 @@ import {
   StyledForm,
   StyledLabel,
   CloseModalBtn,
+  Ellipse222,
+  Ellipse224,
 } from './UserInfoModal.styled';
 import AddPhoto from '../../../assets/images/userInfoModal/addPhoto.svg';
 import UserAvatar from '../../../assets/images/userInfoModal/userAvatar.svg';
@@ -26,6 +28,8 @@ export default function UserInfoModal({ onBackdropClose }) {
 
   return (
     <ModalInfoContainer>
+      <Ellipse222 />
+      <Ellipse224 />
       <ImageWrapper>
         <LabelAddFile>
           <InputAddFile type="file" onChange={handleChange} />

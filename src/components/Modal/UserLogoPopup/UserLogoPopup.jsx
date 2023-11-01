@@ -5,10 +5,13 @@ import {
   ModalContainer,
   IconEdit,
 } from './UserLogoPopup.styled';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ModalPortal from '../ModalPortal/ModalPortal';
 
-export default function UserLogoPopup({ onCloseUserLogoModal }) {
+export default function UserLogoPopup({
+  onCloseUserLogoModal,
+  onBackdropClose,
+}) {
   const [isModalUserInfoOpen, setIsModalUserInfoOpen] = useState(false);
   const [, setShowModal] = useState(false);
 
@@ -22,9 +25,21 @@ export default function UserLogoPopup({ onCloseUserLogoModal }) {
 
   const onBackdrop = () => {
     setIsModalUserInfoOpen(false);
-    // onCloseUserLogoModal();
+     onCloseUserLogoModal();
     console.log('where are you?');
+
   };
+
+  useEffect(e => {
+    const handleEsc = event => {
+      if (event.key === 'Escape') {
+        onBackdrop();
+      }
+    };
+    document.addEventListener('keydown', handleEsc);
+    return () => document.removeEventListener('keydown', handleEsc);
+  });
+
   return (
     <>
       <ModalContainer>
@@ -33,7 +48,6 @@ export default function UserLogoPopup({ onCloseUserLogoModal }) {
           <IconEdit />
         </EditProfileBtn>
         <LogoutBtn onBackdrop={onBackdrop} />
-        {/* <button onClick={() => onBackdropClose}>Close Modal</button> */}
       </ModalContainer>
 
       <ModalPortal

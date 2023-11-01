@@ -3,7 +3,7 @@ import UserLogoPopup from '../UserLogoPopup/UserLogoPopup';
 import UserInfoModal from '../UserInfoModal/UserInfoModal';
 
 export default function ModalPortal({
-  showModal,
+  isShowUserLogoModal,
   onBackdrop,
   isModalUserInfoOpen,
   openUserInfoModal,
@@ -12,15 +12,17 @@ export default function ModalPortal({
   //   const [, setIsModalUserInfoOpen] = useState(false);
 
   const onBackdropClose = () => {
-    // setShowModal(false);
-    // setIsModalUserInfoOpen(false);
+    console.log("onBackdropClose-portal");
+    //  setShowModal(false);
+    //  setIsModalUserInfoOpen(false);
     onBackdrop();
   };
   return (
     <>
-      {showModal && (
+      {isShowUserLogoModal && (
         <Modal
           onBackdropClose={onBackdropClose}
+       
           children={
             <UserLogoPopup
               onBackdropClose={onBackdropClose}
@@ -29,7 +31,7 @@ export default function ModalPortal({
           }
         />
       )}
-      {isModalUserInfoOpen && !showModal && (
+      {isModalUserInfoOpen && !isShowUserLogoModal && (
         <Modal
           onBackdropClose={onBackdropClose}
           children={
