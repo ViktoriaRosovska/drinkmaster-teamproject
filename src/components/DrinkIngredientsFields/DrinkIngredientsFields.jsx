@@ -10,12 +10,21 @@ import closeIcon from '../../assets/images/addDrink/X.svg';
 import { AddFormSelect } from 'components/DrinkDescriptionFields/DrinkDescriptionFields.styled';
 import Subtitle from 'components/Typography/Subtitle/Subtitle';
 import QuantitySwitch from './QuantitySwitch/QuantitySwitch';
+import { useState } from 'react';
+// import { useState } from 'react';
 export default function DrinkIngridientsFields() {
+  const [totalValue, setTotalValue] = useState(1);
+
+  const getTotalValue = quantity => {
+    setTotalValue(quantity);
+    console.log(totalValue);
+    return totalValue;
+  };
   return (
     <DrinkIngredientsWrapper>
       <TitleWrapper>
         <Subtitle title="Ingredients" />
-        <QuantitySwitch />
+        <QuantitySwitch getTotalValue={getTotalValue} />
       </TitleWrapper>
       <IngredientWrapper>
         <IngredientInputsWrapper>
