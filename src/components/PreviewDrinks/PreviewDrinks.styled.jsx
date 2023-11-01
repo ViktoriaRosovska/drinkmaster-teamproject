@@ -56,7 +56,7 @@ export const CategoryDrinksIMG = styled.img`
   border-radius: 8px;
   object-fit: ${({ placeholder }) =>
     placeholder === 'true' ? 'contain' : 'cover'};
-  background-color: #161f37;
+  background-color: var(--dark-blue-color);
   padding: ${({ placeholder }) => (placeholder === 'true' ? '28px' : 0)};
 
   @media screen and (min-width: 1440px) {
@@ -81,7 +81,7 @@ export const CategoryDrinksLink = styled(NavLink)`
   line-height: 18px;
   white-space: nowrap;
 
-  color: #0a0a1180;
+  color: var(--white-fifty-color);
   transition: color ${transition};
 
   &:hover,
