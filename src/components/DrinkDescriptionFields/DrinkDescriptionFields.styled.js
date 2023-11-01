@@ -2,6 +2,17 @@ import { ReactSVG } from 'react-svg';
 import styled from 'styled-components';
 import Select from 'react-select';
 
+const DescriptionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    width: 100%;
+  }
+`;
+
 const AddPhotoContainer = styled.div`
   position: relative;
   display: flex;
@@ -66,7 +77,14 @@ const SelectContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 31px;
-  margin-bottom: 81px;
+  /* margin-bottom: 81px; */
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    width: 352px;
+  }
+  @media screen and (min-width: 1438.98px) {
+    width: 393px;
+  }
 `;
 
 const AddFormSelect = styled(Select)`
@@ -89,6 +107,7 @@ const AddFormInput = styled.input`
   line-height: 14px;
   letter-spacing: 0em;
   border: none;
+  width: 100%;
   border-radius: 0;
   border-bottom: 1px solid var(--white-fifty-color);
 
@@ -96,7 +115,6 @@ const AddFormInput = styled.input`
   background-color: transparent;
   position: relative;
 
-  width: 335px;
   height: 34px;
   outline: none;
   &:hover {
@@ -150,6 +168,7 @@ const AddFormSelectContainer = styled.div`
   position: relative;
 `;
 export {
+  DescriptionWrapper,
   InputAddFile,
   InputFileWrapper,
   FileImage,
