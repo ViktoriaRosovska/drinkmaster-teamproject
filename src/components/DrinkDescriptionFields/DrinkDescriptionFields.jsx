@@ -1,39 +1,54 @@
 import {
-  AddBtn,
-  AddBtnText,
   AddFormInput,
   AddFormRadioGroup,
+  AddFormSelect,
+  AddFormSelectContainer,
+  AddFormSelectLabel,
   AddPhotoContainer,
+  FileImage,
+  InputAddFile,
+  InputFileWrapper,
   InputRadio,
+  InputText,
   ReactSVGIcon,
   SelectContainer,
 } from './DrinkDescriptionFields.styled';
 import IconPlus from '../../assets/images/addDrink/plus.svg';
-// import chevronDown from '../../../assets/images/addDrink/chevron-down.svg';
-// import glasses from '../../../helpers/Data/glasses';
+import { useState } from 'react';
+// import chevronDown from '../../assets/images/addDrink/chevron-down.svg';
+import glasses from '../../helpers/Data/glasses';
+import ingredients from '../../helpers/Data/ingredients.json';
 // import { useState } from 'react';
 export const DrinkDescriptionFields = () => {
+  const [file, setFile] = useState();
   // const [value, setValue] = useState('Alcogolic');
+
+  const handleChange = e => {
+    setFile(URL.createObjectURL(e.target.files[0]));
+  };
 
   return (
     <>
       <AddPhotoContainer>
-        <AddBtn>
-          <ReactSVGIcon src={IconPlus} />
-        </AddBtn>
-        <AddBtnText>Add image</AddBtnText>
+        {file && <FileImage src={file ? file : null} alt="Add drink" />}
+        <InputFileWrapper>
+          <label>
+            <InputAddFile type="file" onChange={handleChange} />
+            <ReactSVGIcon src={IconPlus} />
+          </label>
+        </InputFileWrapper>
+        <InputText>Add drink</InputText>
       </AddPhotoContainer>
+
       <SelectContainer>
         <AddFormInput
           type="text"
-          data-limit="50"
+          data-limit="40"
           placeholder="Enter item title"
         />
         <AddFormInput type="text" placeholder="Enter about recipe" />
-        {/* <AddFormSelectContainer>
-          <AddFormSelectLabel>
-            Category <ChevronReactSvg src={chevronDown} />
-          </AddFormSelectLabel>
+        <AddFormSelectContainer>
+          <AddFormSelectLabel>Category</AddFormSelectLabel>
           <AddFormSelect
             placeholder=""
             getOptionLabel={ingredient => ingredient.title}
@@ -62,9 +77,7 @@ export const DrinkDescriptionFields = () => {
         </AddFormSelectContainer>
 
         <AddFormSelectContainer>
-          <AddFormSelectLabel>
-            Glass <ChevronReactSvg src={chevronDown} />
-          </AddFormSelectLabel>
+          <AddFormSelectLabel>Glass</AddFormSelectLabel>
           <AddFormSelect
             className="react-select"
             classNamePrefix="react-select"
@@ -93,7 +106,7 @@ export const DrinkDescriptionFields = () => {
               }),
             }}
           />
-        </AddFormSelectContainer> */}
+        </AddFormSelectContainer>
         <AddFormRadioGroup>
           <InputRadio
             type="radio"
