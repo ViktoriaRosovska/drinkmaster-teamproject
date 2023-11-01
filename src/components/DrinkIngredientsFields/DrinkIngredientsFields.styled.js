@@ -11,11 +11,31 @@ const CloseIconReactSvg = styled(ReactSVG)`
   }
 `;
 
-const IngredientsWrapper = styled.div`
+const DrinkIngredientsWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   gap: 8px;
   align-content: center;
+  margin-bottom: 80px;
 `;
-export { CloseIconReactSvg, IngredientsWrapper };
+const IngredientWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+`;
+const TitleWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+`;
+export {
+  CloseIconReactSvg,
+  DrinkIngredientsWrapper,
+  IngredientWrapper,
+  TitleWrapper,
+};

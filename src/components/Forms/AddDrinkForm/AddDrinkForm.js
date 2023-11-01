@@ -1,7 +1,5 @@
-import minuIcon from '../../../assets/images/addDrink/MinusForm.svg';
-import plusIcon from '../../../assets/images/addDrink/PlusForm.svg';
-
 import {
+  FormContainer,
   QuantityBtn,
   QuantityBtnMirror,
   QuantityContainer,
@@ -24,7 +22,6 @@ import DrinkIngridientsFields from 'components/DrinkIngredientsFields/DrinkIngre
 // import { ReactSVG } from 'react-svg';
 
 export default function AddDrinkForm() {
-  const [quantityValue, setQuantityValue] = useState(1);
   // const changeValue = e => {
   // setValue(e.currentTarget.value);
 
@@ -34,44 +31,14 @@ export default function AddDrinkForm() {
     console.log(e.currentTarget.elements.typeDrink.value);
   };
 
-  const onMinusQuantityHandler = () => {
-    if (quantityValue > 1) {
-      setQuantityValue(quantityValue - 1);
-    } else {
-      setQuantityValue(1);
-    }
-  };
-  const onPlusQuantityHandler = () => {
-    if (quantityValue < 20) {
-      setQuantityValue(quantityValue + 1);
-    } else {
-      setQuantityValue(quantityValue);
-    }
-  };
-
   return (
     <>
-      <form onSubmit={onFormSubmit} style={{ marginBottom: '80px' }}>
+      <FormContainer onSubmit={onFormSubmit} style={{ marginBottom: '80px' }}>
         <DrinkDescriptionFields />
-
-        <>
-          <QuantityContainer>
-            <Subtitle title="Ingredients" />
-            <QuantityIngredients>
-              <QuantityBtn onClick={onMinusQuantityHandler}>
-                <QuantityIconReactSvg src={minuIcon} />
-              </QuantityBtn>
-              <QuantityText>{quantityValue}</QuantityText>
-              <QuantityBtnMirror onClick={onPlusQuantityHandler}>
-                <QuantityIconReactSvg src={plusIcon} />
-              </QuantityBtnMirror>
-            </QuantityIngredients>
-          </QuantityContainer>
-        </>
         <DrinkIngridientsFields />
         <DrinkRecipePreparation />
         <WhiteLinkBtn type="submit" title="Add" />
-      </form>
+      </FormContainer>
     </>
   );
 }
