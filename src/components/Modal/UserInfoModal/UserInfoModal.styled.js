@@ -12,6 +12,7 @@ const ModalInfoContainer = styled.div`
   border-radius: 16px;
   background-color: #161f37;
   color: #f3f3f3;
+  overflow: hidden;
   transform: translate(-50%, -50%);
   @media screen and (min-width: 768px) {
     width: 500px;
@@ -29,6 +30,7 @@ const ImageWrapper = styled.div`
   @media screen and (min-width: 768px) {
     width: 100px;
     height: 100px;
+    margin: 0 auto 66px auto;
   }
 `;
 
@@ -76,6 +78,7 @@ const ReactSVGIcon = styled(ReactSVG)`
 `;
 
 const StyledForm = styled.form`
+  box-sizing: border-box;
   background-color: transparent;
 `;
 
@@ -88,6 +91,7 @@ const StyledInput = styled.input`
   width: 100%;
   height: 54px;
   padding: 18px 24px;
+  margin: 0 auto;
   margin-bottom: 18px;
   font-family: Manrope;
   font-size: 14px;
@@ -97,8 +101,11 @@ const StyledInput = styled.input`
   border: 1px solid #f3f3f333;
   background-color: transparent;
   color: #f3f3f3;
+
   @media screen and (min-width: 768px) {
+    height: 56px;
     margin-bottom: 25px;
+    padding: 14px 24px 15px 24px;
     font-size: 17px;
   }
 `;
@@ -159,6 +166,27 @@ const CloseModalBtn = styled.button`
     width: 32px;
     height: 32px;
   }
+`;
+
+export const Ellipse224 = styled.div`
+  position: absolute;
+  width: 362px;
+  height: 358px;
+  left: 367px;
+  top: 258px;
+  background: rgba(64, 112, 205, 0.5);
+  filter: blur(104.854px);
+  z-index: 2;
+`;
+
+export const Ellipse222 = styled.div`
+  position: absolute;
+  width: 284px;
+  height: 307px;
+  left: -84px;
+  top: -153px;
+  background: rgba(188, 230, 210, 0.4);
+  filter: blur(104.854px);
 `;
 
 export {
