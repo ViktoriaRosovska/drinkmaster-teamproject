@@ -123,6 +123,7 @@ function SignupForm() {
               <InputWrapper>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <BirthDate
+                    name="birthDate"
                     value={moment(values.birthDate, 'DD MMM YYYY')}
                     onChange={value => {
                       values.birthDate = value
@@ -138,6 +139,9 @@ function SignupForm() {
                   />
                   <ErrorMessage name="birthDate" />
                 </LocalizationProvider>
+                {errors.birthDate && touched.birthDate ? (
+                  <ErrorText error>{errors.birthDate}</ErrorText>
+                ) : null}
               </InputWrapper>
 
               <InputWrapper>
