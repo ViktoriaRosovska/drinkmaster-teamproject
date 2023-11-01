@@ -4,6 +4,7 @@ import Stack from '@mui/material/Stack';
 import { StyledPagination, stackStyles } from './Paginator.styled';
 import { PaginationItem } from '@mui/material';
 import { Link } from 'react-router-dom';
+
 // import { createTheme, ThemeProvider } from '@mui/styles';
 
 // import prev from '../../assets/images/paginator/prev.svg';
@@ -20,7 +21,6 @@ const Paginator = ({ totalPages, onPageChange, currentPage }) => {
         onChange={(_, pageNum) => onPageChange(pageNum)}
         renderItem={
           (item) => {
-            console.log(item.page)
             return <PaginationItem
               component={Link}
               to={`/favorites?page=${item.page}`}

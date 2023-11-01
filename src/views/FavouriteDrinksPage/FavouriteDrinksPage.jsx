@@ -13,7 +13,6 @@ export default function FavoriteDrinksPage() {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  // const pagesToShow = 8;
   const drinksPerPage = 9;
 
   const onPageChange = pageNum => {
@@ -24,7 +23,7 @@ export default function FavoriteDrinksPage() {
   // const totalPages = 8;
 
   useEffect(() => {
-    dispatch(getFavoriteAll({ page: currentPage, limit: drinksPerPage }));
+    dispatch(getFavoriteAll({ page: currentPage, limit: drinksPerPage })).unwrap().catch(error => console.log(error));
   }, [dispatch, currentPage, drinksPerPage]);
 
   return (
