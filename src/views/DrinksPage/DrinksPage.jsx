@@ -2,21 +2,25 @@ import PageTitle from 'components/PageTitle/PageTitle';
 import DrinksSearch from 'components/DrinksSearch/DrinksSearch';
 import { MainContainer } from 'styles/App.styled';
 import { Drinks } from 'components/Drinks/Drinks';
-import { useState } from 'react';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+// import { useDrink } from 'hooks/useDrink';
+import { getMainPageAllDrinks } from 'redux/drinks/drinksOperations';
 
 export default function DrinksPage() {
-  const [filterValue, setFilterValue] = useState('');
+  const dispatch = useDispatch();
 
-  const updateData = value => {
-    setFilterValue(value);
-    console.log(filterValue);
-  };
+  // const { error } = useDrink();
+
+  useEffect(() => {
+    dispatch(getMainPageAllDrinks());
+  }, [dispatch]);
 
   return (
     <MainContainer>
       <PageTitle title="Drinks" />
-      <DrinksSearch updateData={updateData} />
-      <Drinks filter={filterValue} />
+      <DrinksSearch />
+      <Drinks />
     </MainContainer>
   );
 }
