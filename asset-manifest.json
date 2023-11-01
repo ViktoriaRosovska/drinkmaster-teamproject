@@ -1,18 +1,19 @@
 {
   "files": {
     "main.css": "/drinkmaster-teamproject/static/css/main.17221a4d.css",
-    "main.js": "/drinkmaster-teamproject/static/js/main.2e9e50a0.js",
-    "static/js/239.bf08ae05.chunk.js": "/drinkmaster-teamproject/static/js/239.bf08ae05.chunk.js",
+    "main.js": "/drinkmaster-teamproject/static/js/main.803b40ef.js",
+    "static/js/442.f28adc70.chunk.js": "/drinkmaster-teamproject/static/js/442.f28adc70.chunk.js",
     "static/js/342.40718faf.chunk.js": "/drinkmaster-teamproject/static/js/342.40718faf.chunk.js",
     "static/js/121.b234ebd1.chunk.js": "/drinkmaster-teamproject/static/js/121.b234ebd1.chunk.js",
     "static/js/19.483843c7.chunk.js": "/drinkmaster-teamproject/static/js/19.483843c7.chunk.js",
     "static/js/261.e3705944.chunk.js": "/drinkmaster-teamproject/static/js/261.e3705944.chunk.js",
     "static/js/414.1665fc37.chunk.js": "/drinkmaster-teamproject/static/js/414.1665fc37.chunk.js",
-    "static/js/451.03a8428b.chunk.js": "/drinkmaster-teamproject/static/js/451.03a8428b.chunk.js",
+    "static/js/415.98b33b6c.chunk.js": "/drinkmaster-teamproject/static/js/415.98b33b6c.chunk.js",
     "static/js/374.98b1d5ce.chunk.js": "/drinkmaster-teamproject/static/js/374.98b1d5ce.chunk.js",
     "static/js/922.b668952e.chunk.js": "/drinkmaster-teamproject/static/js/922.b668952e.chunk.js",
     "static/js/866.f9c028a3.chunk.js": "/drinkmaster-teamproject/static/js/866.f9c028a3.chunk.js",
     "static/js/951.3e220520.chunk.js": "/drinkmaster-teamproject/static/js/951.3e220520.chunk.js",
+    "static/js/546.2257befc.chunk.js": "/drinkmaster-teamproject/static/js/546.2257befc.chunk.js",
     "static/js/201.f6f812e9.chunk.js": "/drinkmaster-teamproject/static/js/201.f6f812e9.chunk.js",
     "static/media/hero-desc@2x.png": "/drinkmaster-teamproject/static/media/hero-desc@2x.db60f489f3cec4e24ae6.png",
     "static/media/hero-tab@2x.png": "/drinkmaster-teamproject/static/media/hero-tab@2x.db60f489f3cec4e24ae6.png",
@@ -71,22 +72,23 @@
     "static/media/MinusForm.svg": "/drinkmaster-teamproject/static/media/MinusForm.7aa2513c040a6b5b61df80c9efc7b18d.svg",
     "static/media/plus.svg": "/drinkmaster-teamproject/static/media/plus.a42d76147973b79136673cbc84673ffb.svg",
     "main.17221a4d.css.map": "/drinkmaster-teamproject/static/css/main.17221a4d.css.map",
-    "main.2e9e50a0.js.map": "/drinkmaster-teamproject/static/js/main.2e9e50a0.js.map",
-    "239.bf08ae05.chunk.js.map": "/drinkmaster-teamproject/static/js/239.bf08ae05.chunk.js.map",
+    "main.803b40ef.js.map": "/drinkmaster-teamproject/static/js/main.803b40ef.js.map",
+    "442.f28adc70.chunk.js.map": "/drinkmaster-teamproject/static/js/442.f28adc70.chunk.js.map",
     "342.40718faf.chunk.js.map": "/drinkmaster-teamproject/static/js/342.40718faf.chunk.js.map",
     "121.b234ebd1.chunk.js.map": "/drinkmaster-teamproject/static/js/121.b234ebd1.chunk.js.map",
     "19.483843c7.chunk.js.map": "/drinkmaster-teamproject/static/js/19.483843c7.chunk.js.map",
     "261.e3705944.chunk.js.map": "/drinkmaster-teamproject/static/js/261.e3705944.chunk.js.map",
     "414.1665fc37.chunk.js.map": "/drinkmaster-teamproject/static/js/414.1665fc37.chunk.js.map",
-    "451.03a8428b.chunk.js.map": "/drinkmaster-teamproject/static/js/451.03a8428b.chunk.js.map",
+    "415.98b33b6c.chunk.js.map": "/drinkmaster-teamproject/static/js/415.98b33b6c.chunk.js.map",
     "374.98b1d5ce.chunk.js.map": "/drinkmaster-teamproject/static/js/374.98b1d5ce.chunk.js.map",
     "922.b668952e.chunk.js.map": "/drinkmaster-teamproject/static/js/922.b668952e.chunk.js.map",
     "866.f9c028a3.chunk.js.map": "/drinkmaster-teamproject/static/js/866.f9c028a3.chunk.js.map",
     "951.3e220520.chunk.js.map": "/drinkmaster-teamproject/static/js/951.3e220520.chunk.js.map",
+    "546.2257befc.chunk.js.map": "/drinkmaster-teamproject/static/js/546.2257befc.chunk.js.map",
     "201.f6f812e9.chunk.js.map": "/drinkmaster-teamproject/static/js/201.f6f812e9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.17221a4d.css",
-    "static/js/main.2e9e50a0.js"
+    "static/js/main.803b40ef.js"
   ]
 }
