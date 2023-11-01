@@ -1,9 +1,9 @@
 import { Logout } from './LogautBtn.styled';
 
-export default function LogoutBtn({ onBackdropClose }) {
+export default function LogoutBtn({ onBackdrop }) {
   const onLogoutHandler = () => {
-    // Logout user .....
-    onBackdropClose();
+    console.log('Hello');
+    onBackdrop();
   };
   return (
     <Logout type="button" onClick={onLogoutHandler}>
