@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { DebounceInput } from 'react-debounce-input';
 
-export const Filter = styled.input`
+export const Filter = styled(DebounceInput)`
   width: auto;
   height: 56px;
   background-color: transparent;

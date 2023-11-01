@@ -1,13 +1,16 @@
 import Selection from './Select';
-import { useState } from 'react';
 import { Filter, Wrapper } from './DrinksSearch.styled';
 
-const DrinksSearch = ({ updateData }) => {
-  const [filter, setFilter] = useState('');
-  const handleChange = e => {
-    const { value } = e.currentTarget;
-    setFilter(value);
-    updateData(value);
+import { useDispatch, useSelector } from 'react-redux';
+import { filterSelector } from '../../redux/filter/filterSelector';
+import { setFilter } from '../../redux/filter/filterSlice';
+
+const DrinksSearch = () => {
+  const dispatch = useDispatch();
+  const filter = useSelector(filterSelector);
+
+  const changeFilter = event => {
+    dispatch(setFilter(event.target.value));
   };
 
   const categories = [
@@ -65,7 +68,8 @@ const DrinksSearch = ({ updateData }) => {
         type="text"
         placeholder="Enter the text"
         value={filter}
-        onChange={handleChange}
+        onChange={changeFilter}
+        debounceTimeout={1000}
       />
       <Selection placeholder="All categories" options={categories} />
       <Selection placeholder="Ingredients" options={ingredients} />
