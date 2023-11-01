@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/drinkmaster-teamproject/static/css/main.17221a4d.css",
-    "main.js": "/drinkmaster-teamproject/static/js/main.264d8be2.js",
+    "main.js": "/drinkmaster-teamproject/static/js/main.a92e4e3f.js",
     "static/js/359.eab9a493.chunk.js": "/drinkmaster-teamproject/static/js/359.eab9a493.chunk.js",
     "static/js/342.40718faf.chunk.js": "/drinkmaster-teamproject/static/js/342.40718faf.chunk.js",
-    "static/js/379.5865ec65.chunk.js": "/drinkmaster-teamproject/static/js/379.5865ec65.chunk.js",
+    "static/js/79.0e3f3d19.chunk.js": "/drinkmaster-teamproject/static/js/79.0e3f3d19.chunk.js",
     "static/js/962.e76126a7.chunk.js": "/drinkmaster-teamproject/static/js/962.e76126a7.chunk.js",
     "static/js/261.477931e5.chunk.js": "/drinkmaster-teamproject/static/js/261.477931e5.chunk.js",
-    "static/js/577.b1d1e8cf.chunk.js": "/drinkmaster-teamproject/static/js/577.b1d1e8cf.chunk.js",
+    "static/js/414.1665fc37.chunk.js": "/drinkmaster-teamproject/static/js/414.1665fc37.chunk.js",
     "static/js/451.03a8428b.chunk.js": "/drinkmaster-teamproject/static/js/451.03a8428b.chunk.js",
     "static/js/374.e81d91c4.chunk.js": "/drinkmaster-teamproject/static/js/374.e81d91c4.chunk.js",
     "static/js/922.0a2c7da3.chunk.js": "/drinkmaster-teamproject/static/js/922.0a2c7da3.chunk.js",
@@ -66,14 +66,17 @@
     "static/media/logo_icon.svg": "/drinkmaster-teamproject/static/media/logo_icon.7162b53d441c064b930061976ec09e61.svg",
     "static/media/addPhoto.svg": "/drinkmaster-teamproject/static/media/addPhoto.190518d2a01cca36f082a59cdc48b4c9.svg",
     "static/media/error.svg": "/drinkmaster-teamproject/static/media/error.b418bd98674843d8d48f4d36abf20d94.svg",
+    "static/media/PlusForm.svg": "/drinkmaster-teamproject/static/media/PlusForm.1e3c964c62a55c7133ae6cae68a3f12b.svg",
+    "static/media/MinusForm.svg": "/drinkmaster-teamproject/static/media/MinusForm.7aa2513c040a6b5b61df80c9efc7b18d.svg",
+    "static/media/plus.svg": "/drinkmaster-teamproject/static/media/plus.a42d76147973b79136673cbc84673ffb.svg",
     "main.17221a4d.css.map": "/drinkmaster-teamproject/static/css/main.17221a4d.css.map",
-    "main.264d8be2.js.map": "/drinkmaster-teamproject/static/js/main.264d8be2.js.map",
+    "main.a92e4e3f.js.map": "/drinkmaster-teamproject/static/js/main.a92e4e3f.js.map",
     "359.eab9a493.chunk.js.map": "/drinkmaster-teamproject/static/js/359.eab9a493.chunk.js.map",
     "342.40718faf.chunk.js.map": "/drinkmaster-teamproject/static/js/342.40718faf.chunk.js.map",
-    "379.5865ec65.chunk.js.map": "/drinkmaster-teamproject/static/js/379.5865ec65.chunk.js.map",
+    "79.0e3f3d19.chunk.js.map": "/drinkmaster-teamproject/static/js/79.0e3f3d19.chunk.js.map",
     "962.e76126a7.chunk.js.map": "/drinkmaster-teamproject/static/js/962.e76126a7.chunk.js.map",
     "261.477931e5.chunk.js.map": "/drinkmaster-teamproject/static/js/261.477931e5.chunk.js.map",
-    "577.b1d1e8cf.chunk.js.map": "/drinkmaster-teamproject/static/js/577.b1d1e8cf.chunk.js.map",
+    "414.1665fc37.chunk.js.map": "/drinkmaster-teamproject/static/js/414.1665fc37.chunk.js.map",
     "451.03a8428b.chunk.js.map": "/drinkmaster-teamproject/static/js/451.03a8428b.chunk.js.map",
     "374.e81d91c4.chunk.js.map": "/drinkmaster-teamproject/static/js/374.e81d91c4.chunk.js.map",
     "922.0a2c7da3.chunk.js.map": "/drinkmaster-teamproject/static/js/922.0a2c7da3.chunk.js.map",
@@ -82,6 +85,6 @@
   },
   "entrypoints": [
     "static/css/main.17221a4d.css",
-    "static/js/main.264d8be2.js"
+    "static/js/main.a92e4e3f.js"
   ]
 }
