@@ -1,20 +1,10 @@
-import {
-  FormContainer,
-  QuantityBtn,
-  QuantityBtnMirror,
-  QuantityContainer,
-  QuantityIconReactSvg,
-  QuantityIngredients,
-  QuantityText,
-} from './AddDrinkForm.styled';
+import { FormContainer } from './AddDrinkForm.styled';
 import WhiteLinkBtn from '../../Buttons/WhiteLinkBtn/WhiteLinkBtn';
 
 // import ingredients from '../../../helpers/Data/ingredients.json';
 
 import { DrinkDescriptionFields } from '../../DrinkDescriptionFields/DrinkDescriptionFields';
-import { useState } from 'react';
 
-import Subtitle from 'components/Typography/Subtitle/Subtitle';
 import DrinkRecipePreparation from 'components/DrinkRecipePreparation/DrinkRecipePreparation';
 import DrinkIngridientsFields from 'components/DrinkIngredientsFields/DrinkIngredientsFields';
 
