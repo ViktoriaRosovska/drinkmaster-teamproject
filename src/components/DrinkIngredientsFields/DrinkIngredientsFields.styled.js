@@ -27,7 +27,6 @@ const IngredientWrapper = styled.div`
   width: 100%;
 
   @media screen and (min-width: 768px) {
-    width: 100%;
     gap: 188px;
   }
 `;
@@ -36,6 +35,10 @@ const TitleWrapper = styled.div`
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
+  width: 335px;
+  @media screen and (min-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const IngredientInputsWrapper = styled.div`
