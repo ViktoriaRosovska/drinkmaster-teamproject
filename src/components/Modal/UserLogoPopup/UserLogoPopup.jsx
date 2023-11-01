@@ -3,18 +3,17 @@ import LogoutBtn from 'components/Buttons/LogoutBtn/LogoutBtn';
 import {
   EditProfileBtn,
   ModalContainer,
-  // LogoutBtn,
   IconEdit,
 } from './UserLogoPopup.styled';
 import { useState } from 'react';
 import ModalPortal from '../ModalPortal/ModalPortal';
 
-export default function UserLogoPopup({ onBackdropClose, showModal }) {
+export default function UserLogoPopup({ onCloseUserLogoModal }) {
   const [isModalUserInfoOpen, setIsModalUserInfoOpen] = useState(false);
   const [, setShowModal] = useState(false);
 
   // const dispatch = useDispatch();
-// const handleLogOut = () => dispatch(signOut());
+  // const handleLogOut = () => dispatch(signOut());
 
   const openUserInfoModal = () => {
     setShowModal(false);
@@ -23,6 +22,8 @@ export default function UserLogoPopup({ onBackdropClose, showModal }) {
 
   const onBackdrop = () => {
     setIsModalUserInfoOpen(false);
+    // onCloseUserLogoModal();
+    console.log('where are you?');
   };
   return (
     <>
@@ -31,12 +32,11 @@ export default function UserLogoPopup({ onBackdropClose, showModal }) {
           Edit profile
           <IconEdit />
         </EditProfileBtn>
-        <LogoutBtn onBackdropClose={onBackdropClose} />
+        <LogoutBtn onBackdrop={onBackdrop} />
         {/* <button onClick={() => onBackdropClose}>Close Modal</button> */}
       </ModalContainer>
 
       <ModalPortal
-        showModal={showModal}
         isModalUserInfoOpen={isModalUserInfoOpen}
         onBackdrop={onBackdrop}
         openUserInfoModal={openUserInfoModal}
