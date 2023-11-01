@@ -9,10 +9,17 @@ import { StyledPagination, stackStyles } from './Paginator.styled';
 // import { ReactSVG } from 'react-svg';
 // import { Button, PagContainer, NumberButton, NumberContainer } from './Paginator.styled';
 
-const Paginator = ({totalPages}) => {
+const Paginator = ({totalPages, onPageChange, currentPage}) => {
   return (
     <Stack spacing={2} sx={stackStyles}>
-      <StyledPagination count={totalPages} />
+      <StyledPagination
+        count={totalPages}
+        page={currentPage}
+        onChange={(_, pageNum) => {
+          onPageChange(pageNum)
+          return console.log(pageNum);
+        }}
+      />
     </Stack>
   );
 };

@@ -14,13 +14,14 @@ export default function FavoriteDrinksPage() {
   const [currentPage, setCurrentPage] = useState(1);
 
   // const pagesToShow = 8;
-  const drinksPerPage = 8;
+  const drinksPerPage = 9;
 
   const onPageChange = pageNum => {
     setCurrentPage(pageNum);
   };
 
   const totalPages = Math.ceil(total / drinksPerPage);
+  // const totalPages = 8;
 
   useEffect(() => {
     dispatch(getFavoriteAll({ page: currentPage, limit: drinksPerPage }));
@@ -32,6 +33,7 @@ export default function FavoriteDrinksPage() {
       <DrinkList drinks={favoriteDrinks} />
       {totalPages > 1 && (
         <Paginator
+          currentPage={currentPage}
           totalPages={totalPages}
           onPageChange={onPageChange}
         />
