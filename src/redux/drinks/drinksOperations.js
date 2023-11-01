@@ -83,7 +83,7 @@ export const removeDrink = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const response = await axios.delete(
-        `/api/drinks/favorite/remove/${id}`,
+        `drinks/favorite/remove/${id}`,
       );
       return response.data;
     } catch (error) {
@@ -109,7 +109,7 @@ export const getOwnDrinks = createAsyncThunk(
   async ({ page, limit }, thunkAPI) => {
     try {
       const response = await axios.get(
-        `/api/drinks/own/all?page=${page}&limit=${limit}`,
+        `drinks/own/all?page=${page}&limit=${limit}`,
       );
       return response.data;
     } catch (error) {
@@ -135,7 +135,7 @@ export const getFavoriteAll = createAsyncThunk(
   async ({ page, limit }, thunkAPI) => {
     try {
       const response = await axios.get(
-        `/api/drinks/favorite/all?page=${page}&limit=${limit}`,
+        `drinks/favorite?page=${page}&limit=${limit}`,
       );
       return response.data;
     } catch (error) {
