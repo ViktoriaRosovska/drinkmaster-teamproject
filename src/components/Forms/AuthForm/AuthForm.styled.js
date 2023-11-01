@@ -1,10 +1,10 @@
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { Form, Field } from 'formik';
 import styled, { css } from 'styled-components';
 import transition from '../../../utils/transition';
 import { ReactComponent as ErrorSvg } from '../../../assets/images/authComponents/error.svg';
 import { ReactComponent as CheckSvg } from '../../../assets/images/authComponents/done.svg';
 import { NavLink } from 'react-router-dom';
-// import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 export const Container = styled.div`
   display: flex;
@@ -166,40 +166,55 @@ export const Link = styled(NavLink)`
   text-align: center;
 `;
 
-// export const BirthDate = styled(DatePicker)`
-//   width: 285px;
-//   display: block;
-//   padding: 18px 24px;
-//   border: 1px solid var(--white-twenty-color);
-//   border-radius: 200px;
-//   outline: none;
-//   font-size: 14px;
-//   line-height: 1.28;
-//   color: var(--white-fifty-color);
-//   background-color: transparent;
-//   transition: border ${transition};
+export const BirthDate = styled(DatePicker)`
+  width: 335px;
+  display: block;
+  padding: 18px 24px;
+  border: 1px solid var(--white-twenty-color);
+  border-radius: 200px;
+  outline: none;
+  font-size: 14px;
+  line-height: 1.28;
+  color: var(--white-fifty-color);
+  background-color: transparent;
+  transition: border ${transition};
 
-//   &:focus,
-//   &:hover {
-//     border: 1px solid var(--white-fifty-color);
-//     color: var(--white-fifty-color);
-//   }
+  &:focus,
+  &:hover {
+    border: 1px solid var(--white-fifty-color);
+    color: var(--white-fifty-color);
+  }
 
-//   ${({ error }) =>
-//     error === 'true' &&
-//     css`
-//       border: 1px solid var(--red-error-fifty-color);
-//     `}
-//   ${({ success }) =>
-//     success === 'true' &&
-//     css`
-//       border: 1px solid var(--green-success-fifty-color);
-//     `}
+  ${({ error }) =>
+    error === 'true' &&
+    css`
+      border: 1px solid var(--red-error-fifty-color);
+    `}
+  ${({ success }) =>
+    success === 'true' &&
+    css`
+      border: 1px solid var(--green-success-fifty-color);
+    `}
 
-//   @media screen and (min-width: 768px) {
-//     width: 350px;
-//     font-size: 17px;
-//     line-height: 1.56;
-//     padding: 14px 24px;
-//   }
-// `;
+  @media screen and (min-width: 768px) {
+    width: 350px;
+    font-size: 17px;
+    line-height: 1.56;
+    padding: 14px 24px;
+  }
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root.Mui-error
+    .MuiOutlinedInput-notchedOutline {
+    border: 1px solid var(--white-twenty-color);
+  }
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+    color: var(--white-twenty-color);
+  }
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused
+    .MuiOutlinedInput-notchedOutline {
+    border: 1px solid var(--white-twenty-color);
+  }
+  .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    border: 1px solid var(--white-twenty-color);
+    border-radius: 200px;
+  }
+`;
