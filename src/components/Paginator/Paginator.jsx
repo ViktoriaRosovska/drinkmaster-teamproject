@@ -15,9 +15,9 @@ const Paginator = ({totalPages, onPageChange, currentPage}) => {
       <StyledPagination
         count={totalPages}
         page={currentPage}
-        onChange={(_, num) => {
-          onPageChange(num)
-          return console.log(num);
+        onChange={(_, pageNum) => {
+          onPageChange(pageNum)
+          return console.log(pageNum);
         }}
       />
     </Stack>
