@@ -10,7 +10,6 @@ import {
   MainWrapper,
   SectionContainer,
 } from './PreviewDrinks.styled';
-import { MainContainer } from '../../styles/App.styled';
 import { useResize } from '../../hooks/useResize';
 
 const PreviewDrinks = () => {
@@ -24,35 +23,33 @@ const PreviewDrinks = () => {
   console.log(drinksCategory);
   return (
     <>
-      <MainContainer>
-        <SectionContainer>
-          <MainWrapper>
-            {isLoading ? (
-              <Loader />
-            ) : (
-              drinksCategory.length > 0 &&
-              drinksCategory.map((category, idx) => (
-                <CategoryDrinksDiv key={idx}>
-                  <DrinkCategoryTitle>{category} </DrinkCategoryTitle>
-                  <CategoryDrinksLIST>
-                    {mainPageDrinks[category]
-                      .slice(0, drinksToRender)
-                      .map(item => (
-                        <ItemDrink key={item._id} item={item} />
-                      ))}
-                  </CategoryDrinksLIST>
-                </CategoryDrinksDiv>
-              ))
-            )}
-          </MainWrapper>
-
-          {!isLoading && (
-            <CategoryDrinkToDrink to={`/drinks`}>
-              Other drinks
-            </CategoryDrinkToDrink>
+      <SectionContainer>
+        <MainWrapper>
+          {isLoading ? (
+            <Loader />
+          ) : (
+            drinksCategory.length > 0 &&
+            drinksCategory.map((category, idx) => (
+              <CategoryDrinksDiv key={idx}>
+                <DrinkCategoryTitle>{category} </DrinkCategoryTitle>
+                <CategoryDrinksLIST>
+                  {mainPageDrinks[category]
+                    .slice(0, drinksToRender)
+                    .map(item => (
+                      <ItemDrink key={item._id} item={item} />
+                    ))}
+                </CategoryDrinksLIST>
+              </CategoryDrinksDiv>
+            ))
           )}
-        </SectionContainer>
-      </MainContainer>
+        </MainWrapper>
+
+        {!isLoading && (
+          <CategoryDrinkToDrink to={`/drinks`}>
+            Other drinks
+          </CategoryDrinkToDrink>
+        )}
+      </SectionContainer>
     </>
   );
 };
