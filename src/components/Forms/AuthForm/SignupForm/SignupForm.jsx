@@ -129,12 +129,12 @@ function SignupForm() {
                         ? value.format('DD MMM YYYY')
                         : '';
                     }}
-                    // error={
-                    //   errors.birthDate && touched.birthDate ? 'true' : 'false'
-                    // }
-                    // success={
-                    //   values.birthDate && !errors.birthDate ? 'true' : 'false'
-                    // }
+                    error={
+                      errors.birthDate && touched.birthDate ? 'true' : 'false'
+                    }
+                    success={
+                      values.birthDate && !errors.birthDate ? 'true' : 'false'
+                    }
                   />
                   <ErrorMessage name="birthDate" />
                 </LocalizationProvider>

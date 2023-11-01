@@ -1,10 +1,10 @@
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { Form, Field } from 'formik';
 import styled, { css } from 'styled-components';
 import transition from '../../../utils/transition';
 import { ReactComponent as ErrorSvg } from '../../../assets/images/authComponents/error.svg';
 import { ReactComponent as CheckSvg } from '../../../assets/images/authComponents/done.svg';
 import { NavLink } from 'react-router-dom';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 export const Container = styled.div`
   display: flex;
@@ -201,5 +201,20 @@ export const BirthDate = styled(DatePicker)`
     font-size: 17px;
     line-height: 1.56;
     padding: 14px 24px;
+  }
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root.Mui-error
+    .MuiOutlinedInput-notchedOutline {
+    border: 1px solid var(--white-twenty-color);
+  }
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+    color: var(--white-twenty-color);
+  }
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused
+    .MuiOutlinedInput-notchedOutline {
+    border: 1px solid var(--white-twenty-color);
+  }
+  .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    border: 1px solid var(--white-twenty-color);
+    border-radius: 200px;
   }
 `;
