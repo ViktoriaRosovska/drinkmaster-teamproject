@@ -2,6 +2,8 @@ import React from 'react';
 
 import Stack from '@mui/material/Stack';
 import { StyledPagination, stackStyles } from './Paginator.styled';
+import { PaginationItem } from '@mui/material';
+import { Link } from 'react-router-dom';
 // import { createTheme, ThemeProvider } from '@mui/styles';
 
 // import prev from '../../assets/images/paginator/prev.svg';
@@ -9,22 +11,28 @@ import { StyledPagination, stackStyles } from './Paginator.styled';
 // import { ReactSVG } from 'react-svg';
 // import { Button, PagContainer, NumberButton, NumberContainer } from './Paginator.styled';
 
-const Paginator = ({totalPages, onPageChange, currentPage}) => {
+const Paginator = ({ totalPages, onPageChange, currentPage }) => {
   return (
     <Stack spacing={2} sx={stackStyles}>
       <StyledPagination
         count={totalPages}
         page={currentPage}
-        onChange={(_, pageNum) => {
-          onPageChange(pageNum)
-          return console.log(pageNum);
-        }}
+        onChange={(_, pageNum) => onPageChange(pageNum)}
+        renderItem={
+          (item) => {
+            console.log(item.page)
+            return <PaginationItem
+              component={Link}
+              to={`/favorites?page=${item.page}`}
+            
+              {...item}
+            />
+          }
+        }
       />
     </Stack>
   );
 };
-
-
 
 // const Paginator = ({totalDrinks, drinksPerPage}) => {
 //     const [currentPage, setCurrentPage] = useState(1);
