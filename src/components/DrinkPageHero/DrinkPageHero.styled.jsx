@@ -45,6 +45,8 @@ export const About = styled.p`
 export const ImageDrink = styled.img`
   width: 335px;
   margin-top: 80px;
+  border-radius: 4px;
+  overflow: hidden;
   @media screen and (min-width: 768px) {
     width: 704px;
   }

@@ -21,7 +21,7 @@ const DrinkIngridientList = ({ ingredients }) => {
             )}
              */}
             <Image
-              src="../../assets/images/drinkPage/coctailPlaceholder.png"
+              src="../../assets/images/drinkIdPage/block-tabl@1x.jpg"
               alt={title}
             />
             <Ingredient>
