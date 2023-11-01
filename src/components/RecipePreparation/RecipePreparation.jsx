@@ -6,6 +6,12 @@ import {
   ListItem,
 } from './RecipePreparation.styled';
 
+import drinkIdPageDesk1x from '../../assets/images/drinkIdPage/drink-id-page-desk@1x.jpg';
+// import drinkIdPageDesk2x from  '/src/assets/images/drinkIdPage/drink-id-page-desk@2x.jpg'
+import drinkIdPageTabl1x from '../../assets/images/drinkIdPage/drink-id-page-tabl@1x.jpg';
+import drinkIdPageMob1x from '../../assets/images/drinkIdPage/drink-id-page-mob@1x.jpg';
+import drinkIdPageMob2x from '../../assets/images/drinkIdPage/drink-id-page-mob@2x.jpg';
+
 const RecipePreparation = ({ instructions }) => {
   const steps = instructions.split('.');
   const noEmptySteps = steps.filter(step => step.trim() !== '');
@@ -20,31 +26,14 @@ const RecipePreparation = ({ instructions }) => {
         </List>
         <Picture>
           <source
-            srcset="
-                        src/assets/images/drinkIdPage/drink-id-page-desk@1x.jpg 1x,
-                        src/assets/images/drinkIdPage/drink-id-page-desk@2x.jpg 2x
-                      "
+            srcset={drinkIdPageDesk1x}
+            // {drinkIdPageDesk2x}
+
             media="(min-width:1440px)"
           />
-          <source
-            srcset="
-                       ../../assets/images/drinkIdPage/drink-id-page-tabl@1x.jpg 1x,
-                        ../../assets/images/drinkIdPage/drink-id-page-tabl@2x.jpg 2x
-                      "
-            media="(min-width:768px)"
-          />
-          <source
-            srcset="
-                        ../../assets/images/drinkIdPage/drink-id-page-mob@2x.jpg 2x"
-            media="(max-width:767px)"
-          />
-          <img
-            src="src/assets/images/drinkIdPage/drink-id-page-mob@1x.jpg"
-            alt="Cocktails"
-            width="335"
-            height="430"
-            loading="lazy"
-          />
+          <source srcset={drinkIdPageTabl1x} media="(min-width:768px)" />
+          <source srcset={drinkIdPageMob2x} media="(max-width:767px)" />
+          <img src={drinkIdPageMob1x} alt="Cocktails" loading="lazy" />
         </Picture>
       </RecipeBox>
     </>
