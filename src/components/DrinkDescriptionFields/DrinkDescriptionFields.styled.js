@@ -3,33 +3,54 @@ import styled from 'styled-components';
 import Select from 'react-select';
 
 const AddPhotoContainer = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 335px;
   height: 320px;
   background-color: var(--dark-blue-fifty-color);
   border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 18px;
+  margin-bottom: 40px;
 `;
 
-const AddBtn = styled.button`
+const FileImage = styled.img`
+  width: 335px;
+  height: 320px;
+  background-color: red;
+`;
+
+const InputFileWrapper = styled.div`
+  position: absolute;
   width: 50px;
   height: 50px;
   border-radius: 6px;
   background-color: var(--white-color);
   border: none;
   display: flex;
+
   justify-content: center;
   align-items: center;
-  &:hover {
-    border: 1px solid var(--dark-blue-twenty-color);
-    & svg {
-      stroke: var(--dark-blue-fifty-color);
-    }
-  }
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
+
+const InputAddFile = styled.input`
+  display: none;
+`;
+
+const InputText = styled.span`
+  font-family: 'Manrope';
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  position: absolute;
+  bottom: 96px;
+`;
+
 const ReactSVGIcon = styled(ReactSVG)`
   & div svg {
     width: 29px;
@@ -40,13 +61,7 @@ const ReactSVGIcon = styled(ReactSVG)`
     align-items: center;
   }
 `;
-const AddBtnText = styled.span`
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20px;
 
-  color: var(--white-color);
-`;
 const SelectContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -62,126 +77,6 @@ const AddFormSelect = styled(Select)`
   -moz-appearance: none;
   -webkit-appearance: none;
   outline: none;
-  & .css-1dimb5e-singleValue {
-    line-height: 1;
-    text-align: left;
-    height: 34px;
-
-    color: var(--white-color);
-
-    padding: 0;
-  }
-  & .css-1fdsijx-ValueContainer {
-    padding: 0;
-    & ::selection {
-      background-color: transparent;
-    }
-  }
-  // Випадаюче меню списка
-  & #react-select-3-listbox {
-    font-size: 12px;
-    line-height: 16px;
-
-    background-color: var(--dark-blue-color);
-    color: rgba(243, 243, 243, 0.4);
-    border-radius: 12px;
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-
-    /* padding: 10px; */
-    /* overflow-y: scroll; */
-    overflow: hidden;
-    position: absolute;
-    width: 131px;
-    height: 256px;
-    right: 0;
-    ::-webkit-scrollbar {
-      /* width: 5px; */
-      width: 0;
-    }
-  }
-  & .css-13cymwt-control {
-    border: none;
-    border-bottom: 1px solid var(--white-color);
-  }
-  & .css-1dimb5e-singleValue {
-    margin-right: 28px;
-  }
-  & .css-qbdosj-Input {
-    line-height: normal;
-    letter-spacing: -0.28px;
-
-    color: var(--white-color);
-
-    height: 34px;
-    padding: 0;
-    margin-right: 28px;
-    margin: 0 0 0 60px;
-  }
-
-  & .css-166bipr-Input {
-    color: var(--white-color);
-    margin-left: 60px;
-  }
-
-  & .css-13cymwt-control {
-    line-height: 14px;
-    letter-spacing: 0em;
-
-    background-color: transparent;
-    color: var(--white-color);
-
-    height: 34px;
-  }
-  & .css-1xc3v61-indicatorContainer {
-    display: none;
-    outline: none;
-  }
-  & .css-1hb7zxy-IndicatorsContainer {
-    display: none;
-  }
-  & .react-select-3-placeholder {
-    display: block;
-  }
-  & .css-1dimb5e-singleValue {
-    text-align: right;
-  }
-  & .css-1u9des2-indicatorSeparator {
-    display: none;
-  }
-  & #react-select-3-input {
-    text-align: right;
-    margin-left: 50px;
-    height: 34px;
-  }
-  & #react-select-5-listbox {
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    width: 131px;
-    height: 258px;
-    padding: 0;
-    background-color: var(--dark-blue-color);
-    color: rgba(243, 243, 243, 0.4);
-    font-size: 12px;
-    line-height: 16px;
-    padding: 10px;
-
-    //стилізувати скрол
-
-    /* overflow-y: scroll; */
-    overflow: hidden;
-    position: absolute;
-    right: 0;
-    ::-webkit-scrollbar {
-      /* width: 5px; */
-      width: 0;
-    }
-    & :hover {
-      background-color: none;
-    }
-  }
 `;
 
 const AddFormRadioGroup = styled.div`
@@ -193,13 +88,14 @@ const AddFormRadioGroup = styled.div`
 const AddFormInput = styled.input`
   line-height: 14px;
   letter-spacing: 0em;
-
   border: none;
+  border-radius: 0;
   border-bottom: 1px solid var(--white-fifty-color);
 
   color: var(--white-color);
   background-color: transparent;
   position: relative;
+
   width: 335px;
   height: 34px;
   outline: none;
@@ -248,11 +144,19 @@ const AddFormSelectLabel = styled.label`
   left: 0;
   width: 335px;
 `;
+
+const AddFormSelectContainer = styled.div`
+  height: 34px;
+  position: relative;
+`;
 export {
+  InputAddFile,
+  InputFileWrapper,
+  FileImage,
+  InputText,
   AddPhotoContainer,
-  AddBtn,
+  AddFormSelectContainer,
   ReactSVGIcon,
-  AddBtnText,
   SelectContainer,
   AddFormInput,
   AddFormRadioGroup,

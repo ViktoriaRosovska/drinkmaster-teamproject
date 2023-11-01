@@ -10,34 +10,6 @@ const QuantityIconReactSvg = styled(ReactSVG)`
   }
 `;
 
-const CloseIconReactSvg = styled(ReactSVG)`
-  width: 18px;
-  height: 18px;
-
-  & div svg {
-    /* stroke: var(--white-color); */
-    stroke: red;
-  }
-`;
-
-const AddFormSelectContainer = styled.div`
-  height: 34px;
-  position: relative;
-`;
-
-const AddFormTextarea = styled.textarea`
-  border-radius: 14px;
-  border: 1px solid var(--white-fifty-color);
-  background-color: transparent;
-  margin-bottom: 20px;
-  width: 335px;
-  height: 184px;
-  &::placeholder {
-    color: var(--white-color);
-    line-height: calc(14px / 18px);
-  }
-`;
-
 const AddIngredientsContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -48,14 +20,6 @@ const AddIngredientsContainer = styled.div`
   opacity: 0.8;
   width: 104px;
   height: 38px;
-`;
-
-const SubTitle = styled.h3`
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 32px;
-  letter-spacing: 0em;
-  text-align: left;
 `;
 
 const QuantityIngredients = styled.div`
@@ -109,13 +73,9 @@ const AddIngedientSelect = styled.div`
   align-items: center;
 `;
 export {
-  AddFormSelectContainer,
-  AddFormTextarea,
-  CloseIconReactSvg,
   QuantityBtnMirror,
   QuantityBtn,
   QuantityContainer,
-  SubTitle,
   QuantityText,
   AddIngedientSelect,
   AddIngredientsContainer,
