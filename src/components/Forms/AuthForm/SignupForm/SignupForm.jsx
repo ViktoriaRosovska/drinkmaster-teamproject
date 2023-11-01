@@ -20,7 +20,7 @@ import {
   CheckSvgStyled,
   Link,
 } from '../AuthForm.styled';
-import { BirthDate } from './DatePicker.styled';
+import StyledStaticDatePicker from './DatePicker.styled';
 import { ReactComponent as ShowPassword } from '../../../../assets/images/authComponents/eye.svg';
 import { ReactComponent as HidePassword } from '../../../../assets/images/authComponents/eye-off.svg';
 import { WelcomeWrapper } from 'styles/App.styled';
@@ -122,11 +122,13 @@ function SignupForm() {
 
               <InputWrapper>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <BirthDate
+                  <StyledStaticDatePicker
                     value={moment(values.birthDate, 'DD MMM YYYY')}
-                    onChange={value =>
-                      (values.birthDate = value.format('DD MMM YYYY'))
-                    }
+                    onChange={value => {
+                      values.birthDate = value
+                        ? value.format('DD MMM YYYY')
+                        : '';
+                    }}
                   />
                 </LocalizationProvider>
               </InputWrapper>
