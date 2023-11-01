@@ -77,23 +77,21 @@ export const Container = styled.div`
   font-size: 14px;
   font-weight: 500;
   min-width: 320px;
-  height: 542px;
+  max-height: 542px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
   
   @media screen and (min-width: 768px) {
-    // max-width: 768px;
     width: 704px;
-    height: 482px;
+    max-height: 482px;
     padding-left: 32px;
     padding-right: 32px;
   }
 
   @media screen and (min-width: 1440px) {
-    // max-width: 1440px:
     width: 1240px;
-    height: 428px;
+    max-height: 428px;
     padding-left: 100px;
     padding-right: 100px;
   }
@@ -109,9 +107,9 @@ export const FooterNavWrapper = styled.div`
   @media screen and (min-width: 1440px) {
     display: flex;
     flex-direction: row;
-    row-gap: 411px;
-    // justify-content: space-between;
-    margin-left: 0 auto;
+    // row-gap: 411px;
+    justify-content: space-between;
+    
   }
 `;
 
