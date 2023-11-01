@@ -86,7 +86,7 @@ export const CategoryDrinksLink = styled(NavLink)`
 
   &:hover,
   &:focus {
-    color: var(--black-color);
+    color: var(--white-color);
   }
   @media screen and (min-width: 768px) {
     font-size: 16px;
