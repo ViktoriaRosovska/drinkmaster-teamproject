@@ -95,12 +95,15 @@ const AddFormSelect = styled(Select)`
   -moz-appearance: none;
   -webkit-appearance: none;
   outline: none;
-  border-bottom: 1px solid var(--white-fifty-color);
+  /* border-bottom: 1px solid var(--white-fifty-color); */
   background: 'transparent';
   color: var(--white-fifty-color);
-  &:hover {
-    border-bottom: 1px solid var(--white-color);
+  & .react-select__controll--is-focused {
+    border-color: 1px solid var(--white-fifty-color);
   }
+  /* &:hover {
+    border-bottom: 1px solid var(--white-color);
+  } */
 `;
 
 const AddFormRadioGroup = styled.div`
