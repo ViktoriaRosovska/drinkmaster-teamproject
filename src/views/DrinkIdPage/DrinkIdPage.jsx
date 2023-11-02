@@ -1,9 +1,9 @@
 import React from 'react';
-// import { useParams } from 'react-router-dom';
-// import { useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { getDrinkById } from 'redux/drinks/drinksOperations.js';
-// import { selectDrinkById } from 'redux/drinks/drinksSelectors';
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getDrinkById } from 'redux/drinks/drinksOperations.js';
+import { selectDrinkById } from 'redux/drinks/drinksSelectors';
 // import selectIsLoggedIn from 'redux/auth/authSelectors';
 
 import DrinkPageHero from 'components/DrinkPageHero/DrinkPageHero';
@@ -12,7 +12,6 @@ import DrinkPageHero from 'components/DrinkPageHero/DrinkPageHero';
 
 import { MainContainer } from 'styles/App.styled';
 import { Title } from './DrinkIdPage.styled';
-
 
 const DrinkIdPage = () => {
   const dispatch = useDispatch();
@@ -23,7 +22,6 @@ const DrinkIdPage = () => {
   }, [dispatch, drinkId]);
 
   console.log('drinkId:', drinkId);
-
 
   return (
     <MainContainer>
