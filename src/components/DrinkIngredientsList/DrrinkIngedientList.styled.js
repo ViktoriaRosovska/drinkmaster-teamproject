@@ -30,6 +30,8 @@ export const List = styled.ul`
 export const Image = styled.img`
   width: 157px;
   margin-bottom: 8px;
+  border-radius: 8px;
+  overflow: hidden;
 
   @media screen and (min-width: 768px) {
     width: 220px;

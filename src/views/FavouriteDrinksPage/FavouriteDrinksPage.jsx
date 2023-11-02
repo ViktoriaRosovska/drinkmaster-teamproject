@@ -6,6 +6,7 @@ import { MainContainer } from 'styles/App.styled';
 import { useDrink } from 'hooks/useDrink';
 import { useDispatch } from 'react-redux';
 import { getFavoriteAll } from 'redux/drinks/drinksOperations';
+import NotFound from 'components/NotFound/NotFound';
 
 export default function FavoriteDrinksPage() {
   const dispatch = useDispatch();
@@ -20,21 +21,23 @@ export default function FavoriteDrinksPage() {
   };
 
   const totalPages = Math.ceil(total / drinksPerPage);
-  // const totalPages = 8;
 
   useEffect(() => {
     dispatch(getFavoriteAll({ page: currentPage, limit: drinksPerPage })).unwrap().catch(error => console.log(error));
-  }, [dispatch, currentPage, drinksPerPage]);
+  }, [dispatch, currentPage, totalPages, total]);
 
+  console.log(total)
   return (
     <MainContainer>
       <PageTitle title="Favorites" />
-      <DrinkList drinks={favoriteDrinks} />
+      {total > 0 ? (<DrinkList drinks={favoriteDrinks} />) : (<NotFound/>)}
+      
       {totalPages > 1 && (
         <Paginator
           currentPage={currentPage}
           totalPages={totalPages}
           onPageChange={onPageChange}
+          path={'/favorites'}
         />
       )}
     </MainContainer>
