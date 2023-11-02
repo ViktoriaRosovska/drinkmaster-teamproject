@@ -4,6 +4,7 @@ import {
   Picture,
   List,
   ListItem,
+  Box,
 } from './RecipePreparation.styled';
 
 import drinkIdPageDesk1x from '../../assets/images/drinkIdPage/drink-id-page-desk@1x.jpg';
@@ -24,17 +25,19 @@ const RecipePreparation = ({ instructions }) => {
             <ListItem key={step}>{step}</ListItem>
           ))}
         </List>
-        <Picture>
-          <source
-            srcset={drinkIdPageDesk1x}
-            // {drinkIdPageDesk2x}
+        <Box>
+          <Picture>
+            <source
+              srcSet={drinkIdPageDesk1x}
+              // {drinkIdPageDesk2x}
 
-            media="(min-width:1440px)"
-          />
-          <source srcset={drinkIdPageTabl1x} media="(min-width:768px)" />
-          <source srcset={drinkIdPageMob2x} media="(max-width:767px)" />
-          <img src={drinkIdPageMob1x} alt="Cocktails" loading="lazy" />
-        </Picture>
+              media="(min-width:1440px)"
+            />
+            <source srcSet={drinkIdPageTabl1x} media="(min-width:768px)" />
+            <source srcSet={drinkIdPageMob2x} media="(max-width:767px)" />
+            <img src={drinkIdPageMob1x} alt="Cocktails" loading="lazy" />
+          </Picture>
+        </Box>
       </RecipeBox>
     </>
   );

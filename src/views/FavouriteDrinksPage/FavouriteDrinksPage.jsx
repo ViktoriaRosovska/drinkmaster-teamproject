@@ -27,15 +27,22 @@ export default function FavoriteDrinksPage() {
   const totalPages = Math.ceil(total / drinksPerPage);
 
   useEffect(() => {
+    if (favoriteDrinks?.length === 0 && currentPage > 1) {
+      onPageChange(currentPage - 1);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [favoriteDrinks]);
+
+  useEffect(() => {
     navigate(`?page=${currentPage}`);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [currentPage]);
 
   useEffect(() => {
     dispatch(getFavoriteAll({ page: currentPage, limit: drinksPerPage }))
       .unwrap()
       .catch(error => console.log(error));
-  }, [dispatch, currentPage, total, drinksPerPage]);
+  }, [dispatch, currentPage, total, drinksPerPage, ]);
 
   return (
     <MainContainer>

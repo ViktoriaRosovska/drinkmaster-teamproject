@@ -10,6 +10,7 @@ import NotFound from 'components/NotFound/NotFound';
 import Paginator from 'components/Paginator/Paginator';
 
 export default function MyDrinksPage() {
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { total, drinks } = useDrink();

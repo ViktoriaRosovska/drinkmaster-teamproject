@@ -41,12 +41,14 @@ export const About = styled.p`
     width: 593px;
   }
 `;
-
+export const Box = styled.div`
+  overflow: hidden;
+`;
 export const ImageDrink = styled.img`
   width: 335px;
   margin-top: 80px;
   border-radius: 8px;
-  overflow: hidden;
+
   @media screen and (min-width: 768px) {
     width: 704px;
   }
@@ -57,11 +59,11 @@ export const ImageDrink = styled.img`
     top: -50px;
   }
 `;
-export const DefaultImage = styled.div`
+export const DefaultImage = styled.img`
   width: 335px;
   height: 400px;
-  background-color: grey;
-  opacity: 50%;
+  /* background-color: grey;
+  opacity: 50%; */
   position: relative;
 
   @media screen and (min-width: 768px) {
