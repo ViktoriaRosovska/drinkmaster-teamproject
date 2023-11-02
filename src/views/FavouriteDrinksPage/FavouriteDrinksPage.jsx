@@ -14,7 +14,7 @@ export default function FavoriteDrinksPage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { width } = useResize();
-  const { total } = useDrink();
+  const { total, favoriteDrinks } = useDrink();
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -37,12 +37,16 @@ export default function FavoriteDrinksPage() {
       .catch(error => console.log(error));
   }, [dispatch, currentPage, total, drinksPerPage]);
 
-  console.log(total);
   return (
     <MainContainer>
       <PageTitle title="Favorites" />
       {total > 0 ? (
-        <DrinkList onPageChange={onPageChange} currentPage={currentPage} />
+        <DrinkList
+          favorite={true}
+          drinksData={favoriteDrinks}
+          onPageChange={onPageChange}
+          currentPage={currentPage}
+        />
       ) : (
         <NotFound />
       )}

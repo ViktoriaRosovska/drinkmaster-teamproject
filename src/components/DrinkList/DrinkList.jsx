@@ -1,25 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import DrinkItem from 'components/DrinkItem/DrinkItem';
 import { CardList } from './DrinkList.styled';
-import { useDrink } from 'hooks/useDrink';
 
-const DrinkList = ({ onPageChange, currentPage }) => {
-  const { favoriteDrinks } = useDrink();
-
-  console.log(currentPage);
-
-  useEffect(() => {
-    if (favoriteDrinks?.length === 0) {
-      onPageChange(currentPage - 1);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [favoriteDrinks]);
-
+const DrinkList = ({ drinksData, favorite }) => {
   return (
     <>
       <CardList>
-        {favoriteDrinks.map(drink => {
-          return <DrinkItem key={drink._id} drinkData={drink} />;
+        {drinksData.map(drink => {
+          return <DrinkItem key={drink._id} drinkData={drink} favorite={favorite} />;
         })}
       </CardList>
     </>
