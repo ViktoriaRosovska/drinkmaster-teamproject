@@ -15,7 +15,6 @@ export const selectMainPageDrinks = createSelector(
 
 export const selectDrinkById = (state) => state.drinks.drinkById;
 
-
 // export const selectDrinkById = createSelector(
 //   [selectDrinksData, (_, drinkId) => drinkId],
 //   (drinks, drinkId) => drinks.find((drink) => drink._id === drinkId)
