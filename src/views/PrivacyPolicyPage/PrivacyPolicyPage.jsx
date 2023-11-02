@@ -1,4 +1,4 @@
-import React, {useRef } from 'react';
+import React, {useRef, useEffect } from 'react';
 import ButtonBack from '../../components/ButtonBack/ButtonBack';
 import { Link, useLocation } from 'react-router-dom';
 import {
@@ -9,8 +9,14 @@ import {
 import PageTitle from '../../components/PageTitle/PageTitle';
 
 export default function PrivacyPolicy() {
-
+const pageTitleRef = useRef();
   const location = useLocation();
+
+  useEffect(() => {
+    pageTitleRef.current.scrollIntoView();
+  }, []);
+
+  // повертає завжди а сторінку Хоум  
   const backLinkHref = useRef(location.state?.from ?? '/');
   return (
     <>
@@ -20,7 +26,7 @@ export default function PrivacyPolicy() {
         <ButtonBack text=" Go back" />
       </Link>
 
-        <PageTitle title='Privacy Policy'/>
+        <PageTitle title='Privacy Policy' forwardRef={pageTitleRef}/>
         <PrivacyPolicyText>
           Your privacy is important to us. This section outlines how we collect,
           use, process, and protect your personal data. This Privacy Policy

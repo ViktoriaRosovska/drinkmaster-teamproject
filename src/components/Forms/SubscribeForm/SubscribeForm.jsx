@@ -11,6 +11,7 @@ import { object, string } from 'yup';
 import { toast } from 'react-toastify';
 import { toastConfig } from '../../Notification/notification_options';
 
+
 const validationSchema = object({
   email: string()
     .matches(
@@ -23,7 +24,7 @@ const validationSchema = object({
 
 const SubscribeForm = () => {
   const dispatch = useDispatch();
-
+ 
   return (
     <Formik
       initialValues={{ email: '' }}
@@ -38,19 +39,22 @@ const SubscribeForm = () => {
         }
       }}
     >
-      <SubscribeWrapper>
-        <SubscribeText>
-          Subscribe up to our newsletter. Be in touch with latest news and
-          special offers, etc.
-        </SubscribeText>
-        <SubscribeInput
-          type="email"
-          name="email"
-          placeholder="Enter the email"
-        ></SubscribeInput>
-        <ErrorMessage name="email" component="div" />
-        <SubscribeButton type="submit">Subscribe</SubscribeButton>
-      </SubscribeWrapper>
+      {({ isSubmitting, isValid }) => (
+        <SubscribeWrapper>
+          <SubscribeText>
+            Subscribe up to our newsletter. Be in touch with latest news and
+            special offers, etc.
+          </SubscribeText>
+          <SubscribeInput
+            type="email"
+            name="email"
+            placeholder="Enter the email"
+            required
+          ></SubscribeInput>
+          <ErrorMessage name="email" component="div" style={{ color: 'red', fontSize: '14px' }} />
+          <SubscribeButton type="submit" disabled={isSubmitting || !isValid}>Subscribe</SubscribeButton>
+        </SubscribeWrapper>
+      )}
     </Formik>
   );
 };
