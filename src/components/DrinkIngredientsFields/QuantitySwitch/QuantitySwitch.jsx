@@ -24,11 +24,11 @@ export default function QuantitySwitch({ value, setValue }) {
   return (
     <QuantityContainer>
       <QuantityIngredients>
-        <QuantityBtn onClick={onMinusQuantityHandler}>
+        <QuantityBtn onClick={onMinusQuantityHandler} type="button">
           <QuantityIconReactSvg src={minusIcon} />
         </QuantityBtn>
         <QuantityText>{value}</QuantityText>
-        <QuantityBtnMirror onClick={onPlusQuantityHandler}>
+        <QuantityBtnMirror onClick={onPlusQuantityHandler} type="button">
           <QuantityIconReactSvg src={plusIcon} />
         </QuantityBtnMirror>
       </QuantityIngredients>
