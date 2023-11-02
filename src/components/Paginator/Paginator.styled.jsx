@@ -2,35 +2,33 @@ import { styled } from '@mui/material/styles';
 import Pagination from '@mui/material/Pagination';
 
 export const StyledPagination = styled(Pagination)({
-    '& .MuiPagination-ul': {
-        justifyContent: 'center',
-    }, 
-    '& li .Mui-selected': {
-        color: '#f3f3f3',
-        backgroundColor: 'rgba(64, 112, 205, 0.5)',
-        ':hover': {
-            backgroundColor: 'rgba(64, 112, 205, 0.5)',
-        }
-    },
-    '& li .MuiPaginationItem-root': {
-        color: '#f3f3f3',
-    },
-    '& .MuiPaginationItem-ellipsis': {
-        color: '#f3f3f3',
-    }
-})
-export const stackStyles = {
-    marginTop: '54px',
-    marginBottom: '94px',
+  '& .MuiPagination-ul': {
     justifyContent: 'center',
+  },
+  '& li .Mui-selected': {
+    color: '#f3f3f3',
+    backgroundColor: 'rgba(64, 112, 205, 0.5)',
+    ':hover': {
+      backgroundColor: 'rgba(64, 112, 205, 0.5)',
+    },
+  },
+  '& li .MuiPaginationItem-root': {
+    color: '#f3f3f3',
+  },
+  '& .MuiPaginationItem-ellipsis': {
+    color: '#f3f3f3',
+  },
+});
+export const stackStyles = {
+  marginTop: '54px',
+  // marginBottom: '94px',
+  justifyContent: 'center',
 
-    '@media (min-width: 768px)': {
-        marginTop: '94px',
-        marginBottom: '154px',
-    }
- }
-
-
+  '@media (min-width: 768px)': {
+    marginTop: '94px',
+    // marginBottom: '154px',
+  },
+};
 
 // import styled from 'styled-components';
 

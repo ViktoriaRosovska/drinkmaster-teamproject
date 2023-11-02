@@ -4,25 +4,22 @@ import { StyledPagination, stackStyles } from './Paginator.styled';
 import { PaginationItem } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-
 const Paginator = ({ totalPages, onPageChange, currentPage, path }) => {
-
   return (
     <Stack spacing={2} sx={stackStyles}>
       <StyledPagination
         count={totalPages}
         page={currentPage}
         onChange={(_, pageNum) => onPageChange(pageNum)}
-        renderItem={
-          (item) => {
-            return <PaginationItem
+        renderItem={item => {
+          return (
+            <PaginationItem
               component={Link}
               to={`${path}?page=${item.page}`}
-            
               {...item}
             />
-          }
-        }
+          );
+        }}
       />
     </Stack>
   );

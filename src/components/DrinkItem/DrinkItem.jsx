@@ -22,11 +22,17 @@ const DrinkItem = ({ drinkData }) => {
 
   const handleRemoveFromFav = () => {
     dispatch(removeDrink(_id));
-  }
+  };
 
   return (
     <Card>
-      <CardImage  src={drinkThumb || placeholderImage} alt={drink} onError={(e) => {e.target.src = placeholderImage}}/>
+      <CardImage
+        src={drinkThumb || placeholderImage}
+        alt={drink}
+        onError={e => {
+          e.target.src = placeholderImage;
+        }}
+      />
       <DrinkName>{drink}</DrinkName>
       <IsAlco>{alcoholic}</IsAlco>
       <Description>{description}</Description>

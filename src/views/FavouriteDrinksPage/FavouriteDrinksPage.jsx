@@ -8,16 +8,17 @@ import { useDispatch } from 'react-redux';
 import { getFavoriteAll } from 'redux/drinks/drinksOperations';
 import NotFound from 'components/NotFound/NotFound';
 import { useResize } from 'hooks/useResize';
+import { useNavigate } from 'react-router-dom';
 
 export default function FavoriteDrinksPage() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { width } = useResize();
-  const { total} = useDrink();
-  
+  const { total } = useDrink();
+
   const [currentPage, setCurrentPage] = useState(1);
-  
+
   const drinksPerPage = width < 1440 ? 8 : 9;
-  // const drinksPerPage = 9;
 
   const onPageChange = pageNum => {
     setCurrentPage(pageNum);
@@ -26,15 +27,25 @@ export default function FavoriteDrinksPage() {
   const totalPages = Math.ceil(total / drinksPerPage);
 
   useEffect(() => {
-    dispatch(getFavoriteAll({ page: currentPage, limit: drinksPerPage })).unwrap().catch(error => console.log(error));
+    navigate(`?page=${currentPage}`);
+  }, []);
+
+  useEffect(() => {
+    dispatch(getFavoriteAll({ page: currentPage, limit: drinksPerPage }))
+      .unwrap()
+      .catch(error => console.log(error));
   }, [dispatch, currentPage, total, drinksPerPage]);
 
-  console.log(total)
+  console.log(total);
   return (
     <MainContainer>
       <PageTitle title="Favorites" />
-      {total > 0 ? (<DrinkList onPageChange={onPageChange} currentPage={currentPage} />) : (<NotFound/>)}
-      
+      {total > 0 ? (
+        <DrinkList onPageChange={onPageChange} currentPage={currentPage} />
+      ) : (
+        <NotFound />
+      )}
+
       {totalPages > 1 && (
         <Paginator
           currentPage={currentPage}
