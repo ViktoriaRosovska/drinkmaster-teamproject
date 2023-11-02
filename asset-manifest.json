@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/drinkmaster-teamproject/static/css/main.17221a4d.css",
-    "main.js": "/drinkmaster-teamproject/static/js/main.6dc93c49.js",
+    "main.js": "/drinkmaster-teamproject/static/js/main.7d53c966.js",
     "static/js/442.d0804a10.chunk.js": "/drinkmaster-teamproject/static/js/442.d0804a10.chunk.js",
     "static/js/342.40718faf.chunk.js": "/drinkmaster-teamproject/static/js/342.40718faf.chunk.js",
-    "static/js/427.2005e67d.chunk.js": "/drinkmaster-teamproject/static/js/427.2005e67d.chunk.js",
+    "static/js/753.123a6f9b.chunk.js": "/drinkmaster-teamproject/static/js/753.123a6f9b.chunk.js",
     "static/js/264.824abb7a.chunk.js": "/drinkmaster-teamproject/static/js/264.824abb7a.chunk.js",
     "static/js/853.467dc079.chunk.js": "/drinkmaster-teamproject/static/js/853.467dc079.chunk.js",
     "static/js/992.9ab9d2fc.chunk.js": "/drinkmaster-teamproject/static/js/992.9ab9d2fc.chunk.js",
@@ -76,10 +76,10 @@
     "static/media/MinusForm.svg": "/drinkmaster-teamproject/static/media/MinusForm.7aa2513c040a6b5b61df80c9efc7b18d.svg",
     "static/media/plus.svg": "/drinkmaster-teamproject/static/media/plus.a42d76147973b79136673cbc84673ffb.svg",
     "main.17221a4d.css.map": "/drinkmaster-teamproject/static/css/main.17221a4d.css.map",
-    "main.6dc93c49.js.map": "/drinkmaster-teamproject/static/js/main.6dc93c49.js.map",
+    "main.7d53c966.js.map": "/drinkmaster-teamproject/static/js/main.7d53c966.js.map",
     "442.d0804a10.chunk.js.map": "/drinkmaster-teamproject/static/js/442.d0804a10.chunk.js.map",
     "342.40718faf.chunk.js.map": "/drinkmaster-teamproject/static/js/342.40718faf.chunk.js.map",
-    "427.2005e67d.chunk.js.map": "/drinkmaster-teamproject/static/js/427.2005e67d.chunk.js.map",
+    "753.123a6f9b.chunk.js.map": "/drinkmaster-teamproject/static/js/753.123a6f9b.chunk.js.map",
     "264.824abb7a.chunk.js.map": "/drinkmaster-teamproject/static/js/264.824abb7a.chunk.js.map",
     "853.467dc079.chunk.js.map": "/drinkmaster-teamproject/static/js/853.467dc079.chunk.js.map",
     "992.9ab9d2fc.chunk.js.map": "/drinkmaster-teamproject/static/js/992.9ab9d2fc.chunk.js.map",
@@ -93,6 +93,6 @@
   },
   "entrypoints": [
     "static/css/main.17221a4d.css",
-    "static/js/main.6dc93c49.js"
+    "static/js/main.7d53c966.js"
   ]
 }
