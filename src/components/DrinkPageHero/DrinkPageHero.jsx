@@ -5,7 +5,10 @@ import {
   GlassName,
   HeroContainer,
   ImageDrink,
+  Box,
 } from './DrinkPageHero.styled';
+
+import drinkIdPageBlock from '../../assets/images/drinkIdPage/block-big@1x.jpg';
 
 const DrinkPageHero = ({ glass, about, alcoholic, title, image }) => {
   return (
@@ -24,11 +27,13 @@ const DrinkPageHero = ({ glass, about, alcoholic, title, image }) => {
         )}
         <WhiteButton>Add favorite</WhiteButton>
       </div>
-      {image ? (
-        <ImageDrink src={image} alt={title} />
-      ) : (
-        <DefaultImage>default image</DefaultImage>
-      )}
+      <Box>
+        {image ? (
+          <ImageDrink src={image} alt={title} />
+        ) : (
+          <DefaultImage src={drinkIdPageBlock} alt={title} />
+        )}
+      </Box>
     </HeroContainer>
   );
 };
