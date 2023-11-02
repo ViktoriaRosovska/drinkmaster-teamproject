@@ -49,9 +49,9 @@ export const SubscribeText = styled.p`
   color: var(--white-color);
   font-weight: 400;
   line-height: 1.43;
-
   width: 335px;
   margin: 0 auto;
+
   @media screen and (min-width: 768px) {
     font-size: 18px;
     line-height: 1.33;
@@ -71,7 +71,6 @@ export const SubscribeButton = styled.button`
   color: var(--white-color);
   background-color: transparent;
   transition: transform var(--transition), border var(--transition), background-color var(--transition);
-
 
   &:focus,
   &:hover {
