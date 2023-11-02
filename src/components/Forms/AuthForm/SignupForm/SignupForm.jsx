@@ -130,6 +130,11 @@ function SignupForm() {
                         ? value.format('DD MMM YYYY')
                         : '';
                     }}
+                    disableFuture
+                    showDaysOutsideCurrentMonth
+                    slotProps={{
+                      textField: { fullWidth: true },
+                    }}
                     error={
                       errors.birthDate && touched.birthDate ? 'true' : 'false'
                     }
