@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import {
   Card,
   CardImage,
@@ -11,8 +12,8 @@ import {
 } from './DrinkItem.styled';
 import trash from '../../assets/images/deleteSvg/trash.svg';
 import SeeMoreBtn from 'components/LinkBtn/SeeMoreBtn';
-import { useDispatch } from 'react-redux';
 import { removeDrink } from 'redux/drinks/drinksOperations';
+import placeholderImage from '../../assets/images/drinkPage/coctailPlaceholder.png';
 
 const DrinkItem = ({ drinkData }) => {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ const DrinkItem = ({ drinkData }) => {
 
   return (
     <Card>
-      <CardImage src={drinkThumb} alt={drink} />
+      <CardImage  src={drinkThumb || placeholderImage} alt={drink} onError={(e) => {e.target.src = placeholderImage}}/>
       <DrinkName>{drink}</DrinkName>
       <IsAlco>{alcoholic}</IsAlco>
       <Description>{description}</Description>
