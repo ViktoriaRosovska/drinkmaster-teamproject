@@ -16,7 +16,7 @@ export const getMainPageAllDrinks = createAsyncThunk(
 );
 
 export const getDrinkById = createAsyncThunk(
-  'drinks/getDrinkById',
+  'drinks/drinkById',
   async (id, thunkAPI) => {
     try {
       const response = await axios.get(`/drinks/${id}`);

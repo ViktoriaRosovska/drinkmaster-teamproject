@@ -20,11 +20,14 @@ const DrinkIdPage = () => {
     dispatch(getDrinkById(drinkId));
   }, [dispatch, drinkId]);
 
+  console.log('drinkId:', drinkId);
+
   if (!selectedDrink || !selectedDrink.drinks) {
     return <div>Loading...</div>;
   }
 
-  const drink = selectedDrink.drinks[0];
+  const drink = selectedDrink;
+  // const drink = selectedDrink.drinks[0];
 
   return (
     <MainContainer>

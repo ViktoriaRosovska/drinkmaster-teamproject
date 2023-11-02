@@ -13,13 +13,13 @@ export const selectMainPageDrinks = createSelector(
   (mainPageDrinks) => mainPageDrinks
 );
 
-export const selectDrinkById = createSelector(
-  [selectDrinksData, (_, drinkId) => drinkId],
-  (drinks, drinkId) => drinks.find((drink) => drink._id === drinkId)
-);
+export const selectDrinkById = (state) => state.drinks.drinkById;
 
-// export const selectDrinkById = (state, drinkId) =>
-//   state.drinks.drinks.find((drink) => drink._id === drinkId);
+
+// export const selectDrinkById = createSelector(
+//   [selectDrinksData, (_, drinkId) => drinkId],
+//   (drinks, drinkId) => drinks.find((drink) => drink._id === drinkId)
+// );
 
 export const selectIsLoading = createSelector(
   [selectIsLoadingData],
