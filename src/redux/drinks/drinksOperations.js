@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://drink-master-app.onrender.com/api/'; 
+axios.defaults.baseURL = 'https://drink-master-app.onrender.com/api/';
 
 export const getMainPageAllDrinks = createAsyncThunk(
   'drinks/getAll',
@@ -38,7 +38,7 @@ export const getPopularDrinks = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
-  },
+  }
 );
 
 export const getRequestedDrink = createAsyncThunk(
@@ -60,7 +60,7 @@ export const getRequestedDrink = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
-  },
+  }
 );
 
 export const addMyDrink = createAsyncThunk(
@@ -76,21 +76,19 @@ export const addMyDrink = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
-  },
+  }
 );
 
 export const removeDrink = createAsyncThunk(
   'drinks/favorite/remove/:id',
   async (id, thunkAPI) => {
     try {
-      const response = await axios.delete(
-        `drinks/favorite/remove/${id}`,
-      );
+      const response = await axios.delete(`drinks/favorite/remove/${id}`);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
-  },
+  }
 );
 
 export const removeOwnDrink = createAsyncThunk(
@@ -102,7 +100,7 @@ export const removeOwnDrink = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
-  },
+  }
 );
 
 export const getOwnDrinks = createAsyncThunk(
@@ -110,13 +108,13 @@ export const getOwnDrinks = createAsyncThunk(
   async ({ page, limit }, thunkAPI) => {
     try {
       const response = await axios.get(
-        `drinks/own/all?page=${page}&limit=${limit}`,
+        `drinks/own/all?page=${page}&limit=${limit}`
       );
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
-  },
+  }
 );
 
 export const addDrinkToFavorite = createAsyncThunk(
@@ -128,7 +126,7 @@ export const addDrinkToFavorite = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
-  },
+  }
 );
 
 export const getFavoriteAll = createAsyncThunk(
@@ -136,11 +134,11 @@ export const getFavoriteAll = createAsyncThunk(
   async ({ page, limit }, thunkAPI) => {
     try {
       const response = await axios.get(
-        `drinks/favorite?page=${page}&limit=${limit}`,
+        `drinks/favorite?page=${page}&limit=${limit}`
       );
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
-  },
+  }
 );
