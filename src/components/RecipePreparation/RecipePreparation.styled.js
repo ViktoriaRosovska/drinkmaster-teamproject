@@ -26,15 +26,17 @@ export const RecipeBox = styled.div`
 export const Picture = styled.picture`
   width: 335px;
   height: 430px;
-  object-fit: cover;
   border-radius: 10px;
+  overflow: hidden;
 
   @media screen and (min-width: 768px) {
     width: 704px;
+    height: 818px;
   }
 
   @media screen and (min-width: 1440px) {
-    width: 631px;
+    width: 1240px;
+    height: 480px;
   }
 `;
 export const List = styled.ul`

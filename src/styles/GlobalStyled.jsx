@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import Manrope400woff from '../assets/fonts/Manrope-Regular.woff';
-import Manrope400woff2 from '../assets/fonts/Manrope-Regular.woff2';
+// import Manrope400woff from '../assets/fonts/Manrope-Regular.woff';
+// import Manrope400woff2 from '../assets/fonts/Manrope-Regular.woff2';
 export default createGlobalStyle`
    *,
    *::before,
@@ -39,17 +39,19 @@ img {
   display: block;
 }
 
-    @font-face {
+    ${
+      '' /* @font-face {
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: 
     url(${Manrope400woff2}) format('woff2'),
-    url(${Manrope400woff}) format('woff'),
+    url(${Manrope400woff}) format('woff'), */
+    }
      /* url(../assets/fonts/Manrope-Regular.ttf) format('ttf'), */
      /* url(../assets//fonts/Manrope-Regular.eot) format('eot'); */
-}
+
 /*
 @font-face {
   font-family: 'Manrope';

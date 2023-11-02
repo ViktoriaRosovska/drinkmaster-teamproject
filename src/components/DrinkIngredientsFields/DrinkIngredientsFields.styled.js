@@ -22,12 +22,13 @@ const DrinkIngredientsWrapper = styled.div`
 `;
 const IngredientWrapper = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-direction: column;
+  border: 1px solid red;
+  flex-wrap: wrap;
   width: 100%;
 
   @media screen and (min-width: 768px) {
-    gap: 188px;
+    gap: 24px;
   }
 `;
 const TitleWrapper = styled.div`

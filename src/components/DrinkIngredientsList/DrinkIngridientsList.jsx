@@ -6,7 +6,7 @@ import {
   List,
   Title,
 } from './DrrinkIngedientList.styled';
-
+import drinkIdPageBlock from '../../assets/images/drinkIdPage/block-middle@1x.jpg';
 const DrinkIngridientList = ({ ingredients }) => {
   return (
     <>
@@ -20,10 +20,7 @@ const DrinkIngridientList = ({ ingredients }) => {
               <div>default image</div>
             )}
              */}
-            <Image
-              src="../../assets/images/drinkIdPage/block-tabl@1x.jpg"
-              alt={title}
-            />
+            <Image src={drinkIdPageBlock} alt={title} />
             <Ingredient>
               <IngredientTitle>{title}</IngredientTitle>
               <IngredientMeasure>{measure}</IngredientMeasure>
