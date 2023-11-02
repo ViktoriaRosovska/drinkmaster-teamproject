@@ -23,11 +23,13 @@ export const RecipeBox = styled.div`
     gap: 60px;
   }
 `;
+export const Box = styled.div`
+  overflow: hidden;
+`;
 export const Picture = styled.picture`
   width: 335px;
   height: 430px;
-  border-radius: 10px;
-  overflow: hidden;
+  /* border-radius: 8px; */
 
   @media screen and (min-width: 768px) {
     width: 704px;
