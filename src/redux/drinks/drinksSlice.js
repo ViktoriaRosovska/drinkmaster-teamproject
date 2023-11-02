@@ -16,6 +16,7 @@ const initialState = {
   searchQuery: '',
   mainPageDrinks: [],
   drinks: [],
+  drinkById: [],
   favoriteDrinks: [],
   popularDrinks: [],
   isLoading: false,
@@ -39,7 +40,8 @@ const drinksSlice = createSlice({
 
       .addCase(getDrinkById.pending, handlePending)
       .addCase(getDrinkById.fulfilled, (state, action) => {
-        state.drinks = [action.payload];
+        state.drinkById = [action.payload];
+        console.log('drinkById:', state.drinkById);
         state.isLoading = false;
         state.error = null;
       })
