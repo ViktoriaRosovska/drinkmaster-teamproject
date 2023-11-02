@@ -33,7 +33,7 @@ export default function FavoriteDrinksPage() {
   return (
     <MainContainer>
       <PageTitle title="Favorites" />
-      {total > 0 ? (<DrinkList />) : (<NotFound/>)}
+      {total > 0 ? (<DrinkList onPageChange={onPageChange} currentPage={currentPage} />) : (<NotFound/>)}
       
       {totalPages > 1 && (
         <Paginator

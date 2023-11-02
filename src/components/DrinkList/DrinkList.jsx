@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import DrinkItem from 'components/DrinkItem/DrinkItem';
 import { CardList } from './DrinkList.styled';
 import { useDrink } from 'hooks/useDrink';
 
-const DrinkList = () => {
+const DrinkList = ({onPageChange, currentPage}) => {
   const { favoriteDrinks } = useDrink();
+
+  console.log(currentPage);
+
+  useEffect(() => {
+    if (favoriteDrinks.length === 0 && currentPage > 1) {
+      onPageChange(currentPage - 1)
+    }
+  }, [favoriteDrinks, currentPage, onPageChange])
   
   return (
     <>
