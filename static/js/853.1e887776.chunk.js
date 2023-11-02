@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkdrinkmaster_teamproject=self.webpackChunkdrinkmaster_teamproject||[]).push([[853],{2853:function(t,e,r){r.r(e),r.d(e,{default:function(){return i}});r(2791);var n=r(4717),s=r(3757),u=r(9483),c=r(184);function i(){return(0,c.jsxs)(u.t,{children:[(0,c.jsx)(s.Z,{title:"My drinks"}),(0,c.jsx)(n.Z,{})]})}}}]);
-//# sourceMappingURL=853.1e887776.chunk.js.map
