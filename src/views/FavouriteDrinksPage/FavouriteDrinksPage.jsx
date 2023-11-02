@@ -14,8 +14,7 @@ export default function FavoriteDrinksPage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { width } = useResize();
-  const { total } = useDrink();
-
+  const { total, favoriteDrinks } = useDrink();
   const [currentPage, setCurrentPage] = useState(1);
 
   const drinksPerPage = width < 1440 ? 8 : 9;
@@ -27,22 +26,33 @@ export default function FavoriteDrinksPage() {
   const totalPages = Math.ceil(total / drinksPerPage);
 
   useEffect(() => {
+    if (favoriteDrinks?.length === 0 && currentPage > 1) {
+      onPageChange(currentPage - 1);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [favoriteDrinks]);
+
+  useEffect(() => {
     navigate(`?page=${currentPage}`);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [currentPage]);
 
   useEffect(() => {
     dispatch(getFavoriteAll({ page: currentPage, limit: drinksPerPage }))
       .unwrap()
       .catch(error => console.log(error));
-  }, [dispatch, currentPage, total, drinksPerPage]);
+  }, [dispatch, currentPage, total, drinksPerPage, ]);
 
   console.log(total);
   return (
     <MainContainer>
       <PageTitle title="Favorites" />
       {total > 0 ? (
-        <DrinkList onPageChange={onPageChange} currentPage={currentPage} />
+        <DrinkList
+          drinksData={favoriteDrinks}
+          onPageChange={onPageChange}
+          currentPage={currentPage}
+        />
       ) : (
         <NotFound />
       )}
