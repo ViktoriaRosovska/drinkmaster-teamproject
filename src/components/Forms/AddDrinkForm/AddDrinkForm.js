@@ -1,25 +1,25 @@
-// import * as Yup from 'yup';
+import * as Yup from 'yup';
 import { useFormik } from 'formik';
-// import { useDispatch } from 'react-redux';
-// import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 // import { useNavigate } from 'react-router';
 
-// import { addMyDrink } from 'redux/drinks/drinksOperations';
+import { addMyDrink } from 'redux/drinks/drinksOperations';
 
 import { FormContainer } from './AddDrinkForm.styled';
 import WhiteLinkBtn from '../../Buttons/WhiteLinkBtn/WhiteLinkBtn';
 import { DrinkDescriptionFields } from '../../DrinkDescriptionFields/DrinkDescriptionFields';
 import DrinkRecipePreparation from 'components/DrinkRecipePreparation/DrinkRecipePreparation';
-// import DrinkIngridientsFields from 'components/DrinkIngredientsFields/DrinkIngredientsFields';
+import DrinkIngridientsFields from 'components/DrinkIngredientsFields/DrinkIngredientsFields';
 
-// import Loader from 'components/Loader';
+import Loader from 'components/Loader';
 
 // import chevronUp from '../../assets/images/addDrink/chevron-up.svg';
 // import { ReactSVG } from 'react-svg';
 
 export default function AddDrinkForm() {
-  // const [isLoading, setIsLoading] = useState(false);
-  // const dispatch = useDispatch();
+  const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
   // const navigate = useNavigate();
 
   const formik = useFormik({
@@ -38,16 +38,16 @@ export default function AddDrinkForm() {
         },
       ],
     },
-    // validationSchema: Yup.object().shape({
-    //   drink: Yup.string.required('This field is required'),
-    //   description: Yup.string.required('This field is required'),
-    //   category: Yup.string.required('This field is required'),
-    //   glass: Yup.string.required('This field is required'),
-    //   alcoholic: Yup.string.required('Select a type of drink'),
-    //   instructions: Yup.string.required('This field is required'),
-    //   ingredients: Yup.array.required('This field is required'),
-    //   drinkThumb: Yup.mixed().required('Select a drink image'),
-    // }),
+    validationSchema: Yup.object().shape({
+      drink: Yup.string().required('This field is required'),
+      description: Yup.string().required('This field is required'),
+      category: Yup.string().required('This field is required'),
+      glass: Yup.string().required('This field is required'),
+      alcoholic: Yup.string().required('Select a type of drink'),
+      instructions: Yup.string().required('This field is required'),
+      ingredients: Yup.array().required('This field is required'),
+      drinkThumb: Yup.mixed().required('Select a drink image'),
+    }),
     onSubmit: async values => {
       const formData = new FormData();
       formData.append('drink', values.drink);
@@ -58,55 +58,56 @@ export default function AddDrinkForm() {
       formData.append('instructions', values.instructions);
       formData.append('ingredients', JSON.stringify(values.ingredients));
       formData.append('drinkThumb', values.drinkThumb);
-      console.log(formData);
-      // try {
-      //   setIsLoading(true);
-      //   const responce = await dispatch(addMyDrink(formData));
-      //   setIsLoading(false);
-      //   if (responce) {
-      //     navigate('/my');
-      //   } else {
-      //     console.log('Server error', responce.statusText);
-      //   }
-      // } catch (error) {
-      //   console.log('Sending error. Please, try again', error.statusText);
-      // }
+      setIsLoading(true);
+      try {
+        const responce = await dispatch(addMyDrink(formData));
+        if (responce) {
+          //navigate('/my');
+          console.log('Hurray!!!');
+        } else {
+          console.log('Server error', responce.statusText);
+        }
+      } catch (error) {
+        console.log('Sending error. Please, try again', error.statusText);
+      } finally {
+        setIsLoading(false);
+      }
     },
   });
   // text="Please, wait for the drink to be added"
   return (
     <>
-      {/* {isLoading ? (
+      {isLoading ? (
         <Loader />
-      ) : ( */}
-      <FormContainer onSubmit={formik.handleSubmit}>
-        <DrinkDescriptionFields
-        // values={formik.values}
-        // errors={formik.errors}
-        // touched={formik.touched}
-        // handleChange={formik.handleChange}
-        // handleBlur={formik.handleBlur}
-        // setFieldValue={formik.setFieldValue}
-        />
-        {/* <DrinkIngridientsFields
-        values={formik.values}
-        errors={formik.errors}
-        touched={formik.touched}
-        handleChange={formik.handleChange}
-        handleBlur={formik.handleBlur}
-        setFieldValue={formik.setFieldValue}
-        /> */}
+      ) : (
+        <FormContainer onSubmit={formik.handleSubmit}>
+          <DrinkDescriptionFields
+          // values={formik.values}
+          // errors={formik.errors}
+          // touched={formik.touched}
+          // handleChange={formik.handleChange}
+          // handleBlur={formik.handleBlur}
+          // setFieldValue={formik.setFieldValue}
+          />
+          <DrinkIngridientsFields
+          // values={formik.values}
+          // errors={formik.errors}
+          // touched={formik.touched}
+          // handleChange={formik.handleChange}
+          // handleBlur={formik.handleBlur}
+          // setFieldValue={formik.setFieldValue}
+          />
 
-        <DrinkRecipePreparation
-        // values={formik.values}
-        // errors={formik.errors}
-        // touched={formik.touched}
-        // handleChange={formik.handleChange}
-        // handleBlur={formik.handleBlur}
-        />
-        <WhiteLinkBtn type="submit" title="Add" />
-      </FormContainer>
-      {/* )} */}
+          <DrinkRecipePreparation
+          // values={formik.values}
+          // errors={formik.errors}
+          // touched={formik.touched}
+          // handleChange={formik.handleChange}
+          // handleBlur={formik.handleBlur}
+          />
+          <WhiteLinkBtn type="submit" title="Add" />
+        </FormContainer>
+      )}
     </>
   );
 }
