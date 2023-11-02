@@ -95,6 +95,12 @@ const AddFormSelect = styled(Select)`
   -moz-appearance: none;
   -webkit-appearance: none;
   outline: none;
+  border-bottom: 1px solid var(--white-fifty-color);
+  background: 'transparent';
+  color: var(--white-fifty-color);
+  &:hover {
+    border-bottom: 1px solid var(--white-color);
+  }
 `;
 
 const AddFormRadioGroup = styled.div`
@@ -104,10 +110,18 @@ const AddFormRadioGroup = styled.div`
 `;
 
 const AddFormInput = styled.input`
-  line-height: 14px;
+  height: 34px;
+  width: 100%;
+  font-family: 'Manrope';
+  font-size: 14px;
+
+  font-weight: 400;
+  line-height: 19.12px;
+  letter-spacing: -0.02em;
+
   letter-spacing: 0em;
   border: none;
-  width: 100%;
+
   border-radius: 0;
   border-bottom: 1px solid var(--white-fifty-color);
 
@@ -115,26 +129,19 @@ const AddFormInput = styled.input`
   background-color: transparent;
   position: relative;
 
-  height: 34px;
   outline: none;
   &:hover {
     border-bottom: 1px solid var(--white-color);
   }
   &::placeholder {
     font-family: 'Manrope';
-    line-height: normal;
-    letter-spacing: -0.28px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.12px;
+    letter-spacing: -0.02em;
     position: absolute;
     top: 0;
     color: var(--white-color);
-
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19px;
-    letter-spacing: -0.02em;
-    text-align: left;
-
-    /* color: red; */
   }
 `;
 const InputRadio = styled.input`

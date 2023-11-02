@@ -17,7 +17,7 @@ import {
 import IconPlus from '../../assets/images/addDrink/plus.svg';
 import { useState } from 'react';
 // import chevronDown from '../../assets/images/addDrink/chevron-down.svg';
-import glasses from '../../helpers/Data/glasses';
+// import glasses from '../../helpers/Data/glasses';
 import ingredients from '../../helpers/Data/ingredients.json';
 // import { useState } from 'react';
 export const DrinkDescriptionFields = () => {
@@ -57,30 +57,92 @@ export const DrinkDescriptionFields = () => {
               getOptionValue={ingredient => ingredient.title}
               options={ingredients}
               styles={{
-                control: base => ({
-                  base,
-                  backgroundColor: 'transparent',
+                control: baseStyles => ({
+                  ...baseStyles,
                   boxShadow: 'none',
-                  borderBottom: '1px solid var(--white-fifty-color)',
-                  '&:hover': {
-                    borderBottom: '1px solid var(--white-color)',
+                  backgroundColor: 'transparent',
+                  justifyContent: 'flex-end',
+                  border: 'none',
+                  height: '34px',
+                  position: 'relative',
+                  color: 'red',
+                }),
+                singleValue: baseStyles => ({
+                  ...baseStyles,
+                  color: 'white',
+                  textAlign: 'right',
+                }),
+                input: baseStyles => ({
+                  width: '300px',
+                }),
+                valueContainer: baseStyles => ({
+                  ...baseStyles,
+                  width: '131px',
+                  justifyContent: 'flex-end',
+                  alignItems: 'flex-start',
+                  marginRight: '18px',
+                  color: 'var(--white-color)',
+                  marginBottom: '14px',
+                }),
+                indicatorsContainer: baseStyles => ({
+                  ...baseStyles,
+                  color: 'green',
+                  width: '100%',
+                  justifyContent: 'flex-end',
+                  position: 'absolute',
+                  top: '0',
+                  padding: '0',
+                }),
+                menu: baseStyles => ({
+                  ...baseStyles,
+                  borderRadius: '12px',
+                  backgroundColor: '#161F37',
+                  width: '131px',
+                  top: '16px',
+                  right: '0',
+
+                  '&::-webkit-scrollbar': {
+                    width: '0px',
                   },
                 }),
-                option: (provided, state) => ({
-                  ...provided,
+                menuList: baseStyles => ({
+                  ...baseStyles,
 
-                  backgroundColor: 'none',
+                  '&::-webkit-scrollbar': {
+                    width: '0px',
+                  },
+                }),
+                option: base => ({
+                  ...base,
+                  boxShadow: 'none',
+                  width: '100%',
+                  backgroundColor: 'transparent',
                   '&:hover': {
                     color: 'var(--white-color)',
                   },
+                }),
+
+                indicatorSeparator: base => ({
+                  ...base,
+                  display: 'none',
+                }),
+                dropdownIndicator: (baseStyles, { isFocused }) => ({
+                  ...baseStyles,
+                  color: 'var(--white-color)',
+                  padding: '0',
+                  '&:hover': {
+                    color: 'var(--white-color)',
+                  },
+                  transition: 'transform 0.25s ease-out',
+                  transform: isFocused && 'rotate(180deg)',
                 }),
               }}
             />
           </AddFormSelectContainer>
 
           <AddFormSelectContainer>
-            <AddFormSelectLabel>Glass</AddFormSelectLabel>
-            <AddFormSelect
+            {/* <AddFormSelectLabel>Glass</AddFormSelectLabel> */}
+            {/* <AddFormSelect
               className="react-select"
               classNamePrefix="react-select"
               placeholder=""
@@ -91,23 +153,44 @@ export const DrinkDescriptionFields = () => {
               styles={{
                 control: base => ({
                   base,
-                  backgroundColor: 'transparent',
-                  boxShadow: 'none',
-                  borderBottom: '1px solid var(--white-fifty-color)',
-                  '&:hover': {
-                    borderBottom: '1px solid var(--white-color)',
+                  width: '100%',
+                }),
+                menu: baseStyles => ({
+                  ...baseStyles,
+                  borderRadius: '20px',
+                  backgroundColor: '#161F37',
+                  width: '199px',
+                  marginTop: '4px',
+                  '&::-webkit-scrollbar': {
+                    width: '0px',
                   },
                 }),
-                option: (provided, state) => ({
-                  ...provided,
-
+                menuList: baseStyles => ({
+                  ...baseStyles,
+                  '&::-webkit-scrollbar': {
+                    width: '0px',
+                  },
+                }),
+                option: baseStyles => ({
+                  ...baseStyles,
                   backgroundColor: 'none',
+                  color: 'var(--white-fifty-color)',
+                  width: '100px',
                   '&:hover': {
                     color: 'var(--white-color)',
                   },
                 }),
+                singleValue: baseStyles => ({
+                  ...baseStyles,
+                  color: 'white',
+                }),
+
+                indicatorSeparator: baseStyles => ({
+                  ...baseStyles,
+                  display: 'none',
+                }),
               }}
-            />
+            /> */}
           </AddFormSelectContainer>
           <AddFormRadioGroup>
             <InputRadio
