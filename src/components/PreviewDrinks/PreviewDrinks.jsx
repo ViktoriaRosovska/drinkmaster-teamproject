@@ -14,13 +14,10 @@ import { useResize } from '../../hooks/useResize';
 
 const PreviewDrinks = () => {
   const { mainPageDrinks, isLoading } = useDrink();
-  console.log('mainPageDrinks:', mainPageDrinks);
   const { width } = useResize();
-
   const drinksToRender = width < 768 ? 1 : width < 1440 ? 2 : 3;
-
   const drinksCategory = Object.keys(mainPageDrinks).slice(0, 4);
-  console.log(drinksCategory);
+
   return (
     <>
       <SectionContainer>
