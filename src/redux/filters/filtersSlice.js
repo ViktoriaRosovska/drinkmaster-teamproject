@@ -2,9 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getCategories, getGlasses, getIngredients } from './filtersOperations';
 import { handlePending, handleRejected } from '../../hooks/handlers';
 const initialState = {
-  categories: '',
-  ingredients: '',
-  glasses: '',
+  categories: [],
+  ingredients: [],
+  glasses: [],
   isLoading: false,
   error: null,
 };
@@ -17,7 +17,7 @@ const filtersSlice = createSlice({
       .addCase(getCategories.pending, handlePending)
       .addCase(getCategories.rejected, handleRejected)
       .addCase(getCategories.fulfilled, (state, action) => {
-        state.categories = action.payload.categories;
+        state.categories = action.payload;
         state.isLoading = false;
         state.error = null;
       })
@@ -25,7 +25,7 @@ const filtersSlice = createSlice({
       .addCase(getGlasses.pending, handlePending)
       .addCase(getGlasses.rejected, handleRejected)
       .addCase(getGlasses.fulfilled, (state, action) => {
-        state.glasses = action.payload.glasses;
+        state.glasses = action.payload;
         state.isLoading = false;
         state.error = null;
       })
@@ -33,7 +33,7 @@ const filtersSlice = createSlice({
       .addCase(getIngredients.pending, handlePending)
       .addCase(getIngredients.rejected, handleRejected)
       .addCase(getIngredients.fulfilled, (state, action) => {
-        state.ingredients = action.payload.ingredients;
+        state.ingredients = action.payload;
         state.isLoading = false;
         state.error = null;
       }),
