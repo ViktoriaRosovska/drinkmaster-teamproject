@@ -17,8 +17,8 @@ export default function AddDrinkForm() {
 
   const onFormSubmit = e => {
     e.preventDefault();
-    console.log(e.currentTarget.elements.glassSelect.value);
-    console.log(e.currentTarget.elements.typeDrink.value);
+    // console.log(e.currentTarget.elements.glassSelect.value);
+    // console.log(e.currentTarget.elements.typeDrink.value);
   };
 
   return (
