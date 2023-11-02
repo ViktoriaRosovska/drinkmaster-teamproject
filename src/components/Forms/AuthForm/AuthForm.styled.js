@@ -177,7 +177,7 @@ export const BirthDate = styled(DatePicker)`
   line-height: 1.28;
   color: var(--white-fifty-color);
   background-color: transparent;
-  transition: border ${transition};
+  transition: border ${transition}, color ${transition};
 
   &:focus,
   &:hover {
@@ -197,24 +197,39 @@ export const BirthDate = styled(DatePicker)`
     `}
 
   @media screen and (min-width: 768px) {
-    width: 350px;
+    width: 400px;
     font-size: 17px;
     line-height: 1.56;
     padding: 14px 24px;
   }
-  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root.Mui-error
-    .MuiOutlinedInput-notchedOutline {
-    border: 1px solid var(--white-twenty-color);
-  }
   .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
     color: var(--white-twenty-color);
-  }
-  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused
-    .MuiOutlinedInput-notchedOutline {
     border: 1px solid var(--white-twenty-color);
+    border-radius: 200px;
+    transition: border ${transition};
   }
+  /* .
   .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
     border: 1px solid var(--white-twenty-color);
     border-radius: 200px;
+  }*/
+  /* .css-z3c6am-MuiFormControl-root-MuiTextField-root {
+    border: 1px solid var(--green-success-fifty-color);
+  } */
+
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root.Mui-error
+    .MuiOutlinedInput-notchedOutline {
+    border: 1px solid var(--red-error-fifty-color);
+  }
+  /* .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused {
+    border-color: var(--white-fifty-color);
+  } */
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root
+    .MuiOutlinedInput-notchedOutline {
+    border: 1.5px solid var(--green-success-fifty-color);
+  }
+  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused
+    .MuiOutlinedInput-notchedOutline {
+    border-color: var(--green-success-fifty-color);
   }
 `;
