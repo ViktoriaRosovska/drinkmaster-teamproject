@@ -7,7 +7,6 @@ export const FooterCopyrightWrapper = styled.div`
   @media screen and (min-width: 768px) {
     display: flex;
     flex-direction: row;
-
     gap: 153px;
   }
 
@@ -34,7 +33,7 @@ export const FooterLinkInfo = styled.ul`
   gap: 14px;
 
   @media screen and (min-width: 768px) {
-    column-gap: 18px;
+    gap: 18px;
     padding-top: 0px;
   }
 `;

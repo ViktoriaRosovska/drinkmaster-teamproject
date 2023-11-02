@@ -11,6 +11,8 @@ import PageTitle from '../../components/PageTitle/PageTitle';
 export default function PrivacyPolicy() {
 
   const location = useLocation();
+
+  // повертає завжди а сторінку Хоум  
   const backLinkHref = useRef(location.state?.from ?? '/');
   return (
     <>
