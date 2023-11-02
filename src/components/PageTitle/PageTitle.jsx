@@ -1,9 +1,9 @@
 import React from 'react';
 import { Title } from './PageTitle.styled';
 
-const PageTitle = ({title}) => {
+const PageTitle = ({title, forwardRef}) => {
     return (
-        <Title>{title}</Title>
+        <Title ref={forwardRef}>{title}</Title>
     )
 }  
 
