@@ -12,6 +12,7 @@ const DrinkList = ({ onPageChange, currentPage }) => {
     if (favoriteDrinks?.length === 0) {
       onPageChange(currentPage - 1);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [favoriteDrinks]);
 
   return (
