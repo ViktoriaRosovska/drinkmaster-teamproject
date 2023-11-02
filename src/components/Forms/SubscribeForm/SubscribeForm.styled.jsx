@@ -14,7 +14,7 @@ export const SubscribeWrapper = styled(FormikForm)`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
   }
 `;
 
@@ -30,7 +30,8 @@ export const SubscribeInput = styled(Field)`
   line-height: 1.29;
   color: var(--white-fifty-color);
   background-color: transparent;
-  transition: border var(--transition), transform var(--transition), color var(--transition);
+  transition: border var(--transition), transform var(--transition),
+    color var(--transition);
 
   &:focus,
   &:hover {
@@ -70,7 +71,8 @@ export const SubscribeButton = styled.button`
   border-radius: 200px;
   color: var(--white-color);
   background-color: transparent;
-  transition: transform var(--transition), border var(--transition), background-color var(--transition);
+  transition: transform var(--transition), border var(--transition),
+    background-color var(--transition);
 
   &:focus,
   &:hover {
