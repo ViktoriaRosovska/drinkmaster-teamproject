@@ -41,6 +41,8 @@ export const App = () => {
     dispatch(authOperations.currentUser());
     if (location.pathname === '/') {
       navigate('/home');
+    } else {
+      navigate(location.pathname);
     }
   }, [dispatch, location.pathname, navigate]);
 
