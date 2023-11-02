@@ -1,13 +1,17 @@
-import React, {useRef } from 'react';
+import React, {useRef, useEffect } from 'react';
 import { PrivacyContainer, PrivacyPolicyText, PrivacyPolicyTitle } from '../PrivacyPolicyPage/PrivacyPolicyPage.styled'; 
 import PageTitle from '../../components/PageTitle/PageTitle';
 import ButtonBack from '../../components/ButtonBack/ButtonBack';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function TermsService() {
-
+const pageTitleRef = useRef();
 const location = useLocation();
   const backLinkHref = useRef(location.state?.from ?? '/');
+  
+  useEffect(() => {
+    pageTitleRef.current.scrollIntoView();
+  }, []);
 
   return (
     <PrivacyContainer>
@@ -16,7 +20,7 @@ const location = useLocation();
         <ButtonBack text=" Go back" />
       </Link>
       
-      <PageTitle title='Terms of Service'/>
+      <PageTitle title='Terms of Service' forwardRef={pageTitleRef}/>
       
   <PrivacyPolicyText>
     This "User Agreement" (the "Agreement") sets forth the terms and conditions governing the use of the Drink Master application ("App") and its services.
