@@ -48,6 +48,9 @@ const DrinkIdPage = () => {
   //   // }
   //   // loadPage();
   // }, [dispatch, drinkId, isLoggedIn]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <MainContainer>
@@ -65,7 +68,6 @@ const DrinkIdPage = () => {
 
           {/* <DrinkIngridientList ingredients={ingredientArrayFromDrink} /> */}
 
-      
           <RecipePreparation instructions={drink.instructions} />
         </>
       )}

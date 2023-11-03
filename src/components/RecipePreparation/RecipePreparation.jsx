@@ -1,6 +1,7 @@
 import {
   RecipePreparationTitle,
-  RecipePreparationDescription,
+  List,
+  ListItem,
   RecipePreparationImage,
   RecipePreparationWrap,
 } from './RecipePreparation.styled';
@@ -13,31 +14,31 @@ import drinkIdPageMob1x from '../../assets/images/drinkIdPage/drink-id-page-mob@
 import drinkIdPageMob2x from '../../assets/images/drinkIdPage/drink-id-page-mob@2x.jpg';
 
 const RecipePreparation = ({ instructions }) => {
-
-//   const steps = instructions?.split('.');
-//   const noEmptySteps = steps?.filter(step => step.trim() !== '');
-//   return (
-//     <>
-//       <RecipeTitle>Recipe Preparation</RecipeTitle>
-//       <RecipeBox>
-//         <List>
-//           {noEmptySteps?.map(step => (
-//             <ListItem key={step}>{step}</ListItem>
-//           ))}
-//         </List>
-//         <Box>
-//           <Picture>
-//             <source
-//               srcSet={drinkIdPageDesk1x}
-//     
+  const steps = instructions?.split('.');
+  const noEmptySteps = steps?.filter(step => step.trim() !== '');
+  //   return (
+  //     <>
+  //       <RecipeTitle>Recipe Preparation</RecipeTitle>
+  //       <RecipeBox>
+  //         <List>
+  //           {noEmptySteps?.map(step => (
+  //             <ListItem key={step}>{step}</ListItem>
+  //           ))}
+  //         </List>
+  //         <Box>
+  //           <Picture>
+  //             <source
+  //               srcSet={drinkIdPageDesk1x}
+  //
   return (
     <>
       <RecipePreparationTitle>Recipe Preparation</RecipePreparationTitle>
       <RecipePreparationWrap>
-        <RecipePreparationDescription>
-          {instructions}
-        </RecipePreparationDescription>
-
+        <List>
+          {noEmptySteps?.map(step => (
+            <ListItem key={step}>{step}</ListItem>
+          ))}
+        </List>
 
         <picture>
           <source
