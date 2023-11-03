@@ -26,6 +26,7 @@ const IngredientWrapper = styled.div`
   border: 1px solid red;
   flex-wrap: wrap;
   width: 100%;
+  gap: 18px;
 
   @media screen and (min-width: 768px) {
     gap: 24px;

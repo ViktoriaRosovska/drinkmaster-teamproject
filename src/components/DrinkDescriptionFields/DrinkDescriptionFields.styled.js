@@ -1,11 +1,12 @@
 import { ReactSVG } from 'react-svg';
 import styled from 'styled-components';
-import Select from 'react-select';
+// import Select from 'react-select';
 
 const DescriptionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 80px;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -87,21 +88,18 @@ const SelectContainer = styled.div`
   }
 `;
 
-const AddFormSelect = styled(Select)`
-  padding: 0;
-  width: 100%;
-  height: 34px;
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  outline: none;
-  border-bottom: 1px solid var(--white-fifty-color);
-  background: 'transparent';
-  color: var(--white-fifty-color);
-  &:hover {
-    border-bottom: 1px solid var(--white-color);
-  }
-`;
+// const AddFormSelect = styled(Select)`
+//   padding: 0;
+//   width: 100%;
+//   height: 34px;
+//   appearance: none;
+//   -moz-appearance: none;
+//   -webkit-appearance: none;
+//   outline: none;
+//   border: none;
+//   background: 'transparent';
+//   color: var(--white-fifty-color);
+// `;
 
 const AddFormRadioGroup = styled.div`
   display: flex;
@@ -186,7 +184,7 @@ export {
   SelectContainer,
   AddFormInput,
   AddFormRadioGroup,
-  AddFormSelect,
+  // AddFormSelect,
   InputRadio,
   ChevronReactSvg,
   AddFormSelectLabel,

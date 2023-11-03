@@ -2,8 +2,6 @@ import PageTitle from 'components/PageTitle/PageTitle';
 
 import { MainContainer } from 'styles/App.styled';
 
-import { useEffect } from 'react';
-
 // import { useDispatch } from 'react-redux';
 // import { authOperations } from '../../redux/auth/authOperations';
 
@@ -12,7 +10,6 @@ import FollowUs from 'components/FollowUs/FollowUs';
 import { AddDrinkContainer } from './AddDrinkPage.styled';
 
 export default function AddDrinkPage() {
-  useEffect(() => {}, []);
   return (
     <MainContainer>
       <PageTitle title="Add drink" />
