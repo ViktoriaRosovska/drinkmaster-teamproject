@@ -73,13 +73,19 @@ export const SubscribeButton = styled.button`
   background-color: transparent;
   transition: transform var(--transition), border var(--transition),
     background-color var(--transition);
-
+&:disabled {
+    color: var(--white-twenty-color);
+    opacity: 0.5; /* Наприклад, знизити прозорість неактивної кнопки */
+  cursor: not-allowed;
+  }
   &:focus,
   &:hover {
     border: 1px solid var(--white-fifty-color);
     color: var(--white-color);
     transform: scale(1.05);
+ 
   }
+  
 
   @media screen and (min-width: 768px) {
     width: 309px;

@@ -1,4 +1,4 @@
-import { Formik, ErrorMessage } from 'formik';
+import { Formik, ErrorMessage, Field } from 'formik';
 import {
   SubscribeWrapper,
   SubscribeInput,
@@ -10,7 +10,6 @@ import { subscribeEmail } from 'redux/auth/authOperations';
 import { object, string } from 'yup';
 import { toast } from 'react-toastify';
 import { toastConfig } from '../../Notification/notification_options';
-
 
 const validationSchema = object({
   email: string()
@@ -24,7 +23,7 @@ const validationSchema = object({
 
 const SubscribeForm = () => {
   const dispatch = useDispatch();
- 
+
   return (
     <Formik
       initialValues={{ email: '' }}
@@ -32,6 +31,7 @@ const SubscribeForm = () => {
       onSubmit={async (values, actions) => {
         try {
           await dispatch(subscribeEmail(values));
+
           actions.resetForm();
           toast.success('You have successfully subscribed!', toastConfig());
         } catch (error) {
@@ -40,20 +40,30 @@ const SubscribeForm = () => {
       }}
     >
       {({ isSubmitting, isValid }) => (
-        <SubscribeWrapper>
-          <SubscribeText>
-            Subscribe up to our newsletter. Be in touch with latest news and
-            special offers, etc.
-          </SubscribeText>
-          <SubscribeInput
-            type="email"
-            name="email"
-            placeholder="Enter the email"
-            required
-          ></SubscribeInput>
-          <ErrorMessage name="email" component="div" style={{ color: 'red', fontSize: '14px' }} />
-          <SubscribeButton type="submit" disabled={isSubmitting || !isValid}>Subscribe</SubscribeButton>
-        </SubscribeWrapper>
+        <form>
+          <SubscribeWrapper>
+            <SubscribeText>
+              Subscribe up to our newsletter. Be in touch with latest news and
+              special offers, etc.
+            </SubscribeText>
+             <Field
+              as={SubscribeInput}
+              type="email"
+              name="email"
+              placeholder="Enter the email"
+              required
+            />
+              <ErrorMessage
+                name="email"
+                component="div"
+                style={{ color: 'red', fontSize: '14px' }}
+              />
+            
+            <SubscribeButton type="submit" disabled={isSubmitting || !isValid}>
+              Subscribe
+            </SubscribeButton>
+          </SubscribeWrapper>
+        </form>
       )}
     </Formik>
   );
