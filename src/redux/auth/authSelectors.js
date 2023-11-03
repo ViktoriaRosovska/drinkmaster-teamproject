@@ -8,6 +8,8 @@ const selectIsRefreshing = state => state.auth.isRefreshing;
 const selectToken = state => state.auth.token;
 const selectSubscribe = state => state.auth.isSubscribed;
 
+const selectTheme = state => state.auth.theme;
+
 const authSelectors = {
   selectUser,
   selectUserName,
@@ -17,6 +19,7 @@ const authSelectors = {
   selectIsLoggedIn,
   selectIsRefreshing,
   selectSubscribe,
+  selectTheme,
 };
 
 export default authSelectors;

@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+// import { instance } from '../../api/instance';
 
 axios.defaults.baseURL = 'https://drink-master-app.onrender.com/api/';
 const authHeaderToken = {
@@ -78,10 +79,23 @@ export const subscribeEmail = createAsyncThunk(
   }
 );
 
+const themeThunk = createAsyncThunk(
+  'auth/theme',
+  async (payload, { rejectWithValue }) => {
+    try {
+      const res = await axios.patch('/users/theme', payload);
+      return res.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 export const authOperations = {
   signUp,
   signIn,
   signOut,
   currentUser,
   subscribeEmail,
+  themeThunk,
 };

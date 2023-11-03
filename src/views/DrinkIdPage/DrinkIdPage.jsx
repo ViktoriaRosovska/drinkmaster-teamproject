@@ -17,11 +17,25 @@ const DrinkIdPage = () => {
   const dispatch = useDispatch();
   const { drinkId } = useParams();
   const drink = useSelector(state => selectDrinkById(state, drinkId));
+  // const isLoggedIn = useSelector(state => selectIsLoggedIn(state));
+
   useEffect(() => {
     dispatch(getDrinkById(drinkId));
   }, [dispatch, drinkId]);
 
-  console.log('drinkId:', drinkId);
+  // useEffect(() => {
+  //   async function fetchDrinkById() {
+  //     const res = await dispatch(getDrinkById(drinkId));
+  //     return res;
+  //   }
+
+  //   // function loadPage() {
+  //   //   if (isLoggedIn) {
+  //   //     fetchDrinkById();
+  //   //   }
+  //   // }
+  //   // loadPage();
+  // }, [dispatch, drinkId, isLoggedIn]);
 
   return (
     <MainContainer>
@@ -35,8 +49,8 @@ const DrinkIdPage = () => {
             image={drink.drinkThumb || null}
             alcoholic={drink.alcoholic}
           />
-          {/* <DrinkIngridientList ingredients={drink.ingredients} /> */}
-          {/* <RecipePreparation instructions={drink.instructions} /> */}
+          {/* <DrinkIngridientList ingredients={drink.ingredients } />
+          <RecipePreparation instructions={drink.instructions } /> */}
         </>
       )}
     </MainContainer>

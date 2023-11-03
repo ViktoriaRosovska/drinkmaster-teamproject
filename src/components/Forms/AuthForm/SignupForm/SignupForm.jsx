@@ -23,6 +23,7 @@ import {
 } from '../AuthForm.styled';
 import { ReactComponent as ShowPassword } from '../../../../assets/images/authComponents/eye.svg';
 import { ReactComponent as HidePassword } from '../../../../assets/images/authComponents/eye-off.svg';
+import { CalendarSvgIcon } from './CalendarSvgIcon';
 import { WelcomeWrapper } from 'styles/App.styled';
 
 const initialValues = {
@@ -135,6 +136,7 @@ function SignupForm() {
                     slotProps={{
                       textField: { fullWidth: true },
                     }}
+                    slots={{ openPickerIcon: CalendarSvgIcon }}
                     error={
                       errors.birthDate && touched.birthDate ? 'true' : 'false'
                     }

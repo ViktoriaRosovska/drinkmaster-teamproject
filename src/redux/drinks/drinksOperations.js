@@ -108,7 +108,7 @@ export const getOwnDrinks = createAsyncThunk(
   async ({ page, limit }, thunkAPI) => {
     try {
       const response = await axios.get(
-        `drinks/own/all?page=${page}&limit=${limit}`
+        `drinks/own?page=${page}&limit=${limit}`
       );
       return response.data;
     } catch (error) {

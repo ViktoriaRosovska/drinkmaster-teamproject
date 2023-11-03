@@ -10,64 +10,19 @@ const DrinksSearch = () => {
   const dispatch = useDispatch();
   const filter = useSelector(filterSelector);
 
-  const { categories, isLoading } = useFilters();
+  const { categories, ingredients, isLoading } = useFilters();
 
-  // console.log('categoriesRedux DrinksPage: ', categories);
-  // console.log('ingredientsRedux DrinksPage: ', ingredients);
-  // console.log('glassesRedux DrinksPage: ', glasses);
+  const sortedIngredients = [];
+  for (const ingredient of ingredients) {
+    if (ingredient.title && !sortedIngredients.includes(ingredient.title)) {
+      sortedIngredients.push(ingredient.title);
+    }
+  }
+  // console.log(sortedIngredients);
 
   const changeFilter = event => {
     dispatch(setFilter(event.target.value));
   };
-
-  // const categories = [
-  //   'Ordinary Drink',
-  //   'Cocktail',
-  //   'Shake',
-  //   'Other/Unknown',
-  //   'Cocoa',
-  //   'Shot',
-  //   'Coffee/Tea',
-  //   'Homemade Liqueur',
-  //   'Punch/Party Drink',
-  //   'Beer',
-  //   'Soft Drink',
-  // ];
-
-  // const ingredients = [
-  //   'Highball glass',
-  //   'Cocktail glass',
-  //   'Old-fashioned glass',
-  //   'Whiskey Glass',
-  //   'Collins glass',
-  //   'Pousse cafe glass',
-  //   'Champagne flute',
-  //   'Whiskey sour glass',
-  //   'Cordial glass',
-  //   'Brandy snifter',
-  //   'White wine glass',
-  //   'Nick and Nora Glass',
-  //   'Hurricane glass',
-  //   'Coffee mug',
-  //   'Shot glass',
-  //   'Jar',
-  //   'Irish coffee cup',
-  //   'Punch bowl',
-  //   'Pitcher',
-  //   'Pint glass',
-  //   'Copper Mug',
-  //   'Wine Glass',
-  //   'Beer mug',
-  //   'Margarita/Coupette glass',
-  //   'Beer pilsner',
-  //   'Beer Glass',
-  //   'Parfait glass',
-  //   'Mason jar',
-  //   'Margarita glass',
-  //   'Martini Glass',
-  //   'Balloon Glass',
-  //   'Coupe Glass',
-  // ];
 
   return (
     !isLoading && (
@@ -80,7 +35,7 @@ const DrinksSearch = () => {
           debounceTimeout={1000}
         />
         <Selection placeholder="All categories" options={categories} />
-        {/* <Selection placeholder="Ingredients" options={ingredients} /> */}
+        <Selection placeholder="Ingredients" options={sortedIngredients} />
       </Wrapper>
     )
   );

@@ -14,6 +14,7 @@ const MainContainer = styled.div`
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 80px;
+  padding-bottom: 80px;
   /* background-color: var(--black-color); */
 
   @media screen and (min-width: 375px) {
@@ -25,6 +26,7 @@ const MainContainer = styled.div`
     padding-left: 32px;
     padding-right: 32px;
     padding-top: 140px;
+    padding-bottom: 140px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -32,6 +34,7 @@ const MainContainer = styled.div`
     padding-left: 100px;
     padding-right: 100px;
     padding-top: 160px;
+    padding-bottom: 140px;
   }
 `;
 

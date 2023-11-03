@@ -2,15 +2,17 @@ import React from 'react';
 import DrinkItem from 'components/DrinkItem/DrinkItem';
 import { CardList } from './DrinkList.styled';
 
-const DrinkList = ({drinks}) => {
 
+const DrinkList = ({ drinksData, favorite }) => {
   return (
     <>
-        <CardList>
-          {drinks.map(drink => {
-            return <DrinkItem key={drink._id} drinkData={drink} />;
-          })}
-        </CardList>
+      <CardList>
+        {drinksData.map(drink => {
+
+          return <DrinkItem key={drink._id} drinkData={drink} favorite={favorite} />;
+
+        })}
+      </CardList>
     </>
   );
 };

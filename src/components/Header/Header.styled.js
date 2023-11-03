@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const HeaderCont = styled.header`
+  background-color: ${props => props.theme};
+
   position: relative;
   padding: 20px;
   border-bottom: 1px solid var(--white-twenty-color);
