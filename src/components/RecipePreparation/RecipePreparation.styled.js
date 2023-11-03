@@ -25,11 +25,11 @@ export const RecipeBox = styled.div`
 `;
 export const Box = styled.div`
   overflow: hidden;
+  border-radius: 10px;
 `;
 export const Picture = styled.picture`
   width: 335px;
   height: 430px;
-  /* border-radius: 8px; */
 
   @media screen and (min-width: 768px) {
     width: 704px;

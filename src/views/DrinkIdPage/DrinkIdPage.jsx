@@ -8,7 +8,7 @@ import { selectDrinkById } from 'redux/drinks/drinksSelectors';
 
 import DrinkPageHero from 'components/DrinkPageHero/DrinkPageHero';
 // import DrinkIngridientList from 'components/DrinkIngredientsList/DrinkIngridientsList';
-// import RecipePreparation from 'components/RecipePreparation/RecipePreparation';
+import RecipePreparation from 'components/RecipePreparation/RecipePreparation';
 
 import { MainContainer } from 'styles/App.styled';
 import { Title } from './DrinkIdPage.styled';
@@ -58,14 +58,15 @@ const DrinkIdPage = () => {
         <>
           <Title>{drink.drink} </Title>
           <DrinkPageHero
+            id={drink._id}
             glass={drink.glass}
             about={drink.description || null}
             title={drink.drink}
             image={drink.drinkThumb || null}
             alcoholic={drink.alcoholic}
           />
-          {/* <DrinkIngridientList ingredients={ingredients} /> */}
-          {/* <RecipePreparation instructions={drink.instructions} /> */}
+          {/* <DrinkIngridientList ingredients={ingredientArrayFromDrink} /> */}
+          <RecipePreparation instructions={drink.instructions} />
         </>
       )}
     </MainContainer>

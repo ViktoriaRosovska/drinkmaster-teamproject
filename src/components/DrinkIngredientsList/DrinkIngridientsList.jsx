@@ -21,14 +21,14 @@ const DrinkIngridientList = ({ ingredients }) => {
     dispatch(getIngredients());
   }, [dispatch]);
 
-  const ingredientsWithImages = drinks[0].ingredients;
+  const ingredientsWithImages = drinks.ingredients;
   return (
     <>
       {ingredientsWithImages.length > 0 && (
         <>
           <Title>Ingredients</Title>
           <List>
-            {ingredients.map(ingredient => {
+            {ingredients?.map(ingredient => {
               const ingredientRec = ingredientsWithImages.find(
                 ii => ii._id === ingredient.ingredientId
               );

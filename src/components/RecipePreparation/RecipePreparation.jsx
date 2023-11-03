@@ -14,14 +14,14 @@ import drinkIdPageMob1x from '../../assets/images/drinkIdPage/drink-id-page-mob@
 import drinkIdPageMob2x from '../../assets/images/drinkIdPage/drink-id-page-mob@2x.jpg';
 
 const RecipePreparation = ({ instructions }) => {
-  const steps = instructions.split('.');
-  const noEmptySteps = steps.filter(step => step.trim() !== '');
+  const steps = instructions?.split('.');
+  const noEmptySteps = steps?.filter(step => step.trim() !== '');
   return (
     <>
       <RecipeTitle>Recipe Preparation</RecipeTitle>
       <RecipeBox>
         <List>
-          {noEmptySteps.map(step => (
+          {noEmptySteps?.map(step => (
             <ListItem key={step}>{step}</ListItem>
           ))}
         </List>
