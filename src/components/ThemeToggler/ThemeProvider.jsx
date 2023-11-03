@@ -1,6 +1,6 @@
-import { ThemeProvider } from 'styled-components';
+// import { ThemeProvider } from 'styled-components';
 
-const theme = {
+export const theme = {
   lightTheme: {
     main: '#f1f1f1',
     text: '#121620',
@@ -11,8 +11,8 @@ const theme = {
   },
 };
 
-export const Theme = ({ children }) => (
-  <ThemeProvider theme={theme}>{children}</ThemeProvider>
-);
+// export const Theme = ({ children }) => (
+//   <ThemeProvider theme={theme}>{children}</ThemeProvider>
+// );
 
 // export default Theme;
