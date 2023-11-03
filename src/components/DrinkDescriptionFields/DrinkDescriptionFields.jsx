@@ -18,13 +18,37 @@ import IconPlus from '../../assets/images/addDrink/plus.svg';
 import { useState } from 'react';
 import DrinkFormCustomSelect from './DrinkFormCustomSelect/DrinkFormCustomSelect';
 
-export const DrinkDescriptionFields = () => {
-  const [file, setFile] = useState();
+export const DrinkDescriptionFields = ({
+  values,
+  errors,
+  touched,
+  handleChange,
+  handleBlur,
+  setFieldValue,
+}) => {
   const [value, setValue] = useState('Non-alcoholic');
+  const [selectedFileImage, setSelectedFileImage] = useState(null);
 
-  const handleChange = e => {
-    setFile(URL.createObjectURL(e.target.files[0]));
+  const [drink, setDrink] = useState('');
+
+  console.log(selectedFileImage);
+
+  const handleFileChange = e => {
+    const file = e.target.files[0];
+    setFieldValue('drinkThumb', URL.createObjectURL(file));
+    if (file) {
+      setSelectedFileImage(URL.createObjectURL(file));
+    } else {
+      setSelectedFileImage(null);
+    }
   };
+  const handleTitleChange = e => {
+    const { value } = e.target;
+    setFieldValue('drink', value);
+    setDrink(value);
+  };
+
+  console.log(drink);
 
   const changeValue = e => {
     if (e.target.value === 'Alcoholic') {
@@ -86,225 +110,49 @@ export const DrinkDescriptionFields = () => {
     <>
       <DescriptionWrapper>
         <AddPhotoContainer>
-          {file && <FileImage src={file ? file : null} alt="Add drink" />}
+          {selectedFileImage && (
+            <FileImage src={selectedFileImage} alt="Selected image" />
+          )}
           <InputFileWrapper>
             <label>
-              <InputAddFile type="file" onChange={handleChange} />
+              <InputAddFile
+                type="file"
+                onChange={e => handleFileChange(e)}
+                id="drinkThumb"
+                name="drinkThumb"
+                accept="drinkThumb/*"
+              />
               <ReactSVGIcon src={IconPlus} />
             </label>
           </InputFileWrapper>
           <InputText>Add drink</InputText>
+          {touched.drinkThumb && errors.drinkThumb ? (
+            <div>{errors.drinkThumb}</div>
+          ) : null}
         </AddPhotoContainer>
 
         <SelectContainer>
           <AddFormInput
+            name="drink"
+            id="drink"
             type="text"
             data-limit="40"
             placeholder="Enter item title"
+            onChange={e => handleTitleChange(e)}
+            // onBlur={(e)=>{setIsFocused(false)}}
+            value={values.drink}
           />
+          {touched.drink && errors.drink ? <div>{errors.drink}</div> : null}
           <AddFormInput type="text" placeholder="Enter about recipe" />
           <AddFormSelectContainer>
             <AddFormSelectLabel>Category</AddFormSelectLabel>
-            {/* <AddFormSelect
-              placeholder=""
-              getOptionLabel={ingredient => ingredient.title}
-              getOptionValue={ingredient => ingredient.title}
-              options={ingredients}
-              styles={{
-                control: (baseStyles, state) => ({
-                  ...baseStyles,
-                  boxShadow: '0 !important',
-                  borderColor: state.isFocused
-                    ? 'var(--white-color)'
-                    : 'var(--white-fifty-color)',
 
-                  backgroundColor: 'transparent',
-                  justifyContent: 'flex-end',
-                  border: 'none',
-                  height: '34px',
-                  position: 'relative',
-                  color: 'red',
-                  borderBottom: state.isFocused
-                    ? '1px solid var(--white-color)'
-                    : '1px solid var(--white-fifty-color)',
-                  borderRadius: '0',
-                  '&:hover': {
-                    borderColor: 'var(--white-color)',
-                  },
-                }),
-                singleValue: baseStyles => ({
-                  ...baseStyles,
-                  color: 'white',
-                  textAlign: 'right',
-                }),
-                input: baseStyles => ({
-                  width: '300px',
-                }),
-                valueContainer: baseStyles => ({
-                  ...baseStyles,
-                  width: '131px',
-                  justifyContent: 'flex-end',
-                  alignItems: 'flex-start',
-                  marginRight: '18px',
-                  color: 'var(--white-color)',
-                  marginBottom: '14px',
-                }),
-                indicatorsContainer: baseStyles => ({
-                  ...baseStyles,
-                  color: 'green',
-                  width: '100%',
-                  justifyContent: 'flex-end',
-                  position: 'absolute',
-                  top: '0',
-                  padding: '0',
-                }),
-                menu: baseStyles => ({
-                  ...baseStyles,
-                  borderRadius: '12px',
-                  backgroundColor: '#161F37',
-                  width: '131px',
-                  top: '16px',
-                  right: '0',
-
-                  '&::-webkit-scrollbar': {
-                    width: '0px',
-                  },
-                }),
-                menuList: baseStyles => ({
-                  ...baseStyles,
-
-                  '&::-webkit-scrollbar': {
-                    width: '0px',
-                  },
-                }),
-                option: base => ({
-                  ...base,
-                  boxShadow: 'none',
-                  width: '100%',
-                  backgroundColor: 'transparent',
-                  '&:hover': {
-                    color: 'var(--white-color)',
-                  },
-                }),
-
-                indicatorSeparator: base => ({
-                  ...base,
-                  display: 'none',
-                }),
-                dropdownIndicator: (baseStyles, { isFocused }) => ({
-                  ...baseStyles,
-                  color: 'var(--white-color)',
-                  padding: '0',
-                  '&:hover': {
-                    color: 'var(--white-color)',
-                  },
-                  transition: 'transform 0.25s ease-out',
-                  transform: isFocused && 'rotate(180deg)',
-                }),
-              }}
-            /> */}
             <DrinkFormCustomSelect placeholder="" options={categories} />
           </AddFormSelectContainer>
 
           <AddFormSelectContainer>
             <AddFormSelectLabel>Glass</AddFormSelectLabel>
-            {/* <AddFormSelect
-              className="react-select"
-              classNamePrefix="react-select"
-              placeholder=""
-              name="glassSelect"
-              getOptionLabel={glass => glass.glass}
-              getOptionValue={glass => glass.glass}
-              options={glasses}
-              styles={{
-                control: (baseStyles, state) => ({
-                  ...baseStyles,
-                  boxShadow: 'none',
-                  backgroundColor: 'transparent',
-                  justifyContent: 'flex-end',
-                  border: 'none',
-                  height: '34px',
-                  position: 'relative',
-                  color: 'red',
-                  borderBottom: state.isFocused
-                    ? '1px solid var(--white-color)'
-                    : '1px solid var(--white-fifty-color)',
-                  borderRadius: '0',
-                  '&:hover': {
-                    borderColor: 'var(--white-color)',
-                  },
-                }),
-                singleValue: baseStyles => ({
-                  ...baseStyles,
-                  color: 'white',
-                  textAlign: 'right',
-                }),
-                input: baseStyles => ({
-                  width: '300px',
-                }),
-                valueContainer: baseStyles => ({
-                  ...baseStyles,
-                  width: '131px',
-                  justifyContent: 'flex-end',
-                  alignItems: 'flex-start',
-                  marginRight: '18px',
-                  color: 'var(--white-color)',
-                  marginBottom: '14px',
-                }),
-                indicatorsContainer: baseStyles => ({
-                  ...baseStyles,
-                  color: 'green',
-                  width: '100%',
-                  justifyContent: 'flex-end',
-                  position: 'absolute',
-                  top: '0',
-                  padding: '0',
-                }),
-                menu: baseStyles => ({
-                  ...baseStyles,
-                  borderRadius: '12px',
-                  backgroundColor: '#161F37',
-                  width: '131px',
-                  top: '16px',
-                  right: '0',
 
-                  '&::-webkit-scrollbar': {
-                    width: '0px',
-                  },
-                }),
-                menuList: baseStyles => ({
-                  ...baseStyles,
-
-                  '&::-webkit-scrollbar': {
-                    width: '0px',
-                  },
-                }),
-                option: base => ({
-                  ...base,
-                  boxShadow: 'none',
-                  width: '100%',
-                  backgroundColor: 'transparent',
-                  '&:hover': {
-                    color: 'var(--white-color)',
-                  },
-                }),
-
-                indicatorSeparator: base => ({
-                  ...base,
-                  display: 'none',
-                }),
-                dropdownIndicator: (baseStyles, { isFocused }) => ({
-                  ...baseStyles,
-                  color: 'var(--white-color)',
-                  padding: '0',
-                  '&:hover': {
-                    color: 'var(--white-color)',
-                  },
-                  transition: 'transform 0.25s ease-out',
-                  transform: isFocused && 'rotate(180deg)',
-                }),
-              }}
-            /> */}
             <DrinkFormCustomSelect placeholder="" options={glasses} />
           </AddFormSelectContainer>
           <AddFormRadioGroup>
