@@ -1,7 +1,7 @@
 import {
   AddFormInput,
   AddFormRadioGroup,
-  AddFormSelect,
+  // AddFormSelect,
   AddFormSelectContainer,
   AddFormSelectLabel,
   AddPhotoContainer,
@@ -16,10 +16,8 @@ import {
 } from './DrinkDescriptionFields.styled';
 import IconPlus from '../../assets/images/addDrink/plus.svg';
 import { useState } from 'react';
-// import chevronDown from '../../assets/images/addDrink/chevron-down.svg';
-import glasses from '../../helpers/Data/glasses';
-import ingredients from '../../helpers/Data/ingredients.json';
-// import { useState } from 'react';
+import DrinkFormCustomSelect from './DrinkFormCustomSelect/DrinkFormCustomSelect';
+
 export const DrinkDescriptionFields = () => {
   const [file, setFile] = useState();
   const [value, setValue] = useState('Non-alcoholic');
@@ -36,6 +34,53 @@ export const DrinkDescriptionFields = () => {
       setValue('Non-alcoholic');
     }
   };
+  const glasses = [
+    'Highball glass',
+    'Cocktail glass',
+    'Old-fashioned glass',
+    'Whiskey Glass',
+    'Collins glass',
+    'Pousse cafe glass',
+    'Champagne flute',
+    'Whiskey sour glass',
+    'Cordial glass',
+    'Brandy snifter',
+    'White wine glass',
+    'Nick and Nora Glass',
+    'Hurricane glass',
+    'Coffee mug',
+    'Shot glass',
+    'Jar',
+    'Irish coffee cup',
+    'Punch bowl',
+    'Pitcher',
+    'Pint glass',
+    'Copper Mug',
+    'Wine Glass',
+    'Beer mug',
+    'Margarita/Coupette glass',
+    'Beer pilsner',
+    'Beer Glass',
+    'Parfait glass',
+    'Mason jar',
+    'Margarita glass',
+    'Martini Glass',
+    'Balloon Glass',
+    'Coupe Glass',
+  ];
+  const categories = [
+    'Ordinary Drink',
+    'Cocktail',
+    'Shake',
+    'Other/Unknown',
+    'Cocoa',
+    'Shot',
+    'Coffee/Tea',
+    'Homemade Liqueur',
+    'Punch/Party Drink',
+    'Beer',
+    'Soft Drink',
+  ];
 
   return (
     <>
@@ -60,23 +105,32 @@ export const DrinkDescriptionFields = () => {
           <AddFormInput type="text" placeholder="Enter about recipe" />
           <AddFormSelectContainer>
             <AddFormSelectLabel>Category</AddFormSelectLabel>
-            <AddFormSelect
+            {/* <AddFormSelect
               placeholder=""
               getOptionLabel={ingredient => ingredient.title}
               getOptionValue={ingredient => ingredient.title}
               options={ingredients}
               styles={{
-                control: baseStyles => ({
+                control: (baseStyles, state) => ({
                   ...baseStyles,
-                  boxShadow: 'none',
+                  boxShadow: '0 !important',
+                  borderColor: state.isFocused
+                    ? 'var(--white-color)'
+                    : 'var(--white-fifty-color)',
+
                   backgroundColor: 'transparent',
                   justifyContent: 'flex-end',
                   border: 'none',
                   height: '34px',
                   position: 'relative',
                   color: 'red',
-                  borderBottom: '1px solid var(--white-fifty-color)',
+                  borderBottom: state.isFocused
+                    ? '1px solid var(--white-color)'
+                    : '1px solid var(--white-fifty-color)',
                   borderRadius: '0',
+                  '&:hover': {
+                    borderColor: 'var(--white-color)',
+                  },
                 }),
                 singleValue: baseStyles => ({
                   ...baseStyles,
@@ -148,12 +202,13 @@ export const DrinkDescriptionFields = () => {
                   transform: isFocused && 'rotate(180deg)',
                 }),
               }}
-            />
+            /> */}
+            <DrinkFormCustomSelect placeholder="" options={categories} />
           </AddFormSelectContainer>
 
           <AddFormSelectContainer>
             <AddFormSelectLabel>Glass</AddFormSelectLabel>
-            <AddFormSelect
+            {/* <AddFormSelect
               className="react-select"
               classNamePrefix="react-select"
               placeholder=""
@@ -175,6 +230,9 @@ export const DrinkDescriptionFields = () => {
                     ? '1px solid var(--white-color)'
                     : '1px solid var(--white-fifty-color)',
                   borderRadius: '0',
+                  '&:hover': {
+                    borderColor: 'var(--white-color)',
+                  },
                 }),
                 singleValue: baseStyles => ({
                   ...baseStyles,
@@ -246,7 +304,8 @@ export const DrinkDescriptionFields = () => {
                   transform: isFocused && 'rotate(180deg)',
                 }),
               }}
-            />
+            /> */}
+            <DrinkFormCustomSelect placeholder="" options={glasses} />
           </AddFormSelectContainer>
           <AddFormRadioGroup>
             <InputRadio
