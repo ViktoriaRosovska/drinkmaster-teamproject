@@ -4,11 +4,10 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDrinkById } from 'redux/drinks/drinksOperations.js';
 import { selectDrinkById } from 'redux/drinks/drinksSelectors';
-// import selectIsLoggedIn from 'redux/auth/authSelectors';
 
 import DrinkPageHero from 'components/DrinkPageHero/DrinkPageHero';
 // import DrinkIngridientList from 'components/DrinkIngredientsList/DrinkIngridientsList';
-// import RecipePreparation from 'components/RecipePreparation/RecipePreparation';
+import RecipePreparation from 'components/RecipePreparation/RecipePreparation';
 
 import { MainContainer } from 'styles/App.styled';
 import { Title } from './DrinkIdPage.styled';
@@ -20,12 +19,10 @@ const DrinkIdPage = () => {
   const { drinkId } = useParams();
   const drink = useSelector(state => selectDrinkById(state, drinkId));
   const ingredients = useSelector(selectIngredients);
-  // const isLoggedIn = useSelector(state => selectIsLoggedIn(state));
 
   useEffect(() => {
     dispatch(getDrinkById(drinkId));
     dispatch(getIngredients());
-    // dispatch();
   }, [dispatch, drinkId]);
 
   const ingridientsMap = new Map();
@@ -65,7 +62,7 @@ const DrinkIdPage = () => {
             alcoholic={drink.alcoholic}
           />
           {/* <DrinkIngridientList ingredients={ingredients} /> */}
-          {/* <RecipePreparation instructions={drink.instructions} /> */}
+          <RecipePreparation instructions={drink.instructions} />
         </>
       )}
     </MainContainer>
