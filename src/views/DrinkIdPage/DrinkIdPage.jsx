@@ -12,16 +12,31 @@ import DrinkPageHero from 'components/DrinkPageHero/DrinkPageHero';
 
 import { MainContainer } from 'styles/App.styled';
 import { Title } from './DrinkIdPage.styled';
+import { getIngredients } from 'redux/filters/filtersOperations';
+import { selectIngredients } from 'redux/filters/filtersSelector';
 
 const DrinkIdPage = () => {
   const dispatch = useDispatch();
   const { drinkId } = useParams();
   const drink = useSelector(state => selectDrinkById(state, drinkId));
+  const ingredients = useSelector(selectIngredients);
   // const isLoggedIn = useSelector(state => selectIsLoggedIn(state));
 
   useEffect(() => {
     dispatch(getDrinkById(drinkId));
+    dispatch(getIngredients());
+    // dispatch();
   }, [dispatch, drinkId]);
+
+  const ingridientsMap = new Map();
+  ingredients.forEach(i => {
+    ingridientsMap.set(i._id, i);
+  });
+
+  const ingredientArrayFromDrink = drink.ingredients
+    ? drink.ingredients.map(el => ingridientsMap.get(el.ingredientId))
+    : [];
+  console.log('ingredientArrayFromDrink', ingredientArrayFromDrink);
 
   // useEffect(() => {
   //   async function fetchDrinkById() {
@@ -49,8 +64,8 @@ const DrinkIdPage = () => {
             image={drink.drinkThumb || null}
             alcoholic={drink.alcoholic}
           />
-          {/* <DrinkIngridientList ingredients={drink.ingredients } />
-          <RecipePreparation instructions={drink.instructions } /> */}
+          {/* <DrinkIngridientList ingredients={ingredients} /> */}
+          {/* <RecipePreparation instructions={drink.instructions} /> */}
         </>
       )}
     </MainContainer>
