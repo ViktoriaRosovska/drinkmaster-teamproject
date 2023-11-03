@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDrinkById } from 'redux/drinks/drinksOperations.js';
 import { selectDrinkById } from 'redux/drinks/drinksSelectors';
-// import selectIsLoggedIn from 'redux/auth/authSelectors';
 
 import DrinkPageHero from 'components/DrinkPageHero/DrinkPageHero';
 // import DrinkIngridientList from 'components/DrinkIngredientsList/DrinkIngridientsList';
@@ -20,12 +19,10 @@ const DrinkIdPage = () => {
   const { drinkId } = useParams();
   const drink = useSelector(state => selectDrinkById(state, drinkId));
   const ingredients = useSelector(selectIngredients);
-  // const isLoggedIn = useSelector(state => selectIsLoggedIn(state));
 
   useEffect(() => {
     dispatch(getDrinkById(drinkId));
     dispatch(getIngredients());
-    // dispatch();
   }, [dispatch, drinkId]);
 
   const ingridientsMap = new Map();
@@ -65,7 +62,10 @@ const DrinkIdPage = () => {
             image={drink.drinkThumb || null}
             alcoholic={drink.alcoholic}
           />
+
           {/* <DrinkIngridientList ingredients={ingredientArrayFromDrink} /> */}
+
+      
           <RecipePreparation instructions={drink.instructions} />
         </>
       )}

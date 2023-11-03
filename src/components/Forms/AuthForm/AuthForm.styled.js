@@ -170,7 +170,6 @@ export const BirthDate = styled(DesktopDatePicker)`
   width: 335px;
   display: block;
   padding: 18px 24px;
-  border: 1px solid var(--white-twenty-color);
   border-radius: 200px;
   outline: none;
   font-size: 14px;
@@ -179,61 +178,13 @@ export const BirthDate = styled(DesktopDatePicker)`
   background-color: transparent;
   transition: border ${transition}, color ${transition};
 
-  &:focus,
-  &:hover {
-    border: 1px solid var(--white-fifty-color);
-    color: var(--white-fifty-color);
-  }
-
-  ${({ error }) =>
-    error === 'true' &&
-    css`
-      border: 1px solid var(--red-error-fifty-color);
-    `}
-  ${({ success }) =>
-    success === 'true' &&
-    css`
-      border: 1px solid var(--green-success-fifty-color);
-    `}
-    
-   
-
   @media screen and (min-width: 768px) {
     width: 400px;
     font-size: 17px;
     line-height: 1.56;
     padding: 14px 24px;
   }
-  /* .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
-    color: var(--white-twenty-color);
-    border: 1px solid var(--white-twenty-color);
-    border-radius: 200px;
-    transition: border ${transition};
-  } */
 
-  /* .
-  .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
-    border: 1px solid var(--white-twenty-color);
-    border-radius: 200px;
-  }*/
-  /* .css-z3c6am-MuiFormControl-root-MuiTextField-root {
-    border: 1px solid var(--green-success-fifty-color);
-  } */
-
-  /* 
-   */
-  /* .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused {
-    border-color: var(--white-fifty-color);
-  } */
-
-  /* .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root
-    .MuiOutlinedInput-notchedOutline {
-    border: 1.5px solid var(--green-success-fifty-color);
-  }
-  .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused
-    .MuiOutlinedInput-notchedOutline {
-    border-color: var(--green-success-fifty-color);
-  } */
   .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root {
     font-size: 14px;
     line-height: 1.28;
@@ -251,27 +202,36 @@ export const BirthDate = styled(DesktopDatePicker)`
 
   .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-error
     .MuiOutlinedInput-notchedOutline {
+    transition: border-color ${transition}, color ${transition};
     border-color: var(--red-error-fifty-color);
   }
 
   .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-error:hover
+    .MuiOutlinedInput-notchedOutline,
+  .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-error:focus
     .MuiOutlinedInput-notchedOutline {
     border-style: 0px;
-    border-color: transparent;
+    border-color: var(--white-fifty-color);
     color: var(--white-fifty-color);
   }
 
   .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root
     .MuiOutlinedInput-notchedOutline {
     border-color: var(--green-success-fifty-color);
+    transition: border-color ${transition}, color ${transition};
   }
+
+  .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root:hover
+    .MuiOutlinedInput-notchedOutline {
+    border-color: var(--white-fifty-color);
+  }
+
   .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused
     .MuiOutlinedInput-notchedOutline {
     border-color: var(--white-twenty-color);
   }
 
-  .jpVkwp .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root:focus,
-  .jpVkwp .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root:hover {
-    border: transparent;
+  .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+    padding: 18px 24px;
   }
 `;

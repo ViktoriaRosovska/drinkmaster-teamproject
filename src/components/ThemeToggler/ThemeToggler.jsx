@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth/authOperations';
 import { StyledButton } from './ThemeToggler.styled';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const ThemeToggler = () => {
   const dispatch = useDispatch();
@@ -11,8 +11,10 @@ export const ThemeToggler = () => {
   const onChangeTheme = () => {
     setTheme(isDarkTheme ? 'light' : 'dark');
   };
-  const payload = { theme: theme };
-  dispatch(authOperations.themeThunk(payload));
+
+  useEffect(() => {
+    dispatch(authOperations.themeThunk({ theme: theme }));
+  }, [dispatch, theme]);
 
   return (
     <>
