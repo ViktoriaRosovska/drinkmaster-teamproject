@@ -55,13 +55,17 @@ const DrinkIdPage = () => {
         <>
           <Title>{drink.drink} </Title>
           <DrinkPageHero
+            id={drink._id}
             glass={drink.glass}
             about={drink.description || null}
             title={drink.drink}
             image={drink.drinkThumb || null}
             alcoholic={drink.alcoholic}
           />
-          {/* <DrinkIngridientList ingredients={ingredients} /> */}
+
+          {/* <DrinkIngridientList ingredients={ingredientArrayFromDrink} /> */}
+
+      
           <RecipePreparation instructions={drink.instructions} />
         </>
       )}
