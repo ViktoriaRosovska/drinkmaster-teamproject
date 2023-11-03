@@ -17,7 +17,31 @@ export const RecipePreparationTitle = styled.h2`
     margin-top: 100px;
   }
 `;
+export const List = styled.ul`
+  list-style-type: square;
+  margin-bottom: 40px;
 
+  @media screen and (min-width: 768px) {
+    width: 549px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 0;
+    width: 549px;
+  }
+`;
+
+export const ListItem = styled.li`
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  padding: 14px 0;
+  border-bottom: 1px dotted rgba(243, 243, 243, 0.2);
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: calc(22 / 16);
+  }
+`;
 // export const RecipeBox = styled.div`
 //   @media screen and (min-width: 1440px) {
 //     display: flex;
@@ -34,7 +58,6 @@ export const RecipePreparationTitle = styled.h2`
 //   width: 335px;
 //   height: 430px;
 
-
 export const RecipePreparationDescription = styled.p`
   color: ${({ theme }) => theme.mainText};
   font-size: 14px;
@@ -43,7 +66,6 @@ export const RecipePreparationDescription = styled.p`
   margin-top: 40px;
   margin-bottom: 0;
   overflow-wrap: break-word;
-
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
