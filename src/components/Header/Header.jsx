@@ -1,9 +1,7 @@
-// import React, { useState } from 'react';
-import React from 'react'; //  useState
+import React, { useState } from 'react';
 import Logo from 'components/Logo/Logo';
 import Navigation from 'components/Navigation/Navigation';
 import UserLogo from 'components/Buttons/UserLogo/UserLogo';
-// import ModalPortal from 'components/Modal/ModalPortal/ModalPortal';
 import {
   Container,
   HeaderCont,
@@ -12,14 +10,27 @@ import {
   HeaderItem,
 } from './Header.styled';
 
+// import MobileBurgerMenu from 'components/MobileBurgerMenu/MobileBurgerMenu';
+import CloseMobileMenuBtn from 'components/Buttons/CloseMobileMenuBtn/CloseMobileMenuBtn';
+import BurgerBtn from 'components/Buttons/BurgerBtn/BurgerBtn';
+import NavigationMobileMenu from 'components/MobileBurgerMenu/NavigationMobileMenu/NavigationMobileMenu/NavigationMobileMenu';
+
 const Header = () => {
-  // const [showModal, setShowModal] = useState(false);
-  // const onShowModalClick = () => {
-  //   setShowModal(true);
-  // };
-  // const onBackdrop = () => {
-  //   setShowModal(false);
-  // };
+  const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
+  // const [hideOrShow, setHideOrShow] = useState({});
+
+  const toggleMobileMenu = () => {
+    setIsOpenMobileMenu(prev => !prev);
+    // if (isOpenMobileMenu) {
+    //   setHideOrShow(() => {
+    //     return {};
+    //   });
+    // } else {
+    //   setHideOrShow(() => {
+    //     return { display: 'flex' };
+    //   });
+    // }
+  };
 
   return (
     <>
@@ -34,14 +45,50 @@ const Header = () => {
                 <Navigation />
               </HeaderItem>
               <HeaderItem className="push-right">
-                <div>Theme</div>
-                <UserLogo />
+                {isOpenMobileMenu && <div>Theme</div>}
               </HeaderItem>
+              {!isOpenMobileMenu && <UserLogo />}
+              {isOpenMobileMenu ? (
+                <CloseMobileMenuBtn toggleMobileMenu={toggleMobileMenu} />
+              ) : (
+                <BurgerBtn toggleMobileMenu={toggleMobileMenu} />
+              )}
             </HeaderList>
-            {/* <ModalPortal showModal={showModal} onBackdrop={onBackdrop} /> */}
           </MainWrapper>
         </Container>
       </HeaderCont>
+      {isOpenMobileMenu && (
+        <div
+          style={{
+            height: '100vh',
+            backgroundColor: '#0a0a11',
+            width: '100%',
+            fontSize: '40px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            position: 'fixed',
+            top: '86px',
+            listStyle: 'none',
+            zIndex: 120,
+            transform: isOpenMobileMenu ? 'translateY(0)' : 'translateY(-120%)',
+            transition: 'transform 1s ease-in',
+          }}
+          // style={hideOrShow}
+        >
+          <NavigationMobileMenu />
+          {/* <div
+          style={{
+            // backgroundColor: '#ff0000',
+            zIndex: '101',
+            transform: isOpenMobileMenu ? 'translateY(-120%)' : 'translateY(0)',
+            transition: 'transform 1s ease-in',
+            height: '100vh',
+            display: 'block'}}
+        ><NavigationMobileMenu/></div> */}
+        </div>
+      )}
+      {/* <MobileBurgerMenu hideOrShow={hideOrShow} isOpenMobileMenu={isOpenMobileMenu}/> */}
     </>
   );
 };
