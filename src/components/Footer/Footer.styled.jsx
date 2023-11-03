@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
+  background-color: ${props => props.theme};
+  /* color: ${props => props.theme}; */
+
   border-top: 1px solid var(--white-twenty-color);
   display: flex;
   padding-top: 40px;
   padding-bottom: 18px;
   min-width: 320px;
 
-  background: radial-gradient(
+  /* background: radial-gradient(
     circle,
     var(--light-green-forty-color) 10%,
     rgba(255, 255, 255, 0) 70%
@@ -57,7 +60,7 @@ export const FooterContainer = styled.footer`
     background-repeat: no-repeat, no-repeat;
     background-position-x: calc(50vw - 650px), calc(60vw - 400px);
     background-position-y: 260px, 270px;
-  }
+  } */
 `;
 
 export const FooterLogoAndSocial = styled.div`

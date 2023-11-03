@@ -52,7 +52,9 @@ const authSlice = createSlice({
         state.isSubscribed = true;
       })
       .addCase(authOperations.themeThunk.fulfilled, (state, { payload }) => {
-        state.theme = payload.theme;
+        console.log(state.theme);
+        console.log(payload.subscribeUser.theme);
+        state.theme = payload.subscribeUser.theme;
       }),
 });
 
