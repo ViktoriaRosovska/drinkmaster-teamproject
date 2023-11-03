@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 const transition = '300ms cubic-bezier(0.46, 0.03, 0.52, 0.96)';
 
 export const HeroContainer = styled.section`
-  padding-top: 80px;
+  // padding-top: 80px;
   padding-bottom: 112px;
   @media screen and (min-width: 768px) {
-    padding-top: 120px;
+    // padding-top: 120px;
     padding-bottom: 124px;
   }
-  @media screen and (min-width: 1440px) {
-    padding-top: 128px;
-    padding-bottom: 160px;
-  }
+  // @media screen and (min-width: 1440px) {
+  //   padding-top: 128px;
+  //   padding-bottom: 160px;
+  // }
 `;
 export const SectionWrap = styled.div`
   display: flex;

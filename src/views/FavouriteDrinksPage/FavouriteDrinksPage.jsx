@@ -6,36 +6,64 @@ import { MainContainer } from 'styles/App.styled';
 import { useDrink } from 'hooks/useDrink';
 import { useDispatch } from 'react-redux';
 import { getFavoriteAll } from 'redux/drinks/drinksOperations';
+import NotFound from 'components/NotFound/NotFound';
+import { useResize } from 'hooks/useResize';
+import { useNavigate } from 'react-router-dom';
 
 export default function FavoriteDrinksPage() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { width } = useResize();
   const { total, favoriteDrinks } = useDrink();
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  // const pagesToShow = 8;
-  const drinksPerPage = 9;
+  const drinksPerPage = width < 1440 ? 8 : 9;
 
   const onPageChange = pageNum => {
     setCurrentPage(pageNum);
   };
 
   const totalPages = Math.ceil(total / drinksPerPage);
-  // const totalPages = 8;
 
   useEffect(() => {
-    dispatch(getFavoriteAll({ page: currentPage, limit: drinksPerPage }));
-  }, [dispatch, currentPage, drinksPerPage]);
+    if (favoriteDrinks?.length === 0 && currentPage > 1) {
+      onPageChange(currentPage - 1);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [favoriteDrinks]);
+
+  useEffect(() => {
+    navigate(`?page=${currentPage}`);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentPage]);
+
+  useEffect(() => {
+    dispatch(getFavoriteAll({ page: currentPage, limit: drinksPerPage }))
+      .unwrap()
+      .catch(error => console.log(error));
+  }, [dispatch, currentPage, total, drinksPerPage, ]);
 
   return (
     <MainContainer>
       <PageTitle title="Favorites" />
-      <DrinkList drinks={favoriteDrinks} />
+      {total > 0 ? (
+        <DrinkList
+          favorite={true}
+          drinksData={favoriteDrinks}
+          onPageChange={onPageChange}
+          currentPage={currentPage}
+        />
+      ) : (
+        <NotFound />
+      )}
+
       {totalPages > 1 && (
         <Paginator
           currentPage={currentPage}
           totalPages={totalPages}
           onPageChange={onPageChange}
+          path={'/favorites'}
         />
       )}
     </MainContainer>

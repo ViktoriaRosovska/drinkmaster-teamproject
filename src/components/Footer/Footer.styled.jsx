@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
+  background-color: ${props => props.theme};
+  /* color: ${props => props.theme}; */
+
   border-top: 1px solid var(--white-twenty-color);
   display: flex;
   padding-top: 40px;
   padding-bottom: 18px;
   min-width: 320px;
 
-  background: radial-gradient(
+  /* background: radial-gradient(
     circle,
     var(--light-green-forty-color) 10%,
     rgba(255, 255, 255, 0) 70%
@@ -57,7 +60,7 @@ export const FooterContainer = styled.footer`
     background-repeat: no-repeat, no-repeat;
     background-position-x: calc(50vw - 650px), calc(60vw - 400px);
     background-position-y: 260px, 270px;
-  }
+  } */
 `;
 
 export const FooterLogoAndSocial = styled.div`
@@ -77,23 +80,21 @@ export const Container = styled.div`
   font-size: 14px;
   font-weight: 500;
   min-width: 320px;
-  height: 542px;
+  max-height: 542px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
-  
+
   @media screen and (min-width: 768px) {
-    // max-width: 768px;
-    width: 704px;
-    height: 482px;
+    width: 768px;
+    max-height: 482px;
     padding-left: 32px;
     padding-right: 32px;
   }
 
   @media screen and (min-width: 1440px) {
-    // max-width: 1440px:
-    width: 1240px;
-    height: 428px;
+    width: 1440px;
+    max-height: 428px;
     padding-left: 100px;
     padding-right: 100px;
   }
@@ -109,9 +110,8 @@ export const FooterNavWrapper = styled.div`
   @media screen and (min-width: 1440px) {
     display: flex;
     flex-direction: row;
-    row-gap: 411px;
-    // justify-content: space-between;
-    margin-left: 0 auto;
+    gap: 411px;
+    justify-content: space-between;
   }
 `;
 

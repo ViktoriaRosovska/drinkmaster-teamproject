@@ -9,6 +9,7 @@ import {
   MainWrapper,
   HeaderItem,
 } from './Header.styled';
+import { ThemeToggler } from 'components/ThemeToggler/ThemeToggler';
 
 // import MobileBurgerMenu from 'components/MobileBurgerMenu/MobileBurgerMenu';
 import CloseMobileMenuBtn from 'components/Buttons/CloseMobileMenuBtn/CloseMobileMenuBtn';
@@ -44,8 +45,13 @@ const Header = () => {
               <HeaderItem>
                 <Navigation />
               </HeaderItem>
+              <ThemeToggler />
               <HeaderItem className="push-right">
+
                 {isOpenMobileMenu && <div>Theme</div>}
+
+                <UserLogo />
+
               </HeaderItem>
               {!isOpenMobileMenu && <UserLogo />}
               {isOpenMobileMenu ? (

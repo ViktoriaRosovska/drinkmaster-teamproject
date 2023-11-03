@@ -18,13 +18,18 @@ const DrinkIngredientsWrapper = styled.div`
   gap: 8px;
   align-content: center;
   margin-bottom: 80px;
+  width: 100%;
 `;
 const IngredientWrapper = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-direction: column;
+  border: 1px solid red;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 18px;
+
   @media screen and (min-width: 768px) {
-    width: 768px;
+    gap: 24px;
   }
 `;
 const TitleWrapper = styled.div`
@@ -32,10 +37,21 @@ const TitleWrapper = styled.div`
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
+  width: 335px;
+  @media screen and (min-width: 768px) {
+    width: 100%;
+  }
+`;
+
+const IngredientInputsWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  gap: 14px;
 `;
 export {
   CloseIconReactSvg,
   DrinkIngredientsWrapper,
   IngredientWrapper,
   TitleWrapper,
+  IngredientInputsWrapper,
 };

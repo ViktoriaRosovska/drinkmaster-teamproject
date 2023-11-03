@@ -1,6 +1,18 @@
 import { ReactSVG } from 'react-svg';
 import styled from 'styled-components';
-import Select from 'react-select';
+// import Select from 'react-select';
+
+const DescriptionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 80px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    width: 100%;
+  }
+`;
 
 const AddPhotoContainer = styled.div`
   position: relative;
@@ -66,18 +78,28 @@ const SelectContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 31px;
-  margin-bottom: 81px;
+  /* margin-bottom: 81px; */
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    width: 352px;
+  }
+  @media screen and (min-width: 1438.98px) {
+    width: 393px;
+  }
 `;
 
-const AddFormSelect = styled(Select)`
-  padding: 0;
-  width: 100%;
-  height: 34px;
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  outline: none;
-`;
+// const AddFormSelect = styled(Select)`
+//   padding: 0;
+//   width: 100%;
+//   height: 34px;
+//   appearance: none;
+//   -moz-appearance: none;
+//   -webkit-appearance: none;
+//   outline: none;
+//   border: none;
+//   background: 'transparent';
+//   color: var(--white-fifty-color);
+// `;
 
 const AddFormRadioGroup = styled.div`
   display: flex;
@@ -86,9 +108,18 @@ const AddFormRadioGroup = styled.div`
 `;
 
 const AddFormInput = styled.input`
-  line-height: 14px;
+  height: 34px;
+  width: 100%;
+  font-family: 'Manrope';
+  font-size: 14px;
+
+  font-weight: 400;
+  line-height: 19.12px;
+  letter-spacing: -0.02em;
+
   letter-spacing: 0em;
   border: none;
+
   border-radius: 0;
   border-bottom: 1px solid var(--white-fifty-color);
 
@@ -96,27 +127,19 @@ const AddFormInput = styled.input`
   background-color: transparent;
   position: relative;
 
-  width: 335px;
-  height: 34px;
   outline: none;
   &:hover {
     border-bottom: 1px solid var(--white-color);
   }
   &::placeholder {
     font-family: 'Manrope';
-    line-height: normal;
-    letter-spacing: -0.28px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.12px;
+    letter-spacing: -0.02em;
     position: absolute;
     top: 0;
     color: var(--white-color);
-
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19px;
-    letter-spacing: -0.02em;
-    text-align: left;
-
-    /* color: red; */
   }
 `;
 const InputRadio = styled.input`
@@ -150,6 +173,7 @@ const AddFormSelectContainer = styled.div`
   position: relative;
 `;
 export {
+  DescriptionWrapper,
   InputAddFile,
   InputFileWrapper,
   FileImage,
@@ -160,7 +184,7 @@ export {
   SelectContainer,
   AddFormInput,
   AddFormRadioGroup,
-  AddFormSelect,
+  // AddFormSelect,
   InputRadio,
   ChevronReactSvg,
   AddFormSelectLabel,

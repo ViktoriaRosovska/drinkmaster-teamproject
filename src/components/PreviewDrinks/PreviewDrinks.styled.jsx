@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom';
 const transition = '300ms cubic-bezier(0.46, 0.03, 0.52, 0.96)';
 
 export const SectionContainer = styled.section`
-  padding-bottom: 80px;
+  // padding-bottom: 80px;
 
-  @media screen and (min-width: 768px) {
-    padding-bottom: 140px;
-  }
+  // @media screen and (min-width: 768px) {
+  //   padding-bottom: 140px;
+  // }
 `;
 
 export const MainWrapper = styled.div`
@@ -86,7 +86,7 @@ export const CategoryDrinksLink = styled(NavLink)`
 
   &:hover,
   &:focus {
-    color: var(--black-color);
+    color: var(--white-color);
   }
   @media screen and (min-width: 768px) {
     font-size: 16px;

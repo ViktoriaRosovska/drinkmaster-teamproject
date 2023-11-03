@@ -19,10 +19,11 @@ import {
   ErrorSvgStyled,
   CheckSvgStyled,
   Link,
+  BirthDate,
 } from '../AuthForm.styled';
-import StyledStaticDatePicker from './DatePicker.styled';
 import { ReactComponent as ShowPassword } from '../../../../assets/images/authComponents/eye.svg';
 import { ReactComponent as HidePassword } from '../../../../assets/images/authComponents/eye-off.svg';
+import { CalendarSvgIcon } from './CalendarSvgIcon';
 import { WelcomeWrapper } from 'styles/App.styled';
 
 const initialValues = {
@@ -122,15 +123,26 @@ function SignupForm() {
 
               <InputWrapper>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <StyledStaticDatePicker
+                  <BirthDate
+                    name="birthDate"
                     value={moment(values.birthDate, 'DD MMM YYYY')}
                     onChange={value => {
                       values.birthDate = value
                         ? value.format('DD MMM YYYY')
                         : '';
                     }}
+                    disableFuture
+                    showDaysOutsideCurrentMonth
+                    slotProps={{
+                      textField: { fullWidth: true },
+                    }}
+                    slots={{ openPickerIcon: CalendarSvgIcon }}
                   />
+                  <ErrorMessage name="birthDate" />
                 </LocalizationProvider>
+                {errors.birthDate && touched.birthDate ? (
+                  <ErrorText error>{errors.birthDate}</ErrorText>
+                ) : null}
               </InputWrapper>
 
               <InputWrapper>

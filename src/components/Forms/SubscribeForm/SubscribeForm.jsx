@@ -1,4 +1,4 @@
-import { Formik, ErrorMessage } from 'formik';
+import { Formik, ErrorMessage, Field } from 'formik';
 import {
   SubscribeWrapper,
   SubscribeInput,
@@ -31,6 +31,7 @@ const SubscribeForm = () => {
       onSubmit={async (values, actions) => {
         try {
           await dispatch(subscribeEmail(values));
+
           actions.resetForm();
           toast.success('You have successfully subscribed!', toastConfig());
         } catch (error) {
@@ -38,19 +39,32 @@ const SubscribeForm = () => {
         }
       }}
     >
-      <SubscribeWrapper>
-        <SubscribeText>
-          Subscribe up to our newsletter. Be in touch with latest news and
-          special offers, etc.
-        </SubscribeText>
-        <SubscribeInput
-          type="email"
-          name="email"
-          placeholder="Enter the email"
-        ></SubscribeInput>
-        <ErrorMessage name="email" component="div" />
-        <SubscribeButton type="submit">Subscribe</SubscribeButton>
-      </SubscribeWrapper>
+      {({ isSubmitting, isValid }) => (
+        <form>
+          <SubscribeWrapper>
+            <SubscribeText>
+              Subscribe up to our newsletter. Be in touch with latest news and
+              special offers, etc.
+            </SubscribeText>
+             <Field
+              as={SubscribeInput}
+              type="email"
+              name="email"
+              placeholder="Enter the email"
+              required
+            />
+              <ErrorMessage
+                name="email"
+                component="div"
+                style={{ color: 'red', fontSize: '14px' }}
+              />
+            
+            <SubscribeButton type="submit" disabled={isSubmitting || !isValid}>
+              Subscribe
+            </SubscribeButton>
+          </SubscribeWrapper>
+        </form>
+      )}
     </Formik>
   );
 };

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
   QuantityBtn,
   QuantityBtnMirror,
@@ -11,30 +10,25 @@ import {
 import minusIcon from '../../../assets/images/addDrink/MinusForm.svg';
 import plusIcon from '../../../assets/images/addDrink/PlusForm.svg';
 
-export default function QuantitySwitch() {
-  const [quantityValue, setQuantityValue] = useState(1);
+export default function QuantitySwitch({ value, setValue }) {
   const onMinusQuantityHandler = () => {
-    if (quantityValue > 1) {
-      setQuantityValue(quantityValue - 1);
-    } else {
-      setQuantityValue(1);
+    if (value > 1) {
+      setValue(value - 1);
     }
   };
   const onPlusQuantityHandler = () => {
-    if (quantityValue < 20) {
-      setQuantityValue(quantityValue + 1);
-    } else {
-      setQuantityValue(quantityValue);
+    if (value < 20) {
+      setValue(value + 1);
     }
   };
   return (
     <QuantityContainer>
       <QuantityIngredients>
-        <QuantityBtn onClick={onMinusQuantityHandler}>
+        <QuantityBtn onClick={onMinusQuantityHandler} type="button">
           <QuantityIconReactSvg src={minusIcon} />
         </QuantityBtn>
-        <QuantityText>{quantityValue}</QuantityText>
-        <QuantityBtnMirror onClick={onPlusQuantityHandler}>
+        <QuantityText>{value}</QuantityText>
+        <QuantityBtnMirror onClick={onPlusQuantityHandler} type="button">
           <QuantityIconReactSvg src={plusIcon} />
         </QuantityBtnMirror>
       </QuantityIngredients>

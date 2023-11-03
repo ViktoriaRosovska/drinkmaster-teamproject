@@ -8,6 +8,7 @@ const initialState = {
   isLoggedIn: false,
   isRefreshing: false,
   isSubscribed: false,
+  theme: 'dark',
 };
 
 const authSlice = createSlice({
@@ -49,6 +50,11 @@ const authSlice = createSlice({
       })
       .addCase(authOperations.subscribeEmail.fulfilled, state => {
         state.isSubscribed = true;
+      })
+      .addCase(authOperations.themeThunk.fulfilled, (state, { payload }) => {
+        console.log(state.theme);
+        console.log(payload.subscribeUser.theme);
+        state.theme = payload.subscribeUser.theme;
       }),
 });
 

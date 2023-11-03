@@ -8,8 +8,6 @@ import PublicRoute from 'helpers/PublicRoute';
 import PrivateRoute from 'helpers/PrivateRoute';
 import WelcomePage from 'views/WelcomePage/WelcomePage';
 
-import SignInPage from 'views/SignInPage/SignInPage';
-import SignUpPage from 'views/SignUpPage/SignUpPage';
 import { authOperations } from 'redux/auth/authOperations';
 import Loader from './Loader';
 
@@ -22,6 +20,8 @@ const FavoriteDrinksPage = lazy(() =>
 const MyDrinksPage = lazy(() => import('../views/MyDrinksPage/MyDrinksPage'));
 const DrinkIdPage = lazy(() => import('../views/DrinkIdPage/DrinkIdPage'));
 const DrinksPage = lazy(() => import('../views/DrinksPage/DrinksPage'));
+const SignInPage = lazy(() => import('../views/SignInPage/SignInPage'));
+const SignUpPage = lazy(() => import('../views/SignUpPage/SignUpPage'));
 const PrivacyPolicyPage = lazy(() =>
   import('../views/PrivacyPolicyPage/PrivacyPolicyPage')
 );
@@ -41,6 +41,8 @@ export const App = () => {
     dispatch(authOperations.currentUser());
     if (location.pathname === '/') {
       navigate('/home');
+    } else {
+      navigate(location.pathname);
     }
   }, [dispatch, location.pathname, navigate]);
 
@@ -96,12 +98,12 @@ export const App = () => {
         >
           <Route path="/home" element={<HomePage />} />
           <Route path="/drinks" element={<DrinksPage />} />
-          <Route path="/drinks/:id" element={<DrinkIdPage />} />
+          <Route path="/drinks/:drinkId" element={<DrinkIdPage />} />
           <Route path="/add" element={<AddDrinkPage />} />
           <Route path="/my" element={<MyDrinksPage />} />
           <Route path="/favorites" element={<FavoriteDrinksPage />} />
-          <Route path="privacy" element={<PrivacyPolicyPage />} />
-          <Route path="service" element={<TermsServicePage />} />
+          <Route path="/privacy" element={<PrivacyPolicyPage />} />
+          <Route path="/service" element={<TermsServicePage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
