@@ -1,4 +1,4 @@
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { Form, Field } from 'formik';
 import styled, { css } from 'styled-components';
 import transition from '../../../utils/transition';
@@ -166,7 +166,7 @@ export const Link = styled(NavLink)`
   text-align: center;
 `;
 
-export const BirthDate = styled(DatePicker)`
+export const BirthDate = styled(DesktopDatePicker)`
   width: 335px;
   display: block;
   padding: 18px 24px;
@@ -195,6 +195,8 @@ export const BirthDate = styled(DatePicker)`
     css`
       border: 1px solid var(--green-success-fifty-color);
     `}
+    
+   
 
   @media screen and (min-width: 768px) {
     width: 400px;
@@ -240,6 +242,11 @@ export const BirthDate = styled(DatePicker)`
     outline: none;
     background-color: transparent;
     transition: border ${transition}, color ${transition};
+    padding-right: 18px;
+
+    @media screen and (min-width: 768px) {
+      padding-right: 24px;
+    }
   }
 
   .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-error
