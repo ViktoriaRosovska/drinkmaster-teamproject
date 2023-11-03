@@ -5,23 +5,32 @@ import Loader from '../Loader';
 import { Main, LayoutContainer } from './SharedLayout.styled';
 import GlobalStyled from 'styles/GlobalStyled';
 import Footer from '../Footer/Footer';
+import { useSelector } from 'react-redux';
+import { ThemeProvider } from 'styled-components';
+import { darkTheme } from 'components/ThemeToggler/dark';
+import { lightTheme } from 'components/ThemeToggler/light';
 
 const SharedLayout = () => {
+  const themeSelector = useSelector(state => state.auth.theme);
+  const isDarkTheme = themeSelector === 'dark';
+
   return (
     <>
-      <LayoutContainer>
-        <GlobalStyled />
+      <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
+        <LayoutContainer>
+          <GlobalStyled />
 
-        <Header />
+          <Header />
 
-        <Main>
-          <Suspense fallback={<Loader />}>
-            <Outlet />
-          </Suspense>
-        </Main>
+          <Main>
+            <Suspense fallback={<Loader />}>
+              <Outlet />
+            </Suspense>
+          </Main>
 
-         <Footer />
-      </LayoutContainer>
+          <Footer />
+        </LayoutContainer>
+      </ThemeProvider>
     </>
   );
 };

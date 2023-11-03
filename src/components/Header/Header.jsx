@@ -11,6 +11,7 @@ import {
   MainWrapper,
   HeaderItem,
 } from './Header.styled';
+import { ThemeToggler } from 'components/ThemeToggler/ThemeToggler';
 
 const Header = () => {
   // const [showModal, setShowModal] = useState(false);
@@ -33,8 +34,8 @@ const Header = () => {
               <HeaderItem>
                 <Navigation />
               </HeaderItem>
+              <ThemeToggler />
               <HeaderItem className="push-right">
-                <div>Theme</div>
                 <UserLogo />
               </HeaderItem>
             </HeaderList>

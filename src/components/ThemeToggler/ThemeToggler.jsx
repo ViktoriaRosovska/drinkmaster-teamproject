@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux';
-// import selectTheme from '../../redux/auth/authSelectors';
 import { authOperations } from 'redux/auth/authOperations';
 import { StyledButton } from './ThemeToggler.styled';
 import { useState } from 'react';
@@ -12,15 +11,22 @@ export const ThemeToggler = () => {
   const onChangeTheme = () => {
     setTheme(isDarkTheme ? 'light' : 'dark');
   };
-  const payload = JSON.stringify({ theme: theme });
+  const payload = { theme: theme };
   dispatch(authOperations.themeThunk(payload));
 
   return (
     <>
-      <StyledButton
-        title={isDarkTheme ? 'switch to light theme' : 'switch to dark theme'}
-        onClick={onChangeTheme}
-      ></StyledButton>
+      <StyledButton onClick={onChangeTheme}>
+        {isDarkTheme ? (
+          <span aria-label="Light mode" role="img">
+            🌞
+          </span>
+        ) : (
+          <span aria-label="Dark mode" role="img">
+            🌜
+          </span>
+        )}
+      </StyledButton>
     </>
   );
 };

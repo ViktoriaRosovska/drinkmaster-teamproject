@@ -1,8 +1,10 @@
 import { styled } from 'styled-components';
 
 export const StyledButton = styled.button`
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border-color: ${props => props.theme};
   padding-top: 8px;
   padding-bottom: 8px;
 

@@ -82,12 +82,11 @@ export const subscribeEmail = createAsyncThunk(
 const themeThunk = createAsyncThunk(
   'auth/theme',
   async (payload, { rejectWithValue }) => {
-    console.log(payload);
     try {
       const res = await axios.patch('/users/theme', payload);
       return res.data;
     } catch (error) {
-      return rejectWithValue(error.response.status);
+      return rejectWithValue(error.message);
     }
   }
 );
