@@ -200,24 +200,27 @@ export const BirthDate = styled(DesktopDatePicker)`
     }
   }
 
-  .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-error
-    .MuiOutlinedInput-notchedOutline {
-    transition: border-color ${transition}, color ${transition};
-    border-color: var(--red-error-fifty-color);
-  }
+  // .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-error
+  //   .MuiOutlinedInput-notchedOutline {
+  //   transition: border-color ${transition}, color ${transition};
+  //   border-color: var(--red-error-fifty-color);
+  // }
 
-  .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-error:hover
-    .MuiOutlinedInput-notchedOutline,
-  .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-error:focus
-    .MuiOutlinedInput-notchedOutline {
-    border-style: 0px;
-    border-color: var(--white-fifty-color);
-    color: var(--white-fifty-color);
-  }
+  // .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-error:hover
+  //   .MuiOutlinedInput-notchedOutline,
+  // .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-error:focus
+  //   .MuiOutlinedInput-notchedOutline {
+  //   border-style: 0px;
+  //   border-color: var(--white-fifty-color);
+  //   color: var(--white-fifty-color);
+  // }
 
   .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root
     .MuiOutlinedInput-notchedOutline {
-    border-color: var(--green-success-fifty-color);
+    /////////  Ани  ///////////
+    // border-color: var(--green-success-fifty-color);
+    ////////////////////
+    border-color: var(--white-twenty-color);
     transition: border-color ${transition}, color ${transition};
   }
 
