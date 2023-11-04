@@ -22,6 +22,7 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
       })
       .addCase(authOperations.signIn.fulfilled, (state, { payload }) => {
+        state.theme = payload.user.theme;
         state.user = payload.user;
         state.token = payload.token;
         state.isLoggedIn = true;
@@ -41,6 +42,7 @@ const authSlice = createSlice({
         state.isRefreshing = true;
       })
       .addCase(authOperations.currentUser.fulfilled, (state, { payload }) => {
+        state.theme = payload.user.theme;
         state.user = payload.user;
         state.isLoggedIn = true;
         state.isRefreshing = false;
@@ -52,8 +54,6 @@ const authSlice = createSlice({
         state.isSubscribed = true;
       })
       .addCase(authOperations.themeThunk.fulfilled, (state, { payload }) => {
-        console.log(state.theme);
-        console.log(payload.subscribeUser.theme);
         state.theme = payload.subscribeUser.theme;
       }),
 });

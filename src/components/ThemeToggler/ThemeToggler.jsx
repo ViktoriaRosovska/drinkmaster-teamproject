@@ -1,25 +1,24 @@
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth/authOperations';
 import { StyledButton } from './ThemeToggler.styled';
-import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 export const ThemeToggler = () => {
   const dispatch = useDispatch();
-  const [theme, setTheme] = useState('dark');
 
-  const isDarkTheme = theme === 'dark';
+  const themeSelector = useSelector(state => state.auth.theme);
+
   const onChangeTheme = () => {
-    setTheme(isDarkTheme ? 'light' : 'dark');
+    const theme = themeSelector === 'dark' ? 'light' : 'dark';
+    dispatch(authOperations.themeThunk({ theme: theme }));
   };
 
-  useEffect(() => {
-    dispatch(authOperations.themeThunk({ theme: theme }));
-  }, [dispatch, theme]);
+  const currentTheme = themeSelector === 'dark';
 
   return (
     <>
       <StyledButton onClick={onChangeTheme}>
-        {isDarkTheme ? (
+        {currentTheme ? (
           <span aria-label="Light mode" role="img">
             🌞
           </span>
