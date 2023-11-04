@@ -12,6 +12,7 @@ import RecipePreparation from 'components/RecipePreparation/RecipePreparation';
 
 import { MainContainer } from 'styles/App.styled';
 import { Title } from './DrinkIdPage.styled';
+import Loader from 'components/Loader';
 
 const DrinkIdPage = () => {
   const dispatch = useDispatch();
@@ -22,33 +23,33 @@ const DrinkIdPage = () => {
     dispatch(getDrinkById(drinkId));
   }, [dispatch, drinkId]);
 
+  //   const ingridientsMap = new Map();
+  //   ingredients.forEach(i => {
+  //     ingridientsMap.set(i._id, i);
+  //   });
 
-//   const ingridientsMap = new Map();
-//   ingredients.forEach(i => {
-//     ingridientsMap.set(i._id, i);
-//   });
+  //   const ingredientArrayFromDrink = drink.ingredients
+  //     ? drink.ingredients.map(el => ingridientsMap.get(el.ingredientId))
+  //     : [];
+  //   console.log('ingredientArrayFromDrink', ingredientArrayFromDrink);
 
-//   const ingredientArrayFromDrink = drink.ingredients
-//     ? drink.ingredients.map(el => ingridientsMap.get(el.ingredientId))
-//     : [];
-//   console.log('ingredientArrayFromDrink', ingredientArrayFromDrink);
+  //   // useEffect(() => {
+  //   //   async function fetchDrinkById() {
+  //   //     const res = await dispatch(getDrinkById(drinkId));
+  //   //     return res;
+  //   //   }
 
-//   // useEffect(() => {
-//   //   async function fetchDrinkById() {
-//   //     const res = await dispatch(getDrinkById(drinkId));
-//   //     return res;
-//   //   }
+  //   //   // function loadPage() {
+  //   //   //   if (isLoggedIn) {
+  //   //   //     fetchDrinkById();
+  //   //   //   }
+  //   //   // }
+  //   //   // loadPage();
+  //   // }, [dispatch, drinkId, isLoggedIn]);
 
-//   //   // function loadPage() {
-//   //   //   if (isLoggedIn) {
-//   //   //     fetchDrinkById();
-//   //   //   }
-//   //   // }
-//   //   // loadPage();
-//   // }, [dispatch, drinkId, isLoggedIn]);
-//   useEffect(() => {
-//     window.scrollTo(0, 0);
-//   }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <MainContainer>
@@ -66,13 +67,12 @@ const DrinkIdPage = () => {
 
           <DrinkIngridientList ingredients={drink.ingredients} />
 
-
           {/* <DrinkIngridientList ingredients={ingredientArrayFromDrink} /> */}
 
           <RecipePreparation instructions={drink.instructions} />
         </>
       ) : (
-        <div>Loading...</div>
+        <Loader />
       )}
     </MainContainer>
   );
