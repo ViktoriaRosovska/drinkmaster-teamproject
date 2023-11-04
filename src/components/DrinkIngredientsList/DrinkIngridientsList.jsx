@@ -1,33 +1,29 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getIngredients } from '../../redux/filters/filtersOperations';
-import {
-  // Image,
-  // Ingredient,
-  // IngredientMeasure,
-  // IngredientTitle,
-  List,
-  Title,
-} from './DrrinkIngedientList.styled';
-// // import drinkIdPageBlock from '../../assets/images/drinkIdPage/block-middle@1x.jpg';
 import { IngredientItem } from './IngredientItem';
-import { useDrink } from 'hooks/useDrink';
+import {
+  IngredientsTitle,
+  IngredientsList,
+} from './DrinkIngredientList.styled';
+import { useDrink } from '../../hooks/useDrink';
 
-const DrinkIngridientList = ({ ingredients }) => {
+const DrinkIngredientsList = ({ ingredients }) => {
   const dispatch = useDispatch();
-  const { drinks } = useDrink();
 
   useEffect(() => {
     dispatch(getIngredients());
   }, [dispatch]);
 
-  const ingredientsWithImages = drinks[0].ingredients;
+  const { drinkById } = useDrink();
+  const ingredientsWithImages = drinkById.ingredients;
+
   return (
-    <>
+    <div>
       {ingredientsWithImages.length > 0 && (
-        <>
-          <Title>Ingredients</Title>
-          <List>
+        <div>
+          <IngredientsTitle>Ingredients</IngredientsTitle>
+          <IngredientsList>
             {ingredients.map(ingredient => {
               const ingredientRec = ingredientsWithImages.find(
                 ii => ii._id === ingredient.ingredientId
@@ -35,8 +31,8 @@ const DrinkIngridientList = ({ ingredients }) => {
 
               const images = {
                 ingredientThumb: '',
-                // ['thumb-medium']: '',
-                // ['thumb-small']: '',
+                'thumb-medium': '',
+                'thumb-small': '',
               };
 
               if (ingredientRec) {
@@ -56,10 +52,11 @@ const DrinkIngridientList = ({ ingredients }) => {
                 </li>
               );
             })}
-          </List>
-        </>
+          </IngredientsList>
+        </div>
       )}
-    </>
+    </div>
   );
 };
-export default DrinkIngridientList;
+
+export default DrinkIngredientsList;
