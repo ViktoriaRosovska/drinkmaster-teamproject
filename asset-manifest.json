@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/drinkmaster-teamproject/static/css/main.a32f0ddd.css",
-    "main.js": "/drinkmaster-teamproject/static/js/main.9d09f55e.js",
+    "main.js": "/drinkmaster-teamproject/static/js/main.d3154d12.js",
     "static/js/255.c26ea008.chunk.js": "/drinkmaster-teamproject/static/js/255.c26ea008.chunk.js",
     "static/js/342.40718faf.chunk.js": "/drinkmaster-teamproject/static/js/342.40718faf.chunk.js",
-    "static/js/522.669fedb6.chunk.js": "/drinkmaster-teamproject/static/js/522.669fedb6.chunk.js",
+    "static/js/906.8d52fe7d.chunk.js": "/drinkmaster-teamproject/static/js/906.8d52fe7d.chunk.js",
     "static/js/259.a8a46f60.chunk.js": "/drinkmaster-teamproject/static/js/259.a8a46f60.chunk.js",
     "static/js/853.bda2bd1d.chunk.js": "/drinkmaster-teamproject/static/js/853.bda2bd1d.chunk.js",
     "static/js/660.4ff46594.chunk.js": "/drinkmaster-teamproject/static/js/660.4ff46594.chunk.js",
@@ -20,6 +20,7 @@
     "static/js/866.f9c028a3.chunk.js": "/drinkmaster-teamproject/static/js/866.f9c028a3.chunk.js",
     "static/js/857.98beb9f8.chunk.js": "/drinkmaster-teamproject/static/js/857.98beb9f8.chunk.js",
     "static/js/700.70fae19e.chunk.js": "/drinkmaster-teamproject/static/js/700.70fae19e.chunk.js",
+    "static/js/962.f23088f2.chunk.js": "/drinkmaster-teamproject/static/js/962.f23088f2.chunk.js",
     "static/js/201.f6f812e9.chunk.js": "/drinkmaster-teamproject/static/js/201.f6f812e9.chunk.js",
     "static/css/580.0c8dff8d.chunk.css": "/drinkmaster-teamproject/static/css/580.0c8dff8d.chunk.css",
     "static/js/873.62bacf80.chunk.js": "/drinkmaster-teamproject/static/js/873.62bacf80.chunk.js",
@@ -83,12 +84,14 @@
     "static/media/addPhoto.svg": "/drinkmaster-teamproject/static/media/addPhoto.190518d2a01cca36f082a59cdc48b4c9.svg",
     "static/media/error.svg": "/drinkmaster-teamproject/static/media/error.b418bd98674843d8d48f4d36abf20d94.svg",
     "static/media/burgerclose.svg": "/drinkmaster-teamproject/static/media/burgerclose.6da19b7a40009155e83f449f756c9e6d.svg",
+    "static/media/PlusForm.svg": "/drinkmaster-teamproject/static/media/PlusForm.1e3c964c62a55c7133ae6cae68a3f12b.svg",
+    "static/media/MinusForm.svg": "/drinkmaster-teamproject/static/media/MinusForm.7aa2513c040a6b5b61df80c9efc7b18d.svg",
     "static/media/plus.svg": "/drinkmaster-teamproject/static/media/plus.a42d76147973b79136673cbc84673ffb.svg",
     "main.a32f0ddd.css.map": "/drinkmaster-teamproject/static/css/main.a32f0ddd.css.map",
-    "main.9d09f55e.js.map": "/drinkmaster-teamproject/static/js/main.9d09f55e.js.map",
+    "main.d3154d12.js.map": "/drinkmaster-teamproject/static/js/main.d3154d12.js.map",
     "255.c26ea008.chunk.js.map": "/drinkmaster-teamproject/static/js/255.c26ea008.chunk.js.map",
     "342.40718faf.chunk.js.map": "/drinkmaster-teamproject/static/js/342.40718faf.chunk.js.map",
-    "522.669fedb6.chunk.js.map": "/drinkmaster-teamproject/static/js/522.669fedb6.chunk.js.map",
+    "906.8d52fe7d.chunk.js.map": "/drinkmaster-teamproject/static/js/906.8d52fe7d.chunk.js.map",
     "259.a8a46f60.chunk.js.map": "/drinkmaster-teamproject/static/js/259.a8a46f60.chunk.js.map",
     "853.bda2bd1d.chunk.js.map": "/drinkmaster-teamproject/static/js/853.bda2bd1d.chunk.js.map",
     "660.4ff46594.chunk.js.map": "/drinkmaster-teamproject/static/js/660.4ff46594.chunk.js.map",
@@ -104,12 +107,13 @@
     "866.f9c028a3.chunk.js.map": "/drinkmaster-teamproject/static/js/866.f9c028a3.chunk.js.map",
     "857.98beb9f8.chunk.js.map": "/drinkmaster-teamproject/static/js/857.98beb9f8.chunk.js.map",
     "700.70fae19e.chunk.js.map": "/drinkmaster-teamproject/static/js/700.70fae19e.chunk.js.map",
+    "962.f23088f2.chunk.js.map": "/drinkmaster-teamproject/static/js/962.f23088f2.chunk.js.map",
     "201.f6f812e9.chunk.js.map": "/drinkmaster-teamproject/static/js/201.f6f812e9.chunk.js.map",
     "580.0c8dff8d.chunk.css.map": "/drinkmaster-teamproject/static/css/580.0c8dff8d.chunk.css.map",
     "873.62bacf80.chunk.js.map": "/drinkmaster-teamproject/static/js/873.62bacf80.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a32f0ddd.css",
-    "static/js/main.9d09f55e.js"
+    "static/js/main.d3154d12.js"
   ]
 }
