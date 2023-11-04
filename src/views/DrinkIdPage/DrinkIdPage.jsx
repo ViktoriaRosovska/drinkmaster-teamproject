@@ -22,19 +22,53 @@ const DrinkIdPage = () => {
     dispatch(getDrinkById(drinkId));
   }, [dispatch, drinkId]);
 
+
+//   const ingridientsMap = new Map();
+//   ingredients.forEach(i => {
+//     ingridientsMap.set(i._id, i);
+//   });
+
+//   const ingredientArrayFromDrink = drink.ingredients
+//     ? drink.ingredients.map(el => ingridientsMap.get(el.ingredientId))
+//     : [];
+//   console.log('ingredientArrayFromDrink', ingredientArrayFromDrink);
+
+//   // useEffect(() => {
+//   //   async function fetchDrinkById() {
+//   //     const res = await dispatch(getDrinkById(drinkId));
+//   //     return res;
+//   //   }
+
+//   //   // function loadPage() {
+//   //   //   if (isLoggedIn) {
+//   //   //     fetchDrinkById();
+//   //   //   }
+//   //   // }
+//   //   // loadPage();
+//   // }, [dispatch, drinkId, isLoggedIn]);
+//   useEffect(() => {
+//     window.scrollTo(0, 0);
+//   }, []);
+
   return (
     <MainContainer>
       {drink && drink.ingredients ? (
         <>
           <Title>{drink.drink} </Title>
           <DrinkPageHero
+            id={drink._id}
             glass={drink.glass}
             about={drink.description || null}
             title={drink.drink}
             image={drink.drinkThumb || null}
             alcoholic={drink.alcoholic}
           />
+
           <DrinkIngridientList ingredients={drink.ingredients} />
+
+
+          {/* <DrinkIngridientList ingredients={ingredientArrayFromDrink} /> */}
+
           <RecipePreparation instructions={drink.instructions} />
         </>
       ) : (

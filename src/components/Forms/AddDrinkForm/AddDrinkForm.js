@@ -59,6 +59,7 @@ export default function AddDrinkForm() {
       formData.append('ingredients', JSON.stringify(values.ingredients));
       formData.append('drinkThumb', values.drinkThumb);
       setIsLoading(true);
+      console.log('hello');
       try {
         const responce = await dispatch(addMyDrink(formData));
         if (responce) {
@@ -82,12 +83,12 @@ export default function AddDrinkForm() {
       ) : (
         <FormContainer onSubmit={formik.handleSubmit}>
           <DrinkDescriptionFields
-          // values={formik.values}
-          // errors={formik.errors}
-          // touched={formik.touched}
-          // handleChange={formik.handleChange}
-          // handleBlur={formik.handleBlur}
-          // setFieldValue={formik.setFieldValue}
+            values={formik.values}
+            errors={formik.errors}
+            touched={formik.touched}
+            handleChange={formik.handleChange}
+            handleBlur={formik.handleBlur}
+            setFieldValue={formik.setFieldValue}
           />
           <DrinkIngridientsFields
           // values={formik.values}

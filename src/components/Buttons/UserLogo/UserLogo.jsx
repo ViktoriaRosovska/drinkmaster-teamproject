@@ -12,7 +12,6 @@ import useAuth from 'hooks/useAuth';
 const UserLogo = () => {
   const [isShowUserLogoModal, setIsShowUserLogoModal] = useState(false);
   const { user } = useAuth();
-  console.log(user);
 
   const onShowUserLogoModal = () => {
     setIsShowUserLogoModal(true);
