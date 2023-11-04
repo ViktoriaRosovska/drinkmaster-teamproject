@@ -2,21 +2,31 @@ import PageTitle from 'components/PageTitle/PageTitle';
 import DrinksSearch from 'components/DrinksSearch/DrinksSearch';
 import { MainContainer } from 'styles/App.styled';
 import { Drinks } from 'components/Drinks/Drinks';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 // import { useDrink } from 'hooks/useDrink';
-import { getMainPageAllDrinks } from 'redux/drinks/drinksOperations';
+import {
+  getMainPageAllDrinks,
+  getRequestedDrink,
+} from 'redux/drinks/drinksOperations';
 import {
   getCategories,
   getGlasses,
   getIngredients,
 } from 'redux/filters/filtersOperations';
-import { useFilters } from 'hooks/useFilters';
+import { useDrink } from 'hooks/useDrink';
+import { useResize } from 'hooks/useResize';
+import {
+  categorySelector,
+  filterSelector,
+  ingredientSelector,
+} from 'redux/filter/filterSelector';
+import Paginator from 'components/Paginator/Paginator';
+import { useNavigate } from 'react-router-dom';
 
 export default function DrinksPage() {
   const dispatch = useDispatch();
-
-  const { error } = useFilters();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getMainPageAllDrinks());
@@ -25,15 +35,72 @@ export default function DrinksPage() {
     dispatch(getGlasses());
   }, [dispatch]);
 
-  // const { categories, isLoading } = useFilters();
-  // console.log('categoriesRedux Drinks page: ', categories);
+  const { drinks, error, total } = useDrink();
+
+  const { width } = useResize();
+
+  const filter = useSelector(filterSelector);
+  const category = useSelector(categorySelector);
+  const ingredient = useSelector(ingredientSelector);
+
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const drinksPerPage = width < 1440 ? 8 : 9;
+
+  const onPageChange = pageNum => {
+    setCurrentPage(pageNum);
+  };
+
+  let totalPages = Math.ceil(total / drinksPerPage);
+
+  useEffect(() => {
+    if (drinks?.length === 0 && currentPage > 1) {
+      onPageChange(currentPage - 1);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [drinks]);
+
+  useEffect(() => {
+    navigate(`?page=${currentPage}`);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentPage]);
+
+  useEffect(() => {
+    dispatch(
+      getRequestedDrink({
+        query: filter,
+        category: category.value,
+        ingredient: ingredient.value,
+        page: currentPage,
+        limit: drinksPerPage,
+      })
+    )
+      .unwrap()
+      .catch(error => console.log(error));
+  }, [dispatch, currentPage, drinksPerPage, filter, category, ingredient]);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filter, category, ingredient]);
 
   return (
     <MainContainer>
-      {error && <p>{error}</p>}
       <PageTitle title="Drinks" />
       <DrinksSearch />
-      <Drinks />
+      {error ? (
+        <p>There are no drinks match your request</p>
+      ) : (
+        drinks && <Drinks drinks={drinks} />
+      )}
+
+      {totalPages > 1 && !error && (
+        <Paginator
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={onPageChange}
+          path={'/drinks'}
+        />
+      )}
     </MainContainer>
   );
 }
