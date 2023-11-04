@@ -1,6 +1,12 @@
 import { AddFormSelect } from '../DrinkFormCustomSelect/DrinkFormCustomSelect.styled';
 
-const DrinkFormCustomSelect = ({ placeholder, options }) => {
+const DrinkFormCustomSelect = ({
+  placeholder,
+  options,
+  name,
+  value,
+  onChange,
+}) => {
   const styles = {
     control: (baseStyles, state) => ({
       ...baseStyles,
@@ -104,6 +110,9 @@ const DrinkFormCustomSelect = ({ placeholder, options }) => {
         placeholder={placeholder}
         options={modifiedOptions}
         styles={styles}
+        name={name}
+        onChange={onChange}
+        defaultValue={value}
       />
     </>
   );
