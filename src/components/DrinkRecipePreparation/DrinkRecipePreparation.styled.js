@@ -7,6 +7,7 @@ const AddFormTextarea = styled.textarea`
   margin-bottom: 20px;
   width: 335px;
   height: 184px;
+  color: var(--white-color);
   &::placeholder {
     color: var(--white-color);
     line-height: calc(14px / 18px);
@@ -17,6 +18,7 @@ const RecipeWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
   @media screen and (min-width: 768px) {
     width: 768px;
   }
