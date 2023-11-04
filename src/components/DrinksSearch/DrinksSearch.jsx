@@ -2,13 +2,23 @@ import Selection from './Select';
 import { Filter, Wrapper } from './DrinksSearch.styled';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { filterSelector } from '../../redux/filter/filterSelector';
-import { setFilter } from '../../redux/filter/filterSlice';
+import {
+  filterSelector,
+  ingredientSelector,
+  categorySelector,
+} from '../../redux/filter/filterSelector';
+import {
+  setFilter,
+  setIngredient,
+  setCategory,
+} from '../../redux/filter/filterSlice';
 import { useFilters } from 'hooks/useFilters';
 
 const DrinksSearch = () => {
   const dispatch = useDispatch();
   const filter = useSelector(filterSelector);
+  const ingredient = useSelector(ingredientSelector);
+  const category = useSelector(categorySelector);
 
   const { categories, ingredients, isLoading } = useFilters();
 
@@ -18,10 +28,18 @@ const DrinksSearch = () => {
       sortedIngredients.push(ingredient.title);
     }
   }
-  // console.log(sortedIngredients);
 
-  const changeFilter = event => {
-    dispatch(setFilter(event.target.value));
+  const handleChangeFilter = e => {
+    dispatch(setFilter(e.target.value));
+  };
+  const handleChangeCategory = changeValue => {
+    dispatch(setCategory(changeValue));
+    console.log('Should be setCategory value', changeValue);
+  };
+
+  const handleChangeIngredient = changeValue => {
+    dispatch(setIngredient(changeValue));
+    console.log('Should be setIngredient value', changeValue);
   };
 
   return (
@@ -31,11 +49,21 @@ const DrinksSearch = () => {
           type="text"
           placeholder="Enter the text"
           value={filter}
-          onChange={changeFilter}
+          onChange={handleChangeFilter}
           debounceTimeout={1000}
         />
-        <Selection placeholder="All categories" options={categories} />
-        <Selection placeholder="Ingredients" options={sortedIngredients} />
+        <Selection
+          placeholder="All categories"
+          options={categories}
+          onChange={handleChangeCategory}
+          value={category}
+        />
+        <Selection
+          placeholder="Ingredients"
+          options={sortedIngredients}
+          onChange={handleChangeIngredient}
+          value={ingredient.value}
+        />
       </Wrapper>
     )
   );

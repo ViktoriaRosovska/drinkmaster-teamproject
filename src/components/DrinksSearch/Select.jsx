@@ -1,6 +1,6 @@
 import Select from 'react-select';
 
-const Selection = ({ placeholder, options }) => {
+const Selection = ({ placeholder, options, onChange }) => {
   const style = {
     control: baseStyles => ({
       ...baseStyles,
@@ -47,7 +47,6 @@ const Selection = ({ placeholder, options }) => {
     input: baseStyles => ({
       ...baseStyles,
       color: 'white',
-      // display: 'none',
     }),
     option: baseStyles => ({
       ...baseStyles,
@@ -75,6 +74,9 @@ const Selection = ({ placeholder, options }) => {
         placeholder={placeholder}
         options={modifiedOptions}
         styles={style}
+        onChange={onChange}
+        isClearable={true}
+        isSearchable={true}
       />
     </>
   );
