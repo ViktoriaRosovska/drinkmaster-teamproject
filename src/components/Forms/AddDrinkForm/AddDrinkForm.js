@@ -1,4 +1,4 @@
-// import * as Yup from 'yup';
+import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
@@ -13,6 +13,8 @@ import { DrinkDescriptionFields } from '../../DrinkDescriptionFields/DrinkDescri
 // import DrinkIngridientsFields from 'components/DrinkIngredientsFields/DrinkIngredientsFields';
 
 import Loader from 'components/Loader';
+import DrinkIngridientsFields from 'components/DrinkIngredientsFields/DrinkIngredientsFields';
+import DrinkRecipePreparation from 'components/DrinkRecipePreparation/DrinkRecipePreparation';
 
 // import chevronUp from '../../assets/images/addDrink/chevron-up.svg';
 // import { ReactSVG } from 'react-svg';
@@ -32,22 +34,21 @@ export default function AddDrinkForm() {
       instructions: '',
       ingredients: [
         {
-          title: '',
           measure: '',
           ingredientId: '',
         },
       ],
     },
-    // validationSchema: Yup.object().shape({
-    // drink: Yup.string().max(40).required('This field is required'),
-    // description: Yup.string().required('This field is required'),
-    //   category: Yup.string().required('This field is required'),
-    //   glass: Yup.string().required('This field is required'),
-    //   alcoholic: Yup.string().required('Select a type of drink'),
-    //   instructions: Yup.string().required('This field is required'),
-    //   ingredients: Yup.array().required('This field is required'),
-    //   drinkThumb: Yup.mixed().required('Select a drink image'),
-    // }),
+    validationSchema: Yup.object().shape({
+      // drink: Yup.string().max(40).required('This field is required'),
+      // description: Yup.string().required('This field is required'),
+      // category: Yup.string().required('This field is required'),
+      // glass: Yup.string().required('This field is required'),
+      //   alcoholic: Yup.string().required('Select a type of drink'),
+      //   instructions: Yup.string().required('This field is required'),
+      //   ingredients: Yup.array().required('This field is required'),
+      //   drinkThumb: Yup.mixed().required('Select a drink image'),
+    }),
     onSubmit: async values => {
       const formData = new FormData();
       formData.append('drink', values.drink);
@@ -90,22 +91,23 @@ export default function AddDrinkForm() {
             handleBlur={formik.handleBlur}
             setFieldValue={formik.setFieldValue}
           />
-          {/* <DrinkIngridientsFields
-          values={formik.values}
-          errors={formik.errors}
-          touched={formik.touched}
-          handleChange={formik.handleChange}
-          handleBlur={formik.handleBlur}
-          setFieldValue={formik.setFieldValue}
+          <DrinkIngridientsFields
+            values={formik.values}
+            errors={formik.errors}
+            touched={formik.touched}
+            handleChange={formik.handleChange}
+            handleBlur={formik.handleBlur}
+            setFieldValue={formik.setFieldValue}
           />
 
           <DrinkRecipePreparation
-          values={formik.values}
-          errors={formik.errors}
-          touched={formik.touched}
-          handleChange={formik.handleChange}
-          handleBlur={formik.handleBlur}
-          /> */}
+            values={formik.values}
+            errors={formik.errors}
+            touched={formik.touched}
+            handleChange={formik.handleChange}
+            handleBlur={formik.handleBlur}
+            setFieldValue={formik.setFieldValue}
+          />
           <WhiteLinkBtn type="submit" title="Add" />
         </FormContainer>
       )}
