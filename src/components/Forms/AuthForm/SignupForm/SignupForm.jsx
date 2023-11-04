@@ -1,5 +1,5 @@
 import { Formik, ErrorMessage } from 'formik';
-import moment from 'moment';
+// import moment from 'moment';
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -32,6 +32,10 @@ const initialValues = {
   email: '',
   password: '',
 };
+
+// const checkDateForm = () => {
+//   if (initialValues.birthDate === null) error;
+// };
 
 const schema = Yup.object().shape({
   name: Yup.string().required('Name is required'),
@@ -100,7 +104,7 @@ function SignupForm() {
           onSubmit={handleSubmit}
           validationSchema={schema}
         >
-          {({ values, errors, touched }) => (
+          {({ values, errors, touched, setFieldValue }) => (
             <AuthForm>
               <InputWrapper>
                 <Input
@@ -125,16 +129,32 @@ function SignupForm() {
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <BirthDate
                     name="birthDate"
-                    value={moment(values.birthDate, 'DD MMM YYYY')}
+                    // value={moment(values.birthDate, 'DD MMM YYYY')}
+                    value={null}
+                    // onChange={value => {
+                    //   values.birthDate = value
+                    //     ? value.format('DD MMM YYYY')
+                    //     : '';
+                    // }}
                     onChange={value => {
-                      values.birthDate = value
+                      const updatedValue = value
                         ? value.format('DD MMM YYYY')
                         : '';
+                      setFieldValue('birthDate', updatedValue);
+
+                      // if (values.birthDate === null)
+                      //   console.log(
+                      //     'values.birthDate = null',
+                      //     values.birthDate
+                      //   );
                     }}
                     disableFuture
                     showDaysOutsideCurrentMonth
                     slotProps={{
-                      textField: { fullWidth: true },
+                      textField: {
+                        fullWidth: true,
+                        // error: true,
+                      },
                     }}
                     slots={{ openPickerIcon: CalendarSvgIcon }}
                   />
