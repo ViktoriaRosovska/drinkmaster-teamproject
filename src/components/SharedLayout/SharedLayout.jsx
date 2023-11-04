@@ -11,12 +11,11 @@ import { darkTheme } from 'components/ThemeToggler/dark';
 import { lightTheme } from 'components/ThemeToggler/light';
 
 const SharedLayout = () => {
-  const themeSelector = useSelector(state => state.auth.theme);
-  const isDarkTheme = themeSelector === 'dark';
+  const theme = useSelector(state => state.auth.theme);
 
   return (
     <>
-      <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
+      <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
         <LayoutContainer>
           <GlobalStyled />
 

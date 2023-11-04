@@ -137,12 +137,6 @@ function SignupForm() {
                       textField: { fullWidth: true },
                     }}
                     slots={{ openPickerIcon: CalendarSvgIcon }}
-                    error={
-                      errors.birthDate && touched.birthDate ? 'true' : 'false'
-                    }
-                    success={
-                      values.birthDate && !errors.birthDate ? 'true' : 'false'
-                    }
                   />
                   <ErrorMessage name="birthDate" />
                 </LocalizationProvider>

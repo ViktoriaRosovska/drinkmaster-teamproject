@@ -2,16 +2,24 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const Nav = styled.nav`
-    display: none;
-  @media screen and (min-width: 1440px) {
+  @media screen and (max-width: 1439.98px) {
     display: flex;
-    flex-direction: row;
-    column-gap: 16px;
-    /* margin-left: 224px; */
-  // }
+    flex-direction: column;
+    row-gap: 16px;
+  }
+  @media screen and (min-width: 1440px) {
+    display: none;
+  }
+  & li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const DefButton = styled(NavLink)`
+  display: block;
+  margin: auto;
   background-color: transparent;
   color: var(--white-color);
   padding: 8px 16px 8px 16px;
