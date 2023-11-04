@@ -9,9 +9,9 @@ import { useSelector } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme } from 'components/ThemeToggler/dark';
 import { lightTheme } from 'components/ThemeToggler/light';
-
+import authSelectors from '../../redux/auth/authSelectors';
 const SharedLayout = () => {
-  const theme = useSelector(state => state.auth.theme);
+  const theme = useSelector(authSelectors.selectTheme);
 
   return (
     <>

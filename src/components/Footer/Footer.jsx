@@ -10,14 +10,19 @@ import {
 import Nav from 'components/Nav/Nav';
 import SubscribeForm from 'components/Forms/SubscribeForm/SubscribeForm';
 import FooterCopyright from './FooterCopyright/FooterCopyright';
+import { useSelector } from 'react-redux';
+import authSelectors from '../../redux/auth/authSelectors';
 
 const Footer = () => {
+
+  const theme = useSelector(authSelectors.selectTheme);
+
   return (
     <FooterContainer>
       <Container>
         <FooterContent>
           <FooterNavWrapper>
-            <FooterLogoAndSocial>
+            <FooterLogoAndSocial theme={theme}>
               <Logo />
               <FollowUs />
             </FooterLogoAndSocial>
