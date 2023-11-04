@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import DefaultImg from '../../assets/images/drinkPage/coctailPlaceholder.png';
 import {
   CategoryDrinksITEM,
@@ -9,13 +10,18 @@ import {
 
 export const ItemDrink = ({ item }) => {
   const { _id: id, drink, drinkThumb } = item;
+  const [imageError, setImageError] = useState(false);
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
 
   return (
     <CategoryDrinksITEM key={id}>
       <CategoryDrinksIMG
-        src={drinkThumb || DefaultImg}
+        src={imageError ? DefaultImg : drinkThumb}
         alt={drink}
-        placeholder={!drinkThumb ? 'true' : 'false'}
+        onError={handleImageError}
       />
       <CategoryDrinksTEXTDIV>
         <CategoryDrinksP>{drink}</CategoryDrinksP>
