@@ -40,30 +40,28 @@ const SubscribeForm = () => {
       }}
     >
       {({ isSubmitting, isValid }) => (
-        <form>
-          <SubscribeWrapper>
-            <SubscribeText>
-              Subscribe up to our newsletter. Be in touch with latest news and
-              special offers, etc.
-            </SubscribeText>
-             <Field
-              as={SubscribeInput}
-              type="email"
-              name="email"
-              placeholder="Enter the email"
-              required
-            />
-              <ErrorMessage
-                name="email"
-                component="div"
-                style={{ color: 'red', fontSize: '14px' }}
-              />
-            
-            <SubscribeButton type="submit" disabled={isSubmitting || !isValid}>
-              Subscribe
-            </SubscribeButton>
-          </SubscribeWrapper>
-        </form>
+        <SubscribeWrapper>
+          <SubscribeText>
+            Subscribe up to our newsletter. Be in touch with latest news and
+            special offers, etc.
+          </SubscribeText>
+          <Field
+            as={SubscribeInput}
+            type="email"
+            name="email"
+            placeholder="Enter the email"
+            required
+          />
+          <ErrorMessage
+            name="email"
+            component="div"
+            style={{ color: 'red', fontSize: '14px' }}
+          />
+
+          <SubscribeButton type="submit" disabled={isSubmitting || !isValid}>
+            Subscribe
+          </SubscribeButton>
+        </SubscribeWrapper>
       )}
     </Formik>
   );
