@@ -18,21 +18,16 @@ const DrinkIngredientsList = ({ ingredients }) => {
   const { drinkById } = useDrink();
   const ingredientsWithImages = drinkById.ingredients;
 
-
-//   const ingredientsWithImages = drinks.ingredients;
   return (
     <div>
       {ingredientsWithImages.length > 0 && (
-
         <div>
           <IngredientsTitle>Ingredients</IngredientsTitle>
           <IngredientsList>
             {ingredients.map(ingredient => {
-
-        
-//           <Title>Ingredients</Title>
-//           <List>
-//             {ingredients?.map(ingredient => {
+              //           <Title>Ingredients</Title>
+              //           <List>
+              //             {ingredients?.map(ingredient => {
 
               const ingredientRec = ingredientsWithImages.find(
                 ii => ii._id === ingredient.ingredientId
@@ -49,7 +44,7 @@ const DrinkIngredientsList = ({ ingredients }) => {
                 images['thumb-medium'] = ingredientRec['thumb-medium'];
                 images['thumb-small'] = ingredientRec['thumb-small'];
               }
-
+              console.log('bbbbbbb', ingredientsWithImages);
               return (
                 <li key={ingredient.ingredientId}>
                   <IngredientItem

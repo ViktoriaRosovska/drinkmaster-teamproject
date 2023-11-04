@@ -11,6 +11,7 @@ export const HeroContainer = styled.div`
     margin-bottom: 100px;
     display: flex;
     justify-content: space-between;
+    position: relative;
   }
 `;
 export const GlassName = styled.p`
@@ -43,11 +44,13 @@ export const About = styled.p`
 `;
 export const Box = styled.div`
   overflow: hidden;
+  object-fit: cover;
 `;
 export const ImageDrink = styled.img`
   width: 335px;
   margin-top: 80px;
-  border-radius: 8px;
+  border-radius: 10px;
+  object-fit: cover;
 
   @media screen and (min-width: 768px) {
     width: 704px;
@@ -55,24 +58,25 @@ export const ImageDrink = styled.img`
   @media screen and (min-width: 1440px) {
     width: 400px;
     margin-top: 0px;
-    position: relative;
-    top: -50px;
+    position: absolute;
+    top: -80px;
+    right: 0;
   }
 `;
-export const DefaultImage = styled.img`
-  width: 335px;
-  height: 400px;
-  /* background-color: grey;
-  opacity: 50%; */
-  position: relative;
+// export const DefaultImage = styled.img`
+//   width: 335px;
+//   height: 400px;
+//   /* background-color: grey;
+//   opacity: 50%; */
+//   position: relative;
 
-  @media screen and (min-width: 768px) {
-    width: 704px;
-    height: 400px;
-  }
+//   @media screen and (min-width: 768px) {
+//     width: 704px;
+//     height: 400px;
+//   }
 
-  @media screen and (min-width: 1440px) {
-    width: 400px;
-    height: 400px;
-  }
-`;
+//   @media screen and (min-width: 1440px) {
+//     width: 400px;
+//     height: 400px;
+//   }
+// `;
