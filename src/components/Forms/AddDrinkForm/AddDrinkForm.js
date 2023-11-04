@@ -34,6 +34,7 @@ export default function AddDrinkForm() {
       instructions: '',
       ingredients: [
         {
+          title: '',
           measure: '',
           ingredientId: '',
         },

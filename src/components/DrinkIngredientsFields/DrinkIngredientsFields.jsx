@@ -28,13 +28,15 @@ export default function DrinkIngridientsFields({
   // const [measure, setMeasure] = useState('');
   const onIngredientChange = (i, e) => {
     i.ingredientId = e.value;
+    i.title = e.label;
+    console.log(e);
     pushToParent(ingr);
     // const value = e.value;
     // console.log(value);
     // setIngredientId(value);
     // setFieldValue('ingredientId', value);
   };
-
+  console.log(ingr);
   const onMeasureChange = (i, e) => {
     i.measure = e.target.value;
     pushToParent(ingr);
@@ -52,7 +54,7 @@ export default function DrinkIngridientsFields({
     } else {
       newIngr = [
         ...ingr,
-        { id: UUID.generate(), ingredientId: '', measure: '0' },
+        { id: UUID.generate(), title: '', ingredientId: '', measure: '0' },
       ];
     }
     setIngr(newIngr);
@@ -68,7 +70,11 @@ export default function DrinkIngridientsFields({
   const pushToParent = ingr => {
     setFieldValue(
       'ingredients',
-      ingr.map(i => ({ ingredientId: i.ingredientId, measure: i.measure }))
+      ingr.map(i => ({
+        ingredientId: i.ingredientId,
+        title: i.title,
+        measure: i.measure,
+      }))
     );
   };
 
@@ -87,7 +93,7 @@ export default function DrinkIngridientsFields({
                 options={ingredients}
                 name="ingredientId"
                 onChange={e => onIngredientChange(i, e)}
-                value={i.ingredientId}
+                value={i}
               />
               <input
                 type="text"
