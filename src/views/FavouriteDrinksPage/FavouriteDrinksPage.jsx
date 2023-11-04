@@ -9,6 +9,7 @@ import { getFavoriteAll } from 'redux/drinks/drinksOperations';
 import NotFound from 'components/NotFound/NotFound';
 import { useResize } from 'hooks/useResize';
 import { useNavigate } from 'react-router-dom';
+import MotivatingModalPortal from 'components/Modal/MotivatingModal/MotivatingModalPortal';
 
 export default function FavoriteDrinksPage() {
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ export default function FavoriteDrinksPage() {
     dispatch(getFavoriteAll({ page: currentPage, limit: drinksPerPage }))
       .unwrap()
       .catch(error => console.log(error));
-  }, [dispatch, currentPage, total, drinksPerPage, ]);
+  }, [dispatch, currentPage, total, drinksPerPage]);
 
   return (
     <MainContainer>
@@ -66,6 +67,7 @@ export default function FavoriteDrinksPage() {
           path={'/favorites'}
         />
       )}
+      <MotivatingModalPortal/>
     </MainContainer>
   );
 }

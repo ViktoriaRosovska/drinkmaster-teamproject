@@ -22,7 +22,7 @@ const DrinkItem = ({ drinkData, favorite }) => {
   const { drink, drinkThumb, alcoholic, description, _id } = drinkData;
 
   const handleRemoveFromFav = () => {
-    favorite ? dispatch(removeDrink(_id)) : dispatch(removeOwnDrink(_id)); 
+    favorite ? dispatch(removeDrink(_id)) : dispatch(removeOwnDrink(_id));
   };
 
   return (
