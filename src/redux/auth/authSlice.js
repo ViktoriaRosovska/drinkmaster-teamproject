@@ -55,6 +55,10 @@ const authSlice = createSlice({
       })
       .addCase(authOperations.themeThunk.fulfilled, (state, { payload }) => {
         state.theme = payload.subscribeUser.theme;
+      })
+      .addCase(authOperations.updateUser.fulfilled, (state, { payload }) => {
+        state.user.name = payload.name;
+        payload.avatarURL && (state.user.avatarURL = payload.avatarURL);
       }),
 });
 
