@@ -65,9 +65,9 @@ export const getRequestedDrink = createAsyncThunk(
 
 export const addMyDrink = createAsyncThunk(
   'drinks/own/add',
-  async (data, thunkAPI) => {
+  async (formData, thunkAPI) => {
     try {
-      const response = await axios.post('/drinks/own/add', data, {
+      const response = await axios.post('/drinks/own/add', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
