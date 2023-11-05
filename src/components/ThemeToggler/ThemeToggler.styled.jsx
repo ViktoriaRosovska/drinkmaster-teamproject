@@ -1,6 +1,11 @@
 import { styled } from 'styled-components';
 
 export const StyledButton = styled.button`
+@media screen and (max-width: 1439.99px) {
+  // display: ${props => (props.isOpenBurgerMenu ? 'flex' : 'none')};
+  display: flex;
+}
+
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -8,9 +13,12 @@ export const StyledButton = styled.button`
   padding-top: 8px;
   padding-bottom: 8px;
 
-  display: flex;
   justify-content: center;
   align-items: center;
 
   background-color: white;
+
+  @media screen and (min-width: 1440px) {
+    display: flex;
+  }
 `;

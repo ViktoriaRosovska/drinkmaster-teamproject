@@ -1,37 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
+
 import Logo from 'components/Logo/Logo';
 import Navigation from 'components/Navigation/Navigation';
 import UserLogo from 'components/Buttons/UserLogo/UserLogo';
+import { ThemeToggler } from 'components/ThemeToggler/ThemeToggler';
+import CloseMobileMenuBtn from 'components/Buttons/CloseMobileMenuBtn/CloseMobileMenuBtn';
+import BurgerBtn from 'components/Buttons/BurgerBtn/BurgerBtn';
 import {
   Container,
   HeaderCont,
   HeaderList,
   MainWrapper,
   HeaderItem,
+  LastHeaderItem,
 } from './Header.styled';
-import { ThemeToggler } from 'components/ThemeToggler/ThemeToggler';
 
-// import MobileBurgerMenu from 'components/MobileBurgerMenu/MobileBurgerMenu';
-import CloseMobileMenuBtn from 'components/Buttons/CloseMobileMenuBtn/CloseMobileMenuBtn';
-import BurgerBtn from 'components/Buttons/BurgerBtn/BurgerBtn';
-import NavigationMobileMenu from 'components/MobileBurgerMenu/NavigationMobileMenu/NavigationMobileMenu/NavigationMobileMenu';
 
-const Header = () => {
-  const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
-  // const [hideOrShow, setHideOrShow] = useState({});
-
-  const toggleMobileMenu = () => {
-    setIsOpenMobileMenu(prev => !prev);
-    // if (isOpenMobileMenu) {
-    //   setHideOrShow(() => {
-    //     return {};
-    //   });
-    // } else {
-    //   setHideOrShow(() => {
-    //     return { display: 'flex' };
-    //   });
-    // }
-  };
+const Header = ({ isOpenMobileMenu, toggleMobileMenu }) => {
+  console.log(isOpenMobileMenu);
 
   return (
     <>
@@ -45,56 +31,21 @@ const Header = () => {
               <HeaderItem>
                 <Navigation />
               </HeaderItem>
-              <ThemeToggler />
               <HeaderItem className="push-right">
-
-                {isOpenMobileMenu && <div>Theme</div>}
-
-                <UserLogo />
-
+                <LastHeaderItem>
+                <ThemeToggler isOpenMobileMenu={isOpenMobileMenu} />
+                {!isOpenMobileMenu && <UserLogo />}
+                {isOpenMobileMenu ? (
+                  <CloseMobileMenuBtn toggleMobileMenu={toggleMobileMenu} />
+                ) : (
+                  <BurgerBtn toggleMobileMenu={toggleMobileMenu} />
+                )}
+                </LastHeaderItem>
               </HeaderItem>
-              {!isOpenMobileMenu && <UserLogo />}
-              {isOpenMobileMenu ? (
-                <CloseMobileMenuBtn toggleMobileMenu={toggleMobileMenu} />
-              ) : (
-                <BurgerBtn toggleMobileMenu={toggleMobileMenu} />
-              )}
             </HeaderList>
           </MainWrapper>
         </Container>
       </HeaderCont>
-      {isOpenMobileMenu && (
-        <div
-          style={{
-            height: '100vh',
-            backgroundColor: '#0a0a11',
-            width: '100%',
-            fontSize: '40px',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            position: 'fixed',
-            top: '86px',
-            listStyle: 'none',
-            zIndex: 120,
-            transform: isOpenMobileMenu ? 'translateY(0)' : 'translateY(-120%)',
-            transition: 'transform 1s ease-in',
-          }}
-          // style={hideOrShow}
-        >
-          <NavigationMobileMenu />
-          {/* <div
-          style={{
-            // backgroundColor: '#ff0000',
-            zIndex: '101',
-            transform: isOpenMobileMenu ? 'translateY(-120%)' : 'translateY(0)',
-            transition: 'transform 1s ease-in',
-            height: '100vh',
-            display: 'block'}}
-        ><NavigationMobileMenu/></div> */}
-        </div>
-      )}
-      {/* <MobileBurgerMenu hideOrShow={hideOrShow} isOpenMobileMenu={isOpenMobileMenu}/> */}
     </>
   );
 };

@@ -3,7 +3,12 @@ import styled from 'styled-components';
 export const HeaderCont = styled.header`
   background-color: ${props => props.theme};
 
-  position: relative;
+  @media screen and (max-width: 1439.99px) {
+    position: ${props => (props.isOpenBurgerMenu ? 'fixed' : 'static')};
+    width: ${props => (props.isOpenBurgerMenu ? '100vw' : '')};
+    z-index: 5001;
+  }
+
   padding: 20px;
   border-bottom: 1px solid var(--white-twenty-color);
   min-width: 320px;
@@ -40,15 +45,15 @@ export const Container = styled.div`
 
 export const MainWrapper = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
   position: relative;
 `;
 
 export const HeaderList = styled.ul`
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: flex-end;
   width: 100%;
   @media screen and (min-width: 1440px) {
     > li:first-child {
@@ -67,7 +72,20 @@ export const HeaderItem = styled.li`
   }
 `;
 
+export const LastHeaderItem = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
 
+  @media screen and (min-width: 768px) {
+    gap: 24px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    gap: 28px;
+  }
+`;
 
 // export const Container = styled.div`
 //   min-width: 320px;
