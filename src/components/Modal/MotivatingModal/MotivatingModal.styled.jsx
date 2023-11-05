@@ -1,13 +1,41 @@
 import styled from 'styled-components';
-import vectorImg from '../../../assets/images/motivation/Vector.png';
+import { ReactSVG } from 'react-svg';
+
+export const CloseSvg = styled(ReactSVG)`
+  & div {
+    width: 28px;
+    height: 28px;
+  }
+`;
+
+export const buttonModal = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  width: '42px',
+  height: '42px',
+  borderRadius: '58px',
+  backgroundColor: 'var(--dark-blue-color)',
+  padding: 0,
+  minWidth: '42px',
+};
 
 export const stylePlush = {
+  justifyContent: 'center',
   width: '268px',
   height: '242px',
   borderRadius: '30px',
   backgroundColor: 'rgba(217, 217, 217, 0.138)',
 };
 
+export const svg = {
+  '.injected-svg': {
+    width: '28px',
+    height: '28px',
+  },
+};
 export const styleBox = {
   position: 'absolute',
   top: '50%',
