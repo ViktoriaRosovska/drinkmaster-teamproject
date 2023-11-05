@@ -33,10 +33,6 @@ const initialValues = {
   password: '',
 };
 
-// const checkDateForm = () => {
-//   if (initialValues.birthDate === null) error;
-// };
-
 const schema = Yup.object().shape({
   name: Yup.string().required('Name is required'),
   birthDate: Yup.date().required('Date of Birth is required'),
@@ -57,6 +53,8 @@ const schema = Yup.object().shape({
 
 function SignupForm() {
   const [showPassword, setShowPassword] = useState(false);
+  // const [birthDateError, setBirthDateError] = useState(false);
+
   const dispatch = useDispatch();
 
   const handleTogglePassword = () => {
@@ -104,7 +102,7 @@ function SignupForm() {
           onSubmit={handleSubmit}
           validationSchema={schema}
         >
-          {({ values, errors, touched, setFieldValue }) => (
+          {({ values, errors, touched, setFieldValue, setFieldError }) => (
             <AuthForm>
               <InputWrapper>
                 <Input
@@ -130,7 +128,7 @@ function SignupForm() {
                   <BirthDate
                     name="birthDate"
                     // value={moment(values.birthDate, 'DD MMM YYYY')}
-                    value={null}
+                    value={values.birthDate || null}
                     // onChange={value => {
                     //   values.birthDate = value
                     //     ? value.format('DD MMM YYYY')
@@ -142,11 +140,11 @@ function SignupForm() {
                         : '';
                       setFieldValue('birthDate', updatedValue);
 
-                      // if (values.birthDate === null)
-                      //   console.log(
-                      //     'values.birthDate = null',
-                      //     values.birthDate
-                      //   );
+                      // if (errors.birthDate && touched.birthDate) {
+                      //   setBirthDateError(true);
+                      // } else {
+                      //   setBirthDateError(false);
+                      // }
                     }}
                     disableFuture
                     showDaysOutsideCurrentMonth
@@ -154,12 +152,13 @@ function SignupForm() {
                       textField: {
                         fullWidth: true,
                         // error: true,
+                        // error: birthDateError,
                       },
                     }}
                     slots={{ openPickerIcon: CalendarSvgIcon }}
                   />
-                  <ErrorMessage name="birthDate" />
                 </LocalizationProvider>
+
                 {errors.birthDate && touched.birthDate ? (
                   <ErrorText error>{errors.birthDate}</ErrorText>
                 ) : null}
