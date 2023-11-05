@@ -65,7 +65,7 @@ const drinksSlice = createSlice({
 
       .addCase(addMyDrink.pending, handlePending)
       .addCase(addMyDrink.fulfilled, (state, action) => {
-        state.drinks = action.payload;
+        state.drinks.push(action.payload);
         state.isLoading = false;
         state.error = null;
       })

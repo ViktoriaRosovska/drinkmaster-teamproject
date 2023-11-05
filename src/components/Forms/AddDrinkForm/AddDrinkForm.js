@@ -2,7 +2,7 @@ import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-// import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 
 import { addMyDrink } from 'redux/drinks/drinksOperations';
 
@@ -22,7 +22,7 @@ import DrinkRecipePreparation from 'components/DrinkRecipePreparation/DrinkRecip
 export default function AddDrinkForm() {
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
@@ -65,7 +65,7 @@ export default function AddDrinkForm() {
       try {
         const responce = await dispatch(addMyDrink(formData));
         if (responce) {
-          //navigate('/my');
+          navigate('/my');
           console.log('Hurray!!!');
         } else {
           console.log('Server error', responce.statusText);
