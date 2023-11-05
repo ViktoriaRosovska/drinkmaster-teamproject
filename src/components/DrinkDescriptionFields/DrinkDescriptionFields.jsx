@@ -1,4 +1,5 @@
 import {
+  AddFileLabel,
   AddFormInput,
   AddFormRadioGroup,
   // AddFormSelect,
@@ -156,10 +157,13 @@ export const DrinkDescriptionFields = ({
     <DescriptionWrapper>
       <AddPhotoContainer>
         {selectedFileImage && (
-          <FileImage src={selectedFileImage} alt="Selected image" />
+          <FileImage
+            src={selectedFileImage ? selectedFileImage : null}
+            alt="Selected image"
+          />
         )}
         <InputFileWrapper>
-          <label>
+          <AddFileLabel>
             <InputAddFile
               type="file"
               onChange={e => handleFileChange(e)}
@@ -168,7 +172,7 @@ export const DrinkDescriptionFields = ({
               accept="drinkThumb/*"
             />
             <ReactSVGIcon src={IconPlus} />
-          </label>
+          </AddFileLabel>
         </InputFileWrapper>
         <InputText>Add drink</InputText>
         {touched.drinkThumb && errors.drinkThumb ? (

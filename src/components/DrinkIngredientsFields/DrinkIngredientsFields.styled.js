@@ -32,6 +32,24 @@ const IngredientWrapper = styled.div`
     gap: 24px;
   }
 `;
+
+const MeasureInput = styled.input`
+  width: 101px;
+  height: 50px;
+  border-radius: 200px;
+  border: 1px solid var(--white-fifty-color);
+  background-color: transparent;
+  color: white;
+  padding-left: 18px;
+  padding-right: 18px;
+  font-family: 'Manrope';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+`;
+
 const TitleWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -54,4 +72,5 @@ export {
   IngredientWrapper,
   TitleWrapper,
   IngredientInputsWrapper,
+  MeasureInput,
 };

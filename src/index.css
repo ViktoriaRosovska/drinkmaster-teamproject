@@ -52,3 +52,7 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.move {
+  transform: translate(0px, -40px);
+}
