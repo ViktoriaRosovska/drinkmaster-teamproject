@@ -22,7 +22,7 @@ const DrinkItem = ({ drinkData, favorite }) => {
   const { drink, drinkThumb, alcoholic, description, _id } = drinkData;
 
   const handleRemoveFromFav = () => {
-    favorite ? dispatch(removeDrink(_id)) : dispatch(removeOwnDrink(_id)); 
+    favorite ? dispatch(removeDrink(_id)) : dispatch(removeOwnDrink(_id));
   };
 
   return (
@@ -38,7 +38,7 @@ const DrinkItem = ({ drinkData, favorite }) => {
       <IsAlco>{alcoholic}</IsAlco>
       <Description>{description}</Description>
       <ButtonsContainer>
-        <SeeMoreBtn navLink={`/drink/${_id}`} />
+        <SeeMoreBtn navLink={`/drinks/${_id}`} />
         <DeleteBtn type="button" onClick={handleRemoveFromFav}>
           <SVG src={trash} />
         </DeleteBtn>
