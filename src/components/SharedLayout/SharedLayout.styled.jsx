@@ -59,5 +59,5 @@ export const LayoutContainer = styled.div`
 export const Main = styled.main`
   flex: 1 1 auto;
   background-color: ${props => props.theme};
-  color: ${props => props.theme};
+  /* color: ${props => props.theme}; */
 `;
