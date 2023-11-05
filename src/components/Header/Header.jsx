@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Logo from 'components/Logo/Logo';
+// import Logo from 'components/Logo/Logo';
 import Navigation from 'components/Navigation/Navigation';
 import UserLogo from 'components/Buttons/UserLogo/UserLogo';
 import { ThemeToggler } from 'components/ThemeToggler/ThemeToggler';
@@ -14,7 +14,7 @@ import {
   HeaderItem,
   LastHeaderItem,
 } from './Header.styled';
-
+import LogoHeader from './LogoHeder';
 
 const Header = ({ isOpenMobileMenu, toggleMobileMenu }) => {
   console.log(isOpenMobileMenu);
@@ -26,20 +26,20 @@ const Header = ({ isOpenMobileMenu, toggleMobileMenu }) => {
           <MainWrapper>
             <HeaderList>
               <HeaderItem>
-                <Logo />
+                <LogoHeader />
               </HeaderItem>
               <HeaderItem>
                 <Navigation />
               </HeaderItem>
               <HeaderItem className="push-right">
                 <LastHeaderItem>
-                <ThemeToggler isOpenMobileMenu={isOpenMobileMenu} />
-                {!isOpenMobileMenu && <UserLogo />}
-                {isOpenMobileMenu ? (
-                  <CloseMobileMenuBtn toggleMobileMenu={toggleMobileMenu} />
-                ) : (
-                  <BurgerBtn toggleMobileMenu={toggleMobileMenu} />
-                )}
+                  <ThemeToggler isOpenMobileMenu={isOpenMobileMenu} />
+                  {!isOpenMobileMenu && <UserLogo />}
+                  {isOpenMobileMenu ? (
+                    <CloseMobileMenuBtn toggleMobileMenu={toggleMobileMenu} />
+                  ) : (
+                    <BurgerBtn toggleMobileMenu={toggleMobileMenu} />
+                  )}
                 </LastHeaderItem>
               </HeaderItem>
             </HeaderList>
