@@ -4,10 +4,12 @@ import styled from 'styled-components';
 const CloseIconReactSvg = styled(ReactSVG)`
   width: 18px;
   height: 18px;
-
+  color: var(--white-color);
+  fill: var(--white-color);
+  stroke: var(--white-color);
   & div svg {
-    /* stroke: var(--white-color); */
-    stroke: red;
+    stroke: var(--white-color);
+    /* stroke: red; */
   }
 `;
 

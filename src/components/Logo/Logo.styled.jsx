@@ -7,7 +7,6 @@ export const LogoLink = styled(Link)`
   gap: 14px;
   transition: 0.5s;
   width: 133px;
-
   &:hover,
   &:focus {
     transform: scale(1.1);
@@ -19,12 +18,16 @@ export const LogoLink = styled(Link)`
 
 export const LogoIcon = styled(logo_icon)`
   fill: var(--white-color);
-  // fill: ${props => props.theme};
- 
+
   @media screen and (min-width: 768px) {
     width: 28px;
     height: 28px;
   }
+`;
+
+export const LogoIconHeader = styled(LogoIcon)`
+  /* fill: green; */
+  fill: ${props => props.theme.color};
 `;
 
 export const LogoText = styled.p`

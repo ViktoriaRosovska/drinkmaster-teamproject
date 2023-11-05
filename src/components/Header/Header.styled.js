@@ -86,7 +86,6 @@ export const LastHeaderItem = styled.div`
     gap: 28px;
   }
 `;
-
 // export const Container = styled.div`
 //   min-width: 320px;
 //   margin-left: auto;
