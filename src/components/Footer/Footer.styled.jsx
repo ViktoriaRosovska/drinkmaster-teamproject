@@ -1,16 +1,13 @@
 import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
-  background-color: ${props => props.theme};
-  /* color: ${props => props.theme}; */
-
   border-top: 1px solid var(--white-twenty-color);
   display: flex;
   padding-top: 40px;
   padding-bottom: 18px;
   min-width: 320px;
-
-  /* background: radial-gradient(
+  background-color: var(--black-color);
+  background-image: radial-gradient(
     circle,
     var(--light-green-forty-color) 10%,
     rgba(255, 255, 255, 0) 70%
@@ -24,8 +21,7 @@ export const FooterContainer = styled.footer`
   @media screen and (min-width: 768px) {
     padding-top: 80px;
     padding-bottom: 24px;
-
-    background: radial-gradient(
+    background-image: radial-gradient(
         circle,
         rgba(188, 230, 210, 0.4) 10%,
         rgba(255, 255, 255, 0) 70%
@@ -37,14 +33,13 @@ export const FooterContainer = styled.footer`
       );
 
     background-size: 1100px 1100px, 900px 900px;
-
     background-repeat: no-repeat;
     background-position-x: calc(40vw - 550px), calc(60vw - 300px);
     background-position-y: 260px, 350px;
   }
 
   @media screen and (min-width: 1440px) {
-    background: radial-gradient(
+    background-image: radial-gradient(
         circle,
         rgba(188, 230, 210, 0.4) 30%,
         rgba(255, 255, 255, 0) 70%
@@ -56,11 +51,10 @@ export const FooterContainer = styled.footer`
       );
 
     background-size: 1250px 1250px, 900px 900px;
-
     background-repeat: no-repeat, no-repeat;
     background-position-x: calc(50vw - 650px), calc(60vw - 400px);
     background-position-y: 260px, 270px;
-  } */
+  }
 `;
 
 export const FooterLogoAndSocial = styled.div`
