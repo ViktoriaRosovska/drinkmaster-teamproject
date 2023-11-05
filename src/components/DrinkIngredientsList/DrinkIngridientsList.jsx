@@ -29,7 +29,7 @@ const DrinkIngredientsList = ({ ingredients }) => {
           <IngredientsList>
             {ingredients.map(ingredient => {
 
-        <>
+        
 //           <Title>Ingredients</Title>
 //           <List>
 //             {ingredients?.map(ingredient => {

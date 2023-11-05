@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from 'components/Header/Header';
 import Loader from '../Loader';
@@ -9,9 +9,15 @@ import { useSelector } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme } from 'components/ThemeToggler/dark';
 import { lightTheme } from 'components/ThemeToggler/light';
+import BurgerMenu from 'components/MobileBurgerMenu/BurgerMenu';
 
 const SharedLayout = () => {
   const theme = useSelector(state => state.auth.theme);
+
+  const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
+  const toggleMobileMenu = () => {
+    setIsOpenMobileMenu(prev => !prev);
+  }
 
   return (
     <>
@@ -19,8 +25,8 @@ const SharedLayout = () => {
         <LayoutContainer>
           <GlobalStyled />
 
-          <Header />
-
+          <Header isOpenMobileMenu={isOpenMobileMenu} toggleMobileMenu={toggleMobileMenu}/>
+          <BurgerMenu isOpenMobileMenu={isOpenMobileMenu} toggleMobileMenu={toggleMobileMenu}/>
           <Main>
             <Suspense fallback={<Loader />}>
               <Outlet />
