@@ -54,7 +54,7 @@ export const DrinkDescriptionFields = ({
 
   const handleFileChange = e => {
     const file = e.target.files[0];
-    setFieldValue('drinkThumb', URL.createObjectURL(file));
+    setFieldValue('drinkThumb', file);
     if (file) {
       setSelectedFileImage(URL.createObjectURL(file));
     } else {
@@ -165,11 +165,11 @@ export const DrinkDescriptionFields = ({
         <InputFileWrapper>
           <AddFileLabel>
             <InputAddFile
-              type="blob"
+              type="file"
               onChange={e => handleFileChange(e)}
               id="drinkThumb"
               name="drinkThumb"
-              // accept="drinkThumb/*"
+              accept="drinkThumb/*"
             />
             <ReactSVGIcon src={IconPlus} />
           </AddFileLabel>
