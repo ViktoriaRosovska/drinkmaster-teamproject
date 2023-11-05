@@ -91,6 +91,22 @@ const themeThunk = createAsyncThunk(
   }
 );
 
+export const updateUser = createAsyncThunk(
+  'auth/update',
+  async (data, thunkAPI) => {
+    try {
+      const response = await axios.patch('/users/update', data, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
 export const authOperations = {
   signUp,
   signIn,
@@ -98,4 +114,5 @@ export const authOperations = {
   currentUser,
   subscribeEmail,
   themeThunk,
+  updateUser,
 };
