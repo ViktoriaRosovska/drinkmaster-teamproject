@@ -14,7 +14,6 @@ import { useSelector } from 'react-redux';
 import authSelectors from '../../redux/auth/authSelectors';
 
 const Footer = () => {
-
   const theme = useSelector(authSelectors.selectTheme);
 
   return (
