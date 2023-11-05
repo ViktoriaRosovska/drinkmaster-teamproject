@@ -19,6 +19,21 @@ export const IngredientPhoto = styled.img`
     height: 157px;
   }
 `;
+export const ImageBox = styled.div`
+  margin-bottom: 8px;
+  border-radius: 8px;
+  width: 157px;
+  height: 157px;
+  padding: 25px;
+  // background-color:  var(--blue-color);
+
+  @media (min-width: 768px) {
+    width: 220px;
+    /* height: 220px; */
+    padding: 22px;
+  }
+`;
+
 export const Image = styled.img`
   width: 157px;
   margin-bottom: 8px;
@@ -33,7 +48,7 @@ export const Image = styled.img`
 export const Ingredient = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 157px;
+  max-width: 157px;
 
   @media screen and (min-width: 768px) {
     width: 220px;
