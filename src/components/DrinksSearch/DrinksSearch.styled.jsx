@@ -37,7 +37,4 @@ export const Wrapper = styled.div`
     flex-direction: row;
     gap: 8px;
   }
-
-  @media screen and (min-width: 1440px) {
-  }
 `;

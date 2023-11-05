@@ -1,6 +1,11 @@
 import { IngredientSelect } from './DrinkIngredientCustomSelect.styled';
 
-const DrinkIngredientCustomSelect = ({ placeholder, options }) => {
+const DrinkIngredientCustomSelect = ({
+  placeholder,
+  options,
+  name,
+  onChange,
+}) => {
   const styles = {
     control: (baseStyles, state) => ({
       ...baseStyles,
@@ -87,7 +92,7 @@ const DrinkIngredientCustomSelect = ({ placeholder, options }) => {
   };
   const modifiedOptions = [];
   for (const option of options) {
-    modifiedOptions.push({ value: option.title, label: option.title });
+    modifiedOptions.push({ value: option._id.$oid, label: option.title });
   }
 
   return (
@@ -96,6 +101,8 @@ const DrinkIngredientCustomSelect = ({ placeholder, options }) => {
         placeholder={placeholder}
         options={modifiedOptions}
         styles={styles}
+        name={name}
+        onChange={onChange}
       />
     </>
   );

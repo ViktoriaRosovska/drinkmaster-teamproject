@@ -10,9 +10,10 @@ import { ThemeProvider } from 'styled-components';
 import { darkTheme } from 'components/ThemeToggler/dark';
 import { lightTheme } from 'components/ThemeToggler/light';
 import BurgerMenu from 'components/MobileBurgerMenu/BurgerMenu';
+import authSelectors from '../../redux/auth/authSelectors';
 
 const SharedLayout = () => {
-  const theme = useSelector(state => state.auth.theme);
+  const theme = useSelector(authSelectors.selectTheme);
 
   const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
   const toggleMobileMenu = () => {

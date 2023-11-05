@@ -17,22 +17,16 @@ import {
 import IconPlus from '../../assets/images/addDrink/plus.svg';
 import { useEffect, useState } from 'react';
 import DrinkFormCustomSelect from './DrinkFormCustomSelect/DrinkFormCustomSelect';
-// import { getIngredients } from 'redux/filters/filtersOperations';
+
 import { useDispatch, useSelector } from 'react-redux';
-// import { getCategories } from 'redux/filters/filtersOperations';
-import {
-  selectCategories,
-  selectGlasses,
-  selectIngredients,
-} from 'redux/filters/filtersSelector';
+
+import { selectCategories, selectGlasses } from 'redux/filters/filtersSelector';
 import {
   getCategories,
   getGlasses,
   getIngredients,
 } from 'redux/filters/filtersOperations';
 
-// import { selectIngredients } from 'redux/filters/filtersSelector';
-// import ingredients from '../../helpers/Data/ingredients.json';
 export const DrinkDescriptionFields = ({
   values,
   errors,
@@ -44,9 +38,6 @@ export const DrinkDescriptionFields = ({
   const categories = useSelector(selectCategories);
   const glasses = useSelector(selectGlasses);
 
-  const ingredients = useSelector(selectIngredients);
-
-  console.log('ingredients', ingredients);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCategories());
@@ -54,17 +45,11 @@ export const DrinkDescriptionFields = ({
     dispatch(getIngredients());
   }, [dispatch]);
 
-  console.log(categories);
-  console.log(glasses);
-  console.log(ingredients);
-
-  const [value, setValue] = useState('Non-alcoholic');
+  const [radioAlco, setRadioAlco] = useState('Non-alcoholic');
   const [selectedFileImage, setSelectedFileImage] = useState(null);
-  const [, setDescription] = useState('');
+  const [description, setDescription] = useState('');
 
   const [drink, setDrink] = useState('');
-
-  console.log(selectedFileImage);
 
   const handleFileChange = e => {
     const file = e.target.files[0];
@@ -88,32 +73,37 @@ export const DrinkDescriptionFields = ({
     setFieldValue('description', value);
     setDescription(value);
   };
-  console.log(drink);
+  // console.log(drink);
 
-  // const glassesList = glasses.map(glass => ({
-  //   label: glass,
-  //   value: glass,
-  // }));
-  // console.log(glassesList);
-  const [glassSelect, setGlassSelect] = useState('');
+  const [glassSelect, setGlassSelect] = useState('Cocktail glass');
+  const [categorySelect, setCategorySelect] = useState('Coctail');
+
+  const handleCategorySelectChange = e => {
+    const value = e.value;
+    setCategorySelect(value);
+    setFieldValue('category', value);
+    console.log('category', value);
+  };
 
   const handleGlassSelectChange = e => {
-    // setGlassSelect(option);
-    // setFieldValue('glass', option.value);
-    // console.log(option);
-    setGlassSelect(e.target.value);
+    const value = e.value;
+    setGlassSelect(value);
+    setFieldValue('glass', value);
+    console.log('select', value);
   };
+  // console.log('glass', glassSelect);
 
-  console.log(glassSelect);
-
-  const changeValue = e => {
-    if (e.target.value === 'Alcoholic') {
-      setValue('Alcoholic');
+  const changeRadioAlco = e => {
+    const { value } = e.target;
+    if (value === 'Alcoholic') {
+      setRadioAlco('Alcoholic');
     }
-    if (e.target.value === 'Non-alcoholic') {
-      setValue('Non-alcoholic');
+    if (value === 'Non-alcoholic') {
+      setRadioAlco('Non-alcoholic');
     }
+    setFieldValue('alcoholic', value);
   };
+  console.log(radioAlco);
   // const glasses = [
   //   'Highball glass',
   //   'Cocktail glass',
@@ -195,11 +185,10 @@ export const DrinkDescriptionFields = ({
           placeholder="Enter item title"
           onChange={e => handleTitleChange(e)}
           // onBlur={(e)=>{setIsFocused(false)}}
-          value={values.drink}
+          value={drink}
           style={{
             borderBottom: errors.drink && '1px solid red',
           }}
-          // border={touched.drink && errors.drink && '1px solid red'}
         />
         {touched.drink && errors.drink ? <div>{errors.drink}</div> : null}
         <AddFormInput
@@ -208,28 +197,39 @@ export const DrinkDescriptionFields = ({
           placeholder="Enter about recipe"
           name="description"
           onChange={e => handleDescriptionChange(e)}
-          value={values.description}
+          value={description}
           style={{
-            borderBottom: errors.drink && '1px solid red',
+            borderBottom: errors.description && '1px solid red',
           }}
         />
-        {touched.drink && errors.drink ? <div>{errors.drink}</div> : null}
+        {touched.description && errors.description ? (
+          <div>{errors.description}</div>
+        ) : null}
         <AddFormSelectContainer>
           <AddFormSelectLabel>Category</AddFormSelectLabel>
 
-          <DrinkFormCustomSelect placeholder="" options={categories} />
+          <DrinkFormCustomSelect
+            placeholder=""
+            options={categories}
+            value={categorySelect}
+            name="category"
+            onChange={handleCategorySelectChange}
+          />
         </AddFormSelectContainer>
-
+        {/* {touched.category && errors.category ? (
+          <div>{errors.category}</div>
+        ) : null} */}
         <AddFormSelectContainer>
           <AddFormSelectLabel>Glass</AddFormSelectLabel>
 
           <DrinkFormCustomSelect
             placeholder=""
             options={glasses}
-            value={values.glass}
+            value={glassSelect}
             name="glass"
             onChange={handleGlassSelectChange}
           />
+          {/* {touched.glass && errors.glass ? <div>{errors.glass}</div> : null} */}
         </AddFormSelectContainer>
         <AddFormRadioGroup>
           <InputRadio
@@ -238,15 +238,17 @@ export const DrinkDescriptionFields = ({
             name="typeDrink"
             value="Alcoholic"
             placeholder="Ingredient"
-            checked={value === 'Alcoholic' ? true : false}
-            onChange={e => changeValue(e)}
+            checked={radioAlco === 'Alcoholic' ? true : false}
+            onChange={e => changeRadioAlco(e)}
           />
           <label
             htmlFor="typeAlco"
             id="typeAlcoLabel"
             style={{
               color:
-                value === 'Alcoholic' ? '#F3F3F3' : 'rgba(243, 243, 243, 0.5)',
+                radioAlco === 'Alcoholic'
+                  ? '#F3F3F3'
+                  : 'rgba(243, 243, 243, 0.5)',
             }}
           >
             Alcoholic
@@ -256,15 +258,15 @@ export const DrinkDescriptionFields = ({
             id="typeNonAlco"
             name="typeDrink"
             value="Non-alcoholic"
-            checked={value === 'Non-alcoholic' ? true : false}
-            onChange={e => changeValue(e)}
+            checked={radioAlco === 'Non-alcoholic' ? true : false}
+            onChange={e => changeRadioAlco(e)}
           />
           <label
             htmlFor="typeNonAlco"
             id="typeNonAlcoLabel"
             style={{
               color:
-                value === 'Non-alcoholic'
+                radioAlco === 'Non-alcoholic'
                   ? '#F3F3F3'
                   : 'rgba(243, 243, 243, 0.5)',
             }}

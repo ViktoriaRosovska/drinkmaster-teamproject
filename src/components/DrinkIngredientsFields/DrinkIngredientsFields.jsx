@@ -13,25 +13,71 @@ import { useState } from 'react';
 import { UUID } from 'uuidjs';
 import ingredients from '../../helpers/Data/ingredients.json';
 import DrinkIngredientCustomSelect from './DrinkIngredientCustomSelect/DrinkIngredientCustomSelect';
-export default function DrinkIngridientsFields() {
-  const [ingr, setIngr] = useState([{ id: UUID.generate() }]);
+export default function DrinkIngridientsFields({
+  values,
+  errors,
+  touched,
+  handleChange,
+  handleBlur,
+  setFieldValue,
+}) {
+  const [ingr, setIngr] = useState([
+    { id: UUID.generate(), ingredientId: '', measure: '0' },
+  ]);
+  // const [ingredientId, setIngredientId] = useState('');
+  // const [measure, setMeasure] = useState('');
+  const onIngredientChange = (i, e) => {
+    i.ingredientId = e.value;
+    i.title = e.label;
+    console.log(e);
+    pushToParent(ingr);
+    // const value = e.value;
+    // console.log(value);
+    // setIngredientId(value);
+    // setFieldValue('ingredientId', value);
+  };
+  console.log(ingr);
+  const onMeasureChange = (i, e) => {
+    i.measure = e.target.value;
+    pushToParent(ingr);
+    // const value = e.target.value;
+    // console.log(value);
+    // setMeasure(value);
+    // setFieldValue('measure', value);
+  };
 
   const addIngr = c => {
+    let newIngr;
     if (ingr.length > c) {
-      ingr.pop();
-      setIngr([...ingr]);
-    } else setIngr([...ingr, { id: UUID.generate() }]);
+      newIngr = [...ingr];
+      newIngr.pop();
+    } else {
+      newIngr = [
+        ...ingr,
+        { id: UUID.generate(), title: '', ingredientId: '', measure: '0' },
+      ];
+    }
+    setIngr(newIngr);
+    pushToParent(newIngr);
   };
 
   const removeIngr = idx => {
     ingr.splice(idx, 1);
     setIngr([...ingr]);
+    pushToParent(ingr);
   };
 
-  // found: object with keys {
-  //   _id, title, ingredientThumb, thumb - medium,
-  //   thumb - small, abv, alcohol, description, type, flavour, country
-  // };
+  const pushToParent = ingr => {
+    setFieldValue(
+      'ingredients',
+      ingr.map(i => ({
+        ingredientId: i.ingredientId,
+        title: i.title,
+        measure: i.measure,
+      }))
+    );
+  };
+
   return (
     <DrinkIngredientsWrapper>
       <TitleWrapper>
@@ -41,10 +87,13 @@ export default function DrinkIngridientsFields() {
       <IngredientWrapper>
         {ingr.map((i, idx) => {
           return (
-            <IngredientInputsWrapper key={UUID.generate()}>
+            <IngredientInputsWrapper key={i.id}>
               <DrinkIngredientCustomSelect
                 placeholder="Ingredient"
                 options={ingredients}
+                name="ingredientId"
+                onChange={e => onIngredientChange(i, e)}
+                value={i}
               />
               <input
                 type="text"
@@ -56,8 +105,8 @@ export default function DrinkIngridientsFields() {
                   backgroundColor: 'transparent',
                   color: 'white',
                 }}
-                value={i.amount}
-                onChange={e => (i.amount = e.target.value)}
+                value={i.measure}
+                onChange={e => onMeasureChange(i, e)}
               />
               <CloseIconReactSvg
                 src={closeIcon}
