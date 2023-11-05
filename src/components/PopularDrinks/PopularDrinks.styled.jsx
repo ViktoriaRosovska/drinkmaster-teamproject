@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 
 export const PopularDrinksWrapper = styled.div`
   width: 335px;
-
+margin-top: 40px;
   @media screen and (min-width: 768px) {
     width: 704px;
+    // height: 284px;
+    margin-top: 80px;
   }
 
   @media screen and (min-width: 768px) {
@@ -34,9 +36,9 @@ export const PopularDrinksList = styled.ul`
   @media screen and (min-width: 768px) {
     flex-direction: row;
     flex-wrap: wrap;
-    // justify-content: space-between;
     gap: 32px;
-    align-content: flex-start;
+    justify-content: center;
+    width: 336px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -45,9 +47,7 @@ export const PopularDrinksList = styled.ul`
     gap: 28px;
   }
 `;
-export const PopularDrinksItem = styled.li`
-  text-aline: center;
-`;
+export const PopularDrinksItem = styled.li``;
 
 export const PopularDrinksLink = styled(Link)`
   display: flex;
@@ -85,9 +85,12 @@ export const PopularDrinksTxt = styled.p`
   font-weight: 400;
   line-height: 1.29;
   color: ${props => props.theme.secondaryTextColor};
-    overflow: hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
-    width: 232px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  width: 232px;
 
   @media screen and (min-width: 1440px) {
     width: 209px;
