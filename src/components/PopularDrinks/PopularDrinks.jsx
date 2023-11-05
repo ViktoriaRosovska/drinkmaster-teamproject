@@ -33,7 +33,7 @@ const PopularDrinks = () => {
               {' '}
               <PopularDrinksLink href={`drinks/${_id}`}>
                   <PopularDrinksImg
-                    src={{ drinkThumb } ? { drinkThumb } : {DefoultImg}}
+                    src={ drinkThumb ? drinkThumb : DefoultImg}
                     alt={drink}
                     width={90}
                     height={90}
