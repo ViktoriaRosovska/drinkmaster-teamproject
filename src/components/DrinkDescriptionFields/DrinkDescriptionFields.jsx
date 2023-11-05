@@ -83,14 +83,14 @@ export const DrinkDescriptionFields = ({
     const value = e.value;
     setCategorySelect(value);
     setFieldValue('category', value);
-    console.log('category', value);
+    // console.log('category', value);
   };
 
   const handleGlassSelectChange = e => {
     const value = e.value;
     setGlassSelect(value);
     setFieldValue('glass', value);
-    console.log('select', value);
+    // console.log('select', value);
   };
   // console.log('glass', glassSelect);
 
@@ -104,7 +104,7 @@ export const DrinkDescriptionFields = ({
     }
     setFieldValue('alcoholic', value);
   };
-  console.log(radioAlco);
+  // console.log(radioAlco);
   // const glasses = [
   //   'Highball glass',
   //   'Cocktail glass',
@@ -165,11 +165,11 @@ export const DrinkDescriptionFields = ({
         <InputFileWrapper>
           <AddFileLabel>
             <InputAddFile
-              type="file"
+              type="blob"
               onChange={e => handleFileChange(e)}
               id="drinkThumb"
               name="drinkThumb"
-              accept="drinkThumb/*"
+              // accept="drinkThumb/*"
             />
             <ReactSVGIcon src={IconPlus} />
           </AddFileLabel>

@@ -22,7 +22,7 @@ export default function DrinkRecipePreparation({
     setInstruction(value);
     setFieldValue('instructions', value);
   };
-  console.log(instructions);
+  // console.log(instructions);
   const textArea = useRef();
   const recipeLabel = useRef();
 
