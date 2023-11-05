@@ -65,7 +65,7 @@ const DrinkIdPage = () => {
             alcoholic={drink.alcoholic}
           />
 
-          {/* <DrinkIngridientList ingredients={drink.ingredients} /> */}
+          <DrinkIngridientList ingredients={drink.ingredients} />
 
           {/* <DrinkIngridientList ingredients={ingredientArrayFromDrink} /> */}
 

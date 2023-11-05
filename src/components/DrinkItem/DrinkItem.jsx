@@ -38,7 +38,7 @@ const DrinkItem = ({ drinkData, favorite }) => {
       <IsAlco>{alcoholic}</IsAlco>
       <Description>{description}</Description>
       <ButtonsContainer>
-        <SeeMoreBtn navLink={`/drink/${_id}`} />
+        <SeeMoreBtn navLink={`/drinks/${_id}`} />
         <DeleteBtn type="button" onClick={handleRemoveFromFav}>
           <SVG src={trash} />
         </DeleteBtn>
