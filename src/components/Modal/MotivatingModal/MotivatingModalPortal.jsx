@@ -4,12 +4,12 @@ import { motivationScenarios } from './motivatingScenarios';
 import { useState } from 'react';
 
 const MotivatingModalPortal = () => {
-  const modalRoot = document.getElementById('modal-root');
+  const modalRoot = document.querySelector('#modal-root');
 
   const [isOpen, setIsOpen] = useState(true);
   // const [motivatingScenario, setMotivatingScenario] = useState({});
 
-  const motivatingScenario = motivationScenarios.scenario1;
+  const motivatingScenario = motivationScenarios.scenario3;
 
   // useEffect
 
