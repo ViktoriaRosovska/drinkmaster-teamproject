@@ -2,7 +2,7 @@ import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { useNavigate } from 'react-router';
+// import { useNavigate } from 'react-router';
 
 import { addMyDrink } from 'redux/drinks/drinksOperations';
 
@@ -22,7 +22,7 @@ import DrinkRecipePreparation from 'components/DrinkRecipePreparation/DrinkRecip
 export default function AddDrinkForm() {
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
@@ -41,14 +41,14 @@ export default function AddDrinkForm() {
       ],
     },
     validationSchema: Yup.object().shape({
-      // drink: Yup.string().max(40).required('This field is required'),
-      // description: Yup.string().required('This field is required'),
-      // category: Yup.string().required('This field is required'),
-      // glass: Yup.string().required('This field is required'),
-      //   alcoholic: Yup.string().required('Select a type of drink'),
-      //   instructions: Yup.string().required('This field is required'),
-      //   ingredients: Yup.array().required('This field is required'),
-      //   drinkThumb: Yup.mixed().required('Select a drink image'),
+      drink: Yup.string().max(40).required('This field is required'),
+      description: Yup.string().required('This field is required'),
+      category: Yup.string().required('This field is required'),
+      glass: Yup.string().required('This field is required'),
+      alcoholic: Yup.string().required('Select a type of drink'),
+      instructions: Yup.string().required('This field is required'),
+      ingredients: Yup.array().required('This field is required'),
+      drinkThumb: Yup.mixed().required('Select a drink image'),
     }),
     onSubmit: async values => {
       const formData = new FormData();
@@ -65,7 +65,7 @@ export default function AddDrinkForm() {
       try {
         const responce = await dispatch(addMyDrink(formData));
         if (responce) {
-          navigate('/my');
+          //navigate('/my');
           console.log('Hurray!!!');
         } else {
           console.log('Server error', responce.statusText);
@@ -77,7 +77,7 @@ export default function AddDrinkForm() {
       }
     },
   });
-  // text="Please, wait for the drink to be added"
+
   return (
     <>
       {isLoading ? (

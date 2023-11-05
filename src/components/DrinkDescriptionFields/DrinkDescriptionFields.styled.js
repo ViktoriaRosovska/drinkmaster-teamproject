@@ -36,6 +36,7 @@ const InputFileWrapper = styled.div`
   position: absolute;
   width: 50px;
   height: 50px;
+
   border-radius: 6px;
   background-color: var(--white-color);
   border: none;
@@ -88,19 +89,6 @@ const SelectContainer = styled.div`
   }
 `;
 
-// const AddFormSelect = styled(Select)`
-//   padding: 0;
-//   width: 100%;
-//   height: 34px;
-//   appearance: none;
-//   -moz-appearance: none;
-//   -webkit-appearance: none;
-//   outline: none;
-//   border: none;
-//   background: 'transparent';
-//   color: var(--white-fifty-color);
-// `;
-
 const AddFormRadioGroup = styled.div`
   display: flex;
   gap: 14px;
@@ -141,6 +129,10 @@ const AddFormInput = styled.input`
     top: 0;
     color: var(--white-color);
   }
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 22px;
+  }
 `;
 const InputRadio = styled.input`
   /* display: none; */
@@ -172,6 +164,17 @@ const AddFormSelectContainer = styled.div`
   height: 34px;
   position: relative;
 `;
+
+const AddFileLabel = styled.label`
+  width: 335px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  cursor: pointer;
+`;
+
 export {
   DescriptionWrapper,
   InputAddFile,
@@ -184,8 +187,8 @@ export {
   SelectContainer,
   AddFormInput,
   AddFormRadioGroup,
-  // AddFormSelect,
   InputRadio,
   ChevronReactSvg,
   AddFormSelectLabel,
+  AddFileLabel,
 };
