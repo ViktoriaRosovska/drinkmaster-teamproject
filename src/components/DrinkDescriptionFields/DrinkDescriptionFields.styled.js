@@ -47,6 +47,7 @@ const InputFileWrapper = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 `;
 
 const InputAddFile = styled.input`
@@ -166,13 +167,14 @@ const AddFormSelectContainer = styled.div`
 `;
 
 const AddFileLabel = styled.label`
-  width: 335px;
-  height: 320px;
+  /* width: 335px;
+  height: 320px; */
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  cursor: pointer;
+  /* position: absolute; */
+  /* cursor: pointer; */
+  /* z-index: -1; */
 `;
 
 export {
