@@ -24,8 +24,8 @@ export const buttonModal = {
 
 export const stylePlush = {
   justifyContent: 'center',
-  width: '180px',
-  height: '180px',
+  width: '120px',
+  height: '120px',
   borderRadius: '30px',
   backgroundColor: 'rgba(217, 217, 217, 0.138)',
 
@@ -54,11 +54,11 @@ export const styleBox = {
   padding: '60px',
 
   '@media (min-width: 768px)': {
-    width: '460px',
-    height: '460px',
-    paddingTop: '200px',
-    paddingLeft: '106px',
-    paddingRight: '106px',
+    width: '400px',
+    height: '400px',
+    paddingTop: '140px',
+    paddingLeft: '46px',
+    paddingRight: '46px',
   },
 };
 
