@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 export const PopularDrinksWrapper = styled.div`
 width: 335px;
@@ -27,5 +28,29 @@ margin-bottom: 28px;
 `
 
 export const PopularDrinksList = styled.ul`
+
+`
+export const PopularDrinksItem = styled.li`
+
+`
+
+export const PopularDrinksLink = styled(Link)`
+
+`
+export const PopularDrinksImg = styled.img`
+
+`
+export const PopularDrinksNoImg = styled.img`
+
+`
+
+export const PopularDrinksName = styled.h4`
+
+`
+
+export const PopularDrinksInfo = styled.div`
+
+`
+export const PopularDrinksTxt = styled.p`
 
 `
