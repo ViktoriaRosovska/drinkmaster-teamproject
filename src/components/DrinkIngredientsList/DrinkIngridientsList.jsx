@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getIngredients } from '../../redux/filters/filtersOperations';
 import { IngredientItem } from './IngredientItem';
@@ -16,60 +16,26 @@ const DrinkIngredientsList = ({ ingredients }) => {
   const ingredientsIdArr = ingredients.map(
     ingredient => ingredient.ingredientId
   );
-  useEffect(() => {
-    dispatch(getIngredients());
-  }, [dispatch]);
-
-  const fetchData = useCallback(() => {
-    if (ingredientsAll.length !== 0) {
-      const ingredientsImages = ingredientsAll.filter(item =>
-        ingredientsIdArr.includes(item._id)
-      );
-
-      setIngredientsData(ingredientsImages);
-    }
-  }, [ingredientsAll, ingredientsIdArr]);
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        if (ingredientsAll.length === 0) {
+          const data = await dispatch(getIngredients());
+          if (data.payload.length !== 0) {
+            const ingredientsImages = data.payload.filter(item =>
+              ingredientsIdArr.includes(item._id)
+            );
+            setIngredientsData(ingredientsImages);
+          }
+        }
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+
     fetchData();
-  }, [fetchData]);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const data = await dispatch(getIngredients());
-  //       console.log(data);
-  //       if (data.payload.length !== 0) {
-  //         const ingredientsImages = data.payload.filter(item =>
-  //           ingredientsIdArr.includes(item._id)
-  //         );
-  //         setIngredientsData(ingredientsImages);
-  //       }
-  //     } catch (error) {
-  //       console.log(error.message);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, [ingredientsIdArr, dispatch]);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const data = await dispatch(getIngredients());
-  //       console.log('data', data);
-  //       if (data.payload.length !== 0) {
-  //         const ingredientsImages = data.payload.filter(item =>
-  //           ingredientsIdArr.includes(item._id)
-  //         );
-  //         setIngredientsData(ingredientsImages);
-  //       }
-  //     } catch (error) {
-  //       console.log(error.message);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
+  }, [dispatch, ingredientsAll, ingredientsIdArr]);
 
   const combinedIngredients = ingredients.map(ingredient => {
     const ingredientData = ingredientsData.find(
@@ -82,25 +48,26 @@ const DrinkIngredientsList = ({ ingredients }) => {
   });
 
   return (
-    <div>
+    <>
       {combinedIngredients.length > 0 && (
-        <div>
+        <>
           <IngredientsTitle>Ingredients</IngredientsTitle>
           <IngredientsList>
             {combinedIngredients.map(
-              ({ title, measure, ingredientId, ingredientThumb }) => (
+              ({ title, measure, ingredientId, ingredientThumb, quantity }) => (
                 <IngredientItem
                   title={title}
                   measure={measure}
-                  key={ingredientId}
+                  quantity={quantity}
                   photo={ingredientThumb}
+                  key={ingredientId}
                 />
               )
             )}
           </IngredientsList>
-        </div>
+        </>
       )}
-    </div>
+    </>
   );
 };
 

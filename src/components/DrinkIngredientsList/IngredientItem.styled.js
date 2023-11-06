@@ -1,16 +1,5 @@
 import styled from 'styled-components';
-// export const IngredientPhotoWrapper = styled.div`
-//   width: 100%;
-//   /* max-width: 158px; */
-//   padding: 25px;
-//   border-radius: 8px;
-//   background-color: ${({ theme }) => theme.drinkPageIngredientBg};
 
-//   @media screen and (min-width: 768px) {
-//     height: 220px;
-//     padding: 31px;
-//   }
-// `;
 export const IngredientPhoto = styled.img`
   width: 100%;
 
@@ -46,6 +35,7 @@ export const Image = styled.img`
   }
 `;
 export const Ingredient = styled.div`
+  padding-top: 14px;
   display: flex;
   justify-content: space-between;
   max-width: 157px;
@@ -55,23 +45,25 @@ export const Ingredient = styled.div`
   }
 `;
 export const IngredientTitle = styled.p`
-  font-size: 14px;
-  line-height: calc(18 / 14);
-  font-weight: 500;
-
+  margin-bottom: 0;
+  font-size: 18px;
+  
   @media screen and (min-width: 768px) {
-    font-size: 18px;
-    line-height: calc(24 / 18);
+    width: 150px;
+    font-size: 14px;
   }
 `;
+
 export const IngredientMeasure = styled.p`
-  opacity: 50%;
-  font-size: 14px;
-  line-height: calc(18 / 14);
-  font-weight: 500;
+  margin-bottom: 0;
+  color: ${props => props.theme.secondaryTextColor};
+  font-size: 18px;
+  line-height: 1.29;
+  text-align: end;
+  white-space: nowrap;
 
   @media screen and (min-width: 768px) {
-    font-size: 16px;
-    line-height: calc(20 / 16);
+    font-size: 14px;
+    line-height: 1.25;
   }
 `;
