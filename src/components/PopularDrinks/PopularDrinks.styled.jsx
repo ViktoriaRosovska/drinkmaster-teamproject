@@ -34,10 +34,10 @@ export const PopularDrinksList = styled.ul`
   gap: 24px;
 
   @media screen and (min-width: 768px) {
-    flex-direction: row;
+    // flex-direction: row;
     flex-wrap: wrap;
     gap: 32px;
-    justify-content: center;
+    // justify-content: center;
     width: 336px;
   }
 

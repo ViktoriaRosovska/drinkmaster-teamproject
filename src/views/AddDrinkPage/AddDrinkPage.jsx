@@ -11,6 +11,7 @@ import { AddDrinkContainer } from './AddDrinkPage.styled';
 import PopularDrinks from 'components/PopularDrinks/PopularDrinks';
 
 export default function AddDrinkPage() {
+  
   return (
     <MainContainer>
       <PageTitle title="Add drink" />
@@ -19,7 +20,7 @@ export default function AddDrinkPage() {
         <div>
           <div>
             <h4>FollowUs</h4>
-            <FollowUs />
+            <FollowUs isInFooter={false} />
           </div>
           <div>
             <h4>Popular drinks</h4>

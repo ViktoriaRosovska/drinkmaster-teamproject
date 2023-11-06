@@ -40,7 +40,8 @@ export const FollowUsLink = styled.a`
 `;
 
 export const FacebookIcon = styled(FacebookSvg)`
-  fill: var(--white-color);
+  // fill: var(--white-color);
+  fill: ${props => props.isInFooter === 'true' ? props.theme.color : props.theme.backgroundColor}
   width: 22px;
   height: 22px;
   padding: 8px;
@@ -54,7 +55,8 @@ export const FacebookIcon = styled(FacebookSvg)`
 `;
 
 export const InstagramIcon = styled(InstagramSvg)`
-  fill: var(--white-color);
+  // fill: var(--white-color);
+  fill: ${props => props.isInFooter === 'true' ? props.theme.color : props.theme.backgroundColor}
   width: 22px;
   height: 22px;
   padding: 8px;
@@ -66,7 +68,8 @@ export const InstagramIcon = styled(InstagramSvg)`
   }
 `;
 export const YoutubeIcon = styled(YoutubeSvg)`
-  fill: var(--white-color);
+  // fill: var(--white-color);
+  fill: ${props => props.isInFooter === 'true' ? props.theme.color : props.theme.backgroundColor}
   width: 22px;
   height: 22px;
   padding: 8px;
@@ -77,3 +80,5 @@ export const YoutubeIcon = styled(YoutubeSvg)`
     height: 28px;
   }
 `;
+
+
