@@ -38,9 +38,9 @@ export const App = () => {
   const userAuth = useSelector(authSelectors.selectUserAuth);
 
   useEffect(() => {
-    dispatch(authOperations.currentUser());
     if (location.pathname === '/') {
       navigate('/home');
+      dispatch(authOperations.currentUser());
     } else {
       navigate(location.pathname);
     }

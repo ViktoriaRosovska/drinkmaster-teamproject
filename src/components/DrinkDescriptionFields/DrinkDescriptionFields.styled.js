@@ -1,6 +1,5 @@
 import { ReactSVG } from 'react-svg';
 import styled from 'styled-components';
-// import Select from 'react-select';
 
 const DescriptionWrapper = styled.div`
   display: flex;
@@ -23,7 +22,7 @@ const AddPhotoContainer = styled.div`
   height: 320px;
   background-color: var(--dark-blue-fifty-color);
   border-radius: 8px;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 `;
 
 const FileImage = styled.img`
@@ -79,8 +78,6 @@ const ReactSVGIcon = styled(ReactSVG)`
 const SelectContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 31px;
-  /* margin-bottom: 81px; */
   width: 100%;
   @media screen and (min-width: 768px) {
     width: 352px;
@@ -164,14 +161,17 @@ const AddFormSelectLabel = styled.label`
 const AddFormSelectContainer = styled.div`
   height: 34px;
   position: relative;
+  border: 1px solid pink;
 `;
 
 const AddFileLabel = styled.label`
-  /* width: 335px;
-  height: 320px; */
-  display: flex;
+  width: 335px;
+  height: 320px;
+
+  display: block;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   /* position: absolute; */
   /* cursor: pointer; */
   /* z-index: -1; */
