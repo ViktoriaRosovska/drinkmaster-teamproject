@@ -10,6 +10,7 @@ import WelcomePage from 'views/WelcomePage/WelcomePage';
 
 import { authOperations } from 'redux/auth/authOperations';
 import Loader from './Loader';
+import MotivatingModalPortal from './Modal/MotivatingModal/MotivatingModalPortal';
 
 const HomePage = lazy(() => import('../views/HomePage/HomePage'));
 const ErrorPage = lazy(() => import('../views/ErrorPage/ErrorPage'));
@@ -35,8 +36,8 @@ export const App = () => {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(authSelectors.selectIsRefreshing);
 
-  const userAuth = useSelector(authSelectors.selectUserAuth);
-  console.log('userAuth:', userAuth);
+  // const userAuth = useSelector(authSelectors.selectUserAuth);
+  // console.log('userAuth:', userAuth);
   // const userFavorite = useSelector(authSelectors.selectUserFavorite);
   // console.log('userFavorite:', userFavorite);
 
@@ -109,7 +110,8 @@ export const App = () => {
           <Route path="/service" element={<TermsServicePage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
-      </Routes>
+        </Routes>
+        <MotivatingModalPortal/>
     </>
   );
 };

@@ -5,7 +5,7 @@ import imgTab2 from '../../../assets/images/motivation/motiv-2-tab@2x.png';
 import imgMob3 from '../../../assets/images/motivation/motiv-3@2x.jpg';
 import imgTab3 from '../../../assets/images/motivation/motiv-3-tab@2x.png';
 
-export const motivationScenarios = {
+export const motivatingScenarios = {
   scenario1: {
     image: {
       mob: imgMob1,
