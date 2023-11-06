@@ -1,12 +1,10 @@
-import { LogoLink, LogoIcon, LogoText } from './Logo.styled';
+import { LogoLink, LogoIcon, LogoText } from "./Logo.styled";
 
 const Logo = () => {
-  return (
-    <LogoLink to="/">
-      <LogoIcon />
+  return ( <LogoLink to="/">
+       <LogoIcon />
       <LogoText>Drink&nbsp;master</LogoText>
-    </LogoLink>
-  );
+  </LogoLink>)
 };
 
 export default Logo;

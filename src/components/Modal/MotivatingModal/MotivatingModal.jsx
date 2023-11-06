@@ -14,6 +14,8 @@ import closeSvg from '../../../assets/images/motivation/x.svg';
 const MotivatingModal = ({ open, handleClose, image, text }) => {
   const isMobile = useMediaQuery('(max-width: 767px');
 
+  console.log(image.tab);
+
   return (
     <Modal open={open} onClose={handleClose}>
       <Box

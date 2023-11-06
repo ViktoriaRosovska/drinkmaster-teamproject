@@ -1,5 +1,4 @@
 import { Formik, ErrorMessage } from 'formik';
-// import moment from 'moment';
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -19,11 +18,10 @@ import {
   ErrorSvgStyled,
   CheckSvgStyled,
   Link,
-  BirthDate,
 } from '../AuthForm.styled';
+import BirthDate from './DatePicker.styled';
 import { ReactComponent as ShowPassword } from '../../../../assets/images/authComponents/eye.svg';
 import { ReactComponent as HidePassword } from '../../../../assets/images/authComponents/eye-off.svg';
-import { CalendarSvgIcon } from './CalendarSvgIcon';
 import { WelcomeWrapper } from 'styles/App.styled';
 
 const initialValues = {
@@ -53,7 +51,6 @@ const schema = Yup.object().shape({
 
 function SignupForm() {
   const [showPassword, setShowPassword] = useState(false);
-  // const [birthDateError, setBirthDateError] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -102,7 +99,7 @@ function SignupForm() {
           onSubmit={handleSubmit}
           validationSchema={schema}
         >
-          {({ values, errors, touched, setFieldValue, setFieldError }) => (
+          {({ values, errors, touched }) => (
             <AuthForm>
               <InputWrapper>
                 <Input
@@ -125,38 +122,7 @@ function SignupForm() {
 
               <InputWrapper>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <BirthDate
-                    name="birthDate"
-                    // value={moment(values.birthDate, 'DD MMM YYYY')}
-                    value={values.birthDate || null}
-                    // onChange={value => {
-                    //   values.birthDate = value
-                    //     ? value.format('DD MMM YYYY')
-                    //     : '';
-                    // }}
-                    onChange={value => {
-                      const updatedValue = value
-                        ? value.format('DD MMM YYYY')
-                        : '';
-                      setFieldValue('birthDate', updatedValue);
-
-                      // if (errors.birthDate && touched.birthDate) {
-                      //   setBirthDateError(true);
-                      // } else {
-                      //   setBirthDateError(false);
-                      // }
-                    }}
-                    disableFuture
-                    showDaysOutsideCurrentMonth
-                    slotProps={{
-                      textField: {
-                        fullWidth: true,
-                        // error: true,
-                        // error: birthDateError,
-                      },
-                    }}
-                    slots={{ openPickerIcon: CalendarSvgIcon }}
-                  />
+                  <BirthDate />
                 </LocalizationProvider>
 
                 {errors.birthDate && touched.birthDate ? (

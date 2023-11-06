@@ -1,59 +1,89 @@
-// import { styled } from '@mui/material/styles';
-// import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-
-// export const BirthDate = styled(DatePicker)({
-//   '.MuiOutlinedInput-root': {
-//     color: 'rgba(243, 243, 243, 0.3)',
-//     borderRadius: 200,
-//     borderWidth: 0,
-//     borderColor: '#2196f3',
-//     border: '0px solid',
-//     backgroundColor: 'transparent',
-//     outline: 'none',
-//   },
-
-//   '.css-i4bv87-MuiSvgIcon-root': {
-//     fill: 'rgba(243, 243, 243, 0.3)',
-//   },
-//   '.css-cvgr87-MuiFormControl-root-MuiTextField-root': {
-//     width: '285px',
-//   },
-//   '.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root': {
-//     borderColor: 'rgba(243, 243, 243, 0.3)',
-//   },
-
-//   '.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline ':
-//     {
-//       // С ОШИБКОЙ
-//       borderColor: 'green',
-//     },
-//   '.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input': {
-//     width: '285px',
-//   },
-// });
-
 import { styled } from '@mui/material/styles';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+import { CalendarSvgIcon } from './CalendarSvgIcon';
 
-const StyledStaticDatePicker = styled(DatePicker)({
-  '.MuiPickersToolbar-root': {
-    color: 'rgba(243, 243, 243, 0.3)',
-    borderRadius: 200,
-    borderWidth: 1,
-    borderColor: 'rgba(243, 243, 243, 0.3)',
-    border: '1px solid',
+import { useFormikContext } from 'formik';
+
+const transition = '500ms ease-in';
+
+const StyledDesktopDatePicker = styled(DesktopDatePicker)({
+  '& .MuiInputBase-root': {
+    borderRadius: '200px',
+    border: '1px solid var(--white-twenty-color)',
+    outline: 'none',
+    fontSize: '14px',
+    lineHeight: '1.28',
+    color: 'var(--white-fifty-color)',
     backgroundColor: 'transparent',
+    transition: `border 500ms ease-in`,
   },
-  '.MuiPickersToolbar-content': {
-    color: 'red',
-    borderRadius: 7,
-    borderWidth: 0,
-    borderColor: '#e91e63',
-    border: '0px solid',
-    backgroundColor: '#f8bbd0',
+
+  '& .MuiInputBase-root:hover': {
+    border: '1px solid var(--white-fifty-color)',
+  },
+
+  '& .MuiTextField-root': {
+    padding: '18px 24px',
+  },
+
+  '& .MuiOutlinedInput-root': {
+    fontSize: '14px',
+    lineHeight: '1.28',
+    color: 'var(--white-fifty-color)',
+    backgroundColor: 'transparent',
+    paddingRight: '18px',
+  },
+
+  '& .MuiInputBase-input': {
+    padding: '18px 24px',
+  },
+
+  //////////// НЕ РАБОТАЕТ!!!!!!! ///////////////////
+  '& .MuiIconButton-root': {
+    marginRight: '0px',
+  },
+
+  '& .Mui-error': {
+    transition: `border ${transition} color ${transition}`,
+    border: '1px solid var(--red-error-fifty-color)',
+  },
+
+  '& .MuiOutlinedInput-notchedOutline': {
+    border: 'none',
   },
 });
+// )
+// const mainBorderColor = props =>
+//   props.value && props.error
+//     ? 'var(--white-twenty-color)'
+//     : props.value
+//     ? 'green'
+//     : 'var(--white-twenty-color)';
 
-export default function StyledPickerContainer() {
-  return <StyledStaticDatePicker />;
+export default function BirthDate() {
+  const { setFieldValue } = useFormikContext();
+
+  return (
+    <StyledDesktopDatePicker
+      name="birthDate"
+      value={null}
+      onChange={value => {
+        const updatedValue = value ? value.format('DD MMM YYYY') : '';
+        setFieldValue('birthDate', updatedValue);
+      }}
+      disableFuture
+      showDaysOutsideCurrentMonth
+      slots={{
+        openPickerIcon: CalendarSvgIcon,
+      }}
+      slotProps={{
+        textField: {
+          fullWidth: true,
+          placeholder: 'dd/mm/yyyy',
+        },
+      }}
+      format="DD/MM/YYYY"
+      defaultValue={'dd/mm/yyyy'}
+    />
+  );
 }

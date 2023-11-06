@@ -11,10 +11,10 @@ const FormContainer = styled.form`
     width: 335px;
   }
   @media screen and (min-width: 768px) and (max-width: 1439.98px) {
-    width: 100%;
+    /* width: 768px; */
   }
   @media screen and (min-width: 1440px) {
-    width: 833px;
+    width: 800px;
   }
 `;
 

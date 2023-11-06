@@ -1,5 +1,4 @@
 import {
-  AddFileLabel,
   AddFormInput,
   AddFormRadioGroup,
   // AddFormSelect,
@@ -54,7 +53,7 @@ export const DrinkDescriptionFields = ({
 
   const handleFileChange = e => {
     const file = e.target.files[0];
-    setFieldValue('drinkThumb', file);
+    setFieldValue('drinkThumb', URL.createObjectURL(file));
     if (file) {
       setSelectedFileImage(URL.createObjectURL(file));
     } else {
@@ -83,14 +82,14 @@ export const DrinkDescriptionFields = ({
     const value = e.value;
     setCategorySelect(value);
     setFieldValue('category', value);
-    // console.log('category', value);
+    console.log('category', value);
   };
 
   const handleGlassSelectChange = e => {
     const value = e.value;
     setGlassSelect(value);
     setFieldValue('glass', value);
-    // console.log('select', value);
+    console.log('select', value);
   };
   // console.log('glass', glassSelect);
 
@@ -104,7 +103,7 @@ export const DrinkDescriptionFields = ({
     }
     setFieldValue('alcoholic', value);
   };
-  // console.log(radioAlco);
+  console.log(radioAlco);
   // const glasses = [
   //   'Highball glass',
   //   'Cocktail glass',
@@ -157,13 +156,10 @@ export const DrinkDescriptionFields = ({
     <DescriptionWrapper>
       <AddPhotoContainer>
         {selectedFileImage && (
-          <FileImage
-            src={selectedFileImage ? selectedFileImage : null}
-            alt="Selected image"
-          />
+          <FileImage src={selectedFileImage} alt="Selected image" />
         )}
         <InputFileWrapper>
-          <AddFileLabel>
+          <label>
             <InputAddFile
               type="file"
               onChange={e => handleFileChange(e)}
@@ -172,7 +168,7 @@ export const DrinkDescriptionFields = ({
               accept="drinkThumb/*"
             />
             <ReactSVGIcon src={IconPlus} />
-          </AddFileLabel>
+          </label>
         </InputFileWrapper>
         <InputText>Add drink</InputText>
         {touched.drinkThumb && errors.drinkThumb ? (

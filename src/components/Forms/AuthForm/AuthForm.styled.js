@@ -166,6 +166,10 @@ export const Link = styled(NavLink)`
   text-align: center;
 `;
 
+/////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+
 export const BirthDate = styled(DesktopDatePicker)`
   width: 335px;
   display: block;
@@ -222,6 +226,17 @@ export const BirthDate = styled(DesktopDatePicker)`
     ////////////////////
     border-color: var(--white-twenty-color);
     transition: border-color ${transition}, color ${transition};
+  }
+
+  //////// Иветты ///////////////
+  .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root
+    .MuiOutlinedInput-notchedOutline {
+    border-color: ${props =>
+      props.value && props.error
+        ? 'var(--white-twenty-color)'
+        : props.value
+        ? 'green'
+        : 'var(--white-twenty-color)'};
   }
 
   .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root:hover

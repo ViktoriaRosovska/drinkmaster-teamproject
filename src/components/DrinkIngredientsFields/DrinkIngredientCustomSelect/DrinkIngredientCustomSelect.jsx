@@ -18,7 +18,6 @@ const DrinkIngredientCustomSelect = ({
       borderRadius: '200px',
       height: '50px',
       position: 'relative',
-      paddingLeft: '18px',
       color: 'red',
       '&:hover': {
         borderColor: 'var(--white-color)',

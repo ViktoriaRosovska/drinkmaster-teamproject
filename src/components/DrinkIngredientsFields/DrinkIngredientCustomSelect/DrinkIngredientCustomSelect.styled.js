@@ -12,7 +12,4 @@ export const IngredientSelect = styled(Select)`
   border: none;
   background: 'transparent';
   color: var(--white-fifty-color);
-  @media screen and (min-width: 768px) {
-    font-size: 17px;
-  }
 `;

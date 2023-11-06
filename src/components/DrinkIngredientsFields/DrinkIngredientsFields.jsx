@@ -3,7 +3,6 @@ import {
   DrinkIngredientsWrapper,
   IngredientInputsWrapper,
   IngredientWrapper,
-  MeasureInput,
   TitleWrapper,
 } from './DrinkIngredientsFields.styled';
 import closeIcon from '../../assets/images/addDrink/X.svg';
@@ -23,19 +22,28 @@ export default function DrinkIngridientsFields({
   setFieldValue,
 }) {
   const [ingr, setIngr] = useState([
-    { id: UUID.generate(), ingredientId: '', measure: '' },
+    { id: UUID.generate(), ingredientId: '', measure: '0' },
   ]);
-
+  // const [ingredientId, setIngredientId] = useState('');
+  // const [measure, setMeasure] = useState('');
   const onIngredientChange = (i, e) => {
     i.ingredientId = e.value;
     i.title = e.label;
-    // console.log(e);
+    console.log(e);
     pushToParent(ingr);
+    // const value = e.value;
+    // console.log(value);
+    // setIngredientId(value);
+    // setFieldValue('ingredientId', value);
   };
-  // console.log(ingr);
+  console.log(ingr);
   const onMeasureChange = (i, e) => {
     i.measure = e.target.value;
     pushToParent(ingr);
+    // const value = e.target.value;
+    // console.log(value);
+    // setMeasure(value);
+    // setFieldValue('measure', value);
   };
 
   const addIngr = c => {
@@ -46,7 +54,7 @@ export default function DrinkIngridientsFields({
     } else {
       newIngr = [
         ...ingr,
-        { id: UUID.generate(), title: '', ingredientId: '', measure: '' },
+        { id: UUID.generate(), title: '', ingredientId: '', measure: '0' },
       ];
     }
     setIngr(newIngr);
@@ -87,9 +95,16 @@ export default function DrinkIngridientsFields({
                 onChange={e => onIngredientChange(i, e)}
                 value={i}
               />
-              <MeasureInput
+              <input
                 type="text"
-                placeholder="0"
+                style={{
+                  width: '101px',
+                  height: '50px',
+                  borderRadius: '200px',
+                  border: '1px solid var(--white-fifty-color)',
+                  backgroundColor: 'transparent',
+                  color: 'white',
+                }}
                 value={i.measure}
                 onChange={e => onMeasureChange(i, e)}
               />

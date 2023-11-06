@@ -1,15 +1,15 @@
 import drinkIdPageBlock from '../../assets/images/drinkIdPage/block-middle@1x.jpg';
 import {
-  ImageBox,
+  Image,
   Ingredient,
   IngredientMeasure,
   IngredientPhoto,
   IngredientTitle,
 } from './IngredientItem.styled';
-export const IngredientItem = ({ title, measure, photo }) => {
+export const IngredientItem = ({ title, measure, quantity, images }) => {
   return (
     <>
-      {/* <>
+      <>
         {images['ingredientThumb'] === '' ? (
           <Image src={drinkIdPageBlock} alt={title} />
         ) : (
@@ -29,23 +29,13 @@ export const IngredientItem = ({ title, measure, photo }) => {
             />
           </picture>
         )}
-      </> */}
-      <>
-        <ImageBox>
-          <IngredientPhoto src={photo ? photo : drinkIdPageBlock} />
-        </ImageBox>
-        <Ingredient>
-          <IngredientTitle>{title}</IngredientTitle>
-          <IngredientMeasure>{measure}</IngredientMeasure>
-        </Ingredient>
       </>
-
-      {/* <Ingredient>
+      <Ingredient>
         <IngredientTitle>{title}</IngredientTitle>
         <IngredientMeasure>
           {quantity ? `${quantity} ${measure}` : measure}
         </IngredientMeasure>
-      </Ingredient> */}
+      </Ingredient>
     </>
   );
 };

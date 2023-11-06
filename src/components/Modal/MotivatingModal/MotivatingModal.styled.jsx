@@ -24,15 +24,10 @@ export const buttonModal = {
 
 export const stylePlush = {
   justifyContent: 'center',
-  width: '180px',
-  height: '180px',
+  width: '268px',
+  height: '242px',
   borderRadius: '30px',
   backgroundColor: 'rgba(217, 217, 217, 0.138)',
-
-  '@media (min-width: 768px)': {
-    width: '248px',
-    height: '222px',
-  },
 };
 
 export const svg = {
@@ -41,36 +36,23 @@ export const svg = {
     height: '28px',
   },
 };
-
 export const styleBox = {
   position: 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: '300px',
-  height: '300px',
+  width: '500px',
+  height: '500px',
   borderRadius: '30px',
   background: 'linear-gradient(rgba(10, 10, 17, 0.4), rgba(10, 10, 17, 0.4))',
-  padding: '60px',
-
-  '@media (min-width: 768px)': {
-    width: '460px',
-    height: '460px',
-    paddingTop: '200px',
-    paddingLeft: '106px',
-    paddingRight: '106px',
-  },
+  paddingTop: '200px',
+  paddingLeft: '116px',
+  paddingRight: '116px',
 };
 
 export const StyledText = styled.p`
   font-weight: 500;
-  font-size: 18px;
-  padding: 26px 14px;
-
+  font-size: 28px;
+  padding: 32px 18px;
   text-align: center;
-
-  @media screen and (min-width: 768px) {
-    font-size: 24px;
-    padding: 32px 18px;
-  }
 `;

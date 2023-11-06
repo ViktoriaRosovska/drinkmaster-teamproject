@@ -54,12 +54,13 @@ export const AddDrinkBtnLink = styled(Link)`
   justify-content: center;
   padding: 13px 43px;
   border-radius: 42px;
-  // background: var(--dark-blue-color);
-  background: ${props => props.theme.secondBgrColor};
-  // color: var(--white-color);
-  color: ${props => props.theme.secondaryTextColor};
+
+  background: var(--white-color);
+  color: var(--black-color);
+
   font-weight: 600;
   line-height: 1.285;
+  border: 1px solid: 1px solid var(--white-color);
 
   transition: color ${transition}, background-color ${transition},
     border-color ${transition};
@@ -71,12 +72,9 @@ export const AddDrinkBtnLink = styled(Link)`
 
   &:hover,
   &:focus {
-    // color: var(--dark-blue-color);
-    color: ${props => props.theme.color};
-    // background: var(--dark-blue-color);
-    background: ${props => props.theme.secondBgrColor};
-    // border-color: var(--dark-blue-color);
-    border: 1px solid ${props => props.theme.paginationAccentColor};
+    color: var(--white-color);
+    background: var(--dark-blue-color);
+    border-color: var(--dark-blue-color);
   }
 `;
 
