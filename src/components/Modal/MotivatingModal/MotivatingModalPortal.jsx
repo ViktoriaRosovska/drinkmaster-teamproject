@@ -1,7 +1,7 @@
 import { createPortal } from 'react-dom';
 import MotivatingModal from './MotivatingModal';
 import { motivatingScenarios } from './motivatingScenarios';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import authSelectors from 'redux/auth/authSelectors';
 import { useDrink } from 'hooks/useDrink';
@@ -11,46 +11,53 @@ const MotivatingModalPortal = () => {
   const userAuth = useSelector(authSelectors.selectUserAuth);
   console.log('userAuth:', userAuth);
   const { favoriteDrinks } = useDrink();
-  console.log(favoriteDrinks.length);
+  console.log('length:', favoriteDrinks.length);
 
     const [isOpen, setIsOpen] = useState(false);
-    let motivatingScenarioRef = useRef(null);
-//   const [motivatingScenario, setMotivatingScenario] = useState(null);
+    // let motivatingScenario = null;
+    const [motivatingScenario, setMotivatingScenario] = useState(null);
+ 
 
   //   const motivatingScenario = motivationScenarios.scenario3;
-  const closeModal = () => {
-    setIsOpen(false);
+    const closeModal = () => {
+        setIsOpen(false);
+    };
 
-    localStorage.setItem('motivatingModalClosed', 'true');
-  };
+    const isUser10 = localStorage.getItem('motivatingUser10');
 
-  useEffect(() => {
-    const isModalClosed =
-      localStorage.getItem('motivatingModalClosed') === 'true';
+    useEffect(() => {
+     
+        const isFirstFav = localStorage.getItem('motivatingFavorite1');
+        const isTenthFav = localStorage.getItem('motivatingFavorite10');
+        
+    
 
-    if (!isModalClosed) {
-      if (userAuth === 47) {
-          motivatingScenarioRef.current = motivatingScenarios.scenario1;
-      } else if (favoriteDrinks.length === 1) {
-        motivatingScenarioRef.current = motivatingScenarios.scenario2;
-      } else if (favoriteDrinks.length === 10) {
-        motivatingScenarioRef.current = motivatingScenarios.scenario3;
-      }
-
-      if (motivatingScenarioRef.current) {
-          setIsOpen(true);
-          localStorage.setItem('motivatingModalClosed', 'true');
-      }
-    }
-  }, [userAuth, favoriteDrinks]);
+        if (isFirstFav && isFirstFav === 'false') {
+            setIsOpen(true)
+            setMotivatingScenario(motivatingScenarios.scenario2)
+            localStorage.setItem('motivatingFavorite1', 'true')
+        } else if (isTenthFav && isTenthFav === 'false') {
+            setIsOpen(true);
+            setMotivatingScenario(motivatingScenarios.scenario3)
+            localStorage.setItem('motivatingFavorite10', 'true')
+        } else if (isUser10 && isUser10 === 'false') {
+            setIsOpen(true)
+            setMotivatingScenario(motivatingScenarios.scenario1)
+            localStorage.setItem('motivatingUser10', 'true')
+        }
+    }, [isUser10, favoriteDrinks])
+    
+    
+    
+  console.log(motivatingScenario);
 
   return isOpen
     ? createPortal(
         <MotivatingModal
           open={isOpen}
           handleClose={closeModal}
-          image={motivatingScenarioRef.current.image}
-          text={motivatingScenarioRef.current.text}
+          image={motivatingScenario.image}
+          text={motivatingScenario.text}
         />,
         modalRoot
       )
