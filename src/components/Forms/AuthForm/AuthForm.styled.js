@@ -248,8 +248,4 @@ export const BirthDate = styled(DesktopDatePicker)`
     .MuiOutlinedInput-notchedOutline {
     border-color: var(--white-twenty-color);
   }
-
-  .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
-    padding: 18px 24px;
-  }
 `;
