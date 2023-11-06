@@ -23,7 +23,7 @@ const Footer = () => {
           <FooterNavWrapper>
             <FooterLogoAndSocial theme={theme}>
               <Logo />
-              <FollowUs />
+              <FollowUs isInFooter={true}/>
             </FooterLogoAndSocial>
 
             <Nav />

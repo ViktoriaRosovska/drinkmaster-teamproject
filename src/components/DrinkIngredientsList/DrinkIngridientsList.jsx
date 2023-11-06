@@ -7,7 +7,6 @@ import {
   IngredientsList,
 } from './DrinkIngredientList.styled';
 import { selectIngredients } from 'redux/filters/filtersSelector';
-// import { useDrink } from '../../hooks/useDrink';
 
 const DrinkIngredientsList = ({ ingredients }) => {
   const [ingredientsData, setIngredientsData] = useState([]);
@@ -17,33 +16,24 @@ const DrinkIngredientsList = ({ ingredients }) => {
   const ingredientsIdArr = ingredients.map(
     ingredient => ingredient.ingredientId
   );
+  useEffect(() => {
+    dispatch(getIngredients());
+  }, [dispatch]);
 
-  const fetchData = useCallback(async () => {
-    try {
-      console.log('data from Redux', ingredientsAll);
+  const fetchData = useCallback(() => {
+    if (ingredientsAll.length !== 0) {
+      const ingredientsImages = ingredientsAll.filter(item =>
+        ingredientsIdArr.includes(item._id)
+      );
 
-      if (ingredientsAll.length === 0) {
-        const data = dispatch(getIngredients());
-        if (data.payload.length !== 0) {
-          const ingredientsImages = data.payload.filter(item =>
-            ingredientsIdArr.includes(item._id)
-          );
-          setIngredientsData(ingredientsImages);
-        }
-      } else {
-        const ingredientsImages = ingredientsAll.filter(item =>
-          ingredientsIdArr.includes(item._id)
-        );
-        setIngredientsData(ingredientsImages);
-      }
-    } catch (error) {
-      console.error(error);
+      setIngredientsData(ingredientsImages);
     }
-  }, [dispatch, ingredientsAll, ingredientsIdArr, setIngredientsData]);
+  }, [ingredientsAll, ingredientsIdArr]);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
+
   // useEffect(() => {
   //   const fetchData = async () => {
   //     try {
@@ -90,8 +80,6 @@ const DrinkIngredientsList = ({ ingredients }) => {
       ingredientThumb: ingredientData ? ingredientData.ingredientThumb : null,
     };
   });
-  // const { drinkById } = useDrink();
-  // const ingredientsWithImages = drinkById.ingredients;
 
   return (
     <div>
@@ -109,39 +97,6 @@ const DrinkIngredientsList = ({ ingredients }) => {
                 />
               )
             )}
-
-            {/* {ingredients.map(ingredient => {
-              //           <Title>Ingredients</Title>
-              //           <List>
-              //             {ingredients?.map(ingredient => {
-
-              const ingredientRec = ingredientsWithImages.find(
-                ii => ii._id === ingredient.ingredientId
-              );
-
-              const images = {
-                ingredientThumb: '',
-                'thumb-medium': '',
-                'thumb-small': '',
-              };
-
-              if (ingredientRec) {
-                images.ingredientThumb = ingredientRec.ingredientThumb;
-                images['thumb-medium'] = ingredientRec['thumb-medium'];
-                images['thumb-small'] = ingredientRec['thumb-small'];
-              }
-              console.log('bbbbbbb', ingredientsWithImages);
-              return (
-                <li key={ingredient.ingredientId}>
-                  <IngredientItem
-                    title={ingredient.title}
-                    measure={ingredient.measure}
-                    quantity={ingredient.quantity}
-                    images={images}
-                  />
-                </li>
-              );
-            })} */}
           </IngredientsList>
         </div>
       )}
@@ -150,4 +105,3 @@ const DrinkIngredientsList = ({ ingredients }) => {
 };
 
 export default DrinkIngredientsList;
-

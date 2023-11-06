@@ -7,7 +7,7 @@ import { getDrinkById } from 'redux/drinks/drinksOperations.js';
 import { selectDrinkById } from 'redux/drinks/drinksSelectors';
 
 import DrinkPageHero from 'components/DrinkPageHero/DrinkPageHero';
-// import DrinkIngridientList from 'components/DrinkIngredientsList/DrinkIngridientsList';
+import DrinkIngridientList from 'components/DrinkIngredientsList/DrinkIngridientsList';
 import RecipePreparation from 'components/RecipePreparation/RecipePreparation';
 
 import { MainContainer } from 'styles/App.styled';
@@ -65,7 +65,7 @@ const DrinkIdPage = () => {
             alcoholic={drink.alcoholic}
           />
 
-          {/* <DrinkIngridientList ingredients={drink.ingredients} /> */}
+          <DrinkIngridientList ingredients={drink.ingredients} />
 
           {/* <DrinkIngridientList ingredients={ingredientArrayFromDrink} /> */}
 

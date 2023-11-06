@@ -7,13 +7,13 @@ import {
   PopularDrinksItem,
   PopularDrinksLink,
   PopularDrinksImg,
-    PopularDrinksName,
-    PopularDrinksInfo,
-  PopularDrinksTxt
+  PopularDrinksName,
+  PopularDrinksInfo,
+  PopularDrinksTxt,
 } from './PopularDrinks.styled';
 import { useDrink } from 'hooks/useDrink';
 import { getPopularDrinks } from 'redux/drinks/drinksOperations';
-import DefoultImg from '../../assets/images/drinkIdPage/block-middle@2x.jpg'
+import DefoultImg from '../../assets/images/drinkIdPage/block-small@2x.jpg';
 
 const PopularDrinks = () => {
   const { popularDrinks } = useDrink();
@@ -31,14 +31,14 @@ const PopularDrinks = () => {
           {popularDrinks.map(({ _id, drinkThumb, drink, shortDescription }) => (
             <PopularDrinksItem key={_id}>
               {' '}
-              <PopularDrinksLink href={`drinks/${_id}`}>
-                  <PopularDrinksImg
-                    src={ drinkThumb ? drinkThumb : DefoultImg}
-                    alt={drink}
-                    width={90}
-                    height={90}
-                  />
-             
+              <PopularDrinksLink to={`/drinks/${_id}`}>
+                <PopularDrinksImg
+                  src={drinkThumb ? drinkThumb : DefoultImg}
+                  alt={drink}
+                  width={90}
+                  height={90}
+                />
+
                 <PopularDrinksInfo>
                   <PopularDrinksName>{drink}</PopularDrinksName>
                   <PopularDrinksTxt>{shortDescription}</PopularDrinksTxt>

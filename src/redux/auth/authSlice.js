@@ -9,6 +9,8 @@ const initialState = {
   isRefreshing: false,
   isSubscribed: false,
   theme: 'dark',
+  userAuth: null,
+  userFavorite: null,
 };
 
 const authSlice = createSlice({
@@ -46,6 +48,8 @@ const authSlice = createSlice({
         state.user = payload.user;
         state.isLoggedIn = true;
         state.isRefreshing = false;
+        state.userAuth = payload.user.userAuth;
+        state.userFavorite = payload.user.userFavorite;
       })
       .addCase(authOperations.currentUser.rejected, state => {
         state.isRefreshing = false;

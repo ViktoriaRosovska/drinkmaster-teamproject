@@ -29,13 +29,16 @@ const TermsServicePage = lazy(() =>
   import('../views/TermsServicePage/TermsServicePage')
 );
 
-//  const isLoggedIn = true;
-
 export const App = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isRefreshing = useSelector(authSelectors.selectIsRefreshing);
+
+  const userAuth = useSelector(authSelectors.selectUserAuth);
+  console.log('userAuth:', userAuth);
+  // const userFavorite = useSelector(authSelectors.selectUserFavorite);
+  // console.log('userFavorite:', userFavorite);
 
   useEffect(() => {
     dispatch(authOperations.currentUser());
