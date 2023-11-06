@@ -1,14 +1,14 @@
 import {
   LogoIconHeader,
   LogoLink,
-  LogoText,
+  LogoTextHeader,
 } from 'components/Logo/Logo.styled';
 
 const LogoHeader = () => {
   return (
     <LogoLink to="/">
       <LogoIconHeader />
-      <LogoText>Drink&nbsp;master</LogoText>
+      <LogoTextHeader>Drink&nbsp;master</LogoTextHeader>
     </LogoLink>
   );
 };
