@@ -24,8 +24,8 @@ export const buttonModal = {
 
 export const stylePlush = {
   justifyContent: 'center',
-  width: '120px',
-  height: '120px',
+  width: '180px',
+  height: '180px',
   borderRadius: '30px',
   backgroundColor: 'rgba(217, 217, 217, 0.138)',
 
@@ -49,7 +49,9 @@ export const styleBox = {
   transform: 'translate(-50%, -50%)',
   width: '300px',
   height: '300px',
-  borderRadius: '30px',
+    borderRadius: '30px',
+    border: 'none',
+  outline: 'none',
   background: 'linear-gradient(rgba(10, 10, 17, 0.4), rgba(10, 10, 17, 0.4))',
   padding: '60px',
 
@@ -57,8 +59,9 @@ export const styleBox = {
     width: '400px',
     height: '400px',
     paddingTop: '140px',
-    paddingLeft: '46px',
-    paddingRight: '46px',
+    paddingLeft: '76px',
+    paddingRight: '76px',
+    paddingBottom: '38px',
   },
 };
 
@@ -66,7 +69,6 @@ export const StyledText = styled.p`
   font-weight: 500;
   font-size: 18px;
   padding: 26px 14px;
-
   text-align: center;
 
   @media screen and (min-width: 768px) {

@@ -1,14 +1,14 @@
 import { createPortal } from 'react-dom';
 import MotivatingModal from './MotivatingModal';
 import { motivationScenarios } from './motivatingScenarios';
-import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { authOperations } from 'redux/auth/authOperations';
+import { useState } from 'react';
+// import { useDispatch } from 'react-redux';
+// import { authOperations } from 'redux/auth/authOperations';
 
 const MotivatingModalPortal = () => {
     const modalRoot = document.querySelector('#modal-root');
     
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
   const [isOpen, setIsOpen] = useState(true);
 //   const [motivatingScenario, setMotivatingScenario] = useState({});
@@ -25,7 +25,7 @@ const MotivatingModalPortal = () => {
     //         }
     //     };
     //     fetchData();
-    // }, [dispatch]);
+    // }, []);
          
 
 
