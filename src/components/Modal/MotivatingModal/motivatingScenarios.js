@@ -11,7 +11,7 @@ export const motivatingScenarios = {
       mob: imgMob1,
       tab: imgTab1,
     },
-    text: 'Wow! You have been using the application for 100 days!',
+    text: 'Wow! You have been using the application for 10 days!',
   },
   scenario2: {
     image: {
@@ -25,6 +25,6 @@ export const motivatingScenarios = {
       mob: imgMob3,
       tab: imgTab3,
     },
-    text: 'Wow! You have added 10 recipes to your favorites!',
+    text: 'Wow! You have added 5 recipes to your favorites!',
   },
 };
