@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import IconEdit2 from '../IconEdit2/IconEdit2';
 
 const ModalContainer = styled.div`
-  position: fixed;
-  top: 72px;
-  right: 20px;
+  position: absolute;
+  top: 55px;
+  // right: 20px;
   width: 177px;
   height: 134px;
   padding: 18px;

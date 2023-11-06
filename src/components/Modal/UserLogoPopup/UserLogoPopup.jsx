@@ -5,7 +5,7 @@ import {
   ModalContainer,
   IconEdit,
 } from './UserLogoPopup.styled';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import ModalPortal from '../ModalPortal/ModalPortal';
 
 export default function UserLogoPopup({
@@ -14,6 +14,7 @@ export default function UserLogoPopup({
 }) {
   const [isModalUserInfoOpen, setIsModalUserInfoOpen] = useState(false);
   const [, setShowModal] = useState(false);
+  const modalContainerRef = useRef(null);
 
   // const dispatch = useDispatch();
   // const handleLogOut = () => dispatch(signOut());
@@ -25,24 +26,40 @@ export default function UserLogoPopup({
 
   const onBackdrop = () => {
     setIsModalUserInfoOpen(false);
-     onCloseUserLogoModal();
-    console.log('where are you?');
-
+    onCloseUserLogoModal();
   };
 
-  useEffect(e => {
+  useEffect(() => {
     const handleEsc = event => {
       if (event.key === 'Escape') {
         onBackdrop();
       }
     };
+
+    const handleClickOutside = event => {
+      if (!modalContainerRef.current.contains(event.target)) {
+        if (!isModalUserInfoOpen) {
+          openUserInfoModal();
+        } else {
+          onBackdrop();
+        }
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
     document.addEventListener('keydown', handleEsc);
-    return () => document.removeEventListener('keydown', handleEsc);
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('keydown', handleEsc);
+      document.removeEventListener('click', handleClickOutside);
+    };
   });
 
   return (
     <>
-      <ModalContainer>
+      <ModalContainer ref={modalContainerRef} className="modal-container">
         <EditProfileBtn type="button" onClick={openUserInfoModal}>
           Edit profile
           <IconEdit />

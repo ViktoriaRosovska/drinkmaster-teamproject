@@ -8,21 +8,23 @@ export default function ModalWindow({ onBackdropClose, ...props }) {
     }
   };
 
-  useEffect(e => {
+  useEffect(() => {
     const handleEsc = event => {
       if (event.key === 'Escape') {
         onBackdropClose();
       }
     };
+
     document.addEventListener('keydown', handleEsc);
-    return () => document.removeEventListener('keydown', handleEsc);
+
+    return () => {
+      document.removeEventListener('keydown', handleEsc);
+    };
   });
 
   return (
-    <>
-      <Overlay id="Overlay" onClick={onBackdrop}>
-        {props.children}
-      </Overlay>
-    </>
+    <Overlay id="Overlay" onClick={onBackdrop}>
+      {props.children}
+    </Overlay>
   );
 }
