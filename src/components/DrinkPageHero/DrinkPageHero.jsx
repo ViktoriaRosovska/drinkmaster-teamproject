@@ -26,6 +26,7 @@ const DrinkPageHero = ({ id, glass, about, alcoholic, title, image }) => {
   const notifyAdded = () => toast.success('Added to favorites');
   const notifyRemoved = () => toast.info('Removed from favorites');
   const { isLoading } = useDrink();
+  const { favoriteDrinks } = useDrink();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -60,9 +61,14 @@ const DrinkPageHero = ({ id, glass, about, alcoholic, title, image }) => {
             )}
             {!isDrinkInFavoriteList(id) ? (
               <WhiteButton
-                onClick={() =>
+                onClick={() =>{
                   dispatch(addDrinkToFavorite(id)).then(() => notifyAdded())
-                }
+                  if (favoriteDrinks.length === 0) {
+                    localStorage.setItem('motivatingFavorite1', 'false')
+                  } else if (favoriteDrinks.length === 4) {
+                    localStorage.setItem('motivatingFavorite10', 'false')
+                  }
+                }}
                 disabled={isLoading}
               >
                 Add to favorite

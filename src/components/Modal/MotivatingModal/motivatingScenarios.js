@@ -18,13 +18,13 @@ export const motivatingScenarios = {
       mob: imgMob2,
       tab: imgTab2,
     },
-    text: 'Wow! You have added 10 recipes to your favorites!',
+    text: 'Wow! You have added the first recipe to your favorites!',
   },
   scenario3: {
     image: {
       mob: imgMob3,
       tab: imgTab3,
     },
-    text: 'Wow! You have added the first recipe to your favorites!',
+    text: 'Wow! You have added 10 recipes to your favorites!',
   },
 };
