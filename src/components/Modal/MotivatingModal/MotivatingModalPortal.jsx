@@ -11,14 +11,11 @@ const MotivatingModalPortal = () => {
   const userAuth = useSelector(authSelectors.selectUserAuth);
   console.log('userAuth:', userAuth);
   const { favoriteDrinks } = useDrink();
-  console.log('length:', favoriteDrinks.length);
+  console.log('length of favorites:', favoriteDrinks.length);
 
     const [isOpen, setIsOpen] = useState(false);
-    // let motivatingScenario = null;
     const [motivatingScenario, setMotivatingScenario] = useState(null);
  
-
-  //   const motivatingScenario = motivationScenarios.scenario3;
     const closeModal = () => {
         setIsOpen(false);
     };
@@ -29,8 +26,6 @@ const MotivatingModalPortal = () => {
      
         const isFirstFav = localStorage.getItem('motivatingFavorite1');
         const isTenthFav = localStorage.getItem('motivatingFavorite10');
-        
-    
 
         if (isFirstFav && isFirstFav === 'false') {
             setIsOpen(true)
@@ -45,11 +40,7 @@ const MotivatingModalPortal = () => {
             setMotivatingScenario(motivatingScenarios.scenario1)
             localStorage.setItem('motivatingUser10', 'true')
         }
-    }, [isUser10, favoriteDrinks])
-    
-    
-    
-  console.log(motivatingScenario);
+    }, [isUser10, favoriteDrinks]) 
 
   return isOpen
     ? createPortal(
