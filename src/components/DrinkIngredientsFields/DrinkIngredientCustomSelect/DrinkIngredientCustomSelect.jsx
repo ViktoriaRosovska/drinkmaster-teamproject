@@ -17,6 +17,7 @@ const DrinkIngredientCustomSelect = ({
       justifyContent: 'flex-end',
       borderRadius: '200px',
       height: '50px',
+      width: '100%',
       position: 'relative',
       paddingLeft: '18px',
       color: 'red',

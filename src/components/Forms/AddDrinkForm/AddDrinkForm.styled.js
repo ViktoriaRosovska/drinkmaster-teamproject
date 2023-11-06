@@ -7,14 +7,17 @@ const FormContainer = styled.form`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+  margin-bottom: 80px;
   @media screen and (min-width: 375px) and (max-width: 767.98px) {
     width: 335px;
   }
   @media screen and (min-width: 768px) and (max-width: 1439.98px) {
     width: 100%;
+    margin-bottom: 0;
   }
   @media screen and (min-width: 1440px) {
     width: 833px;
+    margin-bottom: 0;
   }
 `;
 
@@ -36,4 +39,15 @@ const AddIngedientSelect = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-export { FormContainer, AddIngedientSelect, AddIngredientsContainer };
+
+const RelativeWrapper = styled.div`
+  position: relative;
+  margin-bottom: 31px;
+`;
+
+export {
+  FormContainer,
+  AddIngedientSelect,
+  AddIngredientsContainer,
+  RelativeWrapper,
+};

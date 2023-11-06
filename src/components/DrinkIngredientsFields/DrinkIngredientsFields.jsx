@@ -3,7 +3,9 @@ import {
   DrinkIngredientsWrapper,
   IngredientInputsWrapper,
   IngredientWrapper,
+  IngredientiMeasureWrapper,
   MeasureInput,
+  RelativeIngredientWrapper,
   TitleWrapper,
 } from './DrinkIngredientsFields.styled';
 import closeIcon from '../../assets/images/addDrink/X.svg';
@@ -14,49 +16,55 @@ import { useState } from 'react';
 import { UUID } from 'uuidjs';
 import ingredients from '../../helpers/Data/ingredients.json';
 import DrinkIngredientCustomSelect from './DrinkIngredientCustomSelect/DrinkIngredientCustomSelect';
+import { ShowError } from 'components/ShowError/ShowError';
+
 export default function DrinkIngridientsFields({
   values,
   errors,
   touched,
-  handleChange,
-  handleBlur,
   setFieldValue,
 }) {
-  const [ingr, setIngr] = useState([
+  const [ingredientCollection, setIngr] = useState([
     { id: UUID.generate(), ingredientId: '', measure: '' },
   ]);
+  const [hasIngredient, setHasIngredient] = useState(false);
+  const [hasMeasure, setHasMeasure] = useState(false);
 
   const onIngredientChange = (i, e) => {
     i.ingredientId = e.value;
     i.title = e.label;
-    // console.log(e);
-    pushToParent(ingr);
-  };
-  // console.log(ingr);
-  const onMeasureChange = (i, e) => {
-    i.measure = e.target.value;
-    pushToParent(ingr);
+    setHasIngredient(true);
+    pushToParent(ingredientCollection);
   };
 
-  const addIngr = c => {
-    let newIngr;
-    if (ingr.length > c) {
-      newIngr = [...ingr];
-      newIngr.pop();
+  const onMeasureChange = (i, e) => {
+    i.measure = e.target.value;
+    setHasMeasure(true);
+    pushToParent(ingredientCollection);
+  };
+
+  const addIngredient = c => {
+    let newIngredientCollection;
+    if (ingredientCollection.length > c) {
+      newIngredientCollection = [...ingredientCollection];
+      newIngredientCollection.pop();
     } else {
-      newIngr = [
-        ...ingr,
+      newIngredientCollection = [
+        ...ingredientCollection,
         { id: UUID.generate(), title: '', ingredientId: '', measure: '' },
       ];
     }
-    setIngr(newIngr);
-    pushToParent(newIngr);
+    setIngr(newIngredientCollection);
+    pushToParent(newIngredientCollection);
   };
 
-  const removeIngr = idx => {
-    ingr.splice(idx, 1);
-    setIngr([...ingr]);
-    pushToParent(ingr);
+  const removeIngredient = idx => {
+    if (ingredientCollection.length === 1) {
+      return;
+    }
+    ingredientCollection.splice(idx, 1);
+    setIngr([...ingredientCollection]);
+    pushToParent(ingredientCollection);
   };
 
   const pushToParent = ingr => {
@@ -74,28 +82,58 @@ export default function DrinkIngridientsFields({
     <DrinkIngredientsWrapper>
       <TitleWrapper>
         <Subtitle title="Ingredients" />
-        <QuantitySwitch value={ingr.length} setValue={addIngr} />
+        <QuantitySwitch
+          value={ingredientCollection.length}
+          setValue={addIngredient}
+        />
       </TitleWrapper>
       <IngredientWrapper>
-        {ingr.map((i, idx) => {
+        {ingredientCollection.map((i, idx) => {
           return (
             <IngredientInputsWrapper key={i.id}>
-              <DrinkIngredientCustomSelect
-                placeholder="Ingredient"
-                options={ingredients}
-                name="ingredientId"
-                onChange={e => onIngredientChange(i, e)}
-                value={i}
-              />
-              <MeasureInput
-                type="text"
-                placeholder="0"
-                value={i.measure}
-                onChange={e => onMeasureChange(i, e)}
-              />
+              <IngredientiMeasureWrapper>
+                <RelativeIngredientWrapper>
+                  <DrinkIngredientCustomSelect
+                    placeholder="Ingredient"
+                    options={ingredients}
+                    name="ingredientId"
+                    onChange={e => onIngredientChange(i, e)}
+                    value={i}
+                    error={
+                      errors.ingredientId && touched.ingredientId
+                        ? 'true'
+                        : 'false'
+                    }
+                    success={
+                      values.ingredientId && !errors.ingredientId
+                        ? 'true'
+                        : 'false'
+                    }
+                  />
+
+                  {hasIngredient ? null : (
+                    <ShowError message={errors.category} />
+                  )}
+                </RelativeIngredientWrapper>
+
+                <RelativeIngredientWrapper>
+                  <MeasureInput
+                    type="text"
+                    placeholder="0"
+                    value={i.measure}
+                    onChange={e => onMeasureChange(i, e)}
+                    error={errors.measure && touched.measure ? 'true' : 'false'}
+                    success={
+                      values.measure && !errors.measure ? 'true' : 'false'
+                    }
+                  />
+
+                  {hasMeasure ? null : <ShowError message={errors.category} />}
+                </RelativeIngredientWrapper>
+              </IngredientiMeasureWrapper>
               <CloseIconReactSvg
                 src={closeIcon}
-                onClick={() => removeIngr(idx)}
+                onClick={() => removeIngredient(idx)}
               />
             </IngredientInputsWrapper>
           );

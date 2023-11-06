@@ -1,6 +1,5 @@
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
-import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 // import { useNavigate } from 'react-router';
 
@@ -9,15 +8,12 @@ import { addMyDrink } from 'redux/drinks/drinksOperations';
 import { FormContainer } from './AddDrinkForm.styled';
 import WhiteLinkBtn from '../../Buttons/WhiteLinkBtn/WhiteLinkBtn';
 import { DrinkDescriptionFields } from '../../DrinkDescriptionFields/DrinkDescriptionFields';
-// import DrinkRecipePreparation from 'components/DrinkRecipePreparation/DrinkRecipePreparation';
-// import DrinkIngridientsFields from 'components/DrinkIngredientsFields/DrinkIngredientsFields';
-
 import Loader from 'components/Loader';
 import DrinkIngridientsFields from 'components/DrinkIngredientsFields/DrinkIngredientsFields';
 import DrinkRecipePreparation from 'components/DrinkRecipePreparation/DrinkRecipePreparation';
 
-// import chevronUp from '../../assets/images/addDrink/chevron-up.svg';
-// import { ReactSVG } from 'react-svg';
+import { useDispatch } from 'react-redux';
+import { toastConfig } from 'components/Notification/notification_options';
 
 export default function AddDrinkForm() {
   const [isLoading, setIsLoading] = useState(false);
@@ -43,8 +39,22 @@ export default function AddDrinkForm() {
     validationSchema: Yup.object().shape({
       drink: Yup.string().max(40).required('This field is required'),
       description: Yup.string().required('This field is required'),
-      category: Yup.string().required('This field is required'),
-      glass: Yup.string().required('This field is required'),
+      category: Yup.array()
+        .of(
+          Yup.object().shape({
+            value: Yup.string(),
+            label: Yup.string(),
+          })
+        )
+        .required('This field is required'),
+      glass: Yup.array()
+        .of(
+          Yup.object().shape({
+            value: Yup.string(),
+            label: Yup.string(),
+          })
+        )
+        .required('This field is required'),
       alcoholic: Yup.string().required('Select a type of drink'),
       instructions: Yup.string().required('This field is required'),
       ingredients: Yup.array().required('This field is required'),
@@ -61,17 +71,20 @@ export default function AddDrinkForm() {
       formData.append('ingredients', JSON.stringify(values.ingredients));
       formData.append('drinkThumb', values.drinkThumb);
       setIsLoading(true);
-      console.log('hello');
       try {
         const responce = await dispatch(addMyDrink(formData));
         if (responce) {
           //navigate('/my');
-          console.log('Hurray!!!');
+
+          toastConfig.success(`Your recipe was adding success`);
         } else {
-          console.log('Server error', responce.statusText);
+          // console.log('Server error', responce.statusText);
+          toastConfig.error(
+            `There are some problems with server. Please, try again at several time`
+          );
         }
       } catch (error) {
-        console.log('Sending error. Please, try again', error.statusText);
+        toastConfig.error(`Sending error. Please, try again`);
       } finally {
         setIsLoading(false);
       }
