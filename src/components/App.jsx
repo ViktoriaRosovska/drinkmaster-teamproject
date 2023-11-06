@@ -10,6 +10,7 @@ import WelcomePage from 'views/WelcomePage/WelcomePage';
 
 import { authOperations } from 'redux/auth/authOperations';
 import Loader from './Loader';
+import MotivatingModalPortal from './Modal/MotivatingModal/MotivatingModalPortal';
 
 const HomePage = lazy(() => import('../views/HomePage/HomePage'));
 const ErrorPage = lazy(() => import('../views/ErrorPage/ErrorPage'));
@@ -34,11 +35,7 @@ export const App = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isRefreshing = useSelector(authSelectors.selectIsRefreshing);
-
   const userAuth = useSelector(authSelectors.selectUserAuth);
-  console.log('userAuth:', userAuth);
-  // const userFavorite = useSelector(authSelectors.selectUserFavorite);
-  // console.log('userFavorite:', userFavorite);
 
   useEffect(() => {
     if (location.pathname === '/') {
@@ -47,7 +44,11 @@ export const App = () => {
     } else {
       navigate(location.pathname);
     }
-  }, [dispatch, location.pathname, navigate]);
+    if (userAuth === 10) {
+      localStorage.setItem('motivatingUser10', 'false');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch, userAuth]);
 
   const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
 
@@ -110,6 +111,7 @@ export const App = () => {
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
+      <MotivatingModalPortal />
     </>
   );
 };
