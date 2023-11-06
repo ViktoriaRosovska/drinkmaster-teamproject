@@ -1,7 +1,7 @@
 import { createPortal } from 'react-dom';
 import MotivatingModal from './MotivatingModal';
 import { motivatingScenarios } from './motivatingScenarios';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import authSelectors from 'redux/auth/authSelectors';
 import { useDrink } from 'hooks/useDrink';
@@ -13,8 +13,9 @@ const MotivatingModalPortal = () => {
   const { favoriteDrinks } = useDrink();
   console.log(favoriteDrinks.length);
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [motivatingScenario, setMotivatingScenario] = useState(null);
+    const [isOpen, setIsOpen] = useState(false);
+    let motivatingScenarioRef = useRef(null);
+//   const [motivatingScenario, setMotivatingScenario] = useState(null);
 
   //   const motivatingScenario = motivationScenarios.scenario3;
   const closeModal = () => {
@@ -28,27 +29,28 @@ const MotivatingModalPortal = () => {
       localStorage.getItem('motivatingModalClosed') === 'true';
 
     if (!isModalClosed) {
-      if (userAuth === 10) {
-        setMotivatingScenario(motivatingScenarios.scenario1);
+      if (userAuth === 47) {
+          motivatingScenarioRef.current = motivatingScenarios.scenario1;
       } else if (favoriteDrinks.length === 1) {
-        setMotivatingScenario(motivatingScenarios.scenario2);
+        motivatingScenarioRef.current = motivatingScenarios.scenario2;
       } else if (favoriteDrinks.length === 10) {
-        setMotivatingScenario(motivatingScenarios.scenario3);
+        motivatingScenarioRef.current = motivatingScenarios.scenario3;
       }
 
-      if (motivatingScenario) {
-        setIsOpen(true);
+      if (motivatingScenarioRef.current) {
+          setIsOpen(true);
+          localStorage.setItem('motivatingModalClosed', 'true');
       }
     }
-  }, [userAuth, favoriteDrinks, motivatingScenario]);
+  }, [userAuth, favoriteDrinks]);
 
   return isOpen
     ? createPortal(
         <MotivatingModal
           open={isOpen}
           handleClose={closeModal}
-          image={motivatingScenario.image}
-          text={motivatingScenario.text}
+          image={motivatingScenarioRef.current.image}
+          text={motivatingScenarioRef.current.text}
         />,
         modalRoot
       )
