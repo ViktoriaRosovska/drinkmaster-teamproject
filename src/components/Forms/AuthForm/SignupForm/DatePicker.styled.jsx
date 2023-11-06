@@ -6,6 +6,13 @@ import { useFormikContext } from 'formik';
 
 const transition = '500ms ease-in';
 
+// const mainBorderColor = (props =>
+//   props.value && props.error
+//     ? 'var(--white-twenty-color)'
+//     : props.value
+//     ? 'green'
+//     : 'var(--white-twenty-color)').toString();
+
 const StyledDesktopDatePicker = styled(DesktopDatePicker)({
   '& .MuiInputBase-root': {
     borderRadius: '200px',
@@ -38,7 +45,6 @@ const StyledDesktopDatePicker = styled(DesktopDatePicker)({
     padding: '18px 24px',
   },
 
-  //////////// НЕ РАБОТАЕТ!!!!!!! ///////////////////
   '& .MuiIconButton-root': {
     marginRight: '0px',
   },
@@ -52,16 +58,9 @@ const StyledDesktopDatePicker = styled(DesktopDatePicker)({
     border: 'none',
   },
 });
-// )
-// const mainBorderColor = props =>
-//   props.value && props.error
-//     ? 'var(--white-twenty-color)'
-//     : props.value
-//     ? 'green'
-//     : 'var(--white-twenty-color)';
 
 export default function BirthDate() {
-  const { setFieldValue } = useFormikContext();
+  const { setFieldValue, errors } = useFormikContext();
 
   return (
     <StyledDesktopDatePicker
@@ -80,6 +79,7 @@ export default function BirthDate() {
         textField: {
           fullWidth: true,
           placeholder: 'dd/mm/yyyy',
+          error: !!errors.birthDate,
         },
       }}
       format="DD/MM/YYYY"
