@@ -166,6 +166,10 @@ export const Link = styled(NavLink)`
   text-align: center;
 `;
 
+/////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+
 export const BirthDate = styled(DesktopDatePicker)`
   width: 335px;
   display: block;
@@ -224,6 +228,17 @@ export const BirthDate = styled(DesktopDatePicker)`
     transition: border-color ${transition}, color ${transition};
   }
 
+  //////// Иветты ///////////////
+  .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root
+    .MuiOutlinedInput-notchedOutline {
+    border-color: ${props =>
+      props.value && props.error
+        ? 'var(--white-twenty-color)'
+        : props.value
+        ? 'green'
+        : 'var(--white-twenty-color)'};
+  }
+
   .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root:hover
     .MuiOutlinedInput-notchedOutline {
     border-color: var(--white-fifty-color);
@@ -232,9 +247,5 @@ export const BirthDate = styled(DesktopDatePicker)`
   .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused
     .MuiOutlinedInput-notchedOutline {
     border-color: var(--white-twenty-color);
-  }
-
-  .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
-    padding: 18px 24px;
   }
 `;
