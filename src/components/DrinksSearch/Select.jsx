@@ -5,7 +5,7 @@ const Selection = ({ placeholder, options, onChange }) => {
     control: baseStyles => ({
       ...baseStyles,
       borderRadius: '200px',
-      backgroundColor: '#161F37',
+      backgroundColor: `#161F37`,
       boxShadow: 'none',
       border: 0,
       width: 'auto',

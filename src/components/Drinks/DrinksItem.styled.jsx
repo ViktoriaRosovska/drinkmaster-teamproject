@@ -33,11 +33,11 @@ export const Title = styled.h2`
 export const SeeMore = styled(Link)`
   font-size: 14px;
   line-height: 1.125;
-  color: var(--white-fifty-color);
+  color: ${props => props.theme.secondaryTextColor};
   transition: color linear 0.2s;
 
   &:hover {
-    color: var(--white-color);
+    color: ${props => props.theme.hoverBorderColor};
   }
 
   @media screen and (min-width: 768px) {
