@@ -30,7 +30,7 @@ export const FollowUsLink = styled.a`
   &:focus {
     transform: scale(1.1);
     border: solid 1px var(--white-color);
-    // background-color: var(--white-fifty-color);
+    
   }
 
   @media screen and (min-width: 768px) {
