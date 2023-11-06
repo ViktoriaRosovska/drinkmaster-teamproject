@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import DrinkList from 'components/DrinkList/DrinkList';
 import PageTitle from 'components/PageTitle/PageTitle';
+import { ToastContainer, toast, Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Paginator from 'components/Paginator/Paginator';
 import { MainContainer } from 'styles/App.styled';
 import { useDrink } from 'hooks/useDrink';
@@ -41,11 +43,17 @@ export default function FavoriteDrinksPage() {
   useEffect(() => {
     dispatch(getFavoriteAll({ page: currentPage, limit: drinksPerPage }))
       .unwrap()
-      .catch(error => console.log(error));
+      .catch(() => {
+        toast.error(`Something went wrong. Try again`, {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 1500,
+        });
+      });
   }, [dispatch, currentPage, total, drinksPerPage]);
 
   return (
     <MainContainer>
+      <ToastContainer transition={Slide} />
       <PageTitle title="Favorites" />
       {total > 0 ? (
         <DrinkList
