@@ -7,11 +7,11 @@ export default function LogoutBtn({ onBackdrop }) {
 
   const onLogoutHandler = () => {
     // Logout user .....
-    dispatch(authOperations.signOut())
-    onBackdrop();
+    dispatch(authOperations.signOut());
+    // onBackdrop();
   };
   return (
-    <Logout type="button" onClick={()=>onLogoutHandler()} >
+    <Logout type="button" onClick={() => onLogoutHandler()}>
       Logout
     </Logout>
   );
