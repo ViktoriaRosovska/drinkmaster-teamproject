@@ -1,5 +1,6 @@
 import { Formik, ErrorMessage } from 'formik';
 import { ToastContainer, toast, Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth/authOperations';
@@ -37,7 +38,7 @@ const schema = Yup.object().shape({
   email: Yup.string()
     .matches(
       /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-      'Email must contain only digits, letters and . - _ symbols. e.g. example@mail.com'
+      'Emails: digits, letters, . - _ only, e.g., example@mail.com.'
     )
     .email('Invalid email format, example@mail.com')
     .required('Email is required'),
@@ -58,35 +59,23 @@ function SignupForm() {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = (values, { resetForm }) => {
-    console.log('values', values);
+  const handleSubmit = values => {
     const { name, birthDate, email, password } = values;
 
     dispatch(authOperations.signUp({ name, birthDate, email, password }))
       .unwrap()
       .then(() => {
-        console.log('name:', name);
-        console.log('birthDate:', birthDate);
-        console.log('email:', email);
-        console.log('password:', password);
         toast.success(`🦄 Success!`, {
           position: toast.POSITION.TOP_RIGHT,
           autoClose: 1500,
         });
       })
       .catch(() => {
-        console.log('name:', name);
-        console.log('birthDate:', birthDate);
-        console.log('email:', email);
-        console.log('password:', password);
-
         toast.error(`Something went wrong. Try again`, {
           position: toast.POSITION.TOP_RIGHT,
           autoClose: 1500,
         });
       });
-
-    resetForm();
   };
 
   return (
