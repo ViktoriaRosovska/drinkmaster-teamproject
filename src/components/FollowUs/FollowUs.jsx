@@ -16,7 +16,7 @@ const FollowUs = ({ isInFooter }) => {
           href="https://www.facebook.com/goITclub/"
           target="_blank"
           rel="noopener noreferrer nofollow"
-          isinfooter={isInFooter.toString()}
+          // isinfooter={isInFooter.toString()}
         >
           <FacebookIcon />
         </FollowUsLink>
@@ -27,7 +27,7 @@ const FollowUs = ({ isInFooter }) => {
           href="https://www.instagram.com/goitclub/"
           target="_blank"
           rel="noopener noreferrer nofollow"
-          isinfooter={isInFooter.toString()}
+          // isinfooter={isInFooter.toString()}
         >
           <InstagramIcon />
         </FollowUsLink>
@@ -38,7 +38,7 @@ const FollowUs = ({ isInFooter }) => {
           href="https://www.youtube.com/c/GoIT"
           target="_blank"
           rel="noopener noreferrer nofollow"
-          // isinfooter={isInFooter?.toString()}
+          // isinfooter={isInFooter.toString()}
         >
           <YoutubeIcon />
         </FollowUsLink>

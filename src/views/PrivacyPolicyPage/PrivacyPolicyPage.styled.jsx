@@ -27,7 +27,7 @@ export const PrivacyContainer = styled.div`
 
 export const PrivacyPolicyText = styled.p`
   // color: var(--white-fifty-color);
-  secondaryTextColor: ${props => props.theme};
+ color: ${props => props.theme.color};
   font-size: 14px;
   font-weight: 400;
   line-height: 1.333;
@@ -37,7 +37,7 @@ export const PrivacyPolicyText = styled.p`
 
 export const PrivacyPolicyTitle = styled.h2`
   // color: var(--white-color);
-  color: ${props => props.theme};
+  color: ${props => props.theme.color};
   font-size: 16px;
   font-weight: 500;
   padding: 10px;
