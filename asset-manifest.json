@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/drinkmaster-teamproject/static/css/main.53e715e6.css",
-    "main.js": "/drinkmaster-teamproject/static/js/main.4354072d.js",
+    "main.js": "/drinkmaster-teamproject/static/js/main.28bd065e.js",
     "static/js/255.8beb9d65.chunk.js": "/drinkmaster-teamproject/static/js/255.8beb9d65.chunk.js",
     "static/js/342.40718faf.chunk.js": "/drinkmaster-teamproject/static/js/342.40718faf.chunk.js",
     "static/js/57.0857bfb0.chunk.js": "/drinkmaster-teamproject/static/js/57.0857bfb0.chunk.js",
@@ -91,7 +91,7 @@
     "static/media/MinusForm.svg": "/drinkmaster-teamproject/static/media/MinusForm.7aa2513c040a6b5b61df80c9efc7b18d.svg",
     "static/media/plus.svg": "/drinkmaster-teamproject/static/media/plus.a42d76147973b79136673cbc84673ffb.svg",
     "main.53e715e6.css.map": "/drinkmaster-teamproject/static/css/main.53e715e6.css.map",
-    "main.4354072d.js.map": "/drinkmaster-teamproject/static/js/main.4354072d.js.map",
+    "main.28bd065e.js.map": "/drinkmaster-teamproject/static/js/main.28bd065e.js.map",
     "255.8beb9d65.chunk.js.map": "/drinkmaster-teamproject/static/js/255.8beb9d65.chunk.js.map",
     "342.40718faf.chunk.js.map": "/drinkmaster-teamproject/static/js/342.40718faf.chunk.js.map",
     "57.0857bfb0.chunk.js.map": "/drinkmaster-teamproject/static/js/57.0857bfb0.chunk.js.map",
@@ -113,6 +113,6 @@
   },
   "entrypoints": [
     "static/css/main.53e715e6.css",
-    "static/js/main.4354072d.js"
+    "static/js/main.28bd065e.js"
   ]
 }
