@@ -38,7 +38,7 @@ const schema = Yup.object().shape({
   email: Yup.string()
     .matches(
       /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-      'Email must contain only digits, letters and . - _ symbols. e.g. example@mail.com'
+      'Emails: digits, letters, . - _ only, e.g., example@mail.com.'
     )
     .email('Invalid email format, example@mail.com')
     .required('Email is required'),
