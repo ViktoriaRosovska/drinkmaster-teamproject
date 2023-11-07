@@ -13,6 +13,7 @@ import ModalPortal from 'components/Modal/ModalPortal/ModalPortal';
 const UserLogo = () => {
   const [isShowUserLogoModal, setIsShowUserLogoModal] = useState(false);
   const { user } = useAuth();
+  console.log(user);
 
   const onShowUserLogoModal = () => {
     setIsShowUserLogoModal(true);
@@ -25,7 +26,7 @@ const UserLogo = () => {
   return (
     <UserLogoContainer onClick={() => onShowUserLogoModal()}>
       <UserAvatarWrapper>
-        <UserAvatar src={user?.avatarURL || UserAvatar1} alt="User avatar" />
+        <UserAvatar src={user?.avatar || UserAvatar1} alt="User avatar" />
       </UserAvatarWrapper>
       <StyledUserName>{user?.name || 'User'}</StyledUserName>
       <ModalPortal

@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { authOperations } from './authOperations';
 
 const initialState = {
-  user: { name: '', email: '', birthDate: '', avatarURL: '' },
+  user: { name: '', email: '', birthDate: '', avatar: '' },
   token: '',
   isLoggedIn: false,
   isRefreshing: false,
@@ -62,7 +62,7 @@ const authSlice = createSlice({
       })
       .addCase(authOperations.updateUser.fulfilled, (state, { payload }) => {
         state.user.name = payload.name;
-        payload.avatarURL && (state.user.avatarURL = payload.avatarURL);
+        payload.avatar && (state.user.avatar = payload.avatarURL);
       }),
 });
 
