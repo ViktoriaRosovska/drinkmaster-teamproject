@@ -6,36 +6,42 @@ const DrinkFormCustomSelect = ({
   name,
   value,
   onChange,
+  ...props
 }) => {
   const styles = {
     control: (baseStyles, state) => ({
       ...baseStyles,
+      ...props,
       boxShadow: '0 !important',
+
       borderColor: state.isFocused
-        ? props => props.theme.color
-        : props => props.theme.borderSelectColor,
+        ? 'var(--white-color)'
+        : 'var(--white-fifty-color)',
 
       backgroundColor: 'transparent',
       justifyContent: 'flex-end',
       border: 'none',
       height: '34px',
       position: 'relative',
-      color: props => props.theme.color,
-      borderBottom: state.isFocused
-        ? `1px solid ${props => props.theme.color}`
-        : `1px solid ${props => props.theme.borderSelectColor}`,
+      color: `${props => props.theme.color}`,
+      borderBottomWidth: '1px',
+      borderBottomStyle: 'solid',
+
       borderRadius: '0',
       '&:hover': {
-        borderColor: props => props.theme.color,
+        borderColor: `${props => props.theme.color}`,
       },
     }),
     singleValue: baseStyles => ({
       ...baseStyles,
-      color: 'white',
+      color: `${props => props.theme.color}`,
+
       textAlign: 'right',
     }),
     input: baseStyles => ({
+      ...baseStyles,
       width: '300px',
+      color: `${props => props.theme.color}`,
     }),
     valueContainer: baseStyles => ({
       ...baseStyles,
@@ -43,21 +49,25 @@ const DrinkFormCustomSelect = ({
       justifyContent: 'flex-end',
       alignItems: 'flex-start',
       marginRight: '18px',
-      color: props => props.theme.color,
+      color: `${props => props.theme.color}`,
+      borderColor: `${props => props.theme.color}`,
       marginBottom: '14px',
     }),
     indicatorsContainer: baseStyles => ({
       ...baseStyles,
+      ...props,
       width: '100%',
       justifyContent: 'flex-end',
       position: 'absolute',
       top: '0',
       padding: '0',
+      color: `${props => props.theme.color}`,
     }),
     menu: baseStyles => ({
       ...baseStyles,
       borderRadius: '12px',
       backgroundColor: '#161F37',
+      color: 'var(--white-forty-color)',
       width: '131px',
       top: '16px',
       right: '0',
@@ -89,11 +99,11 @@ const DrinkFormCustomSelect = ({
     }),
     dropdownIndicator: (baseStyles, { isFocused }) => ({
       ...baseStyles,
-      color: 'var(--white-color)',
+      color: `${props => props.theme.backgroundColor}`,
 
       padding: '0',
       '&:hover': {
-        color: props => props.theme.color,
+        color: `${props => props.theme.color}`,
       },
       transition: 'transform 0.25s ease-out',
       transform: isFocused && 'rotate(180deg)',

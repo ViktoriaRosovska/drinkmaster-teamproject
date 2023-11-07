@@ -21,18 +21,6 @@ const FormContainer = styled.form`
   }
 `;
 
-// const AddIngredientsContainer = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   border: 1px solid var(--white-color);
-//   background-color: transparent;
-//   border-radius: 200px;
-//   opacity: 0.8;
-//   width: 104px;
-//   height: 38px;
-// `;
-
 const AddIngedientSelect = styled.div`
   display: flex;
   flex-direction: row;
@@ -45,9 +33,4 @@ const RelativeWrapper = styled.div`
   margin-bottom: 31px;
 `;
 
-export {
-  FormContainer,
-  AddIngedientSelect,
-  // AddIngredientsContainer,
-  RelativeWrapper,
-};
+export { FormContainer, AddIngedientSelect, RelativeWrapper };

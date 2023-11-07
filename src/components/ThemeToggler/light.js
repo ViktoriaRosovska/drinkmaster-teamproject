@@ -1,6 +1,6 @@
 export const lightTheme = {
   backgroundColor: '#f3f3f3',
-  color: '#0A0A11',
+  color: '#161f37',
 
   secondaryTextColor: 'rgb(132, 129, 127)',
   borderSelectColor: 'rgba(10, 10, 17, 0.5)',
@@ -14,5 +14,6 @@ export const lightTheme = {
   errorStateColor: '#da1414',
   paginationAccentColor: '#4070cd80',
   activeHeaderColor: '#f3f3f3',
+  btncolor: '#f3f3f3',
   iconColor: '#161f37',
 };

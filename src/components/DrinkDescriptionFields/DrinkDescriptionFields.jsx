@@ -39,9 +39,6 @@ export const DrinkDescriptionFields = ({
   const categories = useSelector(selectCategories);
   const glasses = useSelector(selectGlasses);
 
-  const [hasImageValue, setHasImageValue] = useState(false);
-  const [hasCategorySelect, setHasCategorySelect] = useState(false);
-  const [hasGlassSelect, setHasGlassSelect] = useState(false);
   const [radioAlco, setRadioAlco] = useState('Non-alcoholic');
   const [selectedFileImage, setSelectedFileImage] = useState(null);
   const [description, setDescription] = useState('');
@@ -57,7 +54,6 @@ export const DrinkDescriptionFields = ({
   const handleFileChange = e => {
     const file = e.target.files[0];
     setFieldValue('drinkThumb', file);
-    setHasImageValue(true);
     if (file) {
       setSelectedFileImage(URL.createObjectURL(file));
     } else {
@@ -84,14 +80,12 @@ export const DrinkDescriptionFields = ({
   const handleCategorySelectChange = e => {
     const value = e.value;
     setCategorySelect(value);
-    setHasCategorySelect(true);
     setFieldValue('category', value);
   };
 
   const handleGlassSelectChange = e => {
     const value = e.value;
     setGlassSelect(value);
-    setHasGlassSelect(true);
     setFieldValue('glass', value);
   };
 
@@ -106,8 +100,8 @@ export const DrinkDescriptionFields = ({
     setFieldValue('alcoholic', value);
   };
 
-  console.log(hasImageValue);
-  console.log(hasCategorySelect);
+  console.log('DDD', values, errors, touched);
+
   return (
     <DescriptionWrapper>
       <RelativeWrapper>
@@ -126,7 +120,8 @@ export const DrinkDescriptionFields = ({
               onChange={e => handleFileChange(e)}
               id="drinkThumb"
               name="drinkThumb"
-              accept="drinkThumb/*"
+              accept="image/*"
+              capture="environment"
             />
             <InputFileWrapper>
               <ReactSVGIcon src={IconPlus} />
@@ -135,7 +130,7 @@ export const DrinkDescriptionFields = ({
 
           <InputText>Add drink</InputText>
         </AddPhotoContainer>
-        {errors.drinkThumb ? (
+        {errors.drinkThumb && touched.drinkThumb ? (
           <ShowError message="Select a drink image" />
         ) : null}
       </RelativeWrapper>
@@ -189,7 +184,9 @@ export const DrinkDescriptionFields = ({
             success={values.category && !errors.category ? 'true' : 'false'}
             onChange={handleCategorySelectChange}
           />
-          {hasCategorySelect ? null : <ShowError message={errors.category} />}
+          {errors.category && touched.category ? (
+            <ShowError message={errors.category} />
+          ) : null}
         </RelativeWrapper>
 
         <RelativeWrapper>
@@ -204,7 +201,9 @@ export const DrinkDescriptionFields = ({
             success={values.glass && !errors.glass ? 'true' : 'false'}
             onChange={handleGlassSelectChange}
           />
-          {hasGlassSelect ? null : <ShowError message={errors.glass} />}
+          {errors.glass && touched.glass ? (
+            <ShowError message={errors.glass} />
+          ) : null}
         </RelativeWrapper>
         <AddFormRadioGroup>
           <InputRadio
@@ -223,7 +222,7 @@ export const DrinkDescriptionFields = ({
               color:
                 radioAlco === 'Alcoholic'
                   ? props => props.theme.color
-                  : props => props.theme.secondBtnHoverColor,
+                  : `${props => props.theme.secondBtnHoverColor}`,
             }}
           >
             Alcoholic
@@ -241,9 +240,7 @@ export const DrinkDescriptionFields = ({
             id="typeNonAlcoLabel"
             style={{
               color:
-                radioAlco === 'Non-alcoholic'
-                  ? props => props.theme.color
-                  : props => props.theme.secondBtnHoverColor,
+                radioAlco === 'Non-alcoholic' ? 'var(--white-color)' : 'green',
             }}
           >
             Non-alcoholic

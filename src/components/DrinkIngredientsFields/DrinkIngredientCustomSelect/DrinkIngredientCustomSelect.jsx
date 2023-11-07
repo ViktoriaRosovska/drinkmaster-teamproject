@@ -12,8 +12,8 @@ const DrinkIngredientCustomSelect = ({
       ...baseStyles,
       boxShadow: state.isFocused ? 0 : 0,
       borderColor: state.isFocused
-        ? 'var(--white-color)'
-        : 'var(--white-fifty-color)',
+        ? `${props => props.theme.color}`
+        : `${props => props.theme.borderSelectColor}`,
       backgroundColor: 'transparent',
       justifyContent: 'flex-end',
       borderRadius: '200px',
@@ -21,14 +21,15 @@ const DrinkIngredientCustomSelect = ({
       width: '100%',
       position: 'relative',
       paddingLeft: '18px',
-      color: 'red',
+      color: `${props => props.theme.color}`,
       '&:hover': {
-        borderColor: 'var(--white-color)',
+        borderColor: `${props => props.theme.color}`,
       },
     }),
     singleValue: baseStyles => ({
       ...baseStyles,
-      color: 'white',
+      ...props,
+      color: `${props => props.theme.color}`,
       textAlign: 'right',
     }),
 
@@ -38,21 +39,22 @@ const DrinkIngredientCustomSelect = ({
       justifyContent: 'flex-start',
       alignItems: 'center',
 
-      color: 'var(--white-color)',
+      color: `${props => props.theme.color}`,
     }),
     indicatorsContainer: baseStyles => ({
       ...baseStyles,
-
-      color: 'green',
+      ...props,
       paddingLeft: '16px',
       paddingRight: '16px',
       justifyContent: 'flex-end',
       alignContent: 'center',
+      color: `${props => props.theme.color}`,
     }),
     menu: baseStyles => ({
       ...baseStyles,
       borderRadius: '12px',
       backgroundColor: '#161F37',
+      color: 'var(--white-forty-color)',
       width: '131px',
       top: '16px',
       right: '0',
@@ -77,17 +79,20 @@ const DrinkIngredientCustomSelect = ({
         color: 'var(--white-color)',
       },
     }),
-
-    indicatorSeparator: base => ({
-      ...base,
+    input: baseStyles => ({
+      ...baseStyles,
+      color: `${props => props.theme.color}`,
+    }),
+    indicatorSeparator: baseStyles => ({
+      ...baseStyles,
       display: 'none',
     }),
     dropdownIndicator: (baseStyles, { isFocused }) => ({
       ...baseStyles,
-      color: 'var(--white-color)',
+      color: `${props => props.theme.color}`,
       padding: '0',
       '&:hover': {
-        color: 'var(--white-color)',
+        color: `${props => props.theme.color}`,
       },
       transition: 'transform 0.25s ease-out',
       transform: isFocused && 'rotate(180deg)',

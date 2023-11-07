@@ -10,9 +10,9 @@ export const ErrorWrapper = styled.p`
   font-weight: 400;
   line-height: 14px;
   letter-spacing: 0em;
-  width: 120px;
+  width: 140px;
   @media screen and (min-width: 768px) {
     font-size: 14px;
-    width: 140px;
+    width: 200px;
   }
 `;
