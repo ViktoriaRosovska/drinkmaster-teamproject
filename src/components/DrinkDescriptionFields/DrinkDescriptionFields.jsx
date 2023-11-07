@@ -121,7 +121,6 @@ export const DrinkDescriptionFields = ({
               id="drinkThumb"
               name="drinkThumb"
               accept="image/*"
-              capture="environment"
             />
             <InputFileWrapper>
               <ReactSVGIcon src={IconPlus} />
