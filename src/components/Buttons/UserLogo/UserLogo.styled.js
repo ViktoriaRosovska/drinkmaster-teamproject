@@ -25,6 +25,7 @@ export const UserAvatarWrapper = styled.div`
 `;
 
 export const UserAvatar = styled.img`
+  width: 100%;
   object-fit: contain;
   overflow: hidden;
   border-radius: 50%;
@@ -32,6 +33,7 @@ export const UserAvatar = styled.img`
 
 export const StyledUserName = styled.p`
   font-size: 14px;
+  color: ${props => props.theme.color};
   font-style: normal;
   font-weight: 500;
   line-height: 1.28;

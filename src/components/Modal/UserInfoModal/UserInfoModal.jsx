@@ -27,7 +27,7 @@ import authSelectors from 'redux/auth/authSelectors';
 export default function UserInfoModal({ onBackdropClose }) {
   const dispatch = useDispatch();
   const { avatar, name } = useSelector(authSelectors.selectUser);
-  const [avatarURL, setAvatarURL] = useState("");
+  const [avatarURL, setAvatarURL] = useState('');
   const [userData, setUserData] = useState({
     avatar,
     name,
@@ -48,12 +48,11 @@ export default function UserInfoModal({ onBackdropClose }) {
     // // }
 
     const avatarFile = e.target.files[0];
-    
-      setUserData({ ...userData, avatar: avatarFile });
-   
-      const avatarUrl = URL.createObjectURL(e.target.files[0]);
-      setAvatarURL(avatarUrl);
-    
+
+    setUserData({ ...userData, avatar: avatarFile });
+
+    const avatarUrl = URL.createObjectURL(e.target.files[0]);
+    setAvatarURL(avatarUrl);
   }
 
   const handleNameChange = e => {
