@@ -29,7 +29,6 @@ const FollowUs = ({ isInFooter }) => {
         >
           <InstagramIcon />
         </FollowUsLink>
-        
       </FollowUsListItem>
 
       <FollowUsListItem>
@@ -37,11 +36,10 @@ const FollowUs = ({ isInFooter }) => {
           href="https://www.youtube.com/c/GoIT"
           target="_blank"
           rel="noopener noreferrer nofollow"
-          isinfooter={isInFooter.toString()}
-                  >
+          isinfooter={isInFooter?.toString()}
+        >
           <YoutubeIcon />
         </FollowUsLink>
-        
       </FollowUsListItem>
     </FollowUsList>
   );
