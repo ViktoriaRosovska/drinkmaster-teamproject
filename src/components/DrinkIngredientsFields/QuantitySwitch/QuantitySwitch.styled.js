@@ -5,7 +5,7 @@ const QuantityIngredients = styled.div`
   width: 104px;
   height: 38px;
   border-radius: 200px;
-  border: 1px solid var(--white-color);
+  border: 1px solid ${props => props.theme.color};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +22,6 @@ const QuantityContainer = styled.div`
 
 const QuantityBtn = styled.button`
   background-color: transparent;
-  /* border: 1px solid red; */
   border: none;
   border-radius: 200px 0 0 200px;
   width: 40px;
@@ -48,7 +47,7 @@ const QuantityIconReactSvg = styled(ReactSVG)`
   width: 16px;
   height: 16px;
   & div svg {
-    stroke: var(--white-color);
+    stroke: ${props => props.theme.color};
   }
 `;
 export {

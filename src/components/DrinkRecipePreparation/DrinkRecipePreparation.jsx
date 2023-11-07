@@ -6,13 +6,13 @@ import {
   ResipeLabel,
 } from './DrinkRecipePreparation.styled';
 import { useRef, useState } from 'react';
+import { RelativeWrapper } from 'components/Forms/AddDrinkForm/AddDrinkForm.styled';
+import { ShowError } from 'components/ShowError/ShowError';
 
 export default function DrinkRecipePreparation({
   values,
   errors,
   touched,
-  handleChange,
-  handleBlur,
   setFieldValue,
 }) {
   const [instructions, setInstruction] = useState('');
@@ -22,7 +22,6 @@ export default function DrinkRecipePreparation({
     setInstruction(value);
     setFieldValue('instructions', value);
   };
-  // console.log(instructions);
   const textArea = useRef();
   const recipeLabel = useRef();
 
@@ -38,7 +37,6 @@ export default function DrinkRecipePreparation({
     <>
       <RecipeWrapper>
         <Subtitle title="Recipe Preparation" />
-
         <ResipeLabel
           htmlFor="addDrinkFormTextarea"
           className="recipeLabel"
@@ -46,16 +44,26 @@ export default function DrinkRecipePreparation({
         >
           Enter the recipe
         </ResipeLabel>
-        <AddFormTextarea
-          onFocus={hanleTextareaFocus}
-          onBlur={hanleTextareaBlur}
-          id="addDrinkFormTextarea"
-          name="instructions"
-          value={instructions}
-          onChange={onResipeChange}
-          ref={textArea}
-          // required
-        ></AddFormTextarea>
+        <RelativeWrapper>
+          <AddFormTextarea
+            onFocus={hanleTextareaFocus}
+            onBlur={hanleTextareaBlur}
+            id="addDrinkFormTextarea"
+            name="instructions"
+            value={instructions}
+            onChange={onResipeChange}
+            ref={textArea}
+            error={
+              errors.instructions && touched.instructions ? 'true' : 'false'
+            }
+            success={
+              values.instructions && !errors.instructions ? 'true' : 'false'
+            }
+          ></AddFormTextarea>
+          {touched.instructions && errors.instructions ? (
+            <ShowError message={errors.instructions} />
+          ) : null}
+        </RelativeWrapper>
       </RecipeWrapper>
     </>
   );

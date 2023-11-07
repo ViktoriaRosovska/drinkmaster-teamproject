@@ -4,12 +4,11 @@ import styled from 'styled-components';
 const CloseIconReactSvg = styled(ReactSVG)`
   width: 18px;
   height: 18px;
-  color: var(--white-color);
-  fill: var(--white-color);
-  stroke: var(--white-color);
+  color: ${props => props.theme.color};
+  fill: ${props => props.theme.color};
+  stroke: ${props => props.theme.color};
   & div svg {
-    stroke: var(--white-color);
-    /* stroke: red; */
+    stroke: ${props => props.theme.color};
   }
 `;
 
@@ -25,7 +24,6 @@ const DrinkIngredientsWrapper = styled.div`
 const IngredientWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
   flex-wrap: wrap;
   width: 100%;
   gap: 18px;
@@ -39,9 +37,9 @@ const MeasureInput = styled.input`
   width: 101px;
   height: 50px;
   border-radius: 200px;
-  border: 1px solid var(--white-fifty-color);
+  border: 1px solid ${props => props.theme.secondBorderColor};
   background-color: transparent;
-  color: white;
+  color: ${props => props.theme.color};
   padding-left: 18px;
   padding-right: 18px;
   font-family: 'Manrope';
@@ -50,6 +48,10 @@ const MeasureInput = styled.input`
   line-height: 18px;
   letter-spacing: 0em;
   text-align: center;
+  @media screen and (min-width: 768px) {
+    width: 150px;
+    height: 56px;
+  }
 `;
 
 const TitleWrapper = styled.div`
@@ -64,9 +66,21 @@ const TitleWrapper = styled.div`
 `;
 
 const IngredientInputsWrapper = styled.div`
-  width: 100%;
   display: flex;
-  gap: 14px;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+`;
+
+const RelativeIngredientWrapper = styled.div`
+  position: relative;
+`;
+
+const IngredientiMeasureWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 8px;
 `;
 export {
   CloseIconReactSvg,
@@ -75,4 +89,6 @@ export {
   TitleWrapper,
   IngredientInputsWrapper,
   MeasureInput,
+  RelativeIngredientWrapper,
+  IngredientiMeasureWrapper,
 };

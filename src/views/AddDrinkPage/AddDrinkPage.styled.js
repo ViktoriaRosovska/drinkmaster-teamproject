@@ -1,12 +1,17 @@
+import { PopularDrinksTitle } from 'components/PopularDrinks/PopularDrinks.styled';
 import styled from 'styled-components';
 
 const AddDrinkContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 80px;
   border: 1px solid green;
   @media screen and (min-width: 1440px) {
     flex-direction: row;
+    gap: 94px;
   }
 `;
-export { AddDrinkContainer };
+
+const FollowUsTitle = styled(PopularDrinksTitle)``;
+
+const RightWrapper = styled.div``;
+export { AddDrinkContainer, RightWrapper, FollowUsTitle };

@@ -2,8 +2,6 @@ import {
   AddFileLabel,
   AddFormInput,
   AddFormRadioGroup,
-  // AddFormSelect,
-  AddFormSelectContainer,
   AddFormSelectLabel,
   AddPhotoContainer,
   DescriptionWrapper,
@@ -27,17 +25,27 @@ import {
   getGlasses,
   getIngredients,
 } from 'redux/filters/filtersOperations';
+import { ShowError } from 'components/ShowError/ShowError';
+import { RelativeWrapper } from 'components/Forms/AddDrinkForm/AddDrinkForm.styled';
 
 export const DrinkDescriptionFields = ({
   values,
   errors,
   touched,
   handleChange,
-  handleBlur,
   setFieldValue,
+  ...props
 }) => {
   const categories = useSelector(selectCategories);
   const glasses = useSelector(selectGlasses);
+
+  const [hasImageValue, setHasImageValue] = useState(false);
+  const [hasCategorySelect, setHasCategorySelect] = useState(false);
+  const [hasGlassSelect, setHasGlassSelect] = useState(false);
+  const [radioAlco, setRadioAlco] = useState('Non-alcoholic');
+  const [selectedFileImage, setSelectedFileImage] = useState(null);
+  const [description, setDescription] = useState('');
+  const [drink, setDrink] = useState('');
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -46,15 +54,10 @@ export const DrinkDescriptionFields = ({
     dispatch(getIngredients());
   }, [dispatch]);
 
-  const [radioAlco, setRadioAlco] = useState('Non-alcoholic');
-  const [selectedFileImage, setSelectedFileImage] = useState(null);
-  const [description, setDescription] = useState('');
-
-  const [drink, setDrink] = useState('');
-
   const handleFileChange = e => {
     const file = e.target.files[0];
     setFieldValue('drinkThumb', file);
+    setHasImageValue(true);
     if (file) {
       setSelectedFileImage(URL.createObjectURL(file));
     } else {
@@ -74,25 +77,23 @@ export const DrinkDescriptionFields = ({
     setFieldValue('description', value);
     setDescription(value);
   };
-  // console.log(drink);
 
-  const [glassSelect, setGlassSelect] = useState('Cocktail glass');
-  const [categorySelect, setCategorySelect] = useState('Coctail');
+  const [glassSelect, setGlassSelect] = useState('');
+  const [categorySelect, setCategorySelect] = useState('');
 
   const handleCategorySelectChange = e => {
     const value = e.value;
     setCategorySelect(value);
+    setHasCategorySelect(true);
     setFieldValue('category', value);
-    // console.log('category', value);
   };
 
   const handleGlassSelectChange = e => {
     const value = e.value;
     setGlassSelect(value);
+    setHasGlassSelect(true);
     setFieldValue('glass', value);
-    // console.log('select', value);
   };
-  // console.log('glass', glassSelect);
 
   const changeRadioAlco = e => {
     const { value } = e.target;
@@ -104,126 +105,94 @@ export const DrinkDescriptionFields = ({
     }
     setFieldValue('alcoholic', value);
   };
-  // console.log(radioAlco);
-  // const glasses = [
-  //   'Highball glass',
-  //   'Cocktail glass',
-  //   'Old-fashioned glass',
-  //   'Whiskey Glass',
-  //   'Collins glass',
-  //   'Pousse cafe glass',
-  //   'Champagne flute',
-  //   'Whiskey sour glass',
-  //   'Cordial glass',
-  //   'Brandy snifter',
-  //   'White wine glass',
-  //   'Nick and Nora Glass',
-  //   'Hurricane glass',
-  //   'Coffee mug',
-  //   'Shot glass',
-  //   'Jar',
-  //   'Irish coffee cup',
-  //   'Punch bowl',
-  //   'Pitcher',
-  //   'Pint glass',
-  //   'Copper Mug',
-  //   'Wine Glass',
-  //   'Beer mug',
-  //   'Margarita/Coupette glass',
-  //   'Beer pilsner',
-  //   'Beer Glass',
-  //   'Parfait glass',
-  //   'Mason jar',
-  //   'Margarita glass',
-  //   'Martini Glass',
-  //   'Balloon Glass',
-  //   'Coupe Glass',
-  // ];
-  // const categories = [
-  //   'Ordinary Drink',
-  //   'Cocktail',
-  //   'Shake',
-  //   'Other/Unknown',
-  //   'Cocoa',
-  //   'Shot',
-  //   'Coffee/Tea',
-  //   'Homemade Liqueur',
-  //   'Punch/Party Drink',
-  //   'Beer',
-  //   'Soft Drink',
-  // ];
 
+  console.log(hasImageValue);
+  console.log(hasCategorySelect);
   return (
     <DescriptionWrapper>
-      <AddPhotoContainer>
-        {selectedFileImage && (
-          <FileImage
-            src={selectedFileImage ? selectedFileImage : null}
-            alt="Selected image"
-          />
-        )}
-        <InputFileWrapper>
-          <AddFileLabel>
+      <RelativeWrapper>
+        <AddPhotoContainer>
+          {selectedFileImage && (
+            <FileImage
+              src={selectedFileImage ? selectedFileImage : null}
+              alt="Selected image"
+            />
+          )}
+
+          <AddFileLabel htmlFor="drinkThumb">
             <InputAddFile
               type="file"
+              placeholder=""
               onChange={e => handleFileChange(e)}
               id="drinkThumb"
               name="drinkThumb"
               accept="drinkThumb/*"
             />
-            <ReactSVGIcon src={IconPlus} />
+            <InputFileWrapper>
+              <ReactSVGIcon src={IconPlus} />
+            </InputFileWrapper>
           </AddFileLabel>
-        </InputFileWrapper>
-        <InputText>Add drink</InputText>
-        {touched.drinkThumb && errors.drinkThumb ? (
-          <div>{errors.drinkThumb}</div>
+
+          <InputText>Add drink</InputText>
+        </AddPhotoContainer>
+        {errors.drinkThumb ? (
+          <ShowError message="Select a drink image" />
         ) : null}
-      </AddPhotoContainer>
+      </RelativeWrapper>
 
       <SelectContainer>
-        <AddFormInput
-          name="drink"
-          id="drink"
-          type="text"
-          data-limit="40"
-          placeholder="Enter item title"
-          onChange={e => handleTitleChange(e)}
-          // onBlur={(e)=>{setIsFocused(false)}}
-          value={drink}
-          style={{
-            borderBottom: errors.drink && '1px solid red',
-          }}
-        />
-        {touched.drink && errors.drink ? <div>{errors.drink}</div> : null}
-        <AddFormInput
-          type="text"
-          id="description"
-          placeholder="Enter about recipe"
-          name="description"
-          onChange={e => handleDescriptionChange(e)}
-          value={description}
-          style={{
-            borderBottom: errors.description && '1px solid red',
-          }}
-        />
-        {touched.description && errors.description ? (
-          <div>{errors.description}</div>
-        ) : null}
-        <AddFormSelectContainer>
-          <AddFormSelectLabel>Category</AddFormSelectLabel>
+        <RelativeWrapper>
+          <AddFormInput
+            name="drink"
+            id="drink"
+            type="text"
+            data-limit="40"
+            placeholder="Enter item title"
+            onChange={e => {
+              handleTitleChange(e);
+              handleChange(e);
+            }}
+            error={errors.drink && touched.drink ? 'true' : 'false'}
+            success={values.drink && !errors.drink ? 'true' : 'false'}
+            value={drink}
+          />
+          {touched.drink && errors.drink ? (
+            <ShowError message={errors.drink} />
+          ) : null}
+        </RelativeWrapper>
+        <RelativeWrapper>
+          <AddFormInput
+            type="text"
+            id="description"
+            placeholder="Enter about recipe"
+            name="description"
+            onChange={e => handleDescriptionChange(e)}
+            value={description}
+            error={errors.description && touched.description ? 'true' : 'false'}
+            success={
+              values.description && !errors.description ? 'true' : 'false'
+            }
+          />
+          {touched.description && errors.description ? (
+            <ShowError message={errors.description} />
+          ) : null}
+        </RelativeWrapper>
 
+        <RelativeWrapper>
+          <AddFormSelectLabel>Category</AddFormSelectLabel>
           <DrinkFormCustomSelect
             placeholder=""
             options={categories}
             value={categorySelect}
             name="category"
+            error={errors.category && touched.category ? 'true' : 'false'}
+            success={values.category && !errors.category ? 'true' : 'false'}
             onChange={handleCategorySelectChange}
           />
-        </AddFormSelectContainer>
-        {/* {touched.category && errors.category ? (
-          <div>{errors.category}</div>
-        ) : null} */}
-        <AddFormSelectContainer>
+          {hasCategorySelect ? null : <ShowError message={errors.category} />}
+        </RelativeWrapper>
+
+        <RelativeWrapper>
           <AddFormSelectLabel>Glass</AddFormSelectLabel>
 
           <DrinkFormCustomSelect
@@ -231,10 +200,12 @@ export const DrinkDescriptionFields = ({
             options={glasses}
             value={glassSelect}
             name="glass"
+            error={errors.glass && touched.glass ? 'true' : 'false'}
+            success={values.glass && !errors.glass ? 'true' : 'false'}
             onChange={handleGlassSelectChange}
           />
-          {/* {touched.glass && errors.glass ? <div>{errors.glass}</div> : null} */}
-        </AddFormSelectContainer>
+          {hasGlassSelect ? null : <ShowError message={errors.glass} />}
+        </RelativeWrapper>
         <AddFormRadioGroup>
           <InputRadio
             type="radio"
@@ -251,8 +222,8 @@ export const DrinkDescriptionFields = ({
             style={{
               color:
                 radioAlco === 'Alcoholic'
-                  ? '#F3F3F3'
-                  : 'rgba(243, 243, 243, 0.5)',
+                  ? props => props.theme.color
+                  : props => props.theme.secondBtnHoverColor,
             }}
           >
             Alcoholic
@@ -271,8 +242,8 @@ export const DrinkDescriptionFields = ({
             style={{
               color:
                 radioAlco === 'Non-alcoholic'
-                  ? '#F3F3F3'
-                  : 'rgba(243, 243, 243, 0.5)',
+                  ? props => props.theme.color
+                  : props => props.theme.secondBtnHoverColor,
             }}
           >
             Non-alcoholic

@@ -6,18 +6,20 @@ export const Filter = styled(DebounceInput)`
   height: 56px;
   background-color: transparent;
   border-radius: 200px;
-  border: 1px solid rgba(243, 243, 243, 0.2);
+  border: 1px solid ${props => props.theme.borderColor};
   padding: 0 24px;
 
-  color: #f3f3f3;
+  color: ${props => props.theme.hoverBorderColor};
   font-size: 17px;
+  opacity: 1;
 
   &:focus {
     outline: none;
-    border-color: white;
+    border-color: ${props => props.theme.paginationAccentColor};
   }
   &::placeholder {
-    color: white;
+    color: ${props => props.theme.color};
+    opacity: 1;
   }
 
   @media screen and (min-width: 768px) {

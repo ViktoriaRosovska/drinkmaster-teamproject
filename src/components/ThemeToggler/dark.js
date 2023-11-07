@@ -2,6 +2,7 @@ export const darkTheme = {
   color: '#f3f3f3',
 
   secondaryTextColor: 'rgba(243, 243, 243, 0.5)',
+  borderSelectColor: 'rgba(243, 243, 243, 0.4)',
   backgroundColor: '#0a0a11',
   borderColor: 'rgba(243, 243, 243, 0.2)',
   secondBorderColor: 'rgba(243, 243, 243, 0.5)',
@@ -13,7 +14,8 @@ export const darkTheme = {
   errorStateColor: '#da1414',
   paginationAccentColor: '#4070cd80',
   sectionTagTitle: 'rgba(243, 243, 243, 0.5)',
-
+  activeHeaderColor: '#f3f3f3',
+  iconColor: '#f3f3f3',
   // Recipe/:id
   trueWhite: 'white',
   trueBlack: 'black',

@@ -11,6 +11,7 @@ import { darkTheme } from 'components/ThemeToggler/dark';
 import { lightTheme } from 'components/ThemeToggler/light';
 import BurgerMenu from 'components/MobileBurgerMenu/BurgerMenu';
 import authSelectors from '../../redux/auth/authSelectors';
+import { Slide, ToastContainer } from 'react-toastify';
 
 const SharedLayout = () => {
   const theme = useSelector(authSelectors.selectTheme);
@@ -18,16 +19,22 @@ const SharedLayout = () => {
   const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
   const toggleMobileMenu = () => {
     setIsOpenMobileMenu(prev => !prev);
-  }
+  };
 
   return (
     <>
       <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
         <LayoutContainer>
           <GlobalStyled />
-
-          <Header isOpenMobileMenu={isOpenMobileMenu} toggleMobileMenu={toggleMobileMenu}/>
-          <BurgerMenu isOpenMobileMenu={isOpenMobileMenu} toggleMobileMenu={toggleMobileMenu}/>
+          <ToastContainer transition={Slide} />
+          <Header
+            isOpenMobileMenu={isOpenMobileMenu}
+            toggleMobileMenu={toggleMobileMenu}
+          />
+          <BurgerMenu
+            isOpenMobileMenu={isOpenMobileMenu}
+            toggleMobileMenu={toggleMobileMenu}
+          />
           <Main>
             <Suspense fallback={<Loader />}>
               <Outlet />

@@ -35,11 +35,7 @@ export const App = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isRefreshing = useSelector(authSelectors.selectIsRefreshing);
-
-  // const userAuth = useSelector(authSelectors.selectUserAuth);
-  // console.log('userAuth:', userAuth);
-  // const userFavorite = useSelector(authSelectors.selectUserFavorite);
-  // console.log('userFavorite:', userFavorite);
+  const userAuth = useSelector(authSelectors.selectUserAuth);
 
   useEffect(() => {
     dispatch(authOperations.currentUser());
@@ -48,7 +44,11 @@ export const App = () => {
     } else {
       navigate(location.pathname);
     }
-  }, [dispatch, location.pathname, navigate]);
+    if (userAuth === 10) {
+      localStorage.setItem('motivatingUser10', 'false');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch, userAuth]);
 
   const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
 
@@ -110,8 +110,8 @@ export const App = () => {
           <Route path="/service" element={<TermsServicePage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
-        </Routes>
-        <MotivatingModalPortal/>
+      </Routes>
+      <MotivatingModalPortal />
     </>
   );
 };

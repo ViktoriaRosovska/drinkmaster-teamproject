@@ -1,39 +1,33 @@
-// import { useDispatch } from "react-redux";
+import React, { useState, useEffect, useRef } from 'react';
 import LogoutBtn from 'components/Buttons/LogoutBtn/LogoutBtn';
 import {
   EditProfileBtn,
   ModalContainer,
   IconEdit,
 } from './UserLogoPopup.styled';
-import { useEffect, useState } from 'react';
-import ModalPortal from '../ModalPortal/ModalPortal';
+// import { useState, useRef } from 'react';
+import ModalWindow from '../ModalWindow/ModalWindow';
+import UserInfoModal from '../UserInfoModal/UserInfoModal';
 
 export default function UserLogoPopup({
   onCloseUserLogoModal,
   onBackdropClose,
 }) {
   const [isModalUserInfoOpen, setIsModalUserInfoOpen] = useState(false);
-  const [, setShowModal] = useState(false);
-
-  // const dispatch = useDispatch();
-  // const handleLogOut = () => dispatch(signOut());
+  const modalContainerRef = useRef(null);
 
   const openUserInfoModal = () => {
-    setShowModal(false);
     setIsModalUserInfoOpen(true);
   };
 
-  const onBackdrop = () => {
+  const closeUserInfoModal = () => {
     setIsModalUserInfoOpen(false);
-     onCloseUserLogoModal();
-    console.log('where are you?');
-
   };
 
-  useEffect(e => {
+  useEffect(() => {
     const handleEsc = event => {
       if (event.key === 'Escape') {
-        onBackdrop();
+        onCloseUserLogoModal();
       }
     };
     document.addEventListener('keydown', handleEsc);
@@ -42,19 +36,19 @@ export default function UserLogoPopup({
 
   return (
     <>
-      <ModalContainer>
+      <ModalContainer ref={modalContainerRef} className="modal-container">
         <EditProfileBtn type="button" onClick={openUserInfoModal}>
           Edit profile
           <IconEdit />
         </EditProfileBtn>
-        <LogoutBtn onBackdrop={onBackdrop} />
+        <LogoutBtn onBackdrop={onBackdropClose} />
       </ModalContainer>
 
-      <ModalPortal
-        isModalUserInfoOpen={isModalUserInfoOpen}
-        onBackdrop={onBackdrop}
-        openUserInfoModal={openUserInfoModal}
-      />
+      {isModalUserInfoOpen && (
+        <ModalWindow onBackdropClose={closeUserInfoModal}>
+          <UserInfoModal onBackdropClose={closeUserInfoModal} />
+        </ModalWindow>
+      )}
     </>
   );
 }

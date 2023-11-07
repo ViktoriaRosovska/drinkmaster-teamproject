@@ -124,10 +124,15 @@ function SignupForm() {
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <BirthDate />
                 </LocalizationProvider>
-
-                {errors.birthDate && touched.birthDate ? (
-                  <ErrorText error>{errors.birthDate}</ErrorText>
-                ) : null}
+                {/* {errors.birthDate && touched.birthDate ? (
+                  <ErrorText error>
+                    {errors.birthDate ? errors.birthDate.toString() : null}
+                  </ErrorText>
+                ) : null} */}
+                <ErrorMessage
+                  name="birthDate"
+                  render={message => <ErrorText>{message}</ErrorText>}
+                />
               </InputWrapper>
 
               <InputWrapper>

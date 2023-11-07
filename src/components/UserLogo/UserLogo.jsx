@@ -6,7 +6,7 @@ import {
 } from './UserLogo.styled';
 import { useState } from 'react';
 import UserAvatar1 from '../../assets/images/userInfoModal/userAvatar.svg';
-// import UserLogoPopup from "components/Modal/UserLogoPopup/UserLogoPopup";
+import UserLogoPopup from 'components/Modal/UserLogoPopup/UserLogoPopup';
 import useAuth from 'hooks/useAuth';
 import ModalPortal from 'components/Modal/ModalPortal/ModalPortal';
 
@@ -33,7 +33,7 @@ const UserLogo = () => {
         onBackdropClose={onCloseUserLogoModal}
         openUserInfoModal={onShowUserLogoModal}
       />
-       {/* <UserLogoPopup onCloseUserLogoModal={onCloseUserLogoModal} /> */}
+      <UserLogoPopup onCloseUserLogoModal={onCloseUserLogoModal} />
     </UserLogoContainer>
   );
 };
