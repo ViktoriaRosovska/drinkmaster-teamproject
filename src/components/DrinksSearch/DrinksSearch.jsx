@@ -34,12 +34,10 @@ const DrinksSearch = () => {
   };
   const handleChangeCategory = changeValue => {
     dispatch(setCategory(changeValue));
-    console.log('Should be setCategory value', changeValue);
   };
 
   const handleChangeIngredient = changeValue => {
     dispatch(setIngredient(changeValue));
-    console.log('Should be setIngredient value', changeValue);
   };
 
   return (
