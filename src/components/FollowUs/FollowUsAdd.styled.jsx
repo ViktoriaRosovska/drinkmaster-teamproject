@@ -6,21 +6,20 @@ import { ReactComponent as YoutubeSvg } from '../../assets/images/link_icons/you
 export const FollowUsList = styled.ul`
   display: flex;
   gap: 14px;
-  align-items: center; 
+  align-items: center;
 
   @media screen and (min-width: 768px) {
     gap: 16px;
-    
   }
 `;
 export const FollowUsListItem = styled.li``;
-export const FollowUsLink = styled.a`
+export const FollowUsLinkAdd = styled.a`
   display: flex;
   width: 38px;
   height: 38px;
 
   border-radius: 10px;
-  border: 1px solid var(--white-twenty-color);
+  border: 1px solid ${props => props.theme.borderColor};
   align-items: center;
   justify-content: center;
 
@@ -28,8 +27,7 @@ export const FollowUsLink = styled.a`
   &:hover,
   &:focus {
     transform: scale(1.1);
-    border: solid 1px var(--white-color);
-    
+    border: solid 1px ${props => props.theme.hoverBorderColor};
   }
 
   @media screen and (min-width: 768px) {
@@ -39,8 +37,8 @@ export const FollowUsLink = styled.a`
 `;
 
 export const FacebookIcon = styled(FacebookSvg)`
-  fill: var(--white-color);
-  // fill: ${props => props.isInFooter === 'true' ? props.theme.color : props.theme.backgroundColor}
+  fill: ${props => props.theme.iconColor};
+//   fill: ${props => props.isInFooter === 'true' ? props.theme.colorb : props.theme.backgroundColor};
   width: 22px;
   height: 22px;
   padding: 8px;
@@ -54,8 +52,11 @@ export const FacebookIcon = styled(FacebookSvg)`
 `;
 
 export const InstagramIcon = styled(InstagramSvg)`
-  fill: var(--white-color);
-  // fill: ${props => props.isInFooter === 'true' ? props.theme.color : props.theme.backgroundColor}
+  fill: ${props => props.theme.iconColor};
+  // fill: ${props =>
+    props.isInFooter === 'true'
+      ? props.theme.color
+      : props.theme.backgroundColor};
   width: 22px;
   height: 22px;
   padding: 8px;
@@ -67,8 +68,11 @@ export const InstagramIcon = styled(InstagramSvg)`
   }
 `;
 export const YoutubeIcon = styled(YoutubeSvg)`
-  fill: var(--white-color);
-  // fill: ${props => props.isInFooter === 'true' ? props.theme.color : props.theme.backgroundColor}
+  fill: ${props => props.theme.iconColor};
+  // fill: ${props =>
+    props.isInFooter === 'true'
+      ? props.theme.color
+      : props.theme.backgroundColor};
   width: 22px;
   height: 22px;
   padding: 8px;
@@ -79,5 +83,3 @@ export const YoutubeIcon = styled(YoutubeSvg)`
     height: 28px;
   }
 `;
-
-

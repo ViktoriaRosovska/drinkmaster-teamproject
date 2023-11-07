@@ -6,10 +6,10 @@ import { MainContainer } from 'styles/App.styled';
 // import { authOperations } from '../../redux/auth/authOperations';
 
 import AddDrinkForm from '../../components/Forms/AddDrinkForm/AddDrinkForm';
-import FollowUs from 'components/FollowUs/FollowUs';
+// import FollowUs from 'components/FollowUs/FollowUs';
 import { AddDrinkContainer } from './AddDrinkPage.styled';
 import PopularDrinks from 'components/PopularDrinks/PopularDrinks';
-
+import FollowUsAdd from 'components/FollowUs/FollowUsAdd';
 export default function AddDrinkPage() {
   
   return (
@@ -20,7 +20,8 @@ export default function AddDrinkPage() {
         <div>
           <div>
             <h4>FollowUs</h4>
-            <FollowUs isInFooter={false} />
+            {/* <FollowUs isInFooter={false} /> */}
+            <FollowUsAdd />
           </div>
           <div>
             <h4>Popular drinks</h4>
