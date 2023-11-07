@@ -12,8 +12,9 @@ export const lightTheme = {
   secondBtnHoverColor: 'rgba(64, 112, 205, 0.5)',
   correctStateColor: '#3cbc81',
   errorStateColor: '#da1414',
-  paginationAccentColor: '#4070cd80',
+  paginationAccentColor: '#4070CD',
   activeHeaderColor: '#f3f3f3',
   btncolor: '#f3f3f3',
   iconColor: '#161f37',
+  isAlco: 'rgba(10, 10, 17, 0.5)',
 };

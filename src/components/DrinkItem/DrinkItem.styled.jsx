@@ -29,6 +29,7 @@ export const DrinkName = styled.h2`
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
+  color: ${props => props.theme.color};
 
   @media screen and (min-width: 768px) {
     font-size: 24px;
@@ -38,7 +39,8 @@ export const DrinkName = styled.h2`
 
 export const IsAlco = styled.p`
   margin-bottom: 18px;
-  color: var(--white-fifty-color);
+  /* color: var(--white-fifty-color); */
+  color: ${props => props.theme.isAlco};
   font-size: 14px;
 
   @media screen and (min-width: 768px) {
@@ -58,6 +60,7 @@ export const Description = styled.p`
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   text-overflow: ellipsis;
+  color: ${props => props.theme.color}; 
 
   @media screen and (min-width: 768px) {
     margin-bottom: 24px;
