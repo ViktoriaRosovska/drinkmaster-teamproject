@@ -5,6 +5,7 @@ const DrinkIngredientCustomSelect = ({
   options,
   name,
   onChange,
+  ...props
 }) => {
   const styles = {
     control: (baseStyles, state) => ({
@@ -16,7 +17,7 @@ const DrinkIngredientCustomSelect = ({
       backgroundColor: 'transparent',
       justifyContent: 'flex-end',
       borderRadius: '200px',
-      height: '50px',
+      height: '100%',
       width: '100%',
       position: 'relative',
       paddingLeft: '18px',

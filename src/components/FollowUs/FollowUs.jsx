@@ -16,6 +16,7 @@ const FollowUs = ({ isInFooter }) => {
           href="https://www.facebook.com/goITclub/"
           target="_blank"
           rel="noopener noreferrer nofollow"
+          isinfooter={isInFooter.toString()}
         >
           <FacebookIcon />
         </FollowUsLink>
@@ -26,6 +27,7 @@ const FollowUs = ({ isInFooter }) => {
           href="https://www.instagram.com/goitclub/"
           target="_blank"
           rel="noopener noreferrer nofollow"
+          isinfooter={isInFooter.toString()}
         >
           <InstagramIcon />
         </FollowUsLink>

@@ -14,7 +14,8 @@ export const darkTheme = {
   errorStateColor: '#da1414',
   paginationAccentColor: '#4070cd80',
   sectionTagTitle: 'rgba(243, 243, 243, 0.5)',
-activeHeaderColor: '#f3f3f3',
+  activeHeaderColor: '#f3f3f3',
+  iconColor: '#f3f3f3',
   // Recipe/:id
   trueWhite: 'white',
   trueBlack: 'black',

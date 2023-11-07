@@ -10,7 +10,7 @@ export const PopularDrinksWrapper = styled.div`
     margin-top: 80px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1440px) {
     width: 313px;
   }
 `;
@@ -34,11 +34,10 @@ export const PopularDrinksList = styled.ul`
   gap: 24px;
 
   @media screen and (min-width: 768px) {
-    // flex-direction: row;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 32px;
-    // justify-content: center;
-    width: 336px;
+      
   }
 
   @media screen and (min-width: 1440px) {
