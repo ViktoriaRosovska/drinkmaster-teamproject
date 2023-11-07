@@ -4,11 +4,11 @@ import styled from 'styled-components';
 const CloseIconReactSvg = styled(ReactSVG)`
   width: 18px;
   height: 18px;
-  color: var(--white-color);
-  fill: var(--white-color);
-  stroke: var(--white-color);
+  color: ${props => props.theme.color};
+  fill: ${props => props.theme.color};
+  stroke: ${props => props.theme.color};
   & div svg {
-    stroke: var(--white-color);
+    stroke: ${props => props.theme.color};
   }
 `;
 
@@ -37,9 +37,9 @@ const MeasureInput = styled.input`
   width: 101px;
   height: 50px;
   border-radius: 200px;
-  border: 1px solid var(--white-fifty-color);
+  border: 1px solid ${props => props.theme.secondBorderColor};
   background-color: transparent;
-  color: white;
+  color: ${props => props.theme.color};
   padding-left: 18px;
   padding-right: 18px;
   font-family: 'Manrope';

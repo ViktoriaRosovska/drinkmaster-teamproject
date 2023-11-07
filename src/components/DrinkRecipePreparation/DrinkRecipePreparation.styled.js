@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 const AddFormTextarea = styled.textarea`
   border-radius: 14px;
-  border: 1px solid var(--white-fifty-color);
+  border: 1px solid ${props => props.theme.secondBorderColor};
   background-color: transparent;
   margin-bottom: 20px;
   padding: 18px;
   width: 335px;
   height: 184px;
-  color: var(--white-color);
+  color: ${props => props.theme.color};
   font-family: 'Manrope';
   font-size: 14px;
   font-weight: 400;
@@ -28,7 +28,7 @@ const AddFormTextarea = styled.textarea`
   }
 
   &::-moz-scrollbar-thumb {
-    background-color: var(--white-fifty-color);
+    background-color: ${props => props.theme.secondBorderColor};
     border-radius: 10px;
   }
   &::-webkit-scrollbar {
@@ -36,7 +36,7 @@ const AddFormTextarea = styled.textarea`
     width: 10px;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: var(--white-color);
+    background-color: ${props => props.theme.color};
     border-radius: 10px;
   }
 
@@ -57,6 +57,7 @@ const ResipeLabel = styled.label`
   transition: transform 0.3s ease;
   color: var(--white-fifty-color);
   display: inline-block;
+  color: ${props => props.theme.secondBorderColor};
   @media screen and (min-width: 768px) {
     font-size: 17px;
   }

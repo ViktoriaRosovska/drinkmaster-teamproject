@@ -2,6 +2,7 @@ export const darkTheme = {
   color: '#f3f3f3',
 
   secondaryTextColor: 'rgba(243, 243, 243, 0.5)',
+  borderSelectColor: 'rgba(243, 243, 243, 0.4)',
   backgroundColor: '#0a0a11',
   borderColor: 'rgba(243, 243, 243, 0.2)',
   secondBorderColor: 'rgba(243, 243, 243, 0.5)',

@@ -34,6 +34,7 @@ export const DrinkDescriptionFields = ({
   touched,
   handleChange,
   setFieldValue,
+  ...props
 }) => {
   const categories = useSelector(selectCategories);
   const glasses = useSelector(selectGlasses);
@@ -221,8 +222,8 @@ export const DrinkDescriptionFields = ({
             style={{
               color:
                 radioAlco === 'Alcoholic'
-                  ? '#F3F3F3'
-                  : 'rgba(243, 243, 243, 0.5)',
+                  ? props => props.theme.color
+                  : props => props.theme.secondBtnHoverColor,
             }}
           >
             Alcoholic
@@ -241,8 +242,8 @@ export const DrinkDescriptionFields = ({
             style={{
               color:
                 radioAlco === 'Non-alcoholic'
-                  ? '#F3F3F3'
-                  : 'rgba(243, 243, 243, 0.5)',
+                  ? props => props.theme.color
+                  : props => props.theme.secondBtnHoverColor,
             }}
           >
             Non-alcoholic
