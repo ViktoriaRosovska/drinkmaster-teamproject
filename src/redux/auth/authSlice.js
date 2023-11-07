@@ -16,6 +16,11 @@ const initialState = {
 const authSlice = createSlice({
   name: 'auth',
   initialState,
+  reducers: {
+    toggleTheme(state) {
+      state.theme = state.theme === 'light' ? 'dark' : 'light';
+    },
+  },
   extraReducers: builder =>
     builder
       .addCase(authOperations.signUp.fulfilled, (state, { payload }) => {
@@ -57,9 +62,9 @@ const authSlice = createSlice({
       .addCase(authOperations.subscribeEmail.fulfilled, state => {
         state.isSubscribed = true;
       })
-      .addCase(authOperations.themeThunk.fulfilled, (state, { payload }) => {
-        state.theme = payload.theme;
-      })
+      // .addCase(authOperations.themeThunk.fulfilled, (state, { payload }) => {
+      //   state.theme = payload.theme;
+      // })
       .addCase(authOperations.updateUser.fulfilled, (state, { payload }) => {
         state.user.name = payload.name;
         payload.avatar && (state.user.avatar = payload.avatarURL);
@@ -67,3 +72,5 @@ const authSlice = createSlice({
 });
 
 export const authReducer = authSlice.reducer;
+
+export const { toggleTheme } = authSlice.actions;
