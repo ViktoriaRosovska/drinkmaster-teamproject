@@ -11,5 +11,5 @@ export const AddFormSelect = styled(Select)`
   outline: none;
   border: none;
   background: 'transparent';
-  color: var(--white-fifty-color);
+  color: ${props => props.theme.color};
 `;

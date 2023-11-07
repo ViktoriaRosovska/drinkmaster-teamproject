@@ -16,6 +16,7 @@ export const darkTheme = {
   sectionTagTitle: 'rgba(243, 243, 243, 0.5)',
   activeHeaderColor: '#f3f3f3',
   iconColor: '#f3f3f3',
+  btncolor: '#161f37',
   // Recipe/:id
   trueWhite: 'white',
   trueBlack: 'black',

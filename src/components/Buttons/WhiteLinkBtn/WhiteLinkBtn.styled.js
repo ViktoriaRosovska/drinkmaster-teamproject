@@ -1,20 +1,19 @@
 import styled from 'styled-components';
 
 export const WhiteButton = styled.button`
-  /* min-width: 143px; */
   border-radius: 42px;
   padding: 14px 40px;
   font-weight: 600;
   font-size: 14px;
   line-height: 18px;
-  background-color: var(--white-color);
-  color: var(--dark-blue-color);
+  background-color: ${props => props.theme.color};
+  color: ${props => props.theme.btncolor};
   border: 1px solid var(--white-color);
   transition: background-color 0.25s ease-in;
   &:hover {
-    border: 1px solid var(--white-color);
+    border: 1px solid ${props => props.theme.color};
     background-color: transparent;
-    color: var(--white-color);
+    color: ${props => props.theme.color};
   }
   @media screen and (min-width: 768px) {
     font-size: 16px;

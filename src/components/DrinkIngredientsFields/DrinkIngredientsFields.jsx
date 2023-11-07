@@ -27,19 +27,15 @@ export default function DrinkIngridientsFields({
   const [ingredientCollection, setIngr] = useState([
     { id: UUID.generate(), ingredientId: '', measure: '' },
   ]);
-  const [hasIngredient, setHasIngredient] = useState(false);
-  const [hasMeasure, setHasMeasure] = useState(false);
 
   const onIngredientChange = (i, e) => {
     i.ingredientId = e.value;
     i.title = e.label;
-    setHasIngredient(true);
     pushToParent(ingredientCollection);
   };
 
   const onMeasureChange = (i, e) => {
     i.measure = e.target.value;
-    setHasMeasure(true);
     pushToParent(ingredientCollection);
   };
 
@@ -100,20 +96,35 @@ export default function DrinkIngridientsFields({
                     onChange={e => onIngredientChange(i, e)}
                     value={i}
                     error={
-                      errors.ingredientId && touched.ingredientId
+                      errors.ingredients &&
+                      errors.ingredients[idx] &&
+                      errors.ingredients[idx].ingredientId &&
+                      touched.ingredients &&
+                      touched.ingredients[idx] &&
+                      touched.ingredients[idx].ingredientId
                         ? 'true'
                         : 'false'
                     }
                     success={
-                      values.ingredientId && !errors.ingredientId
+                      values.ingredientId &&
+                      !(
+                        errors.ingredients &&
+                        errors.ingredients[idx] &&
+                        errors.ingredients[idx].ingredientId
+                      )
                         ? 'true'
                         : 'false'
                     }
                   />
 
-                  {hasIngredient ? null : (
-                    <ShowError message={errors.category} />
-                  )}
+                  {errors.ingredients &&
+                  errors.ingredients[idx] &&
+                  errors.ingredients[idx].ingredientId &&
+                  touched.ingredients &&
+                  touched.ingredients[idx] &&
+                  touched.ingredients[idx].ingredientId ? (
+                    <ShowError message={errors.ingredients[idx].ingredientId} />
+                  ) : null}
                 </RelativeIngredientWrapper>
 
                 <RelativeIngredientWrapper>
@@ -122,13 +133,36 @@ export default function DrinkIngridientsFields({
                     placeholder="0"
                     value={i.measure}
                     onChange={e => onMeasureChange(i, e)}
-                    error={errors.measure && touched.measure ? 'true' : 'false'}
+                    error={
+                      errors.ingredients &&
+                      errors.ingredients[idx] &&
+                      errors.ingredients[idx].measure &&
+                      touched.ingredients &&
+                      touched.ingredients[idx] &&
+                      touched.ingredients[idx].measure
+                        ? 'true'
+                        : 'false'
+                    }
                     success={
-                      values.measure && !errors.measure ? 'true' : 'false'
+                      values.measure &&
+                      !(
+                        errors.ingredients &&
+                        errors.ingredients[idx] &&
+                        errors.ingredients[idx].measure
+                      )
+                        ? 'true'
+                        : 'false'
                     }
                   />
 
-                  {hasMeasure ? null : <ShowError message={errors.category} />}
+                  {errors.ingredients &&
+                  errors.ingredients[idx] &&
+                  errors.ingredients[idx].measure &&
+                  touched.ingredients &&
+                  touched.ingredients[idx] &&
+                  touched.ingredients[idx].measure ? (
+                    <ShowError message={errors.ingredients[idx].measure} />
+                  ) : null}
                 </RelativeIngredientWrapper>
               </IngredientiMeasureWrapper>
               <CloseIconReactSvg

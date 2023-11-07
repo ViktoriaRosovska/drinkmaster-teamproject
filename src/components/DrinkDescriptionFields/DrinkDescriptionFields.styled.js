@@ -56,7 +56,7 @@ const InputText = styled.span`
   font-weight: 500;
   line-height: 20px;
   letter-spacing: 0em;
-  color: ${props => props.theme.backgroundColor};
+  color: var(--white-color);
   text-align: left;
   position: absolute;
   bottom: 96px;
@@ -144,7 +144,7 @@ const AddFormSelectLabel = styled.label`
   line-height: 19px;
   letter-spacing: -0.02em;
 
-  color: ${props => props.theme.secondBorderColor};
+  color: ${props => props.theme.borderSelectColor};
 
   display: inline-flex;
   justify-content: space-between;
