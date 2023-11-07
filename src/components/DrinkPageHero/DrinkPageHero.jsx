@@ -20,7 +20,7 @@ import {
   Box,
 } from './DrinkPageHero.styled';
 
-import DefaultImg from '../../assets/images/drinkIdPage/block-big@1x.jpg';
+import DefaultImg from '../../assets/images/drinkPage/coctailPlaceholder.png';
 
 const DrinkPageHero = ({ id, glass, about, alcoholic, title, image }) => {
   const notifyAdded = () => toast.success('Added to favorites');
@@ -80,18 +80,19 @@ const DrinkPageHero = ({ id, glass, about, alcoholic, title, image }) => {
                 }
                 disabled={isLoading}
               >
-                Remove from drinks
+                Remove from favorite
               </WhiteButton>
             )}
           </div>
 
           <Box>
-            {/* <ImageDrink src={DefaultImg} alt={title} width="250" /> */}
-            {!image ? (
-              <ImageDrink src={DefaultImg} alt={title} />
-            ) : (
-              <ImageDrink src={image} alt={title} />
-            )}
+            <ImageDrink
+              src={image || DefaultImg}
+              alt={title}
+              onError={e => {
+                e.target.src = DefaultImg;
+              }}
+            />
           </Box>
         </>
       )}

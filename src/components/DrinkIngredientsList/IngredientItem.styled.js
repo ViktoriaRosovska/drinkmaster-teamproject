@@ -9,6 +9,7 @@ export const IngredientPhoto = styled.img`
   }
 `;
 export const ImageBox = styled.div`
+  margin-top: 20px;
   margin-bottom: 8px;
   border-radius: 8px;
   width: 157px;
@@ -47,7 +48,7 @@ export const Ingredient = styled.div`
 export const IngredientTitle = styled.p`
   margin-bottom: 0;
   font-size: 18px;
-  
+
   @media screen and (min-width: 768px) {
     width: 150px;
     font-size: 14px;

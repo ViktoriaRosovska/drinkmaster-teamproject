@@ -1,5 +1,5 @@
 import React from 'react';
-import drinkIdPageBlock from '../../assets/images/drinkIdPage/block-middle@1x.jpg';
+import drinkIdPageBlock from '../../assets/images/drinkPage/coctailPlaceholder.png';
 import {
   ImageBox,
   Ingredient,
@@ -11,7 +11,13 @@ import {
 export const IngredientItem = ({ title, measure, quantity, photo }) => {
   return (
     <ImageBox>
-      <IngredientPhoto src={photo ? photo : drinkIdPageBlock} />
+      <IngredientPhoto
+        src={photo || drinkIdPageBlock}
+        alt={title}
+        onError={e => {
+          e.target.src = drinkIdPageBlock;
+        }}
+      />
       <Ingredient>
         <IngredientTitle>{title}</IngredientTitle>
         <IngredientMeasure>{quantity ? quantity : measure}</IngredientMeasure>
