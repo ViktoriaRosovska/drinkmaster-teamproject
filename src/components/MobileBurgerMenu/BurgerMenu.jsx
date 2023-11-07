@@ -31,7 +31,7 @@ const BurgerMenu = ({ isOpenMobileMenu, toggleMobileMenu }) => {
       >
         <Ellipse223 />
         <Ellipse224 />
-        <NavigationMobileMenu />
+        <NavigationMobileMenu toggleMobileMenu={toggleMobileMenu} />
       </Drawer>
     </>
   );

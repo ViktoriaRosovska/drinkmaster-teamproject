@@ -38,13 +38,16 @@ export const App = () => {
   const userAuth = useSelector(authSelectors.selectUserAuth);
 
   useEffect(() => {
-    dispatch(authOperations.currentUser());
+    if (!userAuth) {
+      dispatch(authOperations.currentUser());
+    }
+    
     if (location.pathname === '/') {
       navigate('/home');
     } else {
       navigate(location.pathname);
     }
-    if (userAuth === 10) {
+    if (userAuth === 21) {
       localStorage.setItem('motivatingUser10', 'false');
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

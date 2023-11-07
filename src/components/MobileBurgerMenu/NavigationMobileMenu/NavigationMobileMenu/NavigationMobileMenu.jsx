@@ -1,22 +1,22 @@
 import { DefButton, Nav } from "./NavigationMobileMenu.styled";
 
-function NavigationMobileMenu() {
+function NavigationMobileMenu({toggleMobileMenu}) {
     return (
         <Nav>
         <li>
-          <DefButton to="/home">Home</DefButton>
+          <DefButton to="/home" onClick={toggleMobileMenu}>Home</DefButton>
         </li>
         <li>
-          <DefButton to="/drinks">Drinks</DefButton>
+          <DefButton to="/drinks" onClick={toggleMobileMenu}>Drinks</DefButton>
         </li>
         <li>
-          <DefButton to="/add">Add drink</DefButton>
+          <DefButton to="/add" onClick={toggleMobileMenu}>Add drink</DefButton>
         </li>
         <li>
-          <DefButton to="/my">My drinks</DefButton>
+          <DefButton to="/my" onClick={toggleMobileMenu}>My drinks</DefButton>
         </li>
         <li>
-          <DefButton to="/favorites">Favorites</DefButton>
+          <DefButton to="/favorites" onClick={toggleMobileMenu}>Favorites</DefButton>
         </li>
       </Nav>
     );
