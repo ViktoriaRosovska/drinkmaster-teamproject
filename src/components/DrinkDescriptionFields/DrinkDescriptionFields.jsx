@@ -219,10 +219,7 @@ export const DrinkDescriptionFields = ({
             htmlFor="typeAlco"
             id="typeAlcoLabel"
             style={{
-              color:
-                radioAlco === 'Alcoholic'
-                  ? props => props.theme.color
-                  : `${props => props.theme.secondBtnHoverColor}`,
+              color: radioAlco === 'Alcoholic' ? `red` : `green`,
             }}
           >
             Alcoholic
@@ -239,8 +236,7 @@ export const DrinkDescriptionFields = ({
             htmlFor="typeNonAlco"
             id="typeNonAlcoLabel"
             style={{
-              color:
-                radioAlco === 'Non-alcoholic' ? 'var(--white-color)' : 'green',
+              color: radioAlco === 'Non-alcoholic' ? `red` : `green`,
             }}
           >
             Non-alcoholic
