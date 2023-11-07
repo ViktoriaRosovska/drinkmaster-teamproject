@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
 import LogoutBtn from 'components/Buttons/LogoutBtn/LogoutBtn';
 import {
   EditProfileBtn,
   ModalContainer,
   IconEdit,
 } from './UserLogoPopup.styled';
-import ModalWindow from '../ModalWindow/ModalWindow';
-import UserInfoModal from '../UserInfoModal/UserInfoModal';
+import { useState, useRef } from 'react';
+import ModalWindow from '../ModalWindow/ModalWindow'; // Добавьте этот импорт
+import UserInfoModal from '../UserInfoModal/UserInfoModal'; // И этот
 
 export default function UserLogoPopup({
   onCloseUserLogoModal,
@@ -15,43 +15,18 @@ export default function UserLogoPopup({
   const [isModalUserInfoOpen, setIsModalUserInfoOpen] = useState(false);
   const modalContainerRef = useRef(null);
 
-  const toggleUserInfoModal = () => {
-    setIsModalUserInfoOpen(!isModalUserInfoOpen);
+  const openUserInfoModal = () => {
+    setIsModalUserInfoOpen(true);
   };
 
   const closeUserInfoModal = () => {
     setIsModalUserInfoOpen(false);
   };
 
-  const handleEsc = event => {
-    if (event.key === 'Escape') {
-      closeUserInfoModal();
-    }
-  };
-
-  const handleClickOutside = event => {
-    if (
-      modalContainerRef.current &&
-      !modalContainerRef.current.contains(event.target)
-    ) {
-      closeUserInfoModal();
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('keydown', handleEsc);
-    document.addEventListener('click', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('keydown', handleEsc);
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, []);
-
   return (
     <>
       <ModalContainer ref={modalContainerRef} className="modal-container">
-        <EditProfileBtn type="button" onClick={toggleUserInfoModal}>
+        <EditProfileBtn type="button" onClick={openUserInfoModal}>
           Edit profile
           <IconEdit />
         </EditProfileBtn>
