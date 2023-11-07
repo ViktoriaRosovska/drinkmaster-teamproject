@@ -47,7 +47,7 @@ export const App = () => {
     } else {
       navigate(location.pathname);
     }
-    if (userAuth === 21) {
+    if (userAuth === 10) {
       localStorage.setItem('motivatingUser10', 'false');
     }
   }, [dispatch, userAuth, location.pathname, navigate]);
