@@ -3,7 +3,8 @@ export const lightTheme = {
   color: '#0A0A11',
 
   secondaryTextColor: 'rgb(132, 129, 127)',
-  borderColor: '#161f3720',
+  borderSelectColor: 'rgba(10, 10, 17, 0.5)',
+  borderColor: '#161f37',
   secondBorderColor: '#161f37',
   secondBgrColor: '#e0e0e0',
   hoverBorderColor: '#000000',

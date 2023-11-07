@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const PopularDrinksWrapper = styled.div`
   width: 335px;
-margin-top: 40px;
+  margin-top: 40px;
   @media screen and (min-width: 768px) {
     width: 704px;
     // height: 284px;
@@ -47,7 +47,9 @@ export const PopularDrinksList = styled.ul`
     gap: 28px;
   }
 `;
-export const PopularDrinksItem = styled.li``;
+export const PopularDrinksItem = styled.li`
+  width: 313px;
+`;
 
 export const PopularDrinksLink = styled(Link)`
   display: flex;

@@ -20,22 +20,19 @@ const AddPhotoContainer = styled.div`
   align-items: center;
   width: 335px;
   height: 320px;
-  background-color: var(--dark-blue-fifty-color);
+  background-color: ${props => props.theme.btnHoverColor};
   border-radius: 8px;
-  /* margin-bottom: 40px; */
 `;
 
 const FileImage = styled.img`
   width: 335px;
   height: 320px;
-  background-color: red;
 `;
 
 const InputFileWrapper = styled.div`
   position: absolute;
   width: 50px;
   height: 50px;
-
   border-radius: 6px;
   background-color: var(--white-color);
   border: none;
@@ -59,6 +56,7 @@ const InputText = styled.span`
   font-weight: 500;
   line-height: 20px;
   letter-spacing: 0em;
+  color: ${props => props.theme.backgroundColor};
   text-align: left;
   position: absolute;
   bottom: 96px;
@@ -68,7 +66,7 @@ const ReactSVGIcon = styled(ReactSVG)`
   & div svg {
     width: 29px;
     height: 29px;
-    stroke: var(--dark-blue-color);
+    stroke: ${props => props.theme.btnHoverColor};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,15 +105,15 @@ const AddFormInput = styled.input`
   border: none;
 
   border-radius: 0;
-  border-bottom: 1px solid var(--white-fifty-color);
+  border-bottom: 1px solid ${props => props.theme.secondBorderColor};
 
-  color: var(--white-color);
+  color: ${props => props.theme.color};
   background-color: transparent;
   position: relative;
 
   outline: none;
   &:hover {
-    border-bottom: 1px solid var(--white-color);
+    border-bottom: 1px solid ${props => props.theme.color};
   }
   &::placeholder {
     font-family: 'Manrope';
@@ -125,7 +123,7 @@ const AddFormInput = styled.input`
     letter-spacing: -0.02em;
     position: absolute;
     top: 0;
-    color: var(--white-color);
+    color: ${props => props.theme.color};
   }
   @media screen and (min-width: 768px) {
     font-size: 16px;
@@ -138,16 +136,15 @@ const InputRadio = styled.input`
 const ChevronReactSvg = styled(ReactSVG)`
   width: 20px;
   height: 20px;
-  /* opacity: 0.5; */
   & div svg {
-    stroke: var(--white-color);
+    stroke: ${props => props.theme.color};
   }
 `;
 const AddFormSelectLabel = styled.label`
   line-height: 19px;
   letter-spacing: -0.02em;
 
-  color: var(--white-fifty-color);
+  color: ${props => props.theme.secondBorderColor};
 
   display: inline-flex;
   justify-content: space-between;
@@ -172,9 +169,6 @@ const AddFileLabel = styled.label`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  /* position: absolute; */
-  /* cursor: pointer; */
-  /* z-index: -1; */
 `;
 
 export {

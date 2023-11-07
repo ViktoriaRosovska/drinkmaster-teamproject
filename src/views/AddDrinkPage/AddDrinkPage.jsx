@@ -7,26 +7,28 @@ import { MainContainer } from 'styles/App.styled';
 
 import AddDrinkForm from '../../components/Forms/AddDrinkForm/AddDrinkForm';
 import FollowUs from 'components/FollowUs/FollowUs';
-import { AddDrinkContainer } from './AddDrinkPage.styled';
+import {
+  AddDrinkContainer,
+  FollowUsTitle,
+  RightWrapper,
+} from './AddDrinkPage.styled';
 import PopularDrinks from 'components/PopularDrinks/PopularDrinks';
 
 export default function AddDrinkPage() {
-  
   return (
     <MainContainer>
       <PageTitle title="Add drink" />
       <AddDrinkContainer>
         <AddDrinkForm />
-        <div>
+        <RightWrapper>
           <div>
-            <h4>FollowUs</h4>
-            <FollowUs isInFooter={false} />
+            <FollowUsTitle>FollowUs</FollowUsTitle>
+            <FollowUs />
           </div>
           <div>
-            <h4>Popular drinks</h4>
-            <div>Компонент Популярні напої <PopularDrinks/></div>
+            <PopularDrinks />
           </div>
-        </div>
+        </RightWrapper>
       </AddDrinkContainer>
     </MainContainer>
   );

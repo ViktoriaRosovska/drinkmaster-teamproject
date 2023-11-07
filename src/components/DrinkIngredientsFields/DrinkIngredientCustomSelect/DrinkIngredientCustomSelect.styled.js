@@ -11,7 +11,7 @@ export const IngredientSelect = styled(Select)`
   outline: none;
   border: none;
   background: 'transparent';
-  color: var(--white-fifty-color);
+  color: ${props => props.theme.secondBtnHoverColor};
   @media screen and (min-width: 768px) {
     font-size: 17px;
     width: 332px;

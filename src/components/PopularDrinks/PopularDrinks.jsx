@@ -30,7 +30,6 @@ const PopularDrinks = () => {
         <PopularDrinksList>
           {popularDrinks.map(({ _id, drinkThumb, drink, shortDescription }) => (
             <PopularDrinksItem key={_id}>
-              {' '}
               <PopularDrinksLink to={`/drinks/${_id}`}>
                 <PopularDrinksImg
                   src={drinkThumb ? drinkThumb : DefoultImg}
