@@ -13,7 +13,7 @@ import {
 } from './PopularDrinks.styled';
 import { useDrink } from 'hooks/useDrink';
 import { getPopularDrinks } from 'redux/drinks/drinksOperations';
-import DefoultImg from '../../assets/images/drinkIdPage/block-small@2x.jpg';
+import DefoultImg from '../../assets/images/drinkPage/coctailPlaceholder.png';
 
 const PopularDrinks = () => {
   const { popularDrinks } = useDrink();
