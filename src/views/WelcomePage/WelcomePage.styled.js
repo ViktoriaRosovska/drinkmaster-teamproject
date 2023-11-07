@@ -58,9 +58,15 @@ export const DefButton = styled(Link)`
   color: var(--white-color);
   padding: 18px 44px 18px 44px;
   border-radius: 42px;
+  text-decoration: none;
   border: rgba(243, 243, 243, 0.2) solid 1px;
   &:hover {
     background-color: var(--white-color);
     color: var(--dark-blue-color);
   }
+`;
+
+export const ActiveBut = styled(DefButton)`
+  background-color: var(--white-color);
+  color: var(--dark-blue-color);
 `;
