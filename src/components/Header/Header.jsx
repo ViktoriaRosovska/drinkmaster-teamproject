@@ -16,7 +16,7 @@ import {
 } from './Header.styled';
 import LogoHeader from './LogoHeder';
 
-const Header = ({ isOpenMobileMenu, toggleMobileMenu }) => {
+const Header = ({ isOpenMobileMenu, toggleMobileMenu, toggleTheme }) => {
   console.log(isOpenMobileMenu);
 
   return (
@@ -33,7 +33,10 @@ const Header = ({ isOpenMobileMenu, toggleMobileMenu }) => {
               </HeaderItem>
               <HeaderItem className="push-right">
                 <LastHeaderItem>
-                  <ThemeToggler isOpenMobileMenu={isOpenMobileMenu} />
+                  <ThemeToggler
+                    isOpenMobileMenu={isOpenMobileMenu}
+                    toggleTheme={toggleTheme}
+                  />
                   {!isOpenMobileMenu && <UserLogo />}
                   {isOpenMobileMenu ? (
                     <CloseMobileMenuBtn toggleMobileMenu={toggleMobileMenu} />
