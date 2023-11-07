@@ -47,8 +47,7 @@ export const App = () => {
     if (userAuth === 10) {
       localStorage.setItem('motivatingUser10', 'false');
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dispatch, userAuth]);
+  }, [dispatch, userAuth, location.pathname, navigate]);
 
   const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
 
