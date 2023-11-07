@@ -9,7 +9,7 @@ const BurgerButton = styled.button`
     width: 32px;
     height: 32px;
     background-color: transparent;
-    color: #f3f3f3;
+    color: ${props => props.theme.color};
   }
   @media screen and (max-width: 1439.8px) {
     width: 38px;
@@ -29,7 +29,8 @@ const BurgerSVGIcon = styled(ReactSVG)`
     width: 28px;
     height: 28px;
     border: none;
-    stroke: #f3f3f3;
+    // stroke: #f3f3f3;
+    stroke: ${props => props.theme.color};
     transition: scale 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
     &:focus {
       scale: 1.1; 

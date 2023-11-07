@@ -25,9 +25,9 @@ export const DefButton = styled(NavLink)`
   padding: 8px 16px 8px 16px;
   margin: auto;
   background-color: transparent;
-  color: var(--white-color);
+  color: ${props => props.theme.color};
   border-radius: 40px;
-  border: rgba(243, 243, 243, 0.2) solid 1px;
+  border: ${props => props.theme.borderColor} solid 1px;
   @media screen and (min-width: 768px) {
     height: 39px;
   }

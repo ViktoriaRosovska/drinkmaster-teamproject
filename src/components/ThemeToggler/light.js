@@ -1,7 +1,7 @@
 export const lightTheme = {
   backgroundColor: '#f3f3f3',
   color: '#161f37',
-
+mobMenuColor: '#f3f3f3',
   secondaryTextColor: 'rgb(132, 129, 127)',
   borderSelectColor: 'rgba(10, 10, 17, 0.5)',
   borderColor: '#161f37',

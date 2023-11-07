@@ -1,6 +1,6 @@
 export const darkTheme = {
   color: '#f3f3f3',
-
+mobMenuColor: 'rgba(64, 112, 205, 0.5)',
   secondaryTextColor: 'rgba(243, 243, 243, 0.5)',
   borderSelectColor: 'rgba(243, 243, 243, 0.4)',
   backgroundColor: '#0a0a11',

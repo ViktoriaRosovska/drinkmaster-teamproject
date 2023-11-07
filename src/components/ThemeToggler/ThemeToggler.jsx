@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import authSelectors from '../../redux/auth/authSelectors';
 
 export const ThemeToggler = ({isOpenBurgerMenu}) => {
-  console.log(isOpenBurgerMenu);
+  // console.log(isOpenBurgerMenu);
 
   const dispatch = useDispatch();
 
