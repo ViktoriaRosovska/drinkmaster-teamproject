@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { CalendarSvgIcon } from './CalendarSvgIcon';
 
 import { useFormikContext } from 'formik';
@@ -13,7 +13,7 @@ const transition = '500ms ease-in';
 //     ? 'green'
 //     : 'var(--white-twenty-color)').toString();
 
-const StyledDesktopDatePicker = styled(DesktopDatePicker)({
+const StyledDesktopDatePicker = styled(DatePicker)({
   '& .MuiInputBase-root': {
     borderRadius: '200px',
     border: '1px solid var(--white-twenty-color)',
@@ -57,6 +57,13 @@ const StyledDesktopDatePicker = styled(DesktopDatePicker)({
   '& .MuiOutlinedInput-notchedOutline': {
     border: 'none',
   },
+
+  ///////////////// Calendar ////////////////////
+
+  '& .MuiDateCalendar-root': {
+    backgroundColor: 'var(--dark-blue-color)',
+    borderRadius: '200',
+  },
 });
 
 export default function BirthDate() {
@@ -80,6 +87,9 @@ export default function BirthDate() {
           fullWidth: true,
           placeholder: 'dd/mm/yyyy',
           error: !!errors.birthDate,
+        },
+        toolbar: {
+          hidden: true,
         },
       }}
       format="DD/MM/YYYY"
