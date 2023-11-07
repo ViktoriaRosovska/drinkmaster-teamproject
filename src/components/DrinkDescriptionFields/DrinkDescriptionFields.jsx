@@ -10,6 +10,7 @@ import {
   InputFileWrapper,
   InputRadio,
   InputText,
+  RadioLabel,
   ReactSVGIcon,
   SelectContainer,
 } from './DrinkDescriptionFields.styled';
@@ -214,15 +215,15 @@ export const DrinkDescriptionFields = ({
             checked={radioAlco === 'Alcoholic' ? true : false}
             onChange={e => changeRadioAlco(e)}
           />
-          <label
+          <RadioLabel
             htmlFor="typeAlco"
             id="typeAlcoLabel"
             style={{
-              color: radioAlco === 'Alcoholic' ? `red` : `green`,
+              color: radioAlco === 'Alcoholic' && `#4070CD`,
             }}
           >
             Alcoholic
-          </label>
+          </RadioLabel>
           <InputRadio
             type="radio"
             id="typeNonAlco"
@@ -231,15 +232,15 @@ export const DrinkDescriptionFields = ({
             checked={radioAlco === 'Non-alcoholic' ? true : false}
             onChange={e => changeRadioAlco(e)}
           />
-          <label
+          <RadioLabel
             htmlFor="typeNonAlco"
             id="typeNonAlcoLabel"
             style={{
-              color: radioAlco === 'Non-alcoholic' ? `red` : `green`,
+              color: radioAlco === 'Non-alcoholic' && `#4070CD`,
             }}
           >
             Non-alcoholic
-          </label>
+          </RadioLabel>
         </AddFormRadioGroup>
       </SelectContainer>
     </DescriptionWrapper>

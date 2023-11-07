@@ -1,4 +1,5 @@
-import { toast } from 'react-toastify';
+import { ToastContainer, toast, Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -42,61 +43,64 @@ const DrinkPageHero = ({ id, glass, about, alcoholic, title, image }) => {
   };
 
   return (
-    <HeroContainer>
-      {favoriteDrinksList && (
-        <>
-          <div>
-            {glass && alcoholic && (
-              <GlassName>
-                {glass} / {alcoholic}
-              </GlassName>
-            )}
+    <>
+      <ToastContainer transition={Slide} />
+      <HeroContainer>
+        {favoriteDrinksList && (
+          <>
+            <div>
+              {glass && alcoholic && (
+                <GlassName>
+                  {glass} / {alcoholic}
+                </GlassName>
+              )}
 
-            {about ? (
-              <About>{about}</About>
-            ) : (
-              <p>
-                <br />
-              </p>
-            )}
-            {!isDrinkInFavoriteList(id) ? (
-              <WhiteButton
-                onClick={() =>{
-                  dispatch(addDrinkToFavorite(id)).then(() => notifyAdded())
-                  if (favoriteDrinks.length === 0) {
-                    localStorage.setItem('motivatingFavorite1', 'false')
-                  } else if (favoriteDrinks.length === 4) {
-                    localStorage.setItem('motivatingFavorite10', 'false')
+              {about ? (
+                <About>{about}</About>
+              ) : (
+                <p>
+                  <br />
+                </p>
+              )}
+              {!isDrinkInFavoriteList(id) ? (
+                <WhiteButton
+                  onClick={() => {
+                    dispatch(addDrinkToFavorite(id)).then(() => notifyAdded());
+                    if (favoriteDrinks.length === 0) {
+                      localStorage.setItem('motivatingFavorite1', 'false');
+                    } else if (favoriteDrinks.length === 4) {
+                      localStorage.setItem('motivatingFavorite10', 'false');
+                    }
+                  }}
+                  disabled={isLoading}
+                >
+                  Add to favorite
+                </WhiteButton>
+              ) : (
+                <WhiteButton
+                  onClick={() =>
+                    dispatch(removeDrink(id)).then(() => notifyRemoved())
                   }
-                }}
-                disabled={isLoading}
-              >
-                Add to favorite
-              </WhiteButton>
-            ) : (
-              <WhiteButton
-                onClick={() =>
-                  dispatch(removeDrink(id)).then(() => notifyRemoved())
-                }
-                disabled={isLoading}
-              >
-                Remove from favorite
-              </WhiteButton>
-            )}
-          </div>
+                  disabled={isLoading}
+                >
+                  Remove from favorite
+                </WhiteButton>
+              )}
+            </div>
 
-          <Box>
-            <ImageDrink
-              src={image || DefaultImg}
-              alt={title}
-              onError={e => {
-                e.target.src = DefaultImg;
-              }}
-            />
-          </Box>
-        </>
-      )}
-    </HeroContainer>
+            <Box>
+              <ImageDrink
+                src={image || DefaultImg}
+                alt={title}
+                onError={e => {
+                  e.target.src = DefaultImg;
+                }}
+              />
+            </Box>
+          </>
+        )}
+      </HeroContainer>
+    </>
   );
 };
 export default DrinkPageHero;

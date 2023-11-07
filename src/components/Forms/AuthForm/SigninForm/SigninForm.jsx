@@ -48,27 +48,22 @@ export default function SigninForm() {
 
   const dispatch = useDispatch();
 
-  const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = values => {
     const { email, password } = values;
     dispatch(authOperations.signIn({ email, password }))
       .unwrap()
       .then(() => {
-        console.log('email:', email);
-        console.log('password:', password);
         toast.success(`🦄 Your login was successful!`, {
           position: toast.POSITION.TOP_RIGHT,
           autoClose: 1500,
         });
       })
       .catch(() => {
-        console.log('error email:', email);
-        console.log('password:', password);
         toast.error(`Something went wrong. Try again`, {
           position: toast.POSITION.TOP_RIGHT,
           autoClose: 1500,
         });
       });
-    resetForm();
   };
 
   return (

@@ -38,19 +38,18 @@ export const App = () => {
   const userAuth = useSelector(authSelectors.selectUserAuth);
 
   useEffect(() => {
-    if (!userAuth) {
-      dispatch(authOperations.currentUser());
-    }
-    
+    dispatch(authOperations.currentUser());
+
     if (location.pathname === '/') {
       navigate('/home');
     } else {
       navigate(location.pathname);
     }
-    if (userAuth === 21) {
+    if (userAuth === 10) {
       localStorage.setItem('motivatingUser10', 'false');
     }
-  }, [dispatch, userAuth, location.pathname, navigate]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch, userAuth]);
 
   const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
 

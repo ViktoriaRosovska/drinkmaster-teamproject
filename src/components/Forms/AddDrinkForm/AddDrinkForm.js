@@ -1,22 +1,19 @@
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
-import { useState } from 'react';
 import { useNavigate } from 'react-router';
-
 import { addMyDrink } from 'redux/drinks/drinksOperations';
-
 import { FormContainer } from './AddDrinkForm.styled';
 import WhiteLinkBtn from '../../Buttons/WhiteLinkBtn/WhiteLinkBtn';
 import { DrinkDescriptionFields } from '../../DrinkDescriptionFields/DrinkDescriptionFields';
-import Loader from 'components/Loader';
 import DrinkIngridientsFields from 'components/DrinkIngredientsFields/DrinkIngredientsFields';
 import DrinkRecipePreparation from 'components/DrinkRecipePreparation/DrinkRecipePreparation';
 
 import { useDispatch } from 'react-redux';
-import { toastConfig } from 'components/Notification/notification_options';
+import { ToastContainer, Slide, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function AddDrinkForm() {
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -62,61 +59,63 @@ export default function AddDrinkForm() {
       formData.append('instructions', values.instructions);
       formData.append('ingredients', JSON.stringify(values.ingredients));
       formData.append('drinkThumb', values.drinkThumb);
-      setIsLoading(true);
+      // setIsLoading(true);
       try {
         const responce = await dispatch(addMyDrink(formData));
         if (responce) {
           navigate('/my');
-
-          toastConfig.success(`Your recipe was adding success`);
+          toast.success(`Just a moment. We are saving your recipe`, {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 1500,
+          });
         } else {
-          // console.log('Server error', responce.statusText);
-          toastConfig.error(
-            `There are some problems with server. Please, try again at several time`
-          );
+          toast.error(`Something went wrong. Try again`, {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 1500,
+          });
         }
       } catch (error) {
-        toastConfig.error(`Sending error. Please, try again`);
+        toast.error(`Something went wrong. Try again`, {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 1500,
+        });
       } finally {
-        setIsLoading(false);
+        // setIsLoading(false);
       }
     },
   });
 
   return (
     <>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <FormContainer onSubmit={formik.handleSubmit}>
-          <DrinkDescriptionFields
-            values={formik.values}
-            errors={formik.errors}
-            touched={formik.touched}
-            handleChange={formik.handleChange}
-            handleBlur={formik.handleBlur}
-            setFieldValue={formik.setFieldValue}
-          />
-          <DrinkIngridientsFields
-            values={formik.values}
-            errors={formik.errors}
-            touched={formik.touched}
-            handleChange={formik.handleChange}
-            handleBlur={formik.handleBlur}
-            setFieldValue={formik.setFieldValue}
-          />
+      <FormContainer onSubmit={formik.handleSubmit}>
+        <ToastContainer transition={Slide} />
+        <DrinkDescriptionFields
+          values={formik.values}
+          errors={formik.errors}
+          touched={formik.touched}
+          handleChange={formik.handleChange}
+          handleBlur={formik.handleBlur}
+          setFieldValue={formik.setFieldValue}
+        />
+        <DrinkIngridientsFields
+          values={formik.values}
+          errors={formik.errors}
+          touched={formik.touched}
+          handleChange={formik.handleChange}
+          handleBlur={formik.handleBlur}
+          setFieldValue={formik.setFieldValue}
+        />
 
-          <DrinkRecipePreparation
-            values={formik.values}
-            errors={formik.errors}
-            touched={formik.touched}
-            handleChange={formik.handleChange}
-            handleBlur={formik.handleBlur}
-            setFieldValue={formik.setFieldValue}
-          />
-          <WhiteLinkBtn type="submit" title="Add" />
-        </FormContainer>
-      )}
+        <DrinkRecipePreparation
+          values={formik.values}
+          errors={formik.errors}
+          touched={formik.touched}
+          handleChange={formik.handleChange}
+          handleBlur={formik.handleBlur}
+          setFieldValue={formik.setFieldValue}
+        />
+        <WhiteLinkBtn type="submit" title="Add" />
+      </FormContainer>
     </>
   );
 }
