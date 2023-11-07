@@ -5,6 +5,7 @@ import {
   Container,
   DefButton,
   ButtonDiv,
+  ActiveBut,
 } from 'views/WelcomePage/WelcomePage.styled';
 import { WelcomeWrapper } from 'styles/App.styled';
 
@@ -19,7 +20,7 @@ const AuthNav = () => {
             and retrieve your own recipes at any time.
           </P>
           <ButtonDiv>
-            <DefButton to="/signup">Sign Up</DefButton>
+            <ActiveBut to="/signup">Sign Up</ActiveBut>
             <DefButton to="/signin">Sign In</DefButton>
           </ButtonDiv>
         </Container>
