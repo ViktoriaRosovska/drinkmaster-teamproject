@@ -13,7 +13,7 @@ import {
   RightWrapper,
 } from './AddDrinkPage.styled';
 import PopularDrinks from 'components/PopularDrinks/PopularDrinks';
-// import FollowUsAdd from 'components/FollowUs/FollowUsAdd';
+import FollowUsAdd from 'components/FollowUs/FollowUsAdd';
 export default function AddDrinkPage() {
   return (
     <MainContainer>
@@ -23,7 +23,7 @@ export default function AddDrinkPage() {
         <RightWrapper>
           <div>
             <FollowUsTitle>FollowUs</FollowUsTitle>
-            {/* <FollowUs /> */}
+            <FollowUsAdd />
           </div>
           <div>
             <PopularDrinks />

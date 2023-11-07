@@ -38,7 +38,7 @@ export const FollowUsLinkAdd = styled.a`
 
 export const FacebookIcon = styled(FacebookSvg)`
   fill: ${props => props.theme.iconColor};
-//   fill: ${props => props.isInFooter === 'true' ? props.theme.colorb : props.theme.backgroundColor};
+
   width: 22px;
   height: 22px;
   padding: 8px;
@@ -53,10 +53,7 @@ export const FacebookIcon = styled(FacebookSvg)`
 
 export const InstagramIcon = styled(InstagramSvg)`
   fill: ${props => props.theme.iconColor};
-  // fill: ${props =>
-    props.isInFooter === 'true'
-      ? props.theme.color
-      : props.theme.backgroundColor};
+  
   width: 22px;
   height: 22px;
   padding: 8px;
@@ -69,10 +66,7 @@ export const InstagramIcon = styled(InstagramSvg)`
 `;
 export const YoutubeIcon = styled(YoutubeSvg)`
   fill: ${props => props.theme.iconColor};
-  // fill: ${props =>
-    props.isInFooter === 'true'
-      ? props.theme.color
-      : props.theme.backgroundColor};
+
   width: 22px;
   height: 22px;
   padding: 8px;
