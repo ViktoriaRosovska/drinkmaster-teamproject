@@ -18,7 +18,7 @@ import { filtersReducer } from './filters/filtersSlice';
 const authPersistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['token'],
+  whitelist: ['token', 'theme'],
 };
 
 const persistedRooReducer = persistReducer(authPersistConfig, authReducer);
