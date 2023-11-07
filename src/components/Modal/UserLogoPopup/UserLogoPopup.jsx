@@ -1,53 +1,44 @@
-// import { useDispatch } from "react-redux";
+import React, { useState, useEffect, useRef } from 'react';
 import LogoutBtn from 'components/Buttons/LogoutBtn/LogoutBtn';
 import {
   EditProfileBtn,
   ModalContainer,
   IconEdit,
 } from './UserLogoPopup.styled';
-import { useEffect, useState, useRef } from 'react';
-import ModalPortal from '../ModalPortal/ModalPortal';
+import ModalWindow from '../ModalWindow/ModalWindow';
+import UserInfoModal from '../UserInfoModal/UserInfoModal';
 
 export default function UserLogoPopup({
   onCloseUserLogoModal,
   onBackdropClose,
 }) {
   const [isModalUserInfoOpen, setIsModalUserInfoOpen] = useState(false);
-  const [, setShowModal] = useState(false);
   const modalContainerRef = useRef(null);
 
-  // const dispatch = useDispatch();
-  // const handleLogOut = () => dispatch(signOut());
-
-  const openUserInfoModal = () => {
-    setShowModal(false);
-    setIsModalUserInfoOpen(true);
+  const toggleUserInfoModal = () => {
+    setIsModalUserInfoOpen(!isModalUserInfoOpen);
   };
 
-  const onBackdrop = () => {
+  const closeUserInfoModal = () => {
     setIsModalUserInfoOpen(false);
-    onCloseUserLogoModal();
+  };
+
+  const handleEsc = event => {
+    if (event.key === 'Escape') {
+      closeUserInfoModal();
+    }
+  };
+
+  const handleClickOutside = event => {
+    if (
+      modalContainerRef.current &&
+      !modalContainerRef.current.contains(event.target)
+    ) {
+      closeUserInfoModal();
+    }
   };
 
   useEffect(() => {
-    const handleEsc = event => {
-      if (event.key === 'Escape') {
-        onBackdrop();
-      }
-    };
-
-    const handleClickOutside = event => {
-      if (!modalContainerRef.current.contains(event.target)) {
-        if (!isModalUserInfoOpen) {
-          openUserInfoModal();
-        } else {
-          onBackdrop();
-        }
-      }
-    };
-
-    document.addEventListener('click', handleClickOutside);
-
     document.addEventListener('keydown', handleEsc);
     document.addEventListener('click', handleClickOutside);
 
@@ -55,23 +46,23 @@ export default function UserLogoPopup({
       document.removeEventListener('keydown', handleEsc);
       document.removeEventListener('click', handleClickOutside);
     };
-  });
+  }, []);
 
   return (
     <>
       <ModalContainer ref={modalContainerRef} className="modal-container">
-        <EditProfileBtn type="button" onClick={openUserInfoModal}>
+        <EditProfileBtn type="button" onClick={toggleUserInfoModal}>
           Edit profile
           <IconEdit />
         </EditProfileBtn>
-        <LogoutBtn onBackdrop={onBackdrop} />
+        <LogoutBtn onBackdrop={onBackdropClose} />
       </ModalContainer>
 
-      <ModalPortal
-        isModalUserInfoOpen={isModalUserInfoOpen}
-        onBackdrop={onBackdrop}
-        openUserInfoModal={openUserInfoModal}
-      />
+      {isModalUserInfoOpen && (
+        <ModalWindow onBackdropClose={closeUserInfoModal}>
+          <UserInfoModal onBackdropClose={closeUserInfoModal} />
+        </ModalWindow>
+      )}
     </>
   );
 }

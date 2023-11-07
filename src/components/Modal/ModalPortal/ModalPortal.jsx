@@ -5,11 +5,11 @@ import UserInfoModal from '../UserInfoModal/UserInfoModal';
 export default function ModalPortal({
   isShowUserLogoModal,
   isModalUserInfoOpen,
-  onBackdrop,
+  onBackdropClose,
   openUserInfoModal,
 }) {
   const closeModal = () => {
-    onBackdrop();
+    onBackdropClose();
   };
 
   return (
@@ -17,7 +17,7 @@ export default function ModalPortal({
       {isShowUserLogoModal && (
         <ModalWindow onBackdropClose={closeModal}>
           <UserLogoPopup
-            onBackdropClose={closeModal}
+            onBackdropClose={onBackdropClose}
             openUserInfoModal={openUserInfoModal}
           />
         </ModalWindow>
@@ -25,7 +25,7 @@ export default function ModalPortal({
       {isModalUserInfoOpen && !isShowUserLogoModal && (
         <ModalWindow onBackdropClose={closeModal}>
           <UserInfoModal
-            onBackdropClose={closeModal}
+            onBackdropClose={onBackdropClose}
             openUserInfoModal={openUserInfoModal}
           />
         </ModalWindow>
