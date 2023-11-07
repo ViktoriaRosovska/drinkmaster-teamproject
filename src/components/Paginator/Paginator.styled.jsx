@@ -6,7 +6,7 @@ export const StyledPagination = styled(Pagination)({
     justifyContent: 'center',
   },
   '& li .Mui-selected': {
-    color: `${props => props.theme.color}`,
+    color: '#f3f3f3',
     backgroundColor: 'rgba(64, 112, 205, 0.5)',
     ':hover': {
       backgroundColor: 'rgba(64, 112, 205, 0.5)',
