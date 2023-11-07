@@ -6,7 +6,7 @@ import {
 
 const LogoHeader = () => {
   return (
-    <LogoLink to="/">
+    <LogoLink to="/home">
       <LogoIconHeader />
       <LogoTextHeader>Drink&nbsp;master</LogoTextHeader>
     </LogoLink>
