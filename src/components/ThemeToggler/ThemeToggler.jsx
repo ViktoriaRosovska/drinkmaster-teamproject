@@ -1,26 +1,22 @@
-import { useDispatch } from 'react-redux';
-import { authOperations } from 'redux/auth/authOperations';
-import { StyledButton } from './ThemeToggler.styled';
-import { useSelector } from 'react-redux';
-import authSelectors from '../../redux/auth/authSelectors';
+import { useState } from 'react';
+import { SwitchTheme } from './SwitchTheme.styled';
+// import { useSelector } from 'react-redux';
 
-export const ThemeToggler = ({isOpenBurgerMenu}) => {
-  console.log(isOpenBurgerMenu);
+// import authSelectors from 'redux/auth/authSelectors';
 
-  const dispatch = useDispatch();
+export const ThemeToggler = ({ isOpenBurgerMenu, toggleTheme }) => {
+  const [isToggled, setIsToggled] = useState(true);
+  // const themeSelector = useSelector(authSelectors.selectTheme);
 
-  const themeSelector = useSelector(authSelectors.selectTheme);
-
-  const onChangeTheme = () => {
-    const theme = themeSelector === 'dark' ? 'light' : 'dark';
-    dispatch(authOperations.themeThunk({ theme: theme }));
+  const onToggle = () => {
+    setIsToggled(!isToggled);
+    toggleTheme();
   };
-
-  const currentTheme = themeSelector === 'dark';
 
   return (
     <>
-      <StyledButton onClick={onChangeTheme} isOpenBurgerMenu={isOpenBurgerMenu}>
+      <SwitchTheme onChange={onToggle} isOpenBurgerMenu={isOpenBurgerMenu} />
+      {/* <StyledButton onClick={onChangeTheme} isOpenBurgerMenu={isOpenBurgerMenu}>
         {currentTheme ? (
           <span aria-label="Light mode" role="img">
             🌞
@@ -30,7 +26,7 @@ export const ThemeToggler = ({isOpenBurgerMenu}) => {
             🌜
           </span>
         )}
-      </StyledButton>
+      </StyledButton> */}
     </>
   );
 };
