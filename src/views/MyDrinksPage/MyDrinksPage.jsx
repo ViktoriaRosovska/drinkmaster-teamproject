@@ -14,6 +14,7 @@ export default function MyDrinksPage() {
   const dispatch = useDispatch();
   const { total, drinks } = useDrink();
   const [currentPage, setCurrentPage] = useState(1);
+  const [hasDrinks, setHasDrinks] = useState(false);
 
   const drinksPerPage = 6;
 
@@ -27,6 +28,7 @@ export default function MyDrinksPage() {
     if (drinks?.length === 0 && currentPage > 1) {
       onPageChange(currentPage - 1);
     }
+    setHasDrinks(drinks?.length > 0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [drinks]);
 
@@ -44,7 +46,7 @@ export default function MyDrinksPage() {
   return (
     <MainContainer>
       <PageTitle title="My drinks" />
-      {total > 0 ? (
+      {hasDrinks > 0 ? (
         <DrinkList
           drinksData={drinks}
           onPageChange={onPageChange}
