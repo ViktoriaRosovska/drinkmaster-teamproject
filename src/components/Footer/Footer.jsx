@@ -13,7 +13,7 @@ import FooterCopyright from './FooterCopyright/FooterCopyright';
 import { useSelector } from 'react-redux';
 import authSelectors from '../../redux/auth/authSelectors';
 
-const Footer = () => {
+const Footer = ({isInFooter}) => {
   const theme = useSelector(authSelectors.selectTheme);
 
   return (

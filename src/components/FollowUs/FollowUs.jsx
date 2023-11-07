@@ -7,7 +7,8 @@ import {
   YoutubeIcon,
 } from './FollowUs.styled';
 
-const FollowUs = () => {
+const FollowUs = ({ isInFooter }) => {
+  // console.log("isInFooter in FollowUs:", isInFooter);
   return (
     <FollowUsList>
       <FollowUsListItem>
@@ -36,7 +37,8 @@ const FollowUs = () => {
           href="https://www.youtube.com/c/GoIT"
           target="_blank"
           rel="noopener noreferrer nofollow"
-        >
+          isinfooter={isInFooter.toString()}
+                  >
           <YoutubeIcon />
         </FollowUsLink>
         

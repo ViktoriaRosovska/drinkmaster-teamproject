@@ -58,6 +58,6 @@ export const LayoutContainer = styled.div`
 
 export const Main = styled.main`
   flex: 1 1 auto;
-  background-color: ${props => props.theme};
+  background-color: ${props => props.theme.backgroundColor};
   /* color: ${props => props.theme}; */
 `;

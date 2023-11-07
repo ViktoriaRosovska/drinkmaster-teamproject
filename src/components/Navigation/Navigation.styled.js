@@ -8,19 +8,25 @@ export const Nav = styled.nav`
     flex-direction: row;
     column-gap: 16px;
     /* margin-left: 224px; */
-  // }
+  }
 `;
 
 export const DefButton = styled(NavLink)`
   background-color: transparent;
-  color: var(--white-color);
+  color: ${props => props.theme.color};
   padding: 8px 16px 8px 16px;
   border-radius: 40px;
-  border: rgba(243, 243, 243, 0.2) solid 1px;
+  border: ${props => props.theme.borderColor} solid 1px;
+  transition: transform var(--transition), border var(--transition);
   &:hover {
-    background-color: var(--dark-blue-color);
+    background-color: ${props => props.theme.btnHoverColor};
+    border: ${props => props.theme.paginationAccentColor} solid 1px;
+    color: ${props => props.theme.activeHeaderColor};
+    transform: scale(1.05);
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px #7fffd4;
   }
   &.active {
-    background-color: var(--dark-blue-color);
+    background-color: ${props => props.theme.btnHoverColor};
+    color: ${props => props.theme.activeHeaderColor};
   }
 `;

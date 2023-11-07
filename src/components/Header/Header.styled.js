@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HeaderCont = styled.header`
-  background-color: ${props => props.theme};
+  background-color: ${props => props.theme.backgroundColor};
 
   @media screen and (max-width: 1439.99px) {
     position: ${props => (props.isOpenBurgerMenu ? 'fixed' : 'static')};
@@ -10,7 +10,7 @@ export const HeaderCont = styled.header`
   }
 
   padding: 20px;
-  border-bottom: 1px solid var(--white-twenty-color);
+  border-bottom: 1px solid ${props => props.theme.borderColor};
   min-width: 320px;
 
   @media screen and (min-width: 768px) {
