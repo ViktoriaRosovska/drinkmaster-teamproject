@@ -24,7 +24,7 @@ export const Title = styled.h2`
   font-size: 16px;
   font-weight: 500;
   line-height: 1.33;
-
+  color: ${props => props.theme.color};
   @media screen and (min-width: 768px) {
     font-size: 18px;
   }
