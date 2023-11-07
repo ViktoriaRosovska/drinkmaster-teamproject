@@ -9,14 +9,14 @@ export const StyledButton = styled.button`
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border-color: ${props => props.theme};
+  border-color: ${props => props.theme.borderColor};
   padding-top: 8px;
   padding-bottom: 8px;
 
   justify-content: center;
   align-items: center;
 
-  background-color: white;
+  background-color: ${props => props.theme.backgroundColor};
 
   @media screen and (min-width: 1440px) {
     display: flex;
