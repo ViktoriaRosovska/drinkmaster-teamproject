@@ -19,6 +19,7 @@ export default function FavoriteDrinksPage() {
   const { total, favoriteDrinks } = useDrink();
 
   const [currentPage, setCurrentPage] = useState(1);
+  const [hasDrinks, setHasDrinks] = useState(false);
 
   const drinksPerPage = width < 1440 ? 8 : 9;
 
@@ -32,6 +33,8 @@ export default function FavoriteDrinksPage() {
     if (favoriteDrinks?.length === 0 && currentPage > 1) {
       onPageChange(currentPage - 1);
     }
+
+    setHasDrinks(favoriteDrinks?.length > 0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [favoriteDrinks]);
 
@@ -55,7 +58,7 @@ export default function FavoriteDrinksPage() {
     <MainContainer>
       <ToastContainer transition={Slide} />
       <PageTitle title="Favorites" />
-      {total > 0 ? (
+      {hasDrinks > 0 ? (
         <DrinkList
           favorite={true}
           drinksData={favoriteDrinks}
