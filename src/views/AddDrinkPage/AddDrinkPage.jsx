@@ -6,14 +6,14 @@ import { MainContainer } from 'styles/App.styled';
 // import { authOperations } from '../../redux/auth/authOperations';
 
 import AddDrinkForm from '../../components/Forms/AddDrinkForm/AddDrinkForm';
-import FollowUs from 'components/FollowUs/FollowUs';
+// import FollowUs from 'components/FollowUs/FollowUs';
 import {
   AddDrinkContainer,
   FollowUsTitle,
   RightWrapper,
 } from './AddDrinkPage.styled';
 import PopularDrinks from 'components/PopularDrinks/PopularDrinks';
-
+// import FollowUsAdd from 'components/FollowUs/FollowUsAdd';
 export default function AddDrinkPage() {
   return (
     <MainContainer>
@@ -23,7 +23,7 @@ export default function AddDrinkPage() {
         <RightWrapper>
           <div>
             <FollowUsTitle>FollowUs</FollowUsTitle>
-            <FollowUs />
+            {/* <FollowUs /> */}
           </div>
           <div>
             <PopularDrinks />

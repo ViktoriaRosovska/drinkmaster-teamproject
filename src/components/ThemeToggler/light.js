@@ -14,4 +14,5 @@ export const lightTheme = {
   errorStateColor: '#da1414',
   paginationAccentColor: '#4070cd80',
   activeHeaderColor: '#f3f3f3',
+  iconColor: '#161f37',
 };
