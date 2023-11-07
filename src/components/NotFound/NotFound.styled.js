@@ -14,7 +14,7 @@ const NotFoundPageContainer = styled.div`
 `;
 
 const NotFoundText = styled.p`
-  color: var(--white-color);
+ color: ${props => props.theme.color};
   text-align: center;
   font-family: 'Manrope';
   font-size: 14px;
