@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+const transition = '300ms cubic-bezier(0.46, 0.03, 0.52, 0.96)';
 
 export const WhiteButton = styled.button`
   border-radius: 42px;
@@ -6,14 +7,17 @@ export const WhiteButton = styled.button`
   font-weight: 600;
   font-size: 14px;
   line-height: 18px;
-  background-color: ${props => props.theme.color};
-  color: ${props => props.theme.btncolor};
-  border: 1px solid var(--white-color);
-  transition: background-color 0.25s ease-in;
+  background: ${props => props.theme.secondBorderColor};
+  color: ${props => props.theme.secondaryTextColor};
+  border: 1px solid transparent;
+
+  transition: color ${transition}, background-color ${transition},
+    border-color ${transition};
+
   &:hover {
-    border: 1px solid ${props => props.theme.color};
-    background-color: transparent;
-    color: ${props => props.theme.color};
+    border: 1px solid ${props => props.theme.paginationAccentColor};
+    background: ${props => props.theme.iconColor};
+    color: ${props => props.theme.btncolor};
   }
   @media screen and (min-width: 768px) {
     font-size: 16px;

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const HomePageContainer = styled.div`
+  color: ${props => props.theme.hoverBorderColor};
   min-width: 320px;
   min-height: 100vh;
   margin-left: auto;
