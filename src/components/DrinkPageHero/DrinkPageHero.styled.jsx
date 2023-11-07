@@ -15,6 +15,7 @@ export const HeroContainer = styled.div`
   }
 `;
 export const GlassName = styled.p`
+  color: ${props => props.theme.secondaryTextColor};
   margin-bottom: 20px;
   font-size: 12px;
   opacity: 50%;
@@ -33,6 +34,7 @@ export const About = styled.p`
   font-size: 14px;
   line-height: calc(18 / 14);
   margin-bottom: 40px;
+  color: ${props => props.theme.color};
 
   @media screen and (min-width: 768px) {
     font-size: 16px;

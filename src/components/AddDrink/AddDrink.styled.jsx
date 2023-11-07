@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 const transition = '300ms cubic-bezier(0.46, 0.03, 0.52, 0.96)';
 
 export const HeroContainer = styled.section`
-  // padding-top: 80px;
   padding-bottom: 112px;
+
   @media screen and (min-width: 768px) {
-    // padding-top: 120px;
     padding-bottom: 124px;
   }
+
   // @media screen and (min-width: 1440px) {
   //   padding-top: 128px;
   //   padding-bottom: 160px;
@@ -54,10 +54,9 @@ export const AddDrinkBtnLink = styled(Link)`
   justify-content: center;
   padding: 13px 43px;
   border-radius: 42px;
-  // background: var(--dark-blue-color);
-  background: ${props => props.theme.secondBgrColor};
-  // color: var(--white-color);
+  background: ${props => props.theme.secondBorderColor};
   color: ${props => props.theme.secondaryTextColor};
+  border: 1px solid transparent;
   font-weight: 600;
   line-height: 1.285;
 
@@ -71,12 +70,9 @@ export const AddDrinkBtnLink = styled(Link)`
 
   &:hover,
   &:focus {
-    // color: var(--dark-blue-color);
-    color: ${props => props.theme.color};
-    // background: var(--dark-blue-color);
-    background: ${props => props.theme.secondBgrColor};
-    // border-color: var(--dark-blue-color);
     border: 1px solid ${props => props.theme.paginationAccentColor};
+    background: ${props => props.theme.iconColor};
+    color: ${props => props.theme.btncolor};
   }
 `;
 
