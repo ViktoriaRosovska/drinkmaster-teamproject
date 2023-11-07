@@ -25,8 +25,12 @@ const AddPhotoContainer = styled.div`
 `;
 
 const FileImage = styled.img`
-  width: 335px;
-  height: 320px;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
 `;
 
 const InputFileWrapper = styled.div`
@@ -171,7 +175,14 @@ const AddFileLabel = styled.label`
   cursor: pointer;
 `;
 
+const RadioLabel = styled.label`
+  color: ${props => props.theme.color};
+  &:checked {
+    color: red;
+  }
+`;
 export {
+  RadioLabel,
   DescriptionWrapper,
   InputAddFile,
   InputFileWrapper,

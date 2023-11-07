@@ -14,7 +14,12 @@ import {
 } from './AddDrinkPage.styled';
 import PopularDrinks from 'components/PopularDrinks/PopularDrinks';
 import FollowUsAdd from 'components/FollowUs/FollowUsAdd';
+import { useEffect } from 'react';
 export default function AddDrinkPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <MainContainer>
       <PageTitle title="Add drink" />
