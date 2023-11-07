@@ -76,7 +76,7 @@ export default function DrinksPage() {
       })
     )
       .unwrap()
-      .catch(error => console.log(error));
+      .catch(error => error);
   }, [dispatch, currentPage, drinksPerPage, filter, category, ingredient]);
 
   useEffect(() => {
