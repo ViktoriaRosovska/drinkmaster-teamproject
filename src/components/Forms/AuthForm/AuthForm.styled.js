@@ -145,6 +145,8 @@ export const ErrorText = styled.p`
   text-align: ${({ select }) => (select === 'true' ? 'right' : 'left')};
 `;
 
+ErrorText.shouldForwardProp = prop => prop !== 'error';
+
 export const ErrorSvgStyled = styled(ErrorSvg)`
   position: absolute;
   top: 18px;
