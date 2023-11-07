@@ -1,12 +1,13 @@
+import React, { useState, useEffect, useRef } from 'react';
 import LogoutBtn from 'components/Buttons/LogoutBtn/LogoutBtn';
 import {
   EditProfileBtn,
   ModalContainer,
   IconEdit,
 } from './UserLogoPopup.styled';
-import { useState, useRef } from 'react';
-import ModalWindow from '../ModalWindow/ModalWindow'; // Добавьте этот импорт
-import UserInfoModal from '../UserInfoModal/UserInfoModal'; // И этот
+// import { useState, useRef } from 'react';
+import ModalWindow from '../ModalWindow/ModalWindow';
+import UserInfoModal from '../UserInfoModal/UserInfoModal';
 
 export default function UserLogoPopup({
   onCloseUserLogoModal,
@@ -22,6 +23,16 @@ export default function UserLogoPopup({
   const closeUserInfoModal = () => {
     setIsModalUserInfoOpen(false);
   };
+
+  useEffect(() => {
+    const handleEsc = event => {
+      if (event.key === 'Escape') {
+        onCloseUserLogoModal();
+      }
+    };
+    document.addEventListener('keydown', handleEsc);
+    return () => document.removeEventListener('keydown', handleEsc);
+  });
 
   return (
     <>
