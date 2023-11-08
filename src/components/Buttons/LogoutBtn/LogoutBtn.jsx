@@ -6,9 +6,7 @@ export default function LogoutBtn({ onBackdrop }) {
   const dispatch = useDispatch();
 
   const onLogoutHandler = () => {
-    // Logout user .....
     dispatch(authOperations.signOut());
-    // onBackdrop();
   };
   return (
     <Logout type="button" onClick={() => onLogoutHandler()}>
