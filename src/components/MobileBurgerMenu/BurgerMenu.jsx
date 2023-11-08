@@ -2,14 +2,12 @@ import React from 'react';
 import Drawer from '@mui/material/Drawer';
 import NavigationMobileMenu from './NavigationMobileMenu/NavigationMobileMenu/NavigationMobileMenu';
 import { BurgerWrp, Ellipse223, Ellipse224 } from './BurgerMenu.styled';
-import { MainContainer } from 'styles/App.styled';
 
 const BurgerMenu = ({ isOpenMobileMenu, toggleMobileMenu }) => {
   console.log(isOpenMobileMenu);
 
   return (
     <BurgerWrp>
-      <MainContainer></MainContainer>
       <Drawer
         anchor="top"
         variant="temporary"
@@ -18,7 +16,7 @@ const BurgerMenu = ({ isOpenMobileMenu, toggleMobileMenu }) => {
         sx={{
           flexShrink: 0,
           '& .MuiDrawer-paper': {
-            width: '375px',
+            width: '100%',
             height: '100vh',
             boxSizing: 'border-box',
             backgroundColor: '#0a0a11',
