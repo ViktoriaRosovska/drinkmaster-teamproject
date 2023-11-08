@@ -24,7 +24,9 @@ import {
 import DefaultImg from '../../assets/images/drinkPage/coctailPlaceholder.png';
 
 const DrinkPageHero = ({ id, glass, about, alcoholic, title, image }) => {
-  const notifyAdded = () => toast.success('Added to favorites');
+  const notifyAdded = () => {
+    toast.success('Added to favorites');
+  };
   const notifyRemoved = () => toast.info('Removed from favorites');
   const { isLoading } = useDrink();
   const { favoriteDrinks } = useDrink();
@@ -65,7 +67,9 @@ const DrinkPageHero = ({ id, glass, about, alcoholic, title, image }) => {
               {!isDrinkInFavoriteList(id) ? (
                 <WhiteButton
                   onClick={() => {
-                    dispatch(addDrinkToFavorite(id)).then(() => notifyAdded());
+                    dispatch(addDrinkToFavorite(id)).then(() => {
+                      notifyAdded();
+                    });
                     if (favoriteDrinks.length === 0) {
                       localStorage.setItem('motivatingFavorite1', 'false');
                     } else if (favoriteDrinks.length === 4) {

@@ -42,9 +42,6 @@ const DrinkIdPage = () => {
           />
 
           <DrinkIngridientList ingredients={drink.ingredients} />
-
-          {/* <DrinkIngridientList ingredients={ingredientArrayFromDrink} /> */}
-
           <RecipePreparation instructions={drink.instructions} />
         </>
       ) : (

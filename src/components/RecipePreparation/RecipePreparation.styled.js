@@ -36,6 +36,7 @@ export const ListItem = styled.li`
   line-height: calc(18 / 14);
   padding: 14px 0;
   border-bottom: 1px dotted rgba(243, 243, 243, 0.2);
+  color: ${props => props.theme.color};
 
   @media screen and (min-width: 768px) {
     font-size: 16px;

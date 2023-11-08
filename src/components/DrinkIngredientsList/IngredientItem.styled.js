@@ -47,24 +47,26 @@ export const Ingredient = styled.div`
 `;
 export const IngredientTitle = styled.p`
   margin-bottom: 0;
-  font-size: 18px;
+  margin-right: 4px;
+  font-size: 12px;
+  color: ${props => props.theme.color};
 
   @media screen and (min-width: 768px) {
     width: 150px;
-    font-size: 14px;
+    font-size: 16px;
   }
 `;
 
 export const IngredientMeasure = styled.p`
   margin-bottom: 0;
   color: ${props => props.theme.secondaryTextColor};
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.29;
   text-align: end;
   white-space: nowrap;
 
   @media screen and (min-width: 768px) {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.25;
   }
 `;
