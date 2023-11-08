@@ -4,8 +4,10 @@ import {
   EditProfileBtn,
   ModalContainer,
   IconEdit,
+  CloseModalLogoBtn,
+  CloseSVGIcon,
 } from './UserLogoPopup.styled';
-// import { useState, useRef } from 'react';
+import CloseModal1 from '../../../assets/images/addDrink/X.svg';
 import ModalWindow from '../ModalWindow/ModalWindow';
 import UserInfoModal from '../UserInfoModal/UserInfoModal';
 

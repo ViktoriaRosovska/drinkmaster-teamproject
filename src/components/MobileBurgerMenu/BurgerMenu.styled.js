@@ -16,22 +16,6 @@ const BurgerWrp = styled.div`
 const DrawerWrp = styled(Drawer)`
   width: 375px;
 `;
-// const MobileMenuContainer = styled.div`
-//   @media screen and (max-width: 1439.8px) {
-//     // background-color: #0a0a11;
-//     background-color: #ffffff;
-//     min-width: 100%;
-//     height: 60vh;
-//     // position: fixed;
-//     z-index: 101;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     transform: ${props =>
-//       props.isOpenMobileMenu ? 'translateY(0)' : 'translateY(-120%)'};
-//     transition: transform 1s ease-in;
-//   }
-// `;
 
 const Ellipse224 = styled.div`
   @media screen and (max-width: 767.98px) {
@@ -69,10 +53,4 @@ const Ellipse223 = styled.div`
   }
 `;
 
-export {
-  Ellipse224,
-  Ellipse223,
-  // MobileMenuContainer,
-  BurgerWrp,
-  DrawerWrp,
-};
+export { Ellipse224, Ellipse223, BurgerWrp, DrawerWrp };

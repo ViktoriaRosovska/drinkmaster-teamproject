@@ -123,6 +123,9 @@ const IconEdit = styled(IconEdit2)`
 `;
 
 const SaveUserInfoBtn = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 54px;
   padding: 18px;
