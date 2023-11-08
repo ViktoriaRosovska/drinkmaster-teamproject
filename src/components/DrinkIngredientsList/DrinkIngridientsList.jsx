@@ -10,7 +10,7 @@ import { selectIngredients } from 'redux/filters/filtersSelector';
 
 const DrinkIngredientsList = ({ ingredients }) => {
   const [ingredientsData, setIngredientsData] = useState([]);
-  const ingredientsAll = useSelector(state => selectIngredients(state));
+  let ingredientsAll = useSelector(state => selectIngredients(state));
   const dispatch = useDispatch();
 
   const ingredientsIdArr = ingredients.map(
@@ -20,13 +20,18 @@ const DrinkIngredientsList = ({ ingredients }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        console.log('before get');
         if (ingredientsAll.length === 0) {
           const data = await dispatch(getIngredients());
+          console.log('after get-2');
+
           if (data.payload.length !== 0) {
             const ingredientsImages = data.payload.filter(item =>
               ingredientsIdArr.includes(item._id)
             );
             setIngredientsData(ingredientsImages);
+
+            console.log('after get');
           }
         }
       } catch (error) {
