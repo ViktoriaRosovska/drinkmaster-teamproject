@@ -1,8 +1,17 @@
 import styled from 'styled-components';
 
-// const BurgerWrp = styled.div`
-//   display: none;
-// `;
+ const BurgerWrp = styled.div`
+ min-width: 320px;
+ max-width: 375px;
+
+ @media screen and (min-width: 768px) {
+  max-width: 768px;
+}
+
+@media screen and (min-width: 1440px) {
+  display: none;
+}
+ `;
 
 // const MobileMenuContainer = styled.div`
 //   @media screen and (max-width: 1439.8px) {
@@ -20,6 +29,7 @@ import styled from 'styled-components';
 //     transition: transform 1s ease-in;
 //   }
 // `;
+
 const Ellipse224 = styled.div`
 @media screen and (max-width: 767.98px) {
   left: 331px;
@@ -59,7 +69,7 @@ const Ellipse223 = styled.div`
 
 export {
   Ellipse224,
-  Ellipse223
+  Ellipse223,
   // MobileMenuContainer,
-  // BurgerWrp,
+   BurgerWrp,
 };

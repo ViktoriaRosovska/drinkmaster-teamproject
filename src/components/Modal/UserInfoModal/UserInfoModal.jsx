@@ -34,18 +34,6 @@ export default function UserInfoModal({ onBackdropClose }) {
   });
 
   function handleAvatarChange(e) {
-    // const selectedFile = (e.target.files[0]);
-
-    // // if (selectedFile) {
-
-    // //   const fileReader = new FileReader();
-    // //   fileReader.onload = function (e) {
-    // //     const fileContent = e.target.result;
-    // //     console.log('File content:', fileContent);
-    // //   };
-    // //   fileReader.readAsText(selectedFile);
-    // //   setUserData({...userData, avatar: selectedFile});
-    // // }
 
     const avatarFile = e.target.files[0];
     
@@ -57,7 +45,6 @@ export default function UserInfoModal({ onBackdropClose }) {
   }
 
   const handleNameChange = e => {
-    // Обробка зміни імені користувача
     const name = e.target.value;
     setUserData({ ...userData, name });
   };
@@ -73,14 +60,11 @@ export default function UserInfoModal({ onBackdropClose }) {
       // setIsLoading(true);
       await dispatch(updateUser(formData));
       // setIsLoading(false);
-
-      formData.reset();
       onBackdropClose();
     } catch (error) {
       console.log('Помилка сабміту при оновлені профилю', error.message);
     }
-    formData.reset();
-    // Після успішної відповіді закрити модальне вікно
+   
     onBackdropClose();
   };
 
@@ -110,7 +94,7 @@ export default function UserInfoModal({ onBackdropClose }) {
             onChange={handleNameChange}
           />
           <IconEdit />
-          <SaveUserInfoBtn type="submit" onClick={handleSubmitUpdateUser}>
+          <SaveUserInfoBtn type="button" onClick={handleSubmitUpdateUser}>
             Save changes
           </SaveUserInfoBtn>
         </StyledLabel>
