@@ -70,7 +70,33 @@
 - Збереження зображень на хмарному сервісі Cloudinary
 - Підписка на новини за допомогою поштового менеджера Mailgun
 - Логування роботи сервера та відстеження помилок
-  
+
+`Бібліотеки які використовували:`
+- jsonwebtoken
+- mongoose
+- morgan
+- multer
+- multer-storage-cloudinary
+- nanoid
+- nodemailer
+- path
+- pug
+- swagger-ui-express
+- uuid
+- bcrypt
+- body-parser
+- cloudinary
+- cors
+- cross-env
+- crypto
+- dotenv
+- express
+- fs-extra
+- gravatar
+- html-to-text
+- jimp
+- joi
+
 ## Над проектом працювали:
 - Анна Футрик - фронтенд
 - Анастасія Савицька - фронтенд
