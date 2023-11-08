@@ -38,9 +38,14 @@ export const StyledUserName = styled.p`
   font-weight: 500;
   line-height: 1.28;
   cursor: pointer;
+  width: 51px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 1.5;
+    width: 150px;
   }
 `;
