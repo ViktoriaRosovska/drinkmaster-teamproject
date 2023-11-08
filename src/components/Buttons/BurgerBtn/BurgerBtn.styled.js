@@ -29,11 +29,10 @@ const BurgerSVGIcon = styled(ReactSVG)`
     width: 28px;
     height: 28px;
     border: none;
-    // stroke: #f3f3f3;
     stroke: ${props => props.theme.color};
     transition: scale 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
     &:focus {
-      scale: 1.1; 
+      scale: 1.1;
     }
   }
   @media screen and (min-width: 1440px) {

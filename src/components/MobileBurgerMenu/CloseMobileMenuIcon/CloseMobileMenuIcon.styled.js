@@ -2,9 +2,11 @@ import { ReactSVG } from 'react-svg';
 import styled from 'styled-components';
 
 const BurgerCloseIcon = styled(ReactSVG)`
+  width: 16px;
+  height: 16px;
   @media screen and (max-width: 767.8px) {
-    width: 32px;
-    height: 32px;
+    width: 16px;
+    height: 16px;
   }
   @media screen and (max-width: 1439.8px) {
     width: 38px;
