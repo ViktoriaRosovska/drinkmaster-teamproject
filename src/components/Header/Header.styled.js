@@ -4,8 +4,8 @@ export const HeaderCont = styled.header`
   background-color: ${props => props.theme.backgroundColor};
 
   @media screen and (max-width: 1439.99px) {
-    position: ${props => (props.isOpenBurgerMenu ? 'fixed' : 'static')};
-    width: ${props => (props.isOpenBurgerMenu ? '100vw' : '')};
+    position: '${props => (props.isOpenBurgerMenu ? 'fixed' : 'static')}';
+    width: 100%;
     z-index: 5001;
   }
 

@@ -62,7 +62,7 @@ const authSlice = createSlice({
       })
       .addCase(authOperations.updateUser.fulfilled, (state, { payload }) => {
         state.user.name = payload.name;
-        payload.avatar && (state.user.avatar = payload.avatarURL);
+        payload.avatar && (state.user.avatar = payload.avatar);
       }),
 });
 
