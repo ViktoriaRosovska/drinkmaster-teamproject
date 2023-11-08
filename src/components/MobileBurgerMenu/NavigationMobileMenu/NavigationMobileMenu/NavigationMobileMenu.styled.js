@@ -2,16 +2,21 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const Nav = styled.nav`
-  @media screen and (max-width: 1439.98px) {
+  width: 375px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  overflow: hidden;
+  & li {
     display: flex;
-    flex-direction: column;
-    row-gap: 16px;
-    & li {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    justify-content: center;
+    align-items: center;
   }
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+
   @media screen and (min-width: 1440px) {
     display: none;
   }
