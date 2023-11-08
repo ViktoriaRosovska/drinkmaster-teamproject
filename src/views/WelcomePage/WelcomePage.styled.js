@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import transition from '../../utils/transition';
 
 export const Container = styled.div`
   display: flex;
@@ -60,6 +61,7 @@ export const DefButton = styled(Link)`
   border-radius: 42px;
   text-decoration: none;
   border: rgba(243, 243, 243, 0.2) solid 1px;
+  transition: background-color ${transition}, color ${transition};
   &:hover {
     background-color: var(--white-color);
     color: var(--dark-blue-color);
