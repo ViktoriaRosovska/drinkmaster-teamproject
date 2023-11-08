@@ -27,8 +27,8 @@ export const BtnBack = styled.button`
   background: linear-gradient(141.22deg, var(--blue-color) 9.4%, var(--light-green-color) 91.91%);
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
- box-shadow: inset 0px 5px 10px 0px 
-  transition: all var(--transition);
+ box-shadow: inset 0px 5px 10px 0px;
+  transition: transform var(--transition), border var(--transition), background-color var(--transition);
   
 
   &:hover,

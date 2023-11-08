@@ -1,6 +1,6 @@
 import React, {useRef, useEffect } from 'react';
 import ButtonBack from '../../components/ButtonBack/ButtonBack';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
   PrivacyContainer,
   PrivacyPolicyText,
@@ -10,20 +10,19 @@ import PageTitle from '../../components/PageTitle/PageTitle';
 
 export default function PrivacyPolicy() {
 const pageTitleRef = useRef();
-  const location = useLocation();
-
+  
   useEffect(() => {
     pageTitleRef.current.scrollIntoView();
   }, []);
 
   // повертає завжди а сторінку Хоум  
-  const backLinkHref = useRef(location.state?.from ?? '/');
+  
   return (
     <>
       <PrivacyContainer>
 
- <Link to={backLinkHref.current}>
-        <ButtonBack text=" Go back" />
+ <Link to='/home'>
+        <ButtonBack text=" Go HOME" />
       </Link>
 
         <PageTitle title='Privacy Policy' forwardRef={pageTitleRef}/>
