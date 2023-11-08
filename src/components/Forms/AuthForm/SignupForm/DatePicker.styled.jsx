@@ -68,6 +68,55 @@ const StyledDesktopDatePicker = styled(DesktopDatePicker)(
     };
   }
 );
+const PopperDateStyles = {
+  '& .MuiPaper-root': {
+    backgroundColor: 'var(--dark-blue-color)',
+    color: 'var(--white-color)',
+  },
+
+  '& .MuiIconButton-root': {
+  color: 'var(--white-color)',
+},
+
+'& .MuiIconButton-root': {
+  color: 'var(--white-color)',
+},
+
+'& .MuiIconButton-root': {
+   color: 'var(--white-color)',
+},
+
+'& .Mui-disabled.Mui-disabled.MuiIconButton-edgeStart': {
+   color: 'rgba(239, 237, 232, 0.4)',
+},
+
+'& .MuiDayCalendar-weekDayLabel': {
+  color: 'rgba(243, 243, 243, 0.5)',
+},
+
+'& .MuiPickersDay-dayOutsideMonth': {
+  color: 'var(--white-color)',
+},
+
+'& .MuiPickersDay-root.Mui-disabled.Mui-disabled': {
+  color: 'rgba(243, 243, 243, 0.2)',
+},
+
+'& .MuiPickersDay-today.Mui-selected.MuiPickersDay-root': {
+  backgroundColor: 'var(--white-color)',
+  color: 'var(--black-color)',
+ 
+},
+
+'& .MuiPickersDay-today.Mui-selected': {
+border: '1px solid rgba(243, 243, 243, 0.5)',
+},
+
+'& .MuiPickersDay-root': {
+  color:' var(--white-color)',
+},
+
+ }
 
 export default function BirthDate() {
   const { setFieldValue, errors, values } = useFormikContext();
@@ -96,6 +145,9 @@ export default function BirthDate() {
         toolbar: {
           hidden: true,
         },
+        popper: {
+          sx: PopperDateStyles,
+        }
       }}
       format="DD/MM/YYYY"
       defaultValue={'dd/mm/yyyy'}
