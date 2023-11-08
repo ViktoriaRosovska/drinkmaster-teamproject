@@ -4,7 +4,7 @@ export const Logout = styled.button`
   width: 100%;
   height: 42px;
   padding: 12px;
-  font-family: Manrope;
+  font-family: 'Manrope';
   font-size: 14px;
   font-weight: 600;
   border: none;

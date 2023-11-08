@@ -57,9 +57,9 @@ export const HeaderList = styled.ul`
   width: 100%;
   @media screen and (min-width: 1440px) {
     > li:first-child {
-      /* margin-right: 224px; */
+      margin-right: 224px;
     }
-    /* column-gap: 16px; */
+    column-gap: 16px;
   }
 `;
 
