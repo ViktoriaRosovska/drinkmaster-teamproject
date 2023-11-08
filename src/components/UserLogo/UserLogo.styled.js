@@ -30,11 +30,15 @@ export const UserAvatar = styled.img`
   border-radius: 50%;
 `;
 
-export const StyledUserName = styled.p`
+export const StyledUserName = styled.div`
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 1.28;
+  width: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
   cursor: pointer;
 
   @media screen and (min-width: 768px) {

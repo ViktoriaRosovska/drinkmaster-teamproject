@@ -13,7 +13,6 @@ import ModalPortal from 'components/Modal/ModalPortal/ModalPortal';
 const UserLogo = () => {
   const [isShowUserLogoModal, setIsShowUserLogoModal] = useState(false);
   const { user } = useAuth();
-  console.log(user);
 
   const onShowUserLogoModal = () => {
     setIsShowUserLogoModal(true);

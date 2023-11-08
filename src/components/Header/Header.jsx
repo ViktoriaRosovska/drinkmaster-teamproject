@@ -21,7 +21,7 @@ const Header = ({ isOpenMobileMenu, toggleMobileMenu, toggleTheme }) => {
 
   return (
     <>
-      <HeaderCont>
+      <HeaderCont >
         <Container>
           <MainWrapper>
             <HeaderList>
