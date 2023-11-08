@@ -33,8 +33,11 @@ const initialValues = {
 };
 
 const schema = Yup.object().shape({
-  name: Yup.string().required('Name is required'),
-  birthDate: Yup.date().required('Date of Birth is required'),
+  name: Yup.string()
+    .required('Name is required')
+    .matches(/[A-Za-z]+/, 'Name must contain at least one letter')
+    .matches(/^[A-Za-z\s]+$/, 'Name must contain only letters and spaces'),
+  birthDate: Yup.date().required('Date of Birth is required').max(new Date()),
   email: Yup.string()
     .matches(
       /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,

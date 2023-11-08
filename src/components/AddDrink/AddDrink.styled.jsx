@@ -54,8 +54,8 @@ export const AddDrinkBtnLink = styled(Link)`
   justify-content: center;
   padding: 13px 43px;
   border-radius: 42px;
-  background: ${props => props.theme.secondBorderColor};
-  color: ${props => props.theme.secondaryTextColor};
+  background-color: ${props => props.theme.color};
+  color: ${props => props.theme.btncolor};
   border: 1px solid transparent;
   font-weight: 600;
   line-height: 1.285;
@@ -71,8 +71,8 @@ export const AddDrinkBtnLink = styled(Link)`
   &:hover,
   &:focus {
     border: 1px solid ${props => props.theme.paginationAccentColor};
-    background: ${props => props.theme.iconColor};
-    color: ${props => props.theme.btncolor};
+    background-color: ${props => props.theme.btncolor};
+    color: ${props => props.theme.color};
   }
 `;
 

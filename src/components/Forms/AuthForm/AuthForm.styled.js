@@ -1,4 +1,3 @@
-import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { Form, Field } from 'formik';
 import styled, { css } from 'styled-components';
 import transition from '../../../utils/transition';
@@ -99,13 +98,13 @@ export const Button = styled.button`
   margin-top: 14px;
   display: flex;
   justify-content: center;
-  border: none;
+  border: 1px solid var(--white-fifty-color);
+  cursor: pointer;
   transition: border ${transition}, background-color ${transition};
   &:focus,
   &:hover {
     background-color: transparent;
     color: var(--white-color);
-    border: 1px solid var(--white-fifty-color);
   }
 
   @media screen and (min-width: 768px) {
@@ -164,90 +163,22 @@ export const Link = styled(NavLink)`
   font-size: 12px;
   font-weight: 600;
   line-height: 1.33px;
-  text-decoration-line: underline;
+  text-decoration-line: none;
   text-align: center;
-`;
 
-/////////////////////////////////////////////////////
-/////////////////////////////////////////////////////
-/////////////////////////////////////////////////////
+  // position: relative;
+  // padding: 18px;
+  // background-color: var(--white-color);
+  // border-radius: 42px;
+  // display: flex;
+  // justify-content: center;
+  // border-radius: 42px;
+  // background-color: transparent;
+  // border: 1px solid transparent;
+  // transition: border ${transition};
 
-export const BirthDate = styled(DesktopDatePicker)`
-  width: 335px;
-  display: block;
-  padding: 18px 24px;
-  border-radius: 200px;
-  outline: none;
-  font-size: 14px;
-  line-height: 1.28;
-  color: var(--white-fifty-color);
-  background-color: transparent;
-  transition: border ${transition}, color ${transition};
-
-  @media screen and (min-width: 768px) {
-    width: 400px;
-    font-size: 17px;
-    line-height: 1.56;
-    padding: 14px 24px;
-  }
-
-  .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root {
-    font-size: 14px;
-    line-height: 1.28;
-    color: var(--white-fifty-color);
-    border-radius: 200px;
-    outline: none;
-    background-color: transparent;
-    transition: border ${transition}, color ${transition};
-    padding-right: 18px;
-
-    @media screen and (min-width: 768px) {
-      padding-right: 24px;
-    }
-  }
-
-  // .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-error
-  //   .MuiOutlinedInput-notchedOutline {
-  //   transition: border-color ${transition}, color ${transition};
-  //   border-color: var(--red-error-fifty-color);
+  // &:focus,
+  // &:hover {
+  //   border: 1px solid var(--white-fifty-color);
   // }
-
-  // .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-error:hover
-  //   .MuiOutlinedInput-notchedOutline,
-  // .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-error:focus
-  //   .MuiOutlinedInput-notchedOutline {
-  //   border-style: 0px;
-  //   border-color: var(--white-fifty-color);
-  //   color: var(--white-fifty-color);
-  // }
-
-  .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root
-    .MuiOutlinedInput-notchedOutline {
-    /////////  Ани  ///////////
-    // border-color: var(--green-success-fifty-color);
-    ////////////////////
-    border-color: var(--white-twenty-color);
-    transition: border-color ${transition}, color ${transition};
-  }
-
-  //////// Иветты ///////////////
-  .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root
-    .MuiOutlinedInput-notchedOutline {
-    border-color: ${props =>
-      props.value && props.error
-        ? 'var(--white-twenty-color)'
-        : props.value
-        ? 'green'
-        : 'var(--white-twenty-color)'};
-  }
-
-  .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root:hover
-    .MuiOutlinedInput-notchedOutline {
-    border-color: var(--white-fifty-color);
-  }
-
-  .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused
-    .MuiOutlinedInput-notchedOutline {
-    border-color: var(--white-twenty-color);
-  }
 `;
