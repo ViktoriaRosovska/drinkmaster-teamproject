@@ -20,18 +20,14 @@ const DrinkIngredientsList = ({ ingredients }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log('before get');
         if (ingredientsAll.length === 0) {
           const data = await dispatch(getIngredients());
-          console.log('after get-2');
 
           if (data.payload.length !== 0) {
             const ingredientsImages = data.payload.filter(item =>
               ingredientsIdArr.includes(item._id)
             );
             setIngredientsData(ingredientsImages);
-
-            console.log('after get');
           }
         }
       } catch (error) {

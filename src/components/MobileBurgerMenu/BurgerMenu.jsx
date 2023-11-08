@@ -4,8 +4,6 @@ import NavigationMobileMenu from './NavigationMobileMenu/NavigationMobileMenu/Na
 import { BurgerWrp, Ellipse223, Ellipse224 } from './BurgerMenu.styled';
 
 const BurgerMenu = ({ isOpenMobileMenu, toggleMobileMenu }) => {
-  console.log(isOpenMobileMenu);
-
   return (
     <BurgerWrp>
       <Drawer

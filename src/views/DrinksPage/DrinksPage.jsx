@@ -62,7 +62,6 @@ export default function DrinksPage() {
   }, [currentPage]);
 
   useEffect(() => {
-    console.log('currentPage ', currentPage);
     dispatch(
       getRequestedDrink({
         query: filter,

@@ -8,12 +8,12 @@ import authSelectors from 'redux/auth/authSelectors';
 import { StyledPaginationLight } from './PaginatorLight.styled';
 
 const Paginator = ({ totalPages, onPageChange, currentPage, path }) => {
- 
   const themeSelector = useSelector(authSelectors.selectTheme);
   const isDarkTheme = themeSelector === 'dark';
-   console.log(themeSelector)
 
-  const PaginatorStyles = isDarkTheme ? StyledPagination : StyledPaginationLight
+  const PaginatorStyles = isDarkTheme
+    ? StyledPagination
+    : StyledPaginationLight;
 
   return (
     <Stack spacing={2} sx={stackStyles}>
