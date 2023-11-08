@@ -4,16 +4,12 @@ import { MainContainer } from 'styles/App.styled';
 import { Drinks } from 'components/Drinks/Drinks';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { useDrink } from 'hooks/useDrink';
+
 import {
   getMainPageAllDrinks,
   getRequestedDrink,
 } from 'redux/drinks/drinksOperations';
-import {
-  getCategories,
-  getGlasses,
-  getIngredients,
-} from 'redux/filters/filtersOperations';
+import { getCategories, getIngredients } from 'redux/filters/filtersOperations';
 import { useDrink } from 'hooks/useDrink';
 import { useResize } from 'hooks/useResize';
 import {
@@ -23,6 +19,7 @@ import {
 } from 'redux/filter/filterSelector';
 import Paginator from 'components/Paginator/Paginator';
 import { useNavigate } from 'react-router-dom';
+import { ErrorMessage } from './DrinksPage.styled';
 
 export default function DrinksPage() {
   const dispatch = useDispatch();
@@ -32,7 +29,6 @@ export default function DrinksPage() {
     dispatch(getMainPageAllDrinks());
     dispatch(getCategories());
     dispatch(getIngredients());
-    dispatch(getGlasses());
   }, [dispatch]);
 
   const { drinks, error, total } = useDrink();
@@ -66,6 +62,7 @@ export default function DrinksPage() {
   }, [currentPage]);
 
   useEffect(() => {
+    console.log('currentPage ', currentPage);
     dispatch(
       getRequestedDrink({
         query: filter,
@@ -88,7 +85,7 @@ export default function DrinksPage() {
       <PageTitle title="Drinks" />
       <DrinksSearch />
       {error ? (
-        <p>There are no drinks match your request</p>
+        <ErrorMessage>There are no drinks match your request</ErrorMessage>
       ) : (
         drinks && <Drinks drinks={drinks} />
       )}
