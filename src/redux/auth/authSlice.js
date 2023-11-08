@@ -29,7 +29,7 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
       })
       .addCase(authOperations.signIn.fulfilled, (state, { payload }) => {
-        state.theme = payload.user.theme;
+        // state.theme = payload.user.theme;
         state.user = payload.user;
         state.token = payload.token;
         state.isLoggedIn = true;
@@ -49,7 +49,7 @@ const authSlice = createSlice({
         state.isRefreshing = true;
       })
       .addCase(authOperations.currentUser.fulfilled, (state, { payload }) => {
-        state.theme = payload.user.theme;
+        // state.theme = payload.user.theme;
         state.user = payload.user;
         state.isLoggedIn = true;
         state.isRefreshing = false;

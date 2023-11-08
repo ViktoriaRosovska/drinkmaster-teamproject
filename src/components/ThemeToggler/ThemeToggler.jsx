@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import authSelectors from 'redux/auth/authSelectors';
 import { toggleTheme } from 'redux/auth/authSlice';
 
-export const ThemeToggler = ({ isOpenBurgerMenu }) => {
+export const ThemeToggler = () => {
   const themeSelector = useSelector(authSelectors.selectTheme);
   const dispatch = useDispatch();
   return (
@@ -14,7 +14,7 @@ export const ThemeToggler = ({ isOpenBurgerMenu }) => {
         role="switch"
         checked={themeSelector === 'light'}
         onChange={() => dispatch(toggleTheme())}
-        isOpenBurgerMenu={isOpenBurgerMenu}
+        // isOpenBurgerMenu={isOpenBurgerMenu}
       />
     </>
   );
