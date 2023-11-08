@@ -5,7 +5,7 @@
 ## Шаблон репозиторія
 Цей проект був створений на основі [Create React App](https://github.com/facebook/create-react-app). Для ознайомлення з шаблоном [зверніться до документації](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Загальні характеристики 
+## Опис проекту 
 "Drinkmaster" - це випускний проект курсу "Full Stack Developer" IT-школи GoIT, який використовує всі набуті знання та технології. Він складається з фронтенд-частини: основного сайту, який представлений в даному [репозиторії](https://viktoriarosovska.github.io/drinkmaster-teamproject/), бекенд-частини ([переглянути репозиторій бекенду](https://github.com/Soundlover1984/drinkmaster-backend)), та бази даних MongoDB.
 
 ### Фронтенд
