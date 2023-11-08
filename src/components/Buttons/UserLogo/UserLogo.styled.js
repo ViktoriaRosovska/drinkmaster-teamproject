@@ -46,6 +46,6 @@ export const StyledUserName = styled.p`
   @media screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 1.5;
-    width: 150px;
+    width: 100px;
   }
 `;
