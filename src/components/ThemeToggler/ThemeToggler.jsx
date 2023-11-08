@@ -14,7 +14,6 @@ export const ThemeToggler = () => {
         role="switch"
         checked={themeSelector === 'light'}
         onChange={() => dispatch(toggleTheme())}
-        // isOpenBurgerMenu={isOpenBurgerMenu}
       />
     </>
   );
