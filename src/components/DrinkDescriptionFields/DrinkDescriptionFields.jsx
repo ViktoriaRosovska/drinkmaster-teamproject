@@ -101,8 +101,6 @@ export const DrinkDescriptionFields = ({
     setFieldValue('alcoholic', value);
   };
 
-  console.log('DDD', values, errors, touched);
-
   return (
     <DescriptionWrapper>
       <RelativeWrapper>

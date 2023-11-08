@@ -17,11 +17,9 @@ import {
 import LogoHeader from './LogoHeder';
 
 const Header = ({ isOpenMobileMenu, toggleMobileMenu, toggleTheme }) => {
-  console.log(isOpenMobileMenu);
-
   return (
     <>
-      <HeaderCont >
+      <HeaderCont>
         <Container>
           <MainWrapper>
             <HeaderList>
