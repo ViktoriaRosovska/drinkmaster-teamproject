@@ -4,70 +4,71 @@ import { CalendarSvgIcon } from './CalendarSvgIcon';
 
 import { useFormikContext } from 'formik';
 
-const transition = '500ms ease-in';
+const transition = '300ms ease-in';
 
-// const mainBorderColor = (props =>
-//   props.value && props.error
-//     ? 'var(--white-twenty-color)'
-//     : props.value
-//     ? 'green'
-//     : 'var(--white-twenty-color)').toString();
+const StyledDesktopDatePicker = styled(DatePicker)(({ err, curValue }) => {
+  return {
+    '& .MuiInputBase-root': {
+      borderRadius: '200px',
+      border: '1px solid var(--white-twenty-color)',
+      outline: 'none',
+      fontSize: '14px',
+      lineHeight: '1.28',
+      color: 'var(--white-fifty-color)',
+      backgroundColor: 'transparent',
+      transition: `border 300ms ease-in`,
+      borderColor:
+        err && curValue
+          ? 'red'
+          : curValue
+          ? 'green'
+          : 'var(--white-twenty-color)',
+    },
 
-const StyledDesktopDatePicker = styled(DatePicker)({
-  '& .MuiInputBase-root': {
-    borderRadius: '200px',
-    border: '1px solid var(--white-twenty-color)',
-    outline: 'none',
-    fontSize: '14px',
-    lineHeight: '1.28',
-    color: 'var(--white-fifty-color)',
-    backgroundColor: 'transparent',
-    transition: `border 500ms ease-in`,
-  },
+    '& .MuiInputBase-root:hover': {
+      border: '1px solid var(--white-fifty-color)',
+    },
 
-  '& .MuiInputBase-root:hover': {
-    border: '1px solid var(--white-fifty-color)',
-  },
+    '& .MuiTextField-root': {
+      padding: '18px 24px',
+    },
 
-  '& .MuiTextField-root': {
-    padding: '18px 24px',
-  },
+    '& .MuiOutlinedInput-root': {
+      fontSize: '14px',
+      lineHeight: '1.28',
+      color: 'var(--white-fifty-color)',
+      backgroundColor: 'transparent',
+      paddingRight: '18px',
+    },
 
-  '& .MuiOutlinedInput-root': {
-    fontSize: '14px',
-    lineHeight: '1.28',
-    color: 'var(--white-fifty-color)',
-    backgroundColor: 'transparent',
-    paddingRight: '18px',
-  },
+    '& .MuiInputBase-input': {
+      padding: '18px 24px',
+    },
 
-  '& .MuiInputBase-input': {
-    padding: '18px 24px',
-  },
+    '& .MuiIconButton-root': {
+      marginRight: '0px',
+    },
 
-  '& .MuiIconButton-root': {
-    marginRight: '0px',
-  },
+    '& .Mui-error': {
+      transition: `border ${transition} color ${transition}`,
+      border: '1px solid var(--red-error-fifty-color)',
+    },
 
-  '& .Mui-error': {
-    transition: `border ${transition} color ${transition}`,
-    border: '1px solid var(--red-error-fifty-color)',
-  },
+    '& .MuiOutlinedInput-notchedOutline': {
+      border: 'none',
+    },
 
-  '& .MuiOutlinedInput-notchedOutline': {
-    border: 'none',
-  },
+    ///////////////// Calendar ////////////////////
 
-  ///////////////// Calendar ////////////////////
-
-  '& .MuiDateCalendar-root': {
-    backgroundColor: 'var(--dark-blue-color)',
-    borderRadius: '200',
-  },
+    // '& .MuiDateCalendar-root': {
+    //   backgroundColor: 'var(--dark-blue-color)',
+    //   borderRadius: '200',
+    // },
+  };
 });
 
 export default function BirthDate() {
-  const { setFieldValue, errors } = useFormikContext();
+  const { setFieldValue, errors, values } = useFormikContext();
 
   return (
     <StyledDesktopDatePicker
@@ -82,6 +83,8 @@ export default function BirthDate() {
       slots={{
         openPickerIcon: CalendarSvgIcon,
       }}
+      err={errors.birthDate}
+      curValue={values.birthDate}
       slotProps={{
         textField: {
           fullWidth: true,
