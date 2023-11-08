@@ -2,12 +2,10 @@ import React, {useRef, useEffect } from 'react';
 import { PrivacyContainer, PrivacyPolicyText, PrivacyPolicyTitle } from '../PrivacyPolicyPage/PrivacyPolicyPage.styled'; 
 import PageTitle from '../../components/PageTitle/PageTitle';
 import ButtonBack from '../../components/ButtonBack/ButtonBack';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function TermsService() {
 const pageTitleRef = useRef();
-const location = useLocation();
-  const backLinkHref = useRef(location.state?.from ?? '/');
   
   useEffect(() => {
     pageTitleRef.current.scrollIntoView();
@@ -16,7 +14,7 @@ const location = useLocation();
   return (
     <PrivacyContainer>
 
-      <Link to={backLinkHref.current}>
+      <Link to='/home'>
         <ButtonBack text=" Go back" />
       </Link>
       

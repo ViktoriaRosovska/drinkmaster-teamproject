@@ -7,8 +7,8 @@ export const WhiteButton = styled.button`
   font-weight: 600;
   font-size: 14px;
   line-height: 18px;
-  background: ${props => props.theme.secondBorderColor};
-  color: ${props => props.theme.secondaryTextColor};
+  background: ${props => props.theme.color};
+  color: ${props => props.theme.btncolor};
   border: 1px solid transparent;
 
   transition: color ${transition}, background-color ${transition},
@@ -16,8 +16,8 @@ export const WhiteButton = styled.button`
 
   &:hover {
     border: 1px solid ${props => props.theme.paginationAccentColor};
-    background: ${props => props.theme.iconColor};
-    color: ${props => props.theme.btncolor};
+    background: ${props => props.theme.btncolor};
+    color: ${props => props.theme.color};
   }
   @media screen and (min-width: 768px) {
     font-size: 16px;
