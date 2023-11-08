@@ -52,3 +52,50 @@ body {
 .move {
   transform: translate(0px, -40px);
 }
+ /* calendar */
+.MuiPaper-root.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+  background-color: var(--dark-blue-color);
+  color: var(--white-color);
+}
+
+.MuiIconButton-root.css-12mkn7b-MuiButtonBase-root-MuiIconButton-root-MuiPickersCalendarHeader-switchViewButton {
+  color: var(--white-color);
+}
+
+.MuiIconButton-root.css-1nkg345-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button {
+  color: var(--white-color);
+}
+
+.MuiIconButton-root.css-kg9q0s-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button {
+   color: var(--white-color);
+}
+
+.Mui-disabled.css-1nkg345-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button.Mui-disabled.MuiIconButton-edgeStart {
+   color: rgba(239, 237, 232, 0.4);
+}
+
+.MuiDayCalendar-weekDayLabel.css-rhmlg1-MuiTypography-root-MuiDayCalendar-weekDayLabel {
+  color: rgba(243, 243, 243, 0.5);
+}
+
+.MuiPickersDay-dayOutsideMonth.css-18wn1yb-MuiButtonBase-root-MuiPickersDay-root {
+  color: var(--white-color);
+}
+
+.MuiPickersDay-root.Mui-disabled.Mui-disabled.css-1u23akw-MuiButtonBase-root-MuiPickersDay-root {
+  color: rgba(243, 243, 243, 0.2);
+}
+
+.MuiPickersDay-today.css-jgls56-MuiButtonBase-root-MuiPickersDay-root.Mui-selected.MuiPickersDay-root {
+  background-color: var(--white-color);
+  color: var(--black-color);
+ 
+}
+
+.MuiPickersDay-today.css-jgls56-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
+border: 1px solid rgba(243, 243, 243, 0.5);
+}
+
+.MuiPickersDay-root.css-1u23akw-MuiButtonBase-root-MuiPickersDay-root {
+  color: var(--white-color)
+}
