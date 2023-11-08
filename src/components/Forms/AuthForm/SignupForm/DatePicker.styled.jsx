@@ -78,14 +78,6 @@ const PopperDateStyles = {
   color: 'var(--white-color)',
 },
 
-'& .MuiIconButton-root': {
-  color: 'var(--white-color)',
-},
-
-'& .MuiIconButton-root': {
-   color: 'var(--white-color)',
-},
-
 '& .Mui-disabled.Mui-disabled.MuiIconButton-edgeStart': {
    color: 'rgba(239, 237, 232, 0.4)',
 },
